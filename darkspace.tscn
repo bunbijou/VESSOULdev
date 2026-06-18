@@ -1,0 +1,603 @@
+[gd_scene format=3 uid="uid://dcq8fwj5pk1qj"]
+
+[ext_resource type="Script" uid="uid://bris7jad6qwty" path="res://scripts/cutscene_darkspace.gd" id="1_2o6y2"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="3_suhhr"]
+[ext_resource type="Texture2D" uid="uid://d3x7ct8mo5d1" path="res://sprites/npc/ascendant_L.png" id="4_jv7ld"]
+[ext_resource type="Texture2D" uid="uid://bc7s6ykeau4y2" path="res://sprites/enemy_samael/samael_descent_overlay.png" id="4_qmjir"]
+[ext_resource type="Texture2D" uid="uid://dr5arbj3ylmom" path="res://sprites/npc/moon_rocks.png" id="6_gbhra"]
+[ext_resource type="Texture2D" uid="uid://cgvm7sp4hk3d5" path="res://sprites/particles/cloud1.png" id="7_ohar5"]
+[ext_resource type="Texture2D" uid="uid://bm0pb21pssr8o" path="res://sprites/enemy_samael/spr_boss_forsaken.png" id="8_apxcm"]
+[ext_resource type="Texture2D" uid="uid://cymw8qir873mn" path="res://sprites/particles/flame_variants_5.png" id="10_3pxi4"]
+[ext_resource type="Texture2D" uid="uid://dk8rw483e4rs7" path="res://sprites/particles/flame_variants_6.png" id="11_ab7w0"]
+[ext_resource type="Texture2D" uid="uid://bi1b50sj21cl0" path="res://sprites/particles/flame_variants_7.png" id="12_vs63h"]
+[ext_resource type="Texture2D" uid="uid://clhbv4q8nmli8" path="res://sprites/particles/flame_variants_8.png" id="13_hsme2"]
+[ext_resource type="Texture2D" uid="uid://b7u0msussydm6" path="res://sprites/environment/fire_gradient.png" id="14_ab7w0"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="15_kgubr"]
+[ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="26_uxc2b"]
+
+[sub_resource type="Animation" id="Animation_ohar5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DarknessMod/MoonRock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-3, -113)]
+}
+
+[sub_resource type="Animation" id="Animation_apxcm"]
+resource_name = "attack"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../DarknessMod/MoonRock:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-3, -113), Vector2(-3, 268.25)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 5),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"destroy_player"
+}, {
+"args": [1],
+"method": &"increment_message"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qmjir"]
+_data = {
+&"RESET": SubResource("Animation_ohar5"),
+&"attack": SubResource("Animation_apxcm")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_apxcm"]
+atlas = ExtResource("8_apxcm")
+region = Rect2(384, 512, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmjir"]
+atlas = ExtResource("8_apxcm")
+region = Rect2(640, 384, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3pxi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_apxcm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmjir")
+}],
+"loop": true,
+"name": &"glare",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_w576e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ascendants/Ascendant_L:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(485, 525)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DarknessMod/LailunMovementHandler/Ascendant_L:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -34)]
+}
+
+[sub_resource type="Animation" id="Animation_saily"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarknessMod/LailunMovementHandler/Ascendant_L:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4333333, 2.9666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -34), Vector2(0, -26.895), Vector2(0, -34)]
+}
+
+[sub_resource type="Animation" id="Animation_wv7sy"]
+resource_name = "retreat"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ascendants/Ascendant_L:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.93333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(485, 525), Vector2(485, 570.346), Vector2(485, -100)]
+}
+
+[sub_resource type="Animation" id="Animation_ut87r"]
+resource_name = "tremble"
+length = 0.13333334
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarknessMod/LailunMovementHandler/Ascendant_L:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2(0, -34), Vector2(1, -34)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2o6y2"]
+_data = {
+&"RESET": SubResource("Animation_w576e"),
+&"idle": SubResource("Animation_saily"),
+&"retreat": SubResource("Animation_wv7sy"),
+&"tremble": SubResource("Animation_ut87r")
+}
+
+[sub_resource type="Animation" id="Animation_25t6g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(18.892157, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"default"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../SamaelEyeOL:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../BGFlame:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../LAnimPlayer:current_animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&""]
+}
+
+[sub_resource type="Animation" id="Animation_qmjir"]
+resource_name = "emerge"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(18.892157, 0, 0, 0), Color(18.892157, 0, 0, 1), Color(1.4369954, 1.4369954, 1.4369954, 0.9843137)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.4, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1.1, 1.1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_1wlpq"]
+resource_name = "glare"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.4369954, 1.4369954, 1.4369954, 0.9843137)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"glare"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../SamaelEyeOL:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../BGFlame:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../LAnimPlayer:current_animation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"tremble"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_25t6g"]
+_data = {
+&"RESET": SubResource("Animation_25t6g"),
+&"emerge": SubResource("Animation_qmjir"),
+&"glare": SubResource("Animation_1wlpq")
+}
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_jpvib"]
+frames = 4
+frame_0/texture = ExtResource("10_3pxi4")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("11_ab7w0")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("12_vs63h")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("13_hsme2")
+frame_3/duration = 0.1
+
+[node name="darkspace" type="Node" unique_id=2139490185]
+script = ExtResource("1_2o6y2")
+
+[node name="DarknessMod" type="Node2D" parent="." unique_id=340627454]
+modulate = Color(0.2647818, 0.2647818, 0.2647818, 1)
+
+[node name="Player" parent="DarknessMod" unique_id=907920398 instance=ExtResource("3_suhhr")]
+unique_name_in_owner = true
+position = Vector2(0, 13)
+position_override = true
+
+[node name="LailunMovementHandler" type="Node2D" parent="DarknessMod" unique_id=1758421499]
+position = Vector2(0, -13)
+
+[node name="Ascendant_L" type="Sprite2D" parent="DarknessMod/LailunMovementHandler" unique_id=571581438]
+z_index = 1
+position = Vector2(0, -34)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_jv7ld")
+
+[node name="RockAnimPlayer" type="AnimationPlayer" parent="DarknessMod" unique_id=685886539]
+unique_name_in_owner = true
+root_node = NodePath("../../LAnimPlayer")
+libraries/ = SubResource("AnimationLibrary_qmjir")
+
+[node name="MoonRock" type="Sprite2D" parent="DarknessMod" unique_id=659613903]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(-3, -113)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_gbhra")
+
+[node name="BreakParticle" type="CPUParticles2D" parent="DarknessMod/MoonRock" unique_id=2026059482]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(6, 4)
+amount = 99
+texture = ExtResource("7_ohar5")
+lifetime = 3.0
+speed_scale = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(10.05, 25.84)
+gravity = Vector2(0, -1)
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+scale_amount_min = 0.66
+scale_amount_max = 0.66
+color = Color(9.947678, 8.961672, 11.215399, 0.02745098)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="DarknessMod/MoonRock" unique_id=467690483]
+position = Vector2(6, 4)
+lifetime = 0.3
+emission_shape = 1
+emission_sphere_radius = 30.8
+gravity = Vector2(0, -974.985)
+color = Color(0.5137255, 0.4627451, 0.6117647, 1)
+
+[node name="Samael" type="AnimatedSprite2D" parent="DarknessMod" unique_id=965370177]
+modulate = Color(18.892157, 0, 0, 0)
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_3pxi4")
+autoplay = "default"
+
+[node name="Roaming Camera" parent="." unique_id=39511994 instance=ExtResource("15_kgubr")]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2044278588]
+z_index = -999
+offset_left = -801.0
+offset_top = -608.0
+offset_right = 795.0
+offset_bottom = 759.0
+texture = ExtResource("26_uxc2b")
+
+[node name="LAnimPlayer" type="AnimationPlayer" parent="." unique_id=12408284]
+libraries/ = SubResource("AnimationLibrary_2o6y2")
+autoplay = &"idle"
+
+[node name="SamaelAnimPlayer" type="AnimationPlayer" parent="." unique_id=649545644]
+unique_name_in_owner = true
+root_node = NodePath("../DarknessMod/Samael")
+libraries/ = SubResource("AnimationLibrary_25t6g")
+
+[node name="SamaelEyeOL" type="Sprite2D" parent="." unique_id=837854982]
+visible = false
+z_index = 3
+position = Vector2(0, 5)
+texture = ExtResource("4_qmjir")
+
+[node name="BGFlame" type="Node2D" parent="." unique_id=1861683849]
+modulate = Color(1, 1, 1, 0)
+
+[node name="CPUParticlesDown" type="CPUParticles2D" parent="BGFlame" unique_id=1074454013]
+position = Vector2(-140, -2)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown2" type="CPUParticles2D" parent="BGFlame" unique_id=133365614]
+position = Vector2(-117, 3)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown3" type="CPUParticles2D" parent="BGFlame" unique_id=1634999353]
+position = Vector2(-92, -6)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown4" type="CPUParticles2D" parent="BGFlame" unique_id=980161726]
+position = Vector2(-70, 4)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown5" type="CPUParticles2D" parent="BGFlame" unique_id=2063614476]
+position = Vector2(-35, -6)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown6" type="CPUParticles2D" parent="BGFlame" unique_id=1315523700]
+position = Vector2(-5, 3)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown7" type="CPUParticles2D" parent="BGFlame" unique_id=471023442]
+position = Vector2(38, -13)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown8" type="CPUParticles2D" parent="BGFlame" unique_id=471236246]
+position = Vector2(59, 0)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown9" type="CPUParticles2D" parent="BGFlame" unique_id=1882758910]
+position = Vector2(81, -14)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown10" type="CPUParticles2D" parent="BGFlame" unique_id=614615630]
+position = Vector2(101, 0)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown11" type="CPUParticles2D" parent="BGFlame" unique_id=503112738]
+position = Vector2(124, -17)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="CPUParticlesDown12" type="CPUParticles2D" parent="BGFlame" unique_id=1769246886]
+position = Vector2(124, -17)
+amount = 10
+texture = SubResource("AnimatedTexture_jpvib")
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, -500)
+scale_amount_max = 3.0
+
+[node name="TextureRect" type="TextureRect" parent="BGFlame" unique_id=382690350]
+z_index = -2
+offset_left = -144.00002
+offset_top = -113.00001
+offset_right = 908.42285
+offset_bottom = 399.0
+scale = Vector2(0.27460444, 0.27460444)
+texture = ExtResource("14_ab7w0")
+stretch_mode = 1
+
+[editable path="Roaming Camera"]

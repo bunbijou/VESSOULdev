@@ -1,0 +1,79 @@
+[gd_scene load_steps=12 format=3 uid="uid://bbxvqqbm703uw"]
+
+[ext_resource type="Script" uid="uid://oj6lhjpf7sug" path="res://explosive_flame.gd" id="1_sxugg"]
+[ext_resource type="Texture2D" uid="uid://bcxxo42m4u02m" path="res://sprites/sprExplosion.png" id="2_7e5c8"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/hitboxComponent.tscn" id="3_joxar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y42uk"]
+atlas = ExtResource("2_7e5c8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu2xs"]
+atlas = ExtResource("2_7e5c8")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76p6i"]
+atlas = ExtResource("2_7e5c8")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2dod"]
+atlas = ExtResource("2_7e5c8")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n26yb"]
+atlas = ExtResource("2_7e5c8")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lijfv"]
+atlas = ExtResource("2_7e5c8")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5fu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y42uk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu2xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76p6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2dod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n26yb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lijfv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76p6i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0nice"]
+radius = 20.396078
+
+[node name="ExplosiveFlame" type="Node2D" node_paths=PackedStringArray("hitbox")]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_sxugg")
+hitbox = NodePath("HitboxComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_y5fu8")
+autoplay = "default"
+frame_progress = 0.7203616
+
+[node name="HitboxComponent" parent="." instance=ExtResource("3_joxar")]
+on_touch_effect = -1
+canFlash = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_0nice")

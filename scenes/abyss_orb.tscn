@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://cfpeokf0rqvy"]
+
+[ext_resource type="Script" uid="uid://dijnu1hyy5m2y" path="res://scripts/fireball.gd" id="1_uv6gx"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="2_eev87"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="3_ju1i1"]
+[ext_resource type="Texture2D" uid="uid://b7hd645e0unf" path="res://sprites/enemy_abyssoul/abyss_clump.png" id="4_qa8mg"]
+[ext_resource type="PackedScene" uid="uid://gijigdmvqvfg" path="res://scenes/particle_nadir_flame.tscn" id="5_0sa3w"]
+[ext_resource type="Texture2D" uid="uid://8go86amt3cq0" path="res://sprites/particles/fragment_abyss_1.png" id="6_qa8mg"]
+[ext_resource type="Texture2D" uid="uid://coh13jqy88j6i" path="res://sprites/particles/fragment_abyss_2.png" id="7_0sa3w"]
+[ext_resource type="PackedScene" uid="uid://c4nnm60ixtdiq" path="res://scenes/flash_component.tscn" id="7_ygd54"]
+[ext_resource type="Texture2D" uid="uid://b3pkrcss0jjt8" path="res://sprites/particles/fragment_abyss_3.png" id="8_02hlv"]
+[ext_resource type="Texture2D" uid="uid://dl3v50bd5tsa7" path="res://sprites/particles/fragment_abyss_4.png" id="9_ygd54"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kba2"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sa3w"]
+atlas = ExtResource("4_qa8mg")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_02hlv"]
+atlas = ExtResource("4_qa8mg")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ygd54"]
+atlas = ExtResource("4_qa8mg")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kev3c"]
+atlas = ExtResource("4_qa8mg")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyqc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sa3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_02hlv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ygd54")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kev3c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_kev3c"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("6_qa8mg")
+frame_1/texture = ExtResource("7_0sa3w")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("8_02hlv")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("9_ygd54")
+frame_3/duration = 1.0
+
+[node name="abyss_orb" type="Node2D" unique_id=1409250673 node_paths=PackedStringArray("flame_particle")]
+z_index = 999
+script = ExtResource("1_uv6gx")
+substance = "AbyssSoil"
+flame_particle = NodePath("SpawnFlame")
+flash_can_dispel = false
+
+[node name="HitboxComponent" parent="." unique_id=1108796297 instance=ExtResource("2_eev87")]
+collision_mask = 6
+on_touch_effect = "Hazard"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=406702907]
+shape = SubResource("CircleShape2D_7kba2")
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("3_ju1i1")]
+enemy = "Abyssoul"
+no_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=408704857]
+position = Vector2(0, 16)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_7kba2")
+debug_color = Color(0.85007757, 0.00089966, 0.90115523, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=153245551]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_tyqc2")
+autoplay = "default"
+frame_progress = 0.39624518
+
+[node name="SpawnFlame" parent="." unique_id=1663480174 instance=ExtResource("5_0sa3w")]
+amount = 5
+texture = SubResource("AnimatedTexture_kev3c")
+lifetime = 0.25
+explosiveness = 1.0
+emission_rect_extents = Vector2(2.5, 2.5)
+gravity = Vector2(0, 100)
+
+[node name="FlashComponent" parent="." unique_id=405903204 instance=ExtResource("7_ygd54")]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1747862851]
+amount = 3
+emission_shape = 1
+emission_sphere_radius = 3.0
+gravity = Vector2(0, 10)
+color = Color(0.11372549, 0.16862746, 0.3254902, 1)
+
+[connection signal="body_entered" from="HitboxComponent" to="." method="_on_hitbox_component_body_entered"]
+
+[editable path="InfoComponent"]

@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://qnlqdpnghvmn"]
+
+[ext_resource type="Script" uid="uid://fbmb3jbb6w3l" path="res://scripts/miniboss_censer.gd" id="1_s66m5"]
+[ext_resource type="Texture2D" uid="uid://85tpnwtjkq1i" path="res://sprites/enemy_censer/sprMinibossCenser-sheet.png" id="2_5xbqo"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="2_wdj5m"]
+[ext_resource type="Texture2D" uid="uid://cwvtktbo4hgd4" path="res://sprites/environment/darkness0.png" id="3_gtt48"]
+[ext_resource type="Texture2D" uid="uid://cgvm7sp4hk3d5" path="res://sprites/particles/cloud1.png" id="3_wdj5m"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="4_5xbqo"]
+[ext_resource type="Texture2D" uid="uid://mxubsyyyujco" path="res://sprites/particles/light_particle.png" id="7_gq72m"]
+[ext_resource type="Texture2D" uid="uid://djsl2m01ven8p" path="res://sprites/particles/bit_metal_1.png" id="7_t5axu"]
+[ext_resource type="Texture2D" uid="uid://bir1ryo1qg377" path="res://sprites/particles/bit_metal_2.png" id="8_o2ghs"]
+[ext_resource type="Texture2D" uid="uid://biuq60gg4b1dg" path="res://sprites/particles/bit_metal_3.png" id="9_2rkq8"]
+[ext_resource type="Texture2D" uid="uid://dd2gvcgs1hspj" path="res://sprites/particles/bit_metal_4.png" id="10_4a56s"]
+[ext_resource type="Texture2D" uid="uid://dpqx38krhcxqh" path="res://sprites/particles/flame1.png" id="11_xbupk"]
+[ext_resource type="Texture2D" uid="uid://ypa13hyimt33" path="res://sprites/particles/flame2.png" id="12_gtt48"]
+[ext_resource type="Texture2D" uid="uid://cvbdh7lp17na2" path="res://sprites/particles/flame3.png" id="13_givpn"]
+[ext_resource type="Texture2D" uid="uid://yyvom7t73tpy" path="res://sprites/particles/flame4.png" id="14_b2xeq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fi1dd"]
+atlas = ExtResource("2_5xbqo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xbqo"]
+atlas = ExtResource("2_5xbqo")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdj5m"]
+atlas = ExtResource("2_5xbqo")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkbmf"]
+atlas = ExtResource("2_5xbqo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivpkq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fi1dd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_gtt48")
+}],
+"loop": true,
+"name": &"fade",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_5xbqo")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_wdj5m")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkbmf")
+}],
+"loop": true,
+"name": &"tired",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xbqo"]
+radius = 6.0606055
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wdj5m"]
+radius = 118.31772
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_xbupk"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("7_t5axu")
+frame_1/texture = ExtResource("8_o2ghs")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("9_2rkq8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("10_4a56s")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_t5axu"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("10_4a56s")
+frame_1/texture = ExtResource("9_2rkq8")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("8_o2ghs")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_t5axu")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_givpn"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("11_xbupk")
+frame_1/texture = ExtResource("12_gtt48")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("13_givpn")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("14_b2xeq")
+frame_3/duration = 1.0
+
+[node name="MinibossCenser" type="Node2D" unique_id=1590452314 node_paths=PackedStringArray("my_sprite", "hit_area")]
+scale = Vector2(0.66, 0.66)
+script = ExtResource("1_s66m5")
+my_sprite = NodePath("AnimatedSprite2D")
+hit_area = NodePath("HitboxComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=564227201]
+sprite_frames = SubResource("SpriteFrames_ivpkq")
+animation = &"fade"
+autoplay = "default"
+
+[node name="SmokeParticle" type="CPUParticles2D" parent="." unique_id=884472240]
+unique_name_in_owner = true
+z_index = -1
+rotation = 0.00021806575
+scale = Vector2(1.1000338, 1.3550235)
+skew = -7.43866e-05
+amount = 10
+texture = ExtResource("3_wdj5m")
+gravity = Vector2(0, -10)
+scale_amount_min = 0.0
+scale_amount_max = 0.33
+split_scale = true
+scale_curve_x = null
+scale_curve_y = null
+color = Color(1, 1, 1, 0.1882353)
+
+[node name="HitboxComponent" parent="." unique_id=23886643 instance=ExtResource("4_5xbqo")]
+collision_mask = 6
+enemy_class = "Miniboss"
+on_touch_effect = "Standard"
+hp = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=853355083]
+shape = SubResource("CircleShape2D_5xbqo")
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("2_wdj5m")]
+enemy = "Censer"
+
+[node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+position = Vector2(0, -12.545454)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=808399301]
+position = Vector2(0, 15.999999)
+scale = Vector2(1.9999999, 1.9999999)
+shape = SubResource("CircleShape2D_wdj5m")
+debug_color = Color(0.9632587, 1.2513996e-06, 0.5026036, 0.41960785)
+
+[node name="MoteExplosion" type="CPUParticles2D" parent="." unique_id=91288365]
+unique_name_in_owner = true
+z_index = 2
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 200
+texture = ExtResource("7_gq72m")
+lifetime = 3.0
+speed_scale = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, -1000)
+initial_velocity_max = 100.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+
+[node name="MetalFragment" type="CPUParticles2D" parent="." unique_id=1533692749]
+unique_name_in_owner = true
+z_index = 999
+skew = 1.41859055e-05
+emitting = false
+amount = 6
+texture = SubResource("AnimatedTexture_xbupk")
+lifetime = 0.1
+one_shot = true
+speed_scale = 0.25
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(5, 5)
+direction = Vector2(20, 0)
+spread = 180.0
+initial_velocity_max = 500.0
+scale_amount_min = 0.1
+scale_amount_max = 0.6
+
+[node name="MetalExplosion" type="CPUParticles2D" parent="." unique_id=57798019]
+unique_name_in_owner = true
+z_index = 2
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 25
+texture = SubResource("AnimatedTexture_t5axu")
+lifetime = 20.0
+one_shot = true
+speed_scale = 5.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, 1)
+initial_velocity_max = 100.0
+scale_amount_min = 0.25
+scale_amount_max = 0.5
+
+[node name="SmokeExplosion" type="CPUParticles2D" parent="." unique_id=2051161062]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5647059)
+z_index = 2
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 100
+texture = ExtResource("3_wdj5m")
+lifetime = 20.0
+one_shot = true
+speed_scale = 5.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 100.0
+scale_amount_min = 0.5
+
+[node name="FireExplosion" type="CPUParticles2D" parent="." unique_id=583865218]
+unique_name_in_owner = true
+z_index = 999
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 200
+texture = SubResource("AnimatedTexture_givpn")
+lifetime = 10.0
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 15.05
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, -10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+
+[editable path="InfoComponent"]

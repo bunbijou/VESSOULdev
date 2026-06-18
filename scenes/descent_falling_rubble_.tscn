@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dia38v7kd8iot"]
+
+[ext_resource type="Texture2D" uid="uid://c80k8ffayld0r" path="res://sprites/environment/falling_rubble_static.png" id="1_oc2g7"]
+[ext_resource type="Script" uid="uid://cukg41tgs3dn6" path="res://scripts/descent_falling_rubble.gd" id="2_s6puh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqqru"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(0, 0, 16, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_squlu"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(16, 0, 16, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iorr5"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(32, 0, 16, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iixp"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(48, 0, 16, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdg3s"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(64, 0, 16, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10nv5"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(80, 0, 16, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gwnha"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(96, 0, 16, 65)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwrcg"]
+atlas = ExtResource("1_oc2g7")
+region = Rect2(112, 0, 16, 65)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j80b6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqqru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_squlu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iorr5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iixp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdg3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10nv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gwnha")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwrcg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="DescentFallingRubble_" type="AnimatedSprite2D" unique_id=1870395979]
+modulate = Color(0.36367702, 0.36367702, 0.36367702, 1)
+z_index = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_j80b6")
+autoplay = "default"
+frame_progress = 0.8033115
+script = ExtResource("2_s6puh")

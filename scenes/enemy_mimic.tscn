@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://0sw0yxchbigv"]
+
+[ext_resource type="Script" uid="uid://ha8ec1sgllva" path="res://scripts/enemy_mimic.gd" id="1_76e2w"]
+[ext_resource type="Texture2D" uid="uid://dcdbk6fr0etvk" path="res://sprites/enemy_mimic/sprEnemyMimic.png" id="1_fukg5"]
+[ext_resource type="Texture2D" uid="uid://bwijx6sutob5j" path="res://sprites/enemy_mimic/mimic_v2.png" id="3_57dlh"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="3_ji7bd"]
+[ext_resource type="PackedScene" uid="uid://c4nnm60ixtdiq" path="res://scenes/flash_component.tscn" id="4_3rxqw"]
+[ext_resource type="PackedScene" uid="uid://dy3ugnta1kk6v" path="res://shade_shield.tscn" id="5_3rxqw"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="6_pagn7"]
+[ext_resource type="PackedScene" uid="uid://bqwvt16oe40xu" path="res://scenes/particle_enemy_death.tscn" id="7_pym6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wymww"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(36, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cojm2"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(54, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1ncr"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(72, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm43e"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(90, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y764g"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(108, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diqpj"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(126, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2d6k"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(0, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehi45"]
+atlas = ExtResource("1_fukg5")
+region = Rect2(18, 0, 18, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57dlh"]
+atlas = ExtResource("3_57dlh")
+region = Rect2(160, 0, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgeeg"]
+atlas = ExtResource("3_57dlh")
+region = Rect2(180, 0, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hqpy5"]
+atlas = ExtResource("3_57dlh")
+region = Rect2(200, 0, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0djk0"]
+atlas = ExtResource("3_57dlh")
+region = Rect2(220, 0, 20, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyrkt"]
+atlas = ExtResource("3_57dlh")
+region = Rect2(240, 0, 20, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vaibh"]
+animations = [{
+"frames": [{
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_wymww")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_cojm2")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_g1ncr")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_bm43e")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_y764g")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_diqpj")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2d6k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_ehi45")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_wymww")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_ehi45")
+}],
+"loop": false,
+"name": &"peek",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57dlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgeeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hqpy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgeeg")
+}],
+"loop": true,
+"name": &"shuffle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_0djk0")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_xyrkt")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ji7bd"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pagn7"]
+radius = 24.0
+
+[node name="Mimic" type="Node2D" unique_id=1879524217 node_paths=PackedStringArray("hit_area", "flash_component")]
+script = ExtResource("1_76e2w")
+current_zone = null
+hit_area = NodePath("HitboxComponent")
+flash_component = NodePath("FlashComponent")
+speed = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1531293363]
+unique_name_in_owner = true
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_vaibh")
+animation = &"peek"
+autoplay = "default"
+
+[node name="HitboxComponent" parent="." unique_id=463895300 instance=ExtResource("3_ji7bd")]
+enemy_class = "Common"
+on_touch_effect = "Alert"
+hp = 3
+
+[node name="Label" parent="HitboxComponent" index="0" unique_id=1613579812]
+offset_left = -4.0
+offset_top = -7.0000005
+offset_right = 44.0
+offset_bottom = 25.0
+scale = Vector2(0.16552992, 0.16552992)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=840223349]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_ji7bd")
+
+[node name="FlashComponent" parent="." unique_id=60224253 instance=ExtResource("4_3rxqw")]
+visible = false
+
+[node name="ShadeShield" parent="." unique_id=1561931441 instance=ExtResource("5_3rxqw")]
+position = Vector2(0, 2)
+scale = Vector2(0.5, 0.5)
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("6_pagn7")]
+position = Vector2(0, 1)
+enemy = "Mimic"
+
+[node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+scale = Vector2(0.5, 0.5)
+
+[node name="InteractArea2D" parent="InfoComponent" index="1" unique_id=373575630]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" index="0" unique_id=1309308335]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_pagn7")
+debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
+
+[node name="DeathParticle" parent="." unique_id=1493907157 instance=ExtResource("7_pym6t")]
+unique_name_in_owner = true
+position = Vector2(0, 0.99999994)
+emission_sphere_radius = 8.0
+
+[editable path="HitboxComponent"]
+[editable path="InfoComponent"]

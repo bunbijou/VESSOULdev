@@ -1,0 +1,870 @@
+[gd_scene format=3 uid="uid://dmg0s5sgqdhau"]
+
+[ext_resource type="Script" uid="uid://cutlanf7xb3ci" path="res://scripts/gui.gd" id="2_86mtp"]
+[ext_resource type="FontFile" uid="uid://hmecu4n4j2t8" path="res://fonts/ModernDOS9x16.ttf" id="2_jw8q3"]
+[ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/darkness4.png" id="2_qupqx"]
+[ext_resource type="Texture2D" uid="uid://7stxncokg0i8" path="res://sprites/spr9CutMenuDialogue.png" id="3_lrj6d"]
+[ext_resource type="Texture2D" uid="uid://bc3k8jj0gin5y" path="res://sprites/hudKindling.png" id="4_1m5mi"]
+[ext_resource type="Texture2D" uid="uid://bacc66a8v53vf" path="res://sprites/hudBulb.png" id="7_xfvq4"]
+[ext_resource type="Texture2D" uid="uid://chy7vur8e8mod" path="res://sprites/hudTome.png" id="9_1m5mi"]
+[ext_resource type="Texture2D" uid="uid://b37a1xs88qkep" path="res://sprites/hudLid.png" id="14_w4bgk"]
+[ext_resource type="Texture2D" uid="uid://t2wbdebdbt40" path="res://sprites/sprSidebarItem1.png" id="15_86mtp"]
+[ext_resource type="Texture2D" uid="uid://65k2h0d1hhkh" path="res://sprites/hudGlaze.png" id="15_nuyhn"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="17_1m5mi"]
+[ext_resource type="Texture2D" uid="uid://d1xobhgpmigf7" path="res://sprites/spr9CutMenu2.png" id="18_xfvq4"]
+[ext_resource type="Texture2D" uid="uid://c1el22sopolx5" path="res://sprites/spr9CutMenu1.png" id="19_xfvq4"]
+[ext_resource type="Texture2D" uid="uid://whnk63piofo8" path="res://sprites/icon.png" id="20_mnopy"]
+
+[sub_resource type="Animation" id="Animation_1tl11"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Banner:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%HumanityBannerText:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_rvbyd"]
+resource_name = "death"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Banner:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 2.4, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667, 1.5666667, 4.5333333, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%HumanityBannerText:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667, 1.6, 4.5666666, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0.9804348), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wpw45"]
+_data = {
+&"RESET": SubResource("Animation_1tl11"),
+&"death": SubResource("Animation_rvbyd")
+}
+
+[sub_resource type="Animation" id="Animation_1mbii"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Sidebar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(212.22, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wpw45"]
+resource_name = "active"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Sidebar:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.0333333, 1.7666667, 8.5, 9.266666, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(212.22, 1), Vector2(181.87, 1), Vector2(181.87, 1), Vector2(181.87, 1), Vector2(181.87, 1), Vector2(210.44, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jw8q3"]
+resource_name = "hide"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Sidebar:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.4499998, 4.2, 4.9333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(181.87, 1), Vector2(181.87, 1), Vector2(181.87, 1), Vector2(210.44, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mnopy"]
+resource_name = "show"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Sidebar:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(181.87, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1mbii"]
+_data = {
+&"RESET": SubResource("Animation_1mbii"),
+&"active": SubResource("Animation_wpw45"),
+&"hide": SubResource("Animation_jw8q3"),
+&"show": SubResource("Animation_mnopy")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_wpw45"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=975144031]
+follow_viewport_enabled = true
+
+[node name="DeathAnimPlayer" type="AnimationPlayer" parent="." unique_id=610267698]
+unique_name_in_owner = true
+root_node = NodePath("../DeathBannerText")
+libraries/ = SubResource("AnimationLibrary_wpw45")
+
+[node name="DeathBannerText" type="Label" parent="." unique_id=1983604776]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_left = 1.0
+offset_top = 41.0
+offset_right = 541.51416
+offset_bottom = 122.973724
+scale = Vector2(0.390369, 0.390369)
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 9
+theme_override_fonts/font = ExtResource("2_jw8q3")
+text = "LOCALIZE.death"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HumanityBannerText" type="Label" parent="." unique_id=1843778275]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+offset_left = 1.0
+offset_top = 41.0
+offset_right = 541.51416
+offset_bottom = 122.973724
+scale = Vector2(0.390369, 0.390369)
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_outline_size = 9
+theme_override_fonts/font = ExtResource("2_jw8q3")
+text = "LOCALIZE.humanity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Banner" type="Sprite2D" parent="." unique_id=1891320055]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+position = Vector2(123.99999, 56.499996)
+scale = Vector2(16.499998, 1.0624998)
+texture = ExtResource("2_qupqx")
+
+[node name="SidebarAnim" type="AnimationPlayer" parent="." unique_id=1977915120]
+unique_name_in_owner = true
+root_node = NodePath("../GUI")
+libraries/ = SubResource("AnimationLibrary_1mbii")
+
+[node name="GUI" type="Control" parent="." unique_id=2098982673]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1.0
+offset_right = 208.0
+offset_bottom = 118.0
+script = ExtResource("2_86mtp")
+
+[node name="ProgressBar" type="ProgressBar" parent="GUI" unique_id=288860743]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 87.0
+offset_top = 112.0
+offset_right = 286.99997
+offset_bottom = 179.79663
+scale = Vector2(0.2, 0.059)
+theme = ExtResource("17_1m5mi")
+rounded = true
+
+[node name="HPDisplay" type="Label" parent="GUI" unique_id=244405207]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 84.366684
+offset_top = 120.36669
+offset_right = 252.95186
+offset_bottom = 147.70618
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+focus_behavior_recursive = 1
+theme = ExtResource("17_1m5mi")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoulMeter" type="Label" parent="GUI" unique_id=1748654421]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 129.0
+offset_top = 108.0
+offset_right = 334.61444
+offset_bottom = 132.0
+scale = Vector2(0.5, 0.5)
+focus_behavior_recursive = 1
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_constants/outline_size = 30
+theme_override_font_sizes/font_size = 16
+label_settings = SubResource("LabelSettings_wpw45")
+vertical_alignment = 1
+
+[node name="BottomBoundingBox" type="NinePatchRect" parent="GUI" unique_id=843654821]
+z_index = -2
+layout_mode = 0
+offset_left = -10.999985
+offset_top = 107.99999
+offset_right = 138.01184
+offset_bottom = 117.0444
+scale = Vector2(2.008151, 1.516396)
+texture = ExtResource("3_lrj6d")
+
+[node name="Sidebar" type="NinePatchRect" parent="GUI" unique_id=211820746]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 4.220001
+offset_top = -58.5
+offset_right = 75.48416
+offset_bottom = 74.17
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.9858364, 0.89859945)
+focus_behavior_recursive = 1
+texture = ExtResource("3_lrj6d")
+
+[node name="MotesCount" type="Label" parent="GUI/Sidebar" unique_id=1509525622]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 0
+offset_left = 0.79119873
+offset_top = 122.41272
+offset_right = 108.7912
+offset_bottom = 154.41275
+scale = Vector2(0.26022512, 0.26022512)
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jw8q3")
+theme_override_font_sizes/font_size = 16
+text = "x 9999"
+horizontal_alignment = 1
+
+[node name="Kindling" type="TextureRect" parent="GUI/Sidebar" unique_id=691103288]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.9713745
+offset_top = 4.1789246
+offset_right = 41.971375
+offset_bottom = 44.178925
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_1m5mi")
+
+[node name="KindlingCount" type="Label" parent="GUI/Sidebar/Kindling" unique_id=2006886296]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 0
+offset_left = 42.805725
+offset_top = 8.495422
+offset_right = 90.805725
+offset_bottom = 40.495422
+scale = Vector2(0.7463476, 0.7463476)
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "x0"
+
+[node name="IntensityBar" type="ProgressBar" parent="GUI/Sidebar/Kindling" unique_id=568783690]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -0.55278414
+offset_top = 45.421867
+offset_right = 73.834114
+offset_bottom = 61.421867
+theme = ExtResource("17_1m5mi")
+max_value = 10.0
+step = 1.0
+
+[node name="IntensityLabel" type="Label" parent="GUI/Sidebar/Kindling" unique_id=860646315]
+unique_name_in_owner = true
+visible = false
+layout_direction = 2
+layout_mode = 0
+offset_left = -3.9339106
+offset_top = 49.1314
+offset_right = 113.066086
+offset_bottom = 81.1314
+scale = Vector2(0.7463476, 0.7463476)
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jw8q3")
+theme_override_font_sizes/font_size = 16
+text = "#INTENSITY:00"
+horizontal_alignment = 1
+
+[node name="Bloombulb" type="TextureRect" parent="GUI/Sidebar" unique_id=1871179759]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 0.9713745
+offset_top = 34.856
+offset_right = 40.971375
+offset_bottom = 74.85599
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_xfvq4")
+
+[node name="BloombulbCount" type="Label" parent="GUI/Sidebar/Bloombulb" unique_id=736799692]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 0
+offset_left = 43.33333
+offset_top = 8.871567
+offset_right = 91.33333
+offset_bottom = 40.871567
+scale = Vector2(0.8058393, 0.8058393)
+theme = ExtResource("17_1m5mi")
+text = "x0"
+
+[node name="CapacityBar" type="ProgressBar" parent="GUI/Sidebar/Bloombulb" unique_id=1827223719]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.7807007
+offset_top = 39.611343
+offset_right = 77.1676
+offset_bottom = 55.611343
+scale = Vector2(1, 0.95215017)
+theme = ExtResource("17_1m5mi")
+max_value = 6.0
+step = 1.0
+
+[node name="CapacityLabel" type="Label" parent="GUI/Sidebar/Bloombulb" unique_id=428107532]
+unique_name_in_owner = true
+visible = false
+layout_direction = 2
+layout_mode = 0
+offset_left = -0.5525818
+offset_top = 41.712402
+offset_right = 112.642365
+offset_bottom = 73.7124
+scale = Vector2(0.7463476, 0.7463476)
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jw8q3")
+theme_override_font_sizes/font_size = 16
+text = "#CAPACITY:99"
+horizontal_alignment = 1
+
+[node name="Tome" type="TextureRect" parent="GUI/Sidebar" unique_id=1137832382]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.971283
+offset_top = 63.307327
+offset_right = 17.971283
+offset_bottom = 79.30733
+scale = Vector2(0.66, 0.66)
+texture = ExtResource("9_1m5mi")
+
+[node name="TomeCount" type="Label" parent="GUI/Sidebar/Tome" unique_id=1946204583]
+unique_name_in_owner = true
+layout_direction = 2
+layout_mode = 0
+offset_left = 18.160065
+offset_top = 4.374481
+offset_right = 66.160065
+offset_bottom = 36.37448
+scale = Vector2(0.35761884, 0.35761884)
+theme = ExtResource("17_1m5mi")
+text = "x0"
+
+[node name="EfficiencyBar" type="ProgressBar" parent="GUI/Sidebar/Tome" unique_id=406230616]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -0.25107968
+offset_top = 17.05023
+offset_right = 74.13582
+offset_bottom = 33.050232
+scale = Vector2(0.45736903, 0.42489415)
+theme = ExtResource("17_1m5mi")
+max_value = 3.0
+step = 1.0
+
+[node name="EfficiencyLabel" type="Label" parent="GUI/Sidebar/Tome" unique_id=282049506]
+unique_name_in_owner = true
+visible = false
+layout_direction = 2
+layout_mode = 0
+offset_left = -1.7879639
+offset_top = 17.050247
+offset_right = 124.212036
+offset_bottom = 49.050247
+scale = Vector2(0.30984265, 0.30984265)
+theme = ExtResource("17_1m5mi")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_jw8q3")
+theme_override_font_sizes/font_size = 16
+text = "#EFFICIENCY:99"
+horizontal_alignment = 1
+
+[node name="ItemIconLid" type="TextureRect" parent="GUI/Sidebar" unique_id=695156180]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 7.1006165
+offset_top = 106.83287
+offset_right = 47.100616
+offset_bottom = 146.83289
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("14_w4bgk")
+
+[node name="ItemIconGlaze" type="TextureRect" parent="GUI/Sidebar" unique_id=452199280]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 7.100525
+offset_top = 90.140274
+offset_right = 47.100525
+offset_bottom = 130.14029
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("15_nuyhn")
+
+[node name="SidebarItem1" type="TextureRect" parent="GUI/Sidebar" unique_id=459227638]
+layout_mode = 0
+offset_left = 6.0862427
+offset_top = 105.72011
+offset_right = 46.086243
+offset_bottom = 145.72012
+scale = Vector2(0.3525356, 0.3525356)
+texture = ExtResource("15_86mtp")
+
+[node name="SidebarItem2" type="TextureRect" parent="GUI/Sidebar" unique_id=307492584]
+layout_mode = 0
+offset_left = 6.086212
+offset_top = 89.027466
+offset_right = 46.086212
+offset_bottom = 129.02748
+scale = Vector2(0.35026404, 0.35026404)
+texture = ExtResource("15_86mtp")
+
+[node name="PauseMenu" type="Control" parent="GUI" unique_id=1442483861]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_top = 1.0
+offset_right = 210.0
+offset_bottom = 120.0
+focus_neighbor_top = NodePath("NinePatchRect/BackToGame")
+focus_neighbor_bottom = NodePath("NinePatchRect/ReturnToMenu")
+focus_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GUI/PauseMenu" unique_id=956044154]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 27.000002
+offset_right = 113.323044
+offset_bottom = 68.263374
+scale = Vector2(1.5830618, 1.5830618)
+theme = ExtResource("17_1m5mi")
+texture = ExtResource("18_xfvq4")
+
+[node name="LabelPause" type="Label" parent="GUI/PauseMenu/NinePatchRect" unique_id=1496943759]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 2.4461594
+offset_top = 6.948559
+offset_right = 115.00049
+offset_bottom = 55.94856
+scale = Vector2(0.31500414, 0.31500414)
+theme_override_font_sizes/font_size = 16
+text = "#GAME
+PAUSED"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="BackToGame" type="Button" parent="GUI/PauseMenu/NinePatchRect" unique_id=1717595960]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 7.41333
+offset_top = 15.160507
+offset_right = 246.66931
+offset_bottom = 55.160507
+scale = Vector2(0.10630621, 0.10630621)
+focus_neighbor_top = NodePath("../QuitToDesktop")
+focus_neighbor_bottom = NodePath("../ReturnToMenu")
+text = "#CONTINUE"
+
+[node name="ReturnToMenu" type="Button" parent="GUI/PauseMenu/NinePatchRect" unique_id=1689345600]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.9485474
+offset_top = 20.845673
+offset_right = 238.94855
+offset_bottom = 60.845673
+scale = Vector2(0.11213737, 0.11213737)
+focus_neighbor_top = NodePath("../BackToGame")
+focus_neighbor_bottom = NodePath("../QuitToDesktop")
+text = "#QUITTOMENU"
+
+[node name="QuitToDesktop" type="Button" parent="GUI/PauseMenu/NinePatchRect" unique_id=752913623]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 6.9485474
+offset_top = 26.778458
+offset_right = 254.94855
+offset_bottom = 66.77846
+scale = Vector2(0.10630621, 0.10630621)
+focus_neighbor_top = NodePath("../ReturnToMenu")
+focus_neighbor_bottom = NodePath("../BackToGame")
+text = "#QUITTODESKTOP"
+
+[node name="ConsentMenu" type="Control" parent="GUI" unique_id=230267965]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_left = 84.0
+offset_top = 75.0
+offset_right = 124.0
+offset_bottom = 115.0
+theme = ExtResource("17_1m5mi")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GUI/ConsentMenu" unique_id=1449317480]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -44.391956
+offset_right = 20.0
+offset_bottom = -4.3919563
+scale = Vector2(2.008151, 1.516396)
+texture = ExtResource("19_xfvq4")
+
+[node name="ConsentYes" type="Button" parent="GUI/ConsentMenu" unique_id=535999838]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.3919678
+offset_right = 54.0
+offset_bottom = 38.608032
+scale = Vector2(0.28993505, 0.28993505)
+focus_neighbor_left = NodePath("../ConsentNo")
+focus_neighbor_right = NodePath("../ConsentNo")
+text = "Yes"
+
+[node name="ConsentNo" type="Button" parent="GUI/ConsentMenu" unique_id=887349543]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = -1.3919525
+offset_right = 80.0
+offset_bottom = 38.608047
+scale = Vector2(0.28993505, 0.28993505)
+focus_neighbor_left = NodePath("../ConsentYes")
+focus_neighbor_right = NodePath("../ConsentYes")
+text = "No"
+
+[node name="ConsentLabelHeader" type="Label" parent="GUI/ConsentMenu" unique_id=1340897399]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -17.0
+offset_top = -29.0
+offset_right = 275.50827
+offset_bottom = 73.0
+scale = Vector2(0.25611976, 0.25611976)
+text = "Are you sure you want to quit?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="ConsentLabelSubheader" type="Label" parent="GUI/ConsentMenu/ConsentLabelHeader" unique_id=413661213]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 15.617727
+offset_top = 74.18407
+offset_right = 495.61774
+offset_bottom = 106.18407
+scale = Vector2(0.5566905, 0.5566905)
+text = "Unsaved progress will be lost."
+
+[node name="SaveSelect" type="Control" parent="GUI" unique_id=1088178531]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 0
+offset_left = 111.00001
+offset_top = 36.0
+offset_right = 151.0
+offset_bottom = 76.0
+scale = Vector2(0.15, 0.15)
+
+[node name="DeleteSaveConsent" type="Control" parent="GUI/SaveSelect" unique_id=980205896]
+visible = false
+z_index = 50
+anchors_preset = 0
+offset_left = -142.54495
+offset_top = 218.90831
+offset_right = -102.54495
+offset_bottom = 258.90833
+scale = Vector2(4.4638147, 4.4638147)
+theme = ExtResource("17_1m5mi")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="GUI/SaveSelect/DeleteSaveConsent" unique_id=1019058830]
+layout_mode = 0
+offset_left = -20.0
+offset_top = -44.391956
+offset_right = 20.0
+offset_bottom = -4.3919563
+scale = Vector2(2.008151, 1.516396)
+texture = ExtResource("19_xfvq4")
+
+[node name="DeleteSaveConsentYes" type="Button" parent="GUI/SaveSelect/DeleteSaveConsent" unique_id=761817031]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -2.0
+offset_top = -1.3919678
+offset_right = 54.0
+offset_bottom = 38.608032
+scale = Vector2(0.28993505, 0.28993505)
+text = "Yes"
+
+[node name="DeleteSaveConsentNo" type="Button" parent="GUI/SaveSelect/DeleteSaveConsent" unique_id=822737168]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 24.0
+offset_top = -1.3919525
+offset_right = 80.0
+offset_bottom = 38.608047
+scale = Vector2(0.28993505, 0.28993505)
+text = "No"
+
+[node name="DeleteSaveConsentHeader" type="Label" parent="GUI/SaveSelect/DeleteSaveConsent" unique_id=1142916212]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -17.0
+offset_top = -24.43808
+offset_right = 275.50827
+offset_bottom = 77.56192
+scale = Vector2(0.25611976, 0.25611976)
+text = "Delete save data?"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="DeleteSaveConsentSubheader" type="Label" parent="GUI/SaveSelect/DeleteSaveConsent/DeleteSaveConsentHeader" unique_id=1655578903]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 12.940216
+offset_top = 37.528694
+offset_right = 492.94022
+offset_bottom = 104.528694
+scale = Vector2(0.5566905, 0.5566905)
+text = "Game progress will be reverted back to its default state."
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[node name="SaveSlot1Label" type="Label" parent="GUI/SaveSelect" unique_id=1856552120]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -471.00003
+offset_top = -101.0
+offset_right = -375.00003
+offset_bottom = -69.0
+scale = Vector2(0.96014696, 0.96014696)
+theme = ExtResource("17_1m5mi")
+text = "Save 1"
+
+[node name="SaveSlot2Label" type="Label" parent="GUI/SaveSelect" unique_id=1853774169]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -473.45288
+offset_top = 61.090714
+offset_right = -377.45288
+offset_bottom = 93.09071
+scale = Vector2(0.96014696, 0.96014696)
+theme = ExtResource("17_1m5mi")
+text = "Save 2"
+
+[node name="SaveSlot3Label" type="Label" parent="GUI/SaveSelect" unique_id=1422914172]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -468.36203
+offset_top = 229.09018
+offset_right = -372.36203
+offset_bottom = 261.0902
+scale = Vector2(0.96014696, 0.96014696)
+theme = ExtResource("17_1m5mi")
+text = "Save 3"
+
+[node name="Save1" type="Button" parent="GUI/SaveSelect" unique_id=1112711602]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -470.0
+offset_top = -65.0
+offset_right = 359.0
+offset_bottom = 59.0
+theme = ExtResource("17_1m5mi")
+theme_override_constants/line_spacing = 10
+text = "New Game"
+icon = ExtResource("20_mnopy")
+alignment = 0
+expand_icon = true
+
+[node name="Save1Delete" type="Button" parent="GUI/SaveSelect" unique_id=1366404399]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 377.0
+offset_top = -31.0
+offset_right = 426.0
+offset_bottom = 16.0
+theme = ExtResource("17_1m5mi")
+text = "X"
+
+[node name="Save2" type="Button" parent="GUI/SaveSelect" unique_id=1309798707]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -471.0
+offset_top = 94.0
+offset_right = 359.0
+offset_bottom = 221.0
+theme = ExtResource("17_1m5mi")
+theme_override_constants/line_spacing = 10
+text = "New Game"
+icon = ExtResource("20_mnopy")
+alignment = 0
+expand_icon = true
+
+[node name="Save2Delete" type="Button" parent="GUI/SaveSelect" unique_id=1899269393]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 377.0
+offset_top = 136.0
+offset_right = 426.0
+offset_bottom = 183.0
+theme = ExtResource("17_1m5mi")
+text = "X"
+
+[node name="Save3" type="Button" parent="GUI/SaveSelect" unique_id=120156619]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -470.0
+offset_top = 261.0
+offset_right = 357.0
+offset_bottom = 388.0
+theme = ExtResource("17_1m5mi")
+theme_override_constants/line_spacing = 10
+text = "New Game"
+icon = ExtResource("20_mnopy")
+alignment = 0
+expand_icon = true
+
+[node name="Save3Delete" type="Button" parent="GUI/SaveSelect" unique_id=618836322]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 373.0
+offset_top = 305.0
+offset_right = 422.0
+offset_bottom = 352.0
+theme = ExtResource("17_1m5mi")
+text = "X"
+
+[node name="SaveSelectReturn" type="Button" parent="GUI/SaveSelect" unique_id=556085128]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -470.0
+offset_top = 404.0
+offset_right = -153.0
+offset_bottom = 449.0
+theme = ExtResource("17_1m5mi")
+text = "Return to Game"
+
+[connection signal="pressed" from="GUI/PauseMenu/NinePatchRect/BackToGame" to="GUI" method="_on_unpause_pressed"]
+[connection signal="pressed" from="GUI/PauseMenu/NinePatchRect/ReturnToMenu" to="GUI" method="_on_returnto_menu_pressed"]
+[connection signal="pressed" from="GUI/PauseMenu/NinePatchRect/QuitToDesktop" to="GUI" method="_on_quit_to_desktop_pressed"]
+[connection signal="pressed" from="GUI/ConsentMenu/ConsentYes" to="GUI" method="_on_consent_yes_pressed"]
+[connection signal="pressed" from="GUI/ConsentMenu/ConsentNo" to="GUI" method="_on_consent_no_pressed"]
+[connection signal="pressed" from="GUI/SaveSelect/Save1" to="GUI" method="_on_save_1_pressed"]
+[connection signal="pressed" from="GUI/SaveSelect/Save2" to="GUI" method="_on_save_2_pressed"]
+[connection signal="pressed" from="GUI/SaveSelect/Save3" to="GUI" method="_on_save_3_pressed"]
+[connection signal="pressed" from="GUI/SaveSelect/SaveSelectReturn" to="GUI" method="_on_save_select_return_pressed"]

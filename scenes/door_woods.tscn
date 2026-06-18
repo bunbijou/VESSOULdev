@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://bey1fpg4pwrtk"]
+
+[ext_resource type="Script" uid="uid://bfwdte4xsm6hv" path="res://scripts/door_v3.gd" id="1_n1pch"]
+[ext_resource type="Texture2D" uid="uid://c281q7asr3wo" path="res://sprites/environment/spriteWoodsBossDoor.png" id="2_cqj18"]
+[ext_resource type="Texture2D" uid="uid://criadki8n0xf0" path="res://sprites/environment/spriteWoodsDoor.png" id="3_h0vpn"]
+[ext_resource type="FontFile" uid="uid://bdv6780donwln" path="res://fonts/PressStart2P.ttf" id="4_a4pbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyftw"]
+size = Vector2(12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xgdef"]
+atlas = ExtResource("2_cqj18")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4pbh"]
+atlas = ExtResource("2_cqj18")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8sgt"]
+atlas = ExtResource("3_h0vpn")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uqmd"]
+atlas = ExtResource("3_h0vpn")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hu5en"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xgdef")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a4pbh")
+}],
+"loop": true,
+"name": &"boss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8sgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uqmd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_32403"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_ylujf"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gobxe"]
+_data = {
+&"RESET": SubResource("Animation_32403"),
+&"open": SubResource("Animation_ylujf")
+}
+
+[node name="WoodDoors" type="Node2D" unique_id=1563668814 node_paths=PackedStringArray("myAnimPlayer", "mySprite")]
+script = ExtResource("1_n1pch")
+door_variant = "woods"
+myAnimPlayer = NodePath("AnimationPlayer")
+mySprite = NodePath("AnimatedSprite2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1558938436]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2082470371]
+unique_name_in_owner = true
+shape = SubResource("RectangleShape2D_qyftw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1511644180]
+unique_name_in_owner = true
+z_index = 99
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_hu5en")
+animation = &"boss"
+
+[node name="titheLabel" type="Label" parent="." unique_id=652563006]
+unique_name_in_owner = true
+visible = false
+z_index = 999
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 20.0
+offset_bottom = 20.160467
+scale = Vector2(0.3393156, 0.35396343)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_a4pbh")
+theme_override_font_sizes/font_size = 8
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1135224178]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_gobxe")

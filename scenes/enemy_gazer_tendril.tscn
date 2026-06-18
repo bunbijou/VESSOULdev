@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bf87qbc1dayg8"]
+
+[ext_resource type="Texture2D" uid="uid://c2vce1vqytv5n" path="res://sprites/enemy_gazer/sprGazerTendril.png" id="1_quscm"]
+[ext_resource type="Script" uid="uid://cwxp1umjlyqry" path="res://scripts/enemy_gazer_tendril.gd" id="3_ceeep"]
+[ext_resource type="PackedScene" uid="uid://b4wglmrwm7ak" path="res://scenes/mote_big_static.tscn" id="4_6e43q"]
+[ext_resource type="Script" uid="uid://cedihi1hfvnf0" path="res://scripts/hitbox_component.gd" id="5_xnupc"]
+[ext_resource type="PackedScene" uid="uid://dy3ugnta1kk6v" path="res://shade_shield.tscn" id="6_dcxyq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu4f0"]
+atlas = ExtResource("1_quscm")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tamno"]
+atlas = ExtResource("1_quscm")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23ddy"]
+atlas = ExtResource("1_quscm")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2isvx"]
+atlas = ExtResource("1_quscm")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yjy6"]
+atlas = ExtResource("1_quscm")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2tyr"]
+atlas = ExtResource("1_quscm")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnupc"]
+atlas = ExtResource("1_quscm")
+region = Rect2(96, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dcxyq"]
+atlas = ExtResource("1_quscm")
+region = Rect2(112, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h52pa"]
+animations = [{
+"frames": [{
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_tu4f0")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_tamno")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_23ddy")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_2isvx")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_3yjy6")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_w2tyr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_xnupc")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_dcxyq")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xnupc"]
+size = Vector2(9.960159, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dcxyq"]
+radius = 13.582036
+
+[node name="Tendril" type="AnimatedSprite2D" unique_id=579773277]
+scale = Vector2(1.004, 1)
+sprite_frames = SubResource("SpriteFrames_h52pa")
+animation = &"stun"
+autoplay = "default"
+script = ExtResource("3_ceeep")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=930515873 node_paths=PackedStringArray("health_label")]
+scale = Vector2(1, 1.1600004)
+script = ExtResource("5_xnupc")
+on_touch_effect = "Hazard"
+hp = 999
+health_label = NodePath("Label")
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1701807087]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_xnupc")
+
+[node name="Label" type="Label" parent="HitboxComponent" unique_id=152347700]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ShadeShield" parent="." unique_id=1561931441 instance=ExtResource("6_dcxyq")]
+visible = false
+z_index = 1000
+position = Vector2(0, -21)
+scale = Vector2(0.66, 0.66)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ShadeShield" unique_id=98022599]
+
+[node name="ShadeShieldBlock" type="CollisionShape2D" parent="ShadeShield/StaticBody2D" unique_id=2127335358]
+unique_name_in_owner = true
+position = Vector2(0, -1.5151539)
+shape = SubResource("CircleShape2D_dcxyq")
+
+[node name="MoteBigStatic" parent="." unique_id=876191586 instance=ExtResource("4_6e43q")]
+position = Vector2(0, -22)
+
+[connection signal="body_entered" from="MoteBigStatic" to="." method="_on_soul_mote_body_entered"]

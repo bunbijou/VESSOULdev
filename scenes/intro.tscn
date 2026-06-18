@@ -1,0 +1,162 @@
+[gd_scene format=3 uid="uid://ce2fdwgcxopb8"]
+
+[ext_resource type="Script" uid="uid://cuh3ncwp0aurn" path="res://scripts/intro_zenith.gd" id="1_yjqpq"]
+[ext_resource type="Texture2D" uid="uid://bp7wbcb2c7g1s" path="res://sprites/splashes/intro.png" id="3_4bx60"]
+[ext_resource type="Texture2D" uid="uid://bnsopu0giebwy" path="res://sprites/splashes/intro_slides_2.png" id="3_m3r7s"]
+[ext_resource type="Theme" uid="uid://6ftgyhxeioxg" path="res://pixeltheme_outline.tres" id="4_i2l1n"]
+[ext_resource type="Texture2D" uid="uid://c3vgpqur6erb1" path="res://sprites/splashes/intro_slides_3.png" id="4_xwriy"]
+[ext_resource type="Texture2D" uid="uid://cq0prgnwc44nm" path="res://sprites/splashes/intro_slides_4.png" id="5_u5myo"]
+[ext_resource type="Texture2D" uid="uid://dposyx7bshvfc" path="res://sprites/splashes/intro_slides_5.png" id="6_u05oh"]
+[ext_resource type="Texture2D" uid="uid://cu3j5f4s2imqh" path="res://sprites/splashes/intro_slides_6.png" id="7_epycs"]
+[ext_resource type="Texture2D" uid="uid://tyscespaq5dw" path="res://sprites/splashes/intro_slides_7.png" id="8_ge50m"]
+[ext_resource type="Texture2D" uid="uid://dt7gxcx5gfx8o" path="res://sprites/splashes/intro_slides_8.png" id="9_17bgi"]
+[ext_resource type="Texture2D" uid="uid://bpgfp61j74rll" path="res://sprites/splashes/intro_slides_9.png" id="10_dryi7"]
+[ext_resource type="Texture2D" uid="uid://cm5eat6qmeu6r" path="res://sprites/splashes/intro_slides_10.png" id="11_5pmge"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_n6p8m"]
+load_path = "res://godot/imported/test2.png-cad2dbbd0522b6c4be0521afbfdbe0c8.ctex"
+
+[sub_resource type="Animation" id="Animation_xwriy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Slide1/../FGRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.011764706, 0.011764706, 0.011764706, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m3r7s"]
+resource_name = "fade"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("%Slide1/../FGRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1.0333333, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(0.011764706, 0.011764706, 0.011764706, 0), Color(0.011764706, 0.011764706, 0.011764706, 1), Color(0.011764706, 0.011764706, 0.011764706, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xwriy"]
+_data = {
+&"RESET": SubResource("Animation_xwriy"),
+&"fade": SubResource("Animation_m3r7s")
+}
+
+[node name="intro" type="Node2D" unique_id=450075481]
+script = ExtResource("1_yjqpq")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=155908887]
+
+[node name="Image" type="Node2D" parent="." unique_id=1045873833]
+position = Vector2(-308, -269)
+scale = Vector2(0.55, 0.55)
+
+[node name="FGRect" type="TextureRect" parent="Image" unique_id=38061619]
+modulate = Color(0.011764706, 0.011764706, 0.011764706, 0)
+z_index = 1
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("3_4bx60")
+
+[node name="Slide1" type="TextureRect" parent="Image" unique_id=748251142]
+unique_name_in_owner = true
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = SubResource("CompressedTexture2D_n6p8m")
+
+[node name="Slide2" type="TextureRect" parent="Image" unique_id=775359429]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("3_m3r7s")
+
+[node name="Slide3" type="TextureRect" parent="Image" unique_id=1494905087]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("4_xwriy")
+
+[node name="Slide4" type="TextureRect" parent="Image" unique_id=712329913]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("5_u5myo")
+
+[node name="Slide5" type="TextureRect" parent="Image" unique_id=1327773436]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("6_u05oh")
+
+[node name="Slide6" type="TextureRect" parent="Image" unique_id=1182109151]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 0, 0.39215687, 1)
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("7_epycs")
+
+[node name="Slide7" type="TextureRect" parent="Image" unique_id=1439748736]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("8_ge50m")
+
+[node name="Slide8" type="TextureRect" parent="Image" unique_id=518856873]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("9_17bgi")
+
+[node name="Slide9" type="TextureRect" parent="Image" unique_id=203288911]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("10_dryi7")
+
+[node name="Slide10" type="TextureRect" parent="Image" unique_id=393659612]
+unique_name_in_owner = true
+visible = false
+offset_right = 1109.0
+offset_bottom = 752.0
+texture = ExtResource("11_5pmge")
+
+[node name="BGRect" type="TextureRect" parent="." unique_id=1456188392]
+modulate = Color(0.13880259, 0.13880259, 0.13880259, 1)
+z_index = -1000
+offset_left = -625.0
+offset_top = -367.0
+offset_right = 647.0
+offset_bottom = 391.0
+texture = ExtResource("3_4bx60")
+
+[node name="Label" type="Label" parent="." unique_id=1108391595]
+unique_name_in_owner = true
+offset_left = -539.0
+offset_top = -313.0
+offset_right = -499.0
+offset_bottom = -290.0
+theme = ExtResource("4_i2l1n")
+
+[node name="Anim" type="AnimationPlayer" parent="." unique_id=444507119]
+unique_name_in_owner = true
+root_node = NodePath("../Image/Slide1")
+libraries/ = SubResource("AnimationLibrary_xwriy")

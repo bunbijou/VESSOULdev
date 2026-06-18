@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://j8j0ggkve08x"]
+
+[ext_resource type="Script" uid="uid://dijnu1hyy5m2y" path="res://scripts/fireball.gd" id="1_7kba2"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="2_43lgj"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="3_vqoxj"]
+[ext_resource type="Texture2D" uid="uid://disudc8edt23c" path="res://sprites/enemy_blackmote/fireball.png" id="4_86oub"]
+[ext_resource type="PackedScene" uid="uid://gijigdmvqvfg" path="res://scenes/particle_nadir_flame.tscn" id="5_mi4h5"]
+[ext_resource type="Texture2D" uid="uid://cymw8qir873mn" path="res://sprites/particles/flame_variants_5.png" id="6_wyo3q"]
+[ext_resource type="Texture2D" uid="uid://dk8rw483e4rs7" path="res://sprites/particles/flame_variants_6.png" id="7_1fb5b"]
+[ext_resource type="Texture2D" uid="uid://bi1b50sj21cl0" path="res://sprites/particles/flame_variants_7.png" id="8_tyqc2"]
+[ext_resource type="Texture2D" uid="uid://clhbv4q8nmli8" path="res://sprites/particles/flame_variants_8.png" id="9_pq144"]
+[ext_resource type="PackedScene" uid="uid://c4nnm60ixtdiq" path="res://scenes/flash_component.tscn" id="10_wyo3q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kba2"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qaphm"]
+atlas = ExtResource("4_86oub")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mi4h5"]
+atlas = ExtResource("4_86oub")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wyo3q"]
+atlas = ExtResource("4_86oub")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fb5b"]
+atlas = ExtResource("4_86oub")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyqc2"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_qaphm")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_mi4h5")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_wyo3q")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_1fb5b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_0rtms"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("6_wyo3q")
+frame_1/texture = ExtResource("7_1fb5b")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("8_tyqc2")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("9_pq144")
+frame_3/duration = 1.0
+
+[node name="fireball" type="Node2D" unique_id=1409250673 node_paths=PackedStringArray("flame_particle")]
+z_index = 999
+script = ExtResource("1_7kba2")
+flame_particle = NodePath("SpawnFlame")
+
+[node name="HitboxComponent" parent="." unique_id=1108796297 instance=ExtResource("2_43lgj")]
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=406702907]
+shape = SubResource("CircleShape2D_7kba2")
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("3_vqoxj")]
+enemy = "BlackMote"
+no_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=408704857]
+position = Vector2(0, 16)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_7kba2")
+debug_color = Color(0.85007757, 0.00089966, 0.90115523, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=153245551]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_tyqc2")
+autoplay = "default"
+frame_progress = 0.5246037
+
+[node name="SpawnFlame" parent="." unique_id=1663480174 instance=ExtResource("5_mi4h5")]
+amount = 5
+texture = SubResource("AnimatedTexture_0rtms")
+lifetime = 0.25
+explosiveness = 1.0
+emission_rect_extents = Vector2(2.5, 2.5)
+gravity = Vector2(0, -100)
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+
+[node name="FlashComponent" parent="." unique_id=405903204 instance=ExtResource("10_wyo3q")]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="HitboxComponent" to="." method="_on_hitbox_component_body_entered"]
+
+[editable path="InfoComponent"]

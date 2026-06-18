@@ -1,0 +1,285 @@
+[gd_scene format=3 uid="uid://cjdmcp20cp5yt"]
+
+[ext_resource type="Script" uid="uid://btol2tukxu7j0" path="res://scripts/mote.gd" id="1_5ga0t"]
+[ext_resource type="AudioStream" uid="uid://g7y7ybxslhel" path="res://sounds/soul.wav" id="2_602d5"]
+[ext_resource type="Texture2D" uid="uid://d13n6tjmmx01p" path="res://sprites/particles/mote_particle_generic_1.png" id="3_hm6v8"]
+[ext_resource type="Texture2D" uid="uid://bsbytahb21hwc" path="res://sprites/particles/mote_particle_generic_2.png" id="4_5ou3y"]
+[ext_resource type="Texture2D" uid="uid://b14jch3l2lhxn" path="res://sprites/particles/mote_particle_generic_3.png" id="5_5o6ms"]
+[ext_resource type="Texture2D" uid="uid://e1h2j6fuslji" path="res://sprites/particles/mote_particle_generic_4.png" id="6_kc7m7"]
+[ext_resource type="Texture2D" uid="uid://i7ibkc4bw0v0" path="res://sprites/particles/mote_particle_generic_5.png" id="7_mrny1"]
+[ext_resource type="Texture2D" uid="uid://dmobxex2poost" path="res://sprites/particles/mote_particle_generic_6.png" id="8_5p81m"]
+[ext_resource type="Texture2D" uid="uid://c6ar335x5h5q2" path="res://sprites/particles/mote_particle_generic_7.png" id="9_o20ou"]
+[ext_resource type="Texture2D" uid="uid://c5jd2e0titu8o" path="res://sprites/particles/mote_particle_generic_8.png" id="10_5xe5b"]
+[ext_resource type="Texture2D" uid="uid://dwtqaitgbvvhr" path="res://sprites/particles/mote_particle_generic_9.png" id="11_4yr8q"]
+[ext_resource type="Texture2D" uid="uid://du64qqpevxx0i" path="res://sprites/particles/mote_particle_generic_10.png" id="12_n03q6"]
+[ext_resource type="Texture2D" uid="uid://dn30fo8v856i2" path="res://sprites/particles/mote_particle_generic_11.png" id="13_aqdyd"]
+[ext_resource type="Texture2D" uid="uid://d4kcd2suxuj38" path="res://sprites/particles/mote_particle_generic_12.png" id="14_v7men"]
+[ext_resource type="Texture2D" uid="uid://bund8c4c22ig2" path="res://sprites/particles/mote_particle_generic_13.png" id="15_tk7qe"]
+[ext_resource type="Texture2D" uid="uid://ogkurrmehagd" path="res://sprites/particles/mote_particle_generic_14.png" id="16_6eflo"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="17_j4yku"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5ga0t"]
+frames = 14
+speed_scale = 5.0
+frame_0/texture = ExtResource("3_hm6v8")
+frame_1/texture = ExtResource("4_5ou3y")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("5_5o6ms")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("6_kc7m7")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("7_mrny1")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("8_5p81m")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("9_o20ou")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("10_5xe5b")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("11_4yr8q")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("12_n03q6")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("13_aqdyd")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("14_v7men")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("15_tk7qe")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("16_6eflo")
+frame_13/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iwn2"]
+size = Vector2(2, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yn65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_hm6v8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_5ou3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5o6ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kc7m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mrny1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5p81m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_o20ou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5xe5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_4yr8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_n03q6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_aqdyd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_v7men")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_tk7qe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_6eflo")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}]
+
+[sub_resource type="Animation" id="Animation_n6usl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MoteShadow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dt1lx"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PickupSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MoteShadow:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6usl"]
+_data = {
+&"RESET": SubResource("Animation_n6usl"),
+&"pickup": SubResource("Animation_dt1lx")
+}
+
+[node name="mote_sprite2D_" type="Area2D" unique_id=629873019 node_paths=PackedStringArray("myParticle", "mySprite", "myShadow")]
+collision_mask = 6
+script = ExtResource("1_5ga0t")
+myParticle = NodePath("CPUParticles2D")
+mySprite = NodePath("AnimatedSprite2D")
+myShadow = NodePath("MoteShadow")
+type = "Mote"
+animation = "Sprite2D-Wavy"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1119702639]
+unique_name_in_owner = true
+z_index = 50
+scale = Vector2(0.99999994, 0.99999994)
+amount = 1
+texture = SubResource("AnimatedTexture_5ga0t")
+lifetime = 999.0
+gravity = Vector2(0, 0)
+scale_amount_min = 0.25
+scale_amount_max = 0.25
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=249338420]
+position = Vector2(2.9802322e-08, 2.9802322e-08)
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_7iwn2")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=191742618]
+stream = ExtResource("2_602d5")
+volume_db = -80.0
+max_polyphony = 10
+bus = &"SFX"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=801669406]
+unique_name_in_owner = true
+z_index = 10
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_5yn65")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6362132
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1097715452]
+libraries/ = SubResource("AnimationLibrary_n6usl")
+
+[node name="soulLabel" type="Label" parent="." unique_id=445094735]
+unique_name_in_owner = true
+visible = false
+z_index = 999
+offset_left = -150.0
+offset_top = -9.0
+offset_right = 452.67603
+offset_bottom = 312.80798
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("17_j4yku")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_font_sizes/font_size = 16
+text = "999"
+horizontal_alignment = 1
+
+[node name="MoteShadow" type="AnimatedSprite2D" parent="." unique_id=604393718]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0.47843137)
+visibility_layer = 2
+z_index = 99
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5yn65")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.6362132
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://d0x6qnh5lpmxi"]
+
+[ext_resource type="Texture2D" uid="uid://b0h762q28dh3a" path="res://sprites/environment/spriteAbyssSavePoint.png" id="1_867rx"]
+[ext_resource type="Script" uid="uid://550ixxrvpmq7" path="res://scripts/flower_randomize.gd" id="2_2aosc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ie80"]
+atlas = ExtResource("1_867rx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0mta"]
+atlas = ExtResource("1_867rx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6infi"]
+atlas = ExtResource("1_867rx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnqss"]
+atlas = ExtResource("1_867rx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_17sla"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ie80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0mta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6infi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnqss")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=322195602]
+z_index = 10
+sprite_frames = SubResource("SpriteFrames_17sla")
+script = ExtResource("2_2aosc")

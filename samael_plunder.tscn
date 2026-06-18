@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bdd8kkvkp5kix"]
+
+[ext_resource type="Script" uid="uid://d2axob1xmuqyy" path="res://scripts/samael_plunder.gd" id="1_j1cjr"]
+[ext_resource type="Texture2D" uid="uid://brma6mxqike7w" path="res://sprites/splashes/samael_plunder.png" id="1_tqunv"]
+[ext_resource type="AudioStream" uid="uid://crc50mdnjip4d" path="res://music/bad_end.mp3" id="2_7wk8s"]
+[ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="2_jb886"]
+
+[sub_resource type="Animation" id="Animation_7wk8s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j1cjr"]
+resource_name = "plunder"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7.0666666, 14.966666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.8), Color(0.012617188, 0.012617188, 0.012617188, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(20),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"change_scene"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bwish"]
+_data = {
+&"RESET": SubResource("Animation_7wk8s"),
+&"plunder": SubResource("Animation_j1cjr")
+}
+
+[node name="PlayerDestruction" type="Node2D" unique_id=1580358651]
+script = ExtResource("1_j1cjr")
+
+[node name="BadEnd" type="AudioStreamPlayer" parent="." unique_id=779469065]
+stream = ExtResource("2_7wk8s")
+autoplay = true
+bus = &"Music"
+
+[node name="Illustration" type="TextureRect" parent="." unique_id=865407118]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_tqunv")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=997978305]
+z_index = -1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(54.09052, 17.415218)
+texture = ExtResource("2_jb886")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1527153394]
+unique_name_in_owner = true
+root_node = NodePath("../Illustration")
+libraries/ = SubResource("AnimationLibrary_bwish")
+autoplay = &"plunder"

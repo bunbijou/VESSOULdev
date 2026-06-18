@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://bt0sfmje4oqly"]
+
+[ext_resource type="Texture2D" uid="uid://dhq4b8f6j3uxn" path="res://sprites/enemy_lenore/ossuary_bone-sheet.png" id="1_b6vev"]
+[ext_resource type="Script" uid="uid://cedihi1hfvnf0" path="res://scripts/hitbox_component.gd" id="2_s45to"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqmr3"]
+atlas = ExtResource("1_b6vev")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctxxs"]
+atlas = ExtResource("1_b6vev")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh4eh"]
+atlas = ExtResource("1_b6vev")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp2dk"]
+atlas = ExtResource("1_b6vev")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rv2o6"]
+animations = [{
+"frames": [{
+"duration": 1.11,
+"texture": SubResource("AtlasTexture_yqmr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ctxxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh4eh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp2dk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ping5"]
+radius = 28.544725
+
+[node name="OssuaryBones" type="Node2D" unique_id=1139350587]
+visible = false
+z_index = 3
+scale = Vector2(0.5, 0.5)
+
+[node name="Bone1" type="AnimatedSprite2D" parent="." unique_id=511893684]
+position = Vector2(0, -100.2809)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.3658519
+
+[node name="HitboxComponent" type="Area2D" parent="Bone1" unique_id=68279951]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone1/HitboxComponent" unique_id=917612549]
+shape = SubResource("CircleShape2D_ping5")
+
+[node name="Bone2" type="AnimatedSprite2D" parent="." unique_id=1437059535]
+position = Vector2(100.2809, -100.2809)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.5500819
+
+[node name="HitboxComponent" type="Area2D" parent="Bone2" unique_id=886375369]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone2/HitboxComponent" unique_id=588410274]
+shape = SubResource("CircleShape2D_ping5")
+
+[node name="Bone3" type="AnimatedSprite2D" parent="." unique_id=1268459652]
+position = Vector2(100.2809, 0)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.5500819
+
+[node name="HitboxComponent" type="Area2D" parent="Bone3" unique_id=1834490369]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone3/HitboxComponent" unique_id=1077655847]
+shape = SubResource("CircleShape2D_ping5")
+
+[node name="Bone4" type="AnimatedSprite2D" parent="." unique_id=1828516162]
+position = Vector2(100.2809, 100.2809)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.5500819
+
+[node name="HitboxComponent" type="Area2D" parent="Bone4" unique_id=859873016]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone4/HitboxComponent" unique_id=557152193]
+shape = SubResource("CircleShape2D_ping5")
+
+[node name="Bone5" type="AnimatedSprite2D" parent="." unique_id=1744929980]
+position = Vector2(0, 100.84746)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.5500819
+
+[node name="HitboxComponent" type="Area2D" parent="Bone5" unique_id=1723976845]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone5/HitboxComponent" unique_id=1243469554]
+shape = SubResource("CircleShape2D_ping5")
+
+[node name="Bone6" type="AnimatedSprite2D" parent="." unique_id=422672868]
+position = Vector2(-100.84746, 100.84746)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.5500819
+
+[node name="HitboxComponent" type="Area2D" parent="Bone6" unique_id=1577737649]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone6/HitboxComponent" unique_id=838315456]
+shape = SubResource("CircleShape2D_ping5")
+
+[node name="Bone7" type="AnimatedSprite2D" parent="." unique_id=128563801]
+position = Vector2(-100.84746, 0)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.5500819
+
+[node name="HitboxComponent" type="Area2D" parent="Bone7" unique_id=1082045838]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone7/HitboxComponent" unique_id=647890830]
+shape = SubResource("CircleShape2D_ping5")
+
+[node name="Bone8" type="AnimatedSprite2D" parent="." unique_id=1672728719]
+position = Vector2(-101.420456, -101.420456)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rv2o6")
+autoplay = "default"
+frame_progress = 0.5500819
+
+[node name="HitboxComponent" type="Area2D" parent="Bone8" unique_id=970553557]
+script = ExtResource("2_s45to")
+on_touch_effect = "Standard"
+hp = 999
+hitstun = 0.0
+metadata/_custom_type_script = "uid://cedihi1hfvnf0"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bone8/HitboxComponent" unique_id=182570569]
+shape = SubResource("CircleShape2D_ping5")

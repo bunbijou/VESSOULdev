@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://bvulcc8vvt13v"]
+
+[ext_resource type="Script" uid="uid://4jrnuo60cjg2" path="res://scripts/portal_endless.gd" id="1_jqke1"]
+[ext_resource type="Texture2D" uid="uid://b3ql5jj4jg53h" path="res://sprites/environment/sprVortex.png" id="2_qepdv"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="3_gdnum"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d67im"]
+atlas = ExtResource("2_qepdv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_281wl"]
+atlas = ExtResource("2_qepdv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpvg1"]
+atlas = ExtResource("2_qepdv")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t1kl"]
+atlas = ExtResource("2_qepdv")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la138"]
+atlas = ExtResource("2_qepdv")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sfnj"]
+atlas = ExtResource("2_qepdv")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u1n0"]
+animations = [{
+"frames": [{
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_d67im")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_281wl")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_dpvg1")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_6t1kl")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_la138")
+}, {
+"duration": 0.9,
+"texture": SubResource("AtlasTexture_7sfnj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfxtu"]
+size = Vector2(16, 16)
+
+[node name="Portal_Endless" type="Node2D" unique_id=1853889329]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_jqke1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=214075653]
+sprite_frames = SubResource("SpriteFrames_3u1n0")
+autoplay = "default"
+frame_progress = 0.786599
+
+[node name="DestinationLabel" type="Label" parent="." unique_id=18868537]
+unique_name_in_owner = true
+z_index = 999
+offset_left = -40.0
+offset_top = -30.0
+offset_right = 41.329224
+offset_bottom = 18.0
+theme = ExtResource("3_gdnum")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 16
+text = "#ENTER
+MAZE"
+horizontal_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1008389019]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1116919380]
+shape = SubResource("RectangleShape2D_jfxtu")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://2jrn4altunq3"]
+
+[ext_resource type="Texture2D" uid="uid://whnk63piofo8" path="res://sprites/gui/icon.png" id="1_xnwby"]
+
+[node name="Node2D" type="Node2D" unique_id=1161306656]
+
+[node name="Label" type="Label" parent="." unique_id=1611979481]
+z_index = 1
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+text = "You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! You shouldn't be here!!! "
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=901050484]
+offset_left = -1507.0
+offset_top = -1346.0
+offset_right = 5129.4536
+offset_bottom = 4432.0
+texture = ExtResource("1_xnwby")
+stretch_mode = 1

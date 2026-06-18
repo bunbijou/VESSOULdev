@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wrloc2hbx22t"
+path="res://godot/imported/bloombulb get (2).wav-0884cd4c2415196e68a1046725cdfdec.sample"
+
+[deps]
+
+source_file="res://sounds/bloombulb get (2).wav"
+dest_files=["res://godot/imported/bloombulb get (2).wav-0884cd4c2415196e68a1046725cdfdec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bybswemr42ky4"
+path="res://godot/imported/dylg - miracle.mp3-c7a5b32036542e145d2c36b81739f8ca.mp3str"
+
+[deps]
+
+source_file="res://music/dylg - miracle.mp3"
+dest_files=["res://godot/imported/dylg - miracle.mp3-c7a5b32036542e145d2c36b81739f8ca.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

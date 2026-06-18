@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://b841k5hmt7sa4"]
+
+[ext_resource type="Script" uid="uid://c327myuqrmfy3" path="res://scripts/decision_box.gd" id="1_g4ngx"]
+[ext_resource type="Texture2D" uid="uid://w6c243bs23iu" path="res://sprites/gui/spr9CutMenu3.png" id="5_88b80"]
+[ext_resource type="Texture2D" uid="uid://covxnikexl6sw" path="res://sprites/gui/arrow2.png" id="11_w7uyq"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="13_f1nrl"]
+
+[node name="DecisionBox" type="CanvasLayer" unique_id=715312857]
+process_mode = 3
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+script = ExtResource("1_g4ngx")
+
+[node name="DecisionControl" type="Control" parent="." unique_id=797946979]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+
+[node name="DialogueBox" type="NinePatchRect" parent="DecisionControl" unique_id=1594413395]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 5.4000015
+offset_top = 3.2
+offset_right = 200.59991
+offset_bottom = 46.2
+grow_horizontal = 2
+texture = ExtResource("5_88b80")
+
+[node name="DecisionHeader" type="Label" parent="." unique_id=1331188088]
+unique_name_in_owner = true
+layout_direction = 2
+offset_left = 12.2
+offset_top = 4.6
+offset_right = 655.75946
+offset_bottom = 141.6
+scale = Vector2(0.28419417, 0.28419417)
+theme = ExtResource("13_f1nrl")
+theme_override_font_sizes/font_size = 32
+text = "Select your choice:"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="DecisionChoice1" type="Label" parent="." unique_id=303711347]
+unique_name_in_owner = true
+visible = false
+layout_direction = 2
+offset_left = 19.599997
+offset_top = 27.2
+offset_right = 308.13513
+offset_bottom = 164.2
+scale = Vector2(0.28419417, 0.28419417)
+theme = ExtResource("13_f1nrl")
+theme_override_font_sizes/font_size = 32
+text = "Lorem ipsum dolor "
+autowrap_mode = 2
+
+[node name="DecisionArrowLeft" type="TextureRect" parent="." unique_id=804076221]
+unique_name_in_owner = true
+visible = false
+offset_left = 9.400001
+offset_top = 27.0
+offset_right = 17.400002
+offset_bottom = 35.0
+texture = ExtResource("11_w7uyq")
+
+[node name="DecisionChoice2" type="Label" parent="." unique_id=45333535]
+unique_name_in_owner = true
+visible = false
+layout_direction = 2
+offset_left = 112.79999
+offset_top = 27.2
+offset_right = 401.33508
+offset_bottom = 164.2
+scale = Vector2(0.28419417, 0.28419417)
+theme = ExtResource("13_f1nrl")
+theme_override_font_sizes/font_size = 32
+text = "Lorem ipsum dolor "
+autowrap_mode = 2
+
+[node name="DecisionArrowRight" type="TextureRect" parent="." unique_id=988503560]
+unique_name_in_owner = true
+visible = false
+offset_left = 102.6
+offset_top = 27.0
+offset_right = 110.6
+offset_bottom = 35.0
+texture = ExtResource("11_w7uyq")
+
+[node name="ConsentBox" type="NinePatchRect" parent="." unique_id=546372395]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+offset_left = 17.600006
+offset_top = 47.800003
+offset_right = 188.6
+offset_bottom = 69.600006
+texture = ExtResource("5_88b80")
+
+[node name="DecisionConsent" type="Label" parent="ConsentBox" unique_id=1804335485]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1.4000053
+offset_top = 5.0
+offset_right = 416.8077
+offset_bottom = 46.343895
+scale = Vector2(0.40634775, 0.40634775)
+theme = ExtResource("13_f1nrl")
+theme_override_font_sizes/font_size = 16
+text = "Your choice may affect gameplay. Continue?
+Enter: Confirm
+Escape: Go Back"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="." unique_id=738852874]
+unique_name_in_owner = true
+visible = false
+offset_left = 96.2
+offset_top = 105.8
+offset_right = 136.2
+offset_bottom = 128.8
+text = "999"

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bqwvt16oe40xu"]
+
+[ext_resource type="Texture2D" uid="uid://bfk5ssesi5eeq" path="res://sprites/particles/mote_small_fade_2.png" id="1_safan"]
+[ext_resource type="Texture2D" uid="uid://d1ma7kkso1387" path="res://sprites/particles/mote_small_fade_3.png" id="2_2cl0m"]
+[ext_resource type="Texture2D" uid="uid://b84h3eu372ok4" path="res://sprites/particles/mote_small_fade_4.png" id="3_jo8pn"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ysip7"]
+frames = 5
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_safan")
+frame_1/texture = ExtResource("1_safan")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("2_2cl0m")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("3_jo8pn")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("2_2cl0m")
+frame_4/duration = 1.0
+
+[node name="DeathParticle" type="CPUParticles2D" unique_id=1493907157]
+z_index = 999
+scale = Vector2(0.77651507, 0.77651507)
+emitting = false
+amount = 5
+texture = SubResource("AnimatedTexture_ysip7")
+lifetime = 0.66
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, -10)
+scale_amount_min = 0.5

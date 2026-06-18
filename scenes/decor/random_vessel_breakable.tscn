@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://e8s5g10hadhb"]
+
+[ext_resource type="Texture2D" uid="uid://bqv1xww5wcx2y" path="res://sprites/environment/spriteAbyssVessels.png" id="1_5nep3"]
+[ext_resource type="Texture2D" uid="uid://b1ok3iucgfag4" path="res://sprites/items/sprAbyssBrokenVessel.png" id="2_1eivh"]
+[ext_resource type="Script" uid="uid://baah8xm22cef0" path="res://scripts/vesselrandomize.gd" id="2_kmyft"]
+[ext_resource type="PackedScene" uid="uid://cfk6540ej28ic" path="res://scenes/particle_abyss_fragment.tscn" id="4_h3acd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o8yke"]
+atlas = ExtResource("2_1eivh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2f6i"]
+atlas = ExtResource("2_1eivh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kndmk"]
+atlas = ExtResource("2_1eivh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gyguv"]
+atlas = ExtResource("2_1eivh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o4ih0"]
+atlas = ExtResource("2_1eivh")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nep3"]
+atlas = ExtResource("1_5nep3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmyft"]
+atlas = ExtResource("1_5nep3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1eivh"]
+atlas = ExtResource("1_5nep3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qs27e"]
+atlas = ExtResource("1_5nep3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usxh1"]
+atlas = ExtResource("1_5nep3")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acjcu"]
+atlas = ExtResource("1_5nep3")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ultq"]
+atlas = ExtResource("1_5nep3")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jinsk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o8yke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2f6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kndmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gyguv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o4ih0")
+}],
+"loop": false,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_5nep3")
+}, {
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_kmyft")
+}, {
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_1eivh")
+}, {
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_qs27e")
+}, {
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_usxh1")
+}, {
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_acjcu")
+}, {
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_1ultq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_dvnkm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7gv"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1eivh"]
+size = Vector2(16, 8)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=782506214 node_paths=PackedStringArray("collision_area")]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_jinsk")
+autoplay = "default"
+script = ExtResource("2_kmyft")
+collision_area = NodePath("StaticBody2D/CollisionShape2D")
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1378614178]
+physics_material_override = SubResource("PhysicsMaterial_dvnkm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1779875491]
+shape = SubResource("RectangleShape2D_ig7gv")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=129375201]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=209431325]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_1eivh")
+
+[node name="ParticleAbyss" parent="." unique_id=83431102 instance=ExtResource("4_h3acd")]
+position = Vector2(0, -4)
+scale = Vector2(0.5, 0.5)
+amount = 15
+lifetime = 0.33
+emission_shape = 3
+emission_rect_extents = Vector2(15, 10)
+
+[connection signal="area_entered" from="Area2D" to="." method="_boss_touch"]

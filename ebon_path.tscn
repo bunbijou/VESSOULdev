@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://t00c0awp5fu2"]
+
+[ext_resource type="Script" uid="uid://b52cln3jhp572" path="res://scripts/ebon_path.gd" id="1_8rd27"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iipb8"]
+radius = 3.0000153
+
+[node name="Path0" type="Node2D" unique_id=1745119130]
+script = ExtResource("1_8rd27")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1438994300]
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1548429190]
+shape = SubResource("CircleShape2D_iipb8")
+debug_color = Color(0.7243419, 0.2572565, 9.62615e-08, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

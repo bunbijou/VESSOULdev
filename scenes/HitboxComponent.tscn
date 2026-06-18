@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://20k233gcot1d"]
+
+[ext_resource type="Script" uid="uid://cedihi1hfvnf0" path="res://scripts/hitbox_component.gd" id="1_gdaaw"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="2_21bdl"]
+
+[node name="HitboxComponent" type="Area2D" unique_id=1108796297 node_paths=PackedStringArray("health_label")]
+collision_mask = 2
+script = ExtResource("1_gdaaw")
+health_label = NodePath("Label")
+
+[node name="Label" type="Label" parent="." unique_id=1613579812]
+visible = false
+z_index = 999
+offset_left = -23.0
+offset_top = -32.0
+offset_right = 25.0
+theme = ExtResource("2_21bdl")
+text = "HP"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_player_touch"]

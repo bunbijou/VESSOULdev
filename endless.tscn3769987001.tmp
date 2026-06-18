@@ -1,0 +1,2410 @@
+[gd_scene format=4 uid="uid://bwrrls2w8282q"]
+
+[ext_resource type="Script" uid="uid://ch1pc0ejur2om" path="res://endless.gd" id="1_tqfqc"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="2_qogks"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="6_om0fc"]
+[ext_resource type="TileSet" uid="uid://e4x6r4hlh06u" path="res://tileset_dawn.tres" id="7_d3lxm"]
+[ext_resource type="Texture2D" uid="uid://cuhqnjy36ni17" path="res://sprites/enemy_gapingjawer/sprEnemyGapingJawerBody.png" id="7_rkjb7"]
+[ext_resource type="Script" uid="uid://2k35bb2lg1gt" path="res://maze_ruler.gd" id="7_tqfqc"]
+[ext_resource type="TileSet" uid="uid://b747amaa8hmqm" path="res://tileset_dusk.tres" id="8_y0afm"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="9_8e8wk"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="10_vcj2b"]
+[ext_resource type="Texture2D" uid="uid://sl6t556ts03d" path="res://sprites/splashes/ending_good.png" id="10_y0afm"]
+[ext_resource type="Texture2D" uid="uid://clk73wjpy1q2r" path="res://sprites/splashes/ending_bad.png" id="11_di87v"]
+[ext_resource type="Texture2D" uid="uid://difsf0coh0fc3" path="res://sprites/splashes/ending_secret_alt.png" id="12_ip54i"]
+[ext_resource type="PackedScene" uid="uid://b1sy2h3btbeyu" path="res://scenes/mote.tscn" id="13_di87v"]
+[ext_resource type="TileSet" uid="uid://c3eu1xdg0vuhq" path="res://tileset_twilight.tres" id="13_ysybj"]
+[ext_resource type="PackedScene" uid="uid://dqctjbuiw0ke0" path="res://breakable_mote_jar_endless.tscn" id="15_08us5"]
+[ext_resource type="PackedScene" uid="uid://bp3a3g3nh6x1t" path="res://scenes/moteBig.tscn" id="15_ysybj"]
+[ext_resource type="PackedScene" uid="uid://bykdylrtyhfmj" path="res://enemy_maze_guardian.tscn" id="16_ysybj"]
+[ext_resource type="PackedScene" uid="uid://cxcpv33kak8ss" path="res://scenes/enemy_pothead.tscn" id="17_8g3db"]
+[ext_resource type="Script" uid="uid://ccj8ap77lsool" path="res://endless_shop_item.gd" id="20_57k5q"]
+[ext_resource type="Texture2D" uid="uid://h773s5tos818" path="res://sprites/items/sprItemBloomBulb.png" id="20_bk2ly"]
+[ext_resource type="Texture2D" uid="uid://6qenb6s1wgyv" path="res://sprites/items/humanity.png" id="21_75r4v"]
+[ext_resource type="Texture2D" uid="uid://p4p54yqe7v05" path="res://sprites/items/sprItemGlaze.png" id="21_a6u5j"]
+[ext_resource type="Texture2D" uid="uid://ci8corbfishu" path="res://sprites/items/sprTownKey.png" id="22_75r4v"]
+[ext_resource type="Texture2D" uid="uid://c2x6bbfrafx73" path="res://sprites/items/sprKindlingBundle.png" id="22_a6u5j"]
+[ext_resource type="Texture2D" uid="uid://dyengudfqxt7a" path="res://sprites/items/sprTomeBeige.png" id="25_kmbkf"]
+[ext_resource type="Texture2D" uid="uid://brki47i36a78x" path="res://sprites/items/sprItemPotLid.png" id="25_yisjh"]
+[ext_resource type="Texture2D" uid="uid://b72y107c4b0w" path="res://sprites/items/sprTomeOrange.png" id="26_ajj0q"]
+[ext_resource type="Texture2D" uid="uid://nvqe25wvvlkh" path="res://sprites/items/sprTomeBlue.png" id="26_rtpnh"]
+[ext_resource type="Texture2D" uid="uid://b1ok3iucgfag4" path="res://sprites/items/sprAbyssBrokenVessel.png" id="26_x62a1"]
+[ext_resource type="Texture2D" uid="uid://dgwa3uxa2crtu" path="res://sprites/items/sprAbyssChest.png" id="28_iovif"]
+[ext_resource type="Texture2D" uid="uid://d4k2vabof4da2" path="res://sprites/items/sprAbyssChestOpen.png" id="29_nyfqj"]
+[ext_resource type="Texture2D" uid="uid://bpsvf67ai1pg5" path="res://sprites/tilesets/spriteTilesetAbyss.png" id="30_w3js7"]
+[ext_resource type="Texture2D" uid="uid://covxnikexl6sw" path="res://sprites/gui/arrow2.png" id="31_qllch"]
+[ext_resource type="Texture2D" uid="uid://b3ql5jj4jg53h" path="res://sprites/environment/sprVortex.png" id="32_lc25q"]
+[ext_resource type="Texture2D" uid="uid://cd4mk147ucocv" path="res://sprites/gui/arrow1.png" id="32_wynwk"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="33_wynwk"]
+[ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/enemy_blackmote.tscn" id="38_smscj"]
+[ext_resource type="PackedScene" uid="uid://devmjxy5vj2" path="res://scenes/enemy_motemouse.tscn" id="39_o83pp"]
+[ext_resource type="PackedScene" uid="uid://45qq33mwpfjc" path="res://scenes/enemy_lil_jawer.tscn" id="40_t7k8l"]
+[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame.tscn" id="41_nfm0m"]
+[ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://scenes/enemy_wisp_base.tscn" id="42_242tg"]
+[ext_resource type="PackedScene" uid="uid://ci0f64lv0xhyl" path="res://scenes/enemy_lurker.tscn" id="43_242tg"]
+[ext_resource type="PackedScene" uid="uid://fwkag6l68oqp" path="res://scenes/enemy_muncher.tscn" id="44_xnd2r"]
+[ext_resource type="PackedScene" uid="uid://dfhlspi5ovb6s" path="res://scenes/enemy_snake_horizontal.tscn" id="45_w3ca7"]
+[ext_resource type="PackedScene" uid="uid://bwo41youuh3dj" path="res://scenes/enemy_snake_vertical.tscn" id="46_qogks"]
+[ext_resource type="PackedScene" uid="uid://dma38uah41cri" path="res://scenes/enemy_sinkhole.tscn" id="47_qogks"]
+[ext_resource type="PackedScene" uid="uid://0sw0yxchbigv" path="res://scenes/enemy_mimic.tscn" id="48_hd2wk"]
+[ext_resource type="PackedScene" uid="uid://dggt33yc1kxxi" path="res://scenes/enemy_muckman.tscn" id="49_78i32"]
+[ext_resource type="PackedScene" uid="uid://c1gkksgdijph5" path="res://scenes/enemy_ossuary.tscn" id="50_rk47l"]
+[ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/enemy_gazer_3.tscn" id="51_4l1w5"]
+[ext_resource type="PackedScene" uid="uid://dyhe74i7hqy2f" path="res://scenes/enemy_gazer_4.tscn" id="52_4q7mg"]
+[ext_resource type="PackedScene" uid="uid://smabh5t5bodq" path="res://scenes/enemy_burnout.tscn" id="53_4q7mg"]
+[ext_resource type="PackedScene" uid="uid://gesx21b6ie28" path="res://scenes/enemy_cremator_motebearer.tscn" id="54_m0g3d"]
+[ext_resource type="PackedScene" uid="uid://3vmb5wy6vcqd" path="res://scenes/enemy_douser_motebearer.tscn" id="55_360la"]
+[ext_resource type="PackedScene" uid="uid://dufonq4vijj51" path="res://scenes/enemy_shade_motebearer.tscn" id="56_6gffw"]
+[ext_resource type="PackedScene" uid="uid://dob8imwpcj6ct" path="res://scenes/enemy_chiller_motebearer.tscn" id="57_mne48"]
+[ext_resource type="PackedScene" uid="uid://cblhrfo1vo4hc" path="res://scenes/enemy_raven.tscn" id="58_di6rf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqfqc"]
+atlas = ExtResource("7_rkjb7")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8e8wk"]
+atlas = ExtResource("7_rkjb7")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcj2b"]
+atlas = ExtResource("7_rkjb7")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bk2ly"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqfqc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e8wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vcj2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8e8wk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bk2ly"]
+radius = 30.149628
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmbkf"]
+atlas = ExtResource("21_75r4v")
+region = Rect2(0, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajj0q"]
+atlas = ExtResource("21_75r4v")
+region = Rect2(16, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rtpnh"]
+atlas = ExtResource("21_75r4v")
+region = Rect2(32, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iovif"]
+atlas = ExtResource("21_75r4v")
+region = Rect2(48, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyfqj"]
+atlas = ExtResource("21_75r4v")
+region = Rect2(64, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yisjh"]
+atlas = ExtResource("21_75r4v")
+region = Rect2(80, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x62a1"]
+atlas = ExtResource("21_75r4v")
+region = Rect2(96, 0, 16, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6u5j"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc25q"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3js7"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dug5r"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qllch"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynwk"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57k5q"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_smscj"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o83pp"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7k8l"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfvxs"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfm0m"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_242tg"]
+atlas = ExtResource("22_75r4v")
+region = Rect2(192, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmhvi"]
+atlas = ExtResource("26_x62a1")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnd2r"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yydok"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3ca7"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qogks"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd2wk"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78i32"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk47l"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_om0fc"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l1w5"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4q7mg"]
+atlas = ExtResource("25_kmbkf")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug8cy"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5n6b0"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqrtm"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2syel"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4rvf"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vbly"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5l1h"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o38tw"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx78c"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mggwh"]
+atlas = ExtResource("26_rtpnh")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0g3d"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_360la"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gffw"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mne48"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di6rf"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7td7"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r3mcs"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgtb1"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfxtu"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27hcs"]
+atlas = ExtResource("26_ajj0q")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lc25q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_bk2ly")
+}],
+"loop": true,
+"name": &"bloombulb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21_a6u5j")
+}],
+"loop": true,
+"name": &"glaze",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_kmbkf")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_ajj0q")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_rtpnh")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_iovif")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_nyfqj")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_yisjh")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_x62a1")
+}],
+"loop": true,
+"name": &"humanity",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6u5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc25q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3js7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dug5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qllch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wynwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57k5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_smscj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o83pp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t7k8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfvxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfm0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_242tg")
+}],
+"loop": true,
+"name": &"key",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_a6u5j")
+}],
+"loop": true,
+"name": &"kindling",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_yisjh")
+}],
+"loop": true,
+"name": &"lid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmhvi")
+}],
+"loop": true,
+"name": &"rubbish",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnd2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yydok")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3ca7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qogks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd2wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78i32")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk47l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_om0fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4l1w5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4q7mg")
+}],
+"loop": true,
+"name": &"tome_abyss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug8cy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5n6b0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqrtm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2syel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4rvf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vbly")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5l1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o38tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kx78c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mggwh")
+}],
+"loop": true,
+"name": &"tome_town",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0g3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_360la")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gffw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mne48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di6rf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7td7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r3mcs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgtb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfxtu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27hcs")
+}],
+"loop": true,
+"name": &"tome_woods",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u1n0"]
+atlas = ExtResource("30_w3js7")
+region = Rect2(96, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grjjk"]
+atlas = ExtResource("30_w3js7")
+region = Rect2(112, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbiha"]
+atlas = ExtResource("30_w3js7")
+region = Rect2(128, 128, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_af6gq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u1n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grjjk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dbiha")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_57k5q"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": ExtResource("31_qllch")
+}, {
+"duration": 2.5,
+"texture": ExtResource("32_wynwk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkc57"]
+atlas = ExtResource("28_iovif")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yepfd"]
+atlas = ExtResource("28_iovif")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k85lx"]
+atlas = ExtResource("28_iovif")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnetc"]
+atlas = ExtResource("28_iovif")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omrv5"]
+atlas = ExtResource("28_iovif")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro40t"]
+atlas = ExtResource("28_iovif")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibpxr"]
+atlas = ExtResource("28_iovif")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75j1n"]
+atlas = ExtResource("28_iovif")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xkei"]
+atlas = ExtResource("29_nyfqj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xkei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkc57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yepfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k85lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnetc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omrv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro40t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibpxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75j1n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xkei")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d67im"]
+atlas = ExtResource("32_lc25q")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_281wl"]
+atlas = ExtResource("32_lc25q")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpvg1"]
+atlas = ExtResource("32_lc25q")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6t1kl"]
+atlas = ExtResource("32_lc25q")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_la138"]
+atlas = ExtResource("32_lc25q")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sfnj"]
+atlas = ExtResource("32_lc25q")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3u1n0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d67im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_281wl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpvg1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6t1kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_la138")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sfnj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="endless" type="Node" unique_id=2139490185]
+
+[node name="EndlessConfig" type="Node" parent="." unique_id=195525132]
+unique_name_in_owner = true
+script = ExtResource("1_tqfqc")
+theme = "dawn"
+tileset_dawn = ExtResource("7_d3lxm")
+tileset_dusk = ExtResource("8_y0afm")
+tileset_twilight = ExtResource("13_ysybj")
+maze_start_point = [Vector2(0, 0), Vector2(220, -4), Vector2(448, -4), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0), Vector2(0, 0)]
+
+[node name="Axis" type="Node2D" parent="." unique_id=1457212197]
+unique_name_in_owner = true
+position = Vector2(448, -4)
+scale = Vector2(0.5, 0.5)
+
+[node name="RoamingCamera" parent="Axis" unique_id=466995023 instance=ExtResource("6_om0fc")]
+position = Vector2(0, 10)
+scale = Vector2(2, 2)
+
+[node name="GlobalCamera" parent="Axis/RoamingCamera" index="0" unique_id=1095630346]
+position_smoothing_speed = 2.0
+
+[node name="CanvasLayerGUI" parent="Axis/RoamingCamera" index="1" unique_id=78339157]
+visible = false
+
+[node name="BGDawn" type="TextureRect" parent="Axis/RoamingCamera" unique_id=1360012860]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+offset_left = -392.0
+offset_top = -354.0
+offset_right = 1947.4229
+offset_bottom = 961.9253
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("10_y0afm")
+
+[node name="BGDusk" type="TextureRect" parent="Axis/RoamingCamera" unique_id=1529963918]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+offset_left = -143.0
+offset_top = -82.0
+offset_right = 2189.312
+offset_bottom = 1229.9255
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("11_di87v")
+
+[node name="BGTwilight" type="TextureRect" parent="Axis/RoamingCamera" unique_id=739400204]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+offset_left = -197.0
+offset_top = -304.00003
+offset_right = 2142.4229
+offset_bottom = 1011.9253
+scale = Vector2(0.33, 0.33)
+texture = ExtResource("12_ip54i")
+
+[node name="Player" parent="Axis" unique_id=907920398 instance=ExtResource("2_qogks")]
+scale = Vector2(1, 1)
+current_zone = 1000
+position_override = true
+
+[node name="MazeGuardianA" parent="Axis" unique_id=604420161 instance=ExtResource("16_ysybj")]
+position = Vector2(-168, -166)
+scale = Vector2(2, 2)
+id = "a"
+
+[node name="MazeGuardianB" parent="Axis" unique_id=1083778302 instance=ExtResource("16_ysybj")]
+position = Vector2(158, -166)
+scale = Vector2(2, 2)
+id = "b"
+
+[node name="MazeGuardianC" parent="Axis" unique_id=598924854 instance=ExtResource("16_ysybj")]
+position = Vector2(160, 152)
+scale = Vector2(2, 2)
+id = "c"
+
+[node name="MazeGuardianD" parent="Axis" unique_id=806187184 instance=ExtResource("16_ysybj")]
+position = Vector2(-172, 152)
+scale = Vector2(2, 2)
+id = "d"
+
+[node name="MazeGuardianE" type="Node2D" parent="Axis" unique_id=1505849776]
+position = Vector2(2, -336)
+scale = Vector2(2, 2)
+script = ExtResource("7_tqfqc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Axis/MazeGuardianE" unique_id=610014620]
+z_index = 5
+sprite_frames = SubResource("SpriteFrames_bk2ly")
+autoplay = "default"
+frame_progress = 0.36719188
+
+[node name="InfoComponent" parent="Axis/MazeGuardianE" unique_id=1227182012 instance=ExtResource("9_8e8wk")]
+enemy = "MazeGuardian"
+no_interact = true
+
+[node name="HitboxComponent" parent="Axis/MazeGuardianE" unique_id=1108796297 instance=ExtResource("10_vcj2b")]
+enemy_class = "Common"
+on_touch_effect = "Hazard"
+hp = 999
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Axis/MazeGuardianE/HitboxComponent" unique_id=1550148673]
+shape = SubResource("CircleShape2D_bk2ly")
+
+[node name="EndlessTileMap" type="TileMapLayer" parent="." unique_id=1142355943]
+unique_name_in_owner = true
+position = Vector2(0, 8)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AAASAPX/AAABAAIAAAASAPb/AAAAAAEAAAASAPf/AAAAAAEAAAASAPj/AAAAAAEAAAASAPn/AAAAAAEAAAASAPr/AAAAAAEAAAASAPv/AAAAAAEAAAASAPz/AAAAAAEAAAASAP3/AAAAAAEAAAASAP7/AAACAAIAAAASAP//AAAAAAEAAAASAAAAAAAAAAEAAAASAAEAAAAAAAEAAAASAAIAAAAAAAEAAAASAAMAAAAAAAEAAAASAAQAAAAAAAEAAAASAAUAAAAAAAEAAAASAAYAAAAAAAEAAAASAAcAAAAAAAMAAAATAPX/AAABAAEAAAATAP7/AAABAAEAAAATAAcAAAABAAEAAAAUAPX/AAABAAEAAAAUAPf/AAACAAAAAAAUAPj/AAAAAAEAAAAUAPn/AAAAAAEAAAAUAPr/AAACAAEAAAAUAPz/AAAAAAAAAAAUAP7/AAABAAAAAAAUAAAAAAAAAAAAAAAUAAIAAAABAAIAAAAUAAMAAAAAAAMAAAAUAAUAAAADAAAAAAAUAAcAAAABAAEAAAAVAPX/AAABAAEAAAAVAAIAAAACAAMAAAAVAAMAAAAEAAAAAAAVAAUAAAABAAEAAAAVAAcAAAABAAEAAAAWAPX/AAABAAEAAAAWAPf/AAABAAIAAAAWAPj/AAAAAAEAAAAWAPn/AAAAAAEAAAAWAPr/AAAAAAEAAAAWAPv/AAACAAEAAAAWAP3/AAADAAAAAAAWAP//AAADAAEAAAAWAAAAAAADAAIAAAAWAAIAAAAAAAIAAAAWAAMAAAAEAAAAAAAWAAUAAAABAAEAAAAWAAcAAAABAAEAAAAXAPX/AAABAAEAAAAXAPf/AAABAAAAAAAXAP3/AAABAAAAAAAXAP//AAAEAAEAAAAXAAAAAAAEAAIAAAAXAAMAAAABAAAAAAAXAAUAAAABAAAAAAAXAAcAAAABAAEAAAAYAPX/AAABAAEAAAAYAPn/AAADAAAAAAAYAAEAAAAAAAAAAAAYAAcAAAABAAEAAAAZAPX/AAABAAEAAAAZAPf/AAACAAAAAAAZAPj/AAAAAAEAAAAZAPn/AAAEAAAAAAAZAPv/AAADAAAAAAAZAP3/AAADAAAAAAAZAP//AAADAAAAAAAZAAMAAAABAAIAAAAZAAQAAAACAAEAAAAZAAYAAAABAAIAAAAZAAcAAAAEAAAAAAAaAPX/AAABAAEAAAAaAPn/AAABAAEAAAAaAPv/AAABAAEAAAAaAP3/AAABAAEAAAAaAP//AAACAAMAAAAaAAAAAAAAAAMAAAAaAAMAAAABAAEAAAAaAAYAAAABAAEAAAAaAAcAAAABAAEAAAAbAPX/AAABAAEAAAAbAPf/AAAAAAAAAAAbAPn/AAABAAEAAAAbAPv/AAABAAEAAAAbAP3/AAABAAEAAAAbAP//AAABAAEAAAAbAAAAAAACAAMAAAAbAAEAAAACAAEAAAAbAAMAAAABAAEAAAAbAAUAAAACAAAAAAAbAAYAAAAEAAAAAAAbAAcAAAABAAEAAAAcAPX/AAABAAEAAAAcAPn/AAABAAEAAAAcAPv/AAABAAEAAAAcAP3/AAABAAEAAAAcAP//AAACAAMAAAAcAAAAAAABAAMAAAAcAAMAAAABAAEAAAAcAAYAAAABAAEAAAAcAAcAAAABAAEAAAAdAPX/AAABAAEAAAAdAPf/AAACAAAAAAAdAPj/AAAAAAEAAAAdAPn/AAAEAAAAAAAdAPv/AAABAAAAAAAdAP3/AAABAAAAAAAdAP//AAABAAAAAAAdAAMAAAAAAAIAAAAdAAQAAAACAAEAAAAdAAYAAAAAAAIAAAAdAAcAAAAEAAAAAAAeAPX/AAABAAEAAAAeAPn/AAABAAAAAAAeAAEAAAAAAAAAAAAeAAcAAAABAAEAAAAfAPX/AAABAAEAAAAfAPf/AAADAAAAAAAfAP3/AAADAAAAAAAfAP//AAADAAEAAAAfAAAAAAADAAIAAAAfAAMAAAADAAAAAAAfAAUAAAADAAAAAAAfAAcAAAABAAEAAAAgAPX/AAABAAEAAAAgAPf/AAAAAAIAAAAgAPj/AAAAAAEAAAAgAPn/AAAAAAEAAAAgAPr/AAAAAAEAAAAgAPv/AAACAAEAAAAgAP3/AAABAAAAAAAgAP//AAAEAAEAAAAgAAAAAAAEAAIAAAAgAAIAAAABAAIAAAAgAAMAAAAEAAAAAAAgAAUAAAABAAEAAAAgAAcAAAABAAEAAAAhAPX/AAABAAEAAAAhAAIAAAACAAMAAAAhAAMAAAAEAAAAAAAhAAUAAAABAAEAAAAhAAcAAAABAAEAAAAiAPX/AAABAAEAAAAiAPf/AAACAAAAAAAiAPj/AAAAAAEAAAAiAPn/AAAAAAEAAAAiAPr/AAACAAEAAAAiAPz/AAAAAAAAAAAiAP7/AAADAAAAAAAiAAAAAAAAAAAAAAAiAAIAAAAAAAIAAAAiAAMAAAABAAMAAAAiAAUAAAABAAAAAAAiAAcAAAABAAEAAAAjAPX/AAABAAEAAAAjAP7/AAABAAEAAAAjAAcAAAABAAEAAAAkAPX/AAAAAAIAAAAkAPb/AAAAAAEAAAAkAPf/AAAAAAEAAAAkAPj/AAAAAAEAAAAkAPn/AAAAAAEAAAAkAPr/AAAAAAEAAAAkAPv/AAAAAAEAAAAkAPz/AAAAAAEAAAAkAP3/AAAAAAEAAAAkAP7/AAAFAAEAAAAkAP//AAAAAAEAAAAkAAAAAAAAAAEAAAAkAAEAAAAAAAEAAAAkAAIAAAAAAAEAAAAkAAMAAAAAAAEAAAAkAAQAAAAAAAEAAAAkAAUAAAAAAAEAAAAkAAYAAAAAAAEAAAAkAAcAAAABAAMAAAD2//f/AAAAAAEAAAD2//j/AAAAAAEAAAD2//n/AAAAAAEAAAD2//r/AAAAAAEAAAD2//v/AAAAAAEAAAD2//z/AAAAAAEAAAD2//3/AAAAAAEAAAD2//7/AAAAAAEAAAD2////AAAAAAEAAAD2/wAAAAAAAAEAAAD2/wEAAAAAAAEAAAD2/wIAAAAAAAEAAAD2/wMAAAAAAAEAAAD2/wQAAAAAAAEAAAD2/wUAAAAAAAEAAAD2/wcAAAAAAAMAAAD3//X/AAABAAEAAAD3/wcAAAABAAEAAAD4//X/AAABAAEAAAD4/wcAAAABAAEAAAD5//X/AAABAAEAAAD5/wcAAAABAAEAAAD6//X/AAABAAEAAAD6/wcAAAABAAEAAAD7//X/AAABAAEAAAD7/wcAAAABAAEAAAD8//X/AAABAAEAAAD8/wcAAAABAAEAAAD9//X/AAABAAEAAAD9/wcAAAABAAEAAAD+//X/AAABAAEAAAD+/wcAAAABAAEAAAD///X/AAABAAEAAAD//wcAAAABAAEAAAAAAPX/AAABAAEAAAAAAAcAAAABAAEAAAABAPX/AAABAAEAAAABAAcAAAABAAEAAAACAPX/AAABAAEAAAACAAcAAAABAAEAAAADAPX/AAABAAEAAAADAAcAAAABAAEAAAAEAPX/AAABAAEAAAAEAAcAAAABAAEAAAAFAPX/AAABAAEAAAAFAAcAAAABAAEAAAAGAPX/AAABAAEAAAAGAAcAAAABAAEAAAAHAPX/AAABAAEAAAAHAAcAAAABAAEAAAAIAPf/AAAAAAEAAAAIAPj/AAAAAAEAAAAIAPn/AAAAAAEAAAAIAPr/AAAAAAEAAAAIAPv/AAAAAAEAAAAIAPz/AAAAAAEAAAAIAP//AAAAAAEAAAAIAAAAAAAAAAEAAAAIAAEAAAAAAAEAAAAIAAIAAAAAAAEAAAAIAAMAAAAAAAEAAAAIAAQAAAAAAAEAAAAIAAUAAAAAAAEAAAAIAAcAAAABAAMAAAAIAP3/AAAAAAEAAAAIAPX/AAAAAAIAAAD2//X/AAABAAIAAAAIAP7/AAAAAAEAAAD2//b/AAAAAAEAAAAIAPb/AAAAAAEAAAAIAAYAAAAAAAEAAAD2/wYAAAAAAAEAAAAJAP3/AAAGAAAAAAAKAP3/AAAGAAAAAAALAP3/AAAGAAAAAAAMAP3/AAAGAAAAAAANAP3/AAAGAAAAAAAOAP3/AAAGAAAAAAAPAP3/AAAGAAAAAAAQAP3/AAAGAAAAAAARAP3/AAAGAAAAAAAlAP3/AAAGAAAAAAAmAP3/AAAGAAAAAAAnAP3/AAAGAAAAAAAoAP3/AAAGAAAAAAApAP3/AAAGAAAAAAAqAP3/AAAGAAAAAAArAP3/AAAGAAAAAAAsAP3/AAAGAAAAAAAtAP3/AAAGAAAAAAAuAPX/AAABAAIAAAAuAPb/AAAAAAEAAAAuAPf/AAAAAAEAAAAuAPj/AAAAAAEAAAAuAPn/AAAAAAEAAAAuAPr/AAAAAAEAAAAuAPv/AAAAAAEAAAAuAPz/AAAAAAEAAAAuAP3/AAAAAAEAAAAuAP7/AAAAAAEAAAAuAP//AAAAAAEAAAAuAAAAAAAAAAEAAAAuAAEAAAAAAAEAAAAuAAIAAAAAAAEAAAAuAAMAAAAAAAEAAAAuAAQAAAAAAAEAAAAuAAUAAAAAAAEAAAAuAAYAAAAAAAEAAAAuAAcAAAAAAAMAAAAvAPX/AAABAAEAAAAvAAcAAAABAAEAAAAwAPX/AAABAAEAAAAwAAcAAAABAAEAAAAxAPX/AAABAAEAAAAxAAcAAAABAAEAAAAyAPX/AAABAAEAAAAyAAcAAAABAAEAAAAzAPX/AAABAAEAAAAzAAcAAAABAAEAAAA0APX/AAABAAEAAAA0AAcAAAABAAEAAAA1APX/AAABAAEAAAA1AAcAAAABAAEAAAA2APX/AAABAAEAAAA2AAcAAAABAAEAAAA3APX/AAABAAEAAAA3AAcAAAABAAEAAAA4APX/AAABAAEAAAA4AAcAAAABAAEAAAA5APX/AAABAAEAAAA5AAcAAAABAAEAAAA6APX/AAABAAEAAAA6AAcAAAABAAEAAAA7APX/AAABAAEAAAA7AAcAAAABAAEAAAA8APX/AAABAAEAAAA8AAcAAAABAAEAAAA9APX/AAABAAEAAAA9AAcAAAABAAEAAAA+APX/AAABAAEAAAA+AAcAAAABAAEAAAA/APX/AAABAAEAAAA/AAcAAAABAAEAAABAAPX/AAAAAAIAAABAAPb/AAAAAAEAAABAAPf/AAAAAAEAAABAAPj/AAAAAAEAAABAAPn/AAAAAAEAAABAAPr/AAAAAAEAAABAAPv/AAAAAAEAAABAAPz/AAAAAAEAAABAAP3/AAAAAAEAAABAAP7/AAAAAAEAAABAAP//AAAAAAEAAABAAAAAAAAAAAEAAABAAAEAAAAAAAEAAABAAAIAAAAAAAEAAABAAAMAAAAAAAEAAABAAAQAAAAAAAEAAABAAAUAAAAAAAEAAABAAAYAAAAAAAEAAABAAAcAAAABAAMAAABBAP3/AAAGAAAAAABCAP3/AAAGAAAAAABDAP3/AAAGAAAAAABEAP3/AAAGAAAAAABFAP3/AAAGAAAAAABGAP3/AAAGAAAAAABHAP3/AAAGAAAAAABIAP3/AAAGAAAAAABJAP3/AAAGAAAAAABKAPX/AAABAAIAAABKAPb/AAAAAAEAAABKAPf/AAAAAAEAAABKAPj/AAAAAAEAAABKAPn/AAAAAAEAAABKAPr/AAAAAAEAAABKAPv/AAAAAAEAAABKAPz/AAAAAAEAAABKAP3/AAAAAAEAAABKAP7/AAAAAAEAAABKAP//AAAAAAEAAABKAAAAAAAAAAEAAABKAAEAAAAAAAEAAABKAAIAAAAAAAEAAABKAAMAAAAAAAEAAABKAAQAAAAAAAEAAABKAAUAAAAAAAEAAABKAAYAAAAAAAEAAABKAAcAAAAAAAMAAABLAPX/AAABAAEAAABLAAcAAAABAAEAAABMAPX/AAABAAEAAABMAAcAAAABAAEAAABNAPX/AAABAAEAAABNAAcAAAABAAEAAABOAPX/AAABAAEAAABOAAcAAAABAAEAAABPAPX/AAABAAEAAABPAAcAAAABAAEAAABQAPX/AAABAAEAAABQAAcAAAABAAEAAABRAPX/AAABAAEAAABRAAcAAAABAAEAAABSAPX/AAABAAEAAABSAAcAAAABAAEAAABTAPX/AAABAAEAAABTAAcAAAABAAEAAABUAPX/AAABAAEAAABUAAcAAAABAAEAAABVAPX/AAABAAEAAABVAAcAAAABAAEAAABWAPX/AAABAAEAAABWAAcAAAABAAEAAABXAPX/AAABAAEAAABXAAcAAAABAAEAAABYAPX/AAABAAEAAABYAAcAAAABAAEAAABZAPX/AAABAAEAAABZAAcAAAABAAEAAABaAPX/AAABAAEAAABaAAcAAAABAAEAAABbAPX/AAABAAEAAABbAAcAAAABAAEAAABcAPX/AAAAAAIAAABcAPb/AAAAAAEAAABcAPf/AAAAAAEAAABcAPj/AAAAAAEAAABcAPn/AAAAAAEAAABcAPr/AAAAAAEAAABcAPv/AAAAAAEAAABcAPz/AAAAAAEAAABcAP3/AAAAAAEAAABcAP7/AAAAAAEAAABcAP//AAAAAAEAAABcAAAAAAAAAAEAAABcAAEAAAAAAAEAAABcAAIAAAAAAAEAAABcAAMAAAAAAAEAAABcAAQAAAAAAAEAAABcAAUAAAAAAAEAAABcAAYAAAAAAAEAAABcAAcAAAABAAMAAAAbAAgAAAAGAAAAAAAbAAkAAAAGAAAAAAAbAAoAAAAGAAAAAAAbAAsAAAAGAAAAAAAbAAwAAAAGAAAAAAD//wgAAAAGAAAAAAD//wkAAAAGAAAAAAD//woAAAAGAAAAAAD//wsAAAAGAAAAAAD//wwAAAAGAAAAAAA3AAgAAAAGAAAAAAA3AAkAAAAGAAAAAAA3AAoAAAAGAAAAAAA3AAsAAAAGAAAAAAA3AAwAAAAGAAAAAABTAAgAAAAGAAAAAABTAAkAAAAGAAAAAABTAAoAAAAGAAAAAABTAAsAAAAGAAAAAABTAAwAAAAGAAAAAABKAA0AAAABAAIAAABKAA4AAAAAAAEAAABKAA8AAAAAAAEAAABKABAAAAAAAAEAAABKABEAAAAAAAEAAABKABIAAAAAAAEAAABKABMAAAAAAAEAAABKABQAAAAAAAEAAABKABUAAAAAAAEAAABKABYAAAAAAAEAAABKABcAAAAAAAEAAABKABgAAAAAAAEAAABKABkAAAAAAAEAAABKABoAAAAAAAEAAABKABsAAAAAAAEAAABKABwAAAAAAAEAAABKAB0AAAAAAAEAAABKAB4AAAAAAAEAAABKAB8AAAAAAAMAAABLAA0AAAABAAEAAABLAB8AAAABAAEAAABMAA0AAAABAAEAAABMAB8AAAABAAEAAABNAA0AAAABAAEAAABNAB8AAAABAAEAAABOAA0AAAABAAEAAABOAB8AAAABAAEAAABPAA0AAAABAAEAAABPAB8AAAABAAEAAABQAA0AAAABAAEAAABQAB8AAAABAAEAAABRAA0AAAABAAEAAABRAB8AAAABAAEAAABSAA0AAAABAAEAAABSAB8AAAABAAEAAABTAA0AAAABAAEAAABTAB8AAAABAAEAAABTACAAAAAGAAAAAABTACEAAAAGAAAAAABTACIAAAAGAAAAAABTACMAAAAGAAAAAABTACQAAAAGAAAAAABUAA0AAAABAAEAAABUAB8AAAABAAEAAABVAA0AAAABAAEAAABVAB8AAAABAAEAAABWAA0AAAABAAEAAABWAB8AAAABAAEAAABXAA0AAAABAAEAAABXAB8AAAABAAEAAABYAA0AAAABAAEAAABYAB8AAAABAAEAAABZAA0AAAABAAEAAABZAB8AAAABAAEAAABaAA0AAAABAAEAAABaAB8AAAABAAEAAABbAA0AAAABAAEAAABbAB8AAAABAAEAAABcAA0AAAAAAAIAAABcAA4AAAAAAAEAAABcAA8AAAAAAAEAAABcABAAAAAAAAEAAABcABEAAAAAAAEAAABcABIAAAAAAAEAAABcABMAAAAAAAEAAABcABQAAAAAAAEAAABcABUAAAAAAAEAAABcABYAAAAAAAEAAABcABcAAAAAAAEAAABcABgAAAAAAAEAAABcABkAAAAAAAEAAABcABoAAAAAAAEAAABcABsAAAAAAAEAAABcABwAAAAAAAEAAABcAB0AAAAAAAEAAABcAB4AAAAAAAEAAABcAB8AAAABAAMAAAAuAA0AAAABAAIAAAAuAA4AAAAAAAEAAAAuAA8AAAAAAAEAAAAuABAAAAAAAAEAAAAuABEAAAAAAAEAAAAuABIAAAAAAAEAAAAuABMAAAAAAAEAAAAuABQAAAAAAAEAAAAuABUAAAAAAAEAAAAuABYAAAAAAAEAAAAuABcAAAAAAAEAAAAuABgAAAAAAAEAAAAuABkAAAAAAAEAAAAuABoAAAAAAAEAAAAuABsAAAAAAAEAAAAuABwAAAAAAAEAAAAuAB0AAAAAAAEAAAAuAB4AAAAAAAEAAAAuAB8AAAAAAAMAAAAvAA0AAAABAAEAAAAvAB8AAAABAAEAAAAwAA0AAAABAAEAAAAwAB8AAAABAAEAAAAxAA0AAAABAAEAAAAxAB8AAAABAAEAAAAyAA0AAAABAAEAAAAyAB8AAAABAAEAAAAzAA0AAAABAAEAAAAzAB8AAAABAAEAAAA0AA0AAAABAAEAAAA0AB8AAAABAAEAAAA1AA0AAAABAAEAAAA1AB8AAAABAAEAAAA2AA0AAAABAAEAAAA2AB8AAAABAAEAAAA3AA0AAAABAAEAAAA3AB8AAAABAAEAAAA3ACAAAAAGAAAAAAA3ACEAAAAGAAAAAAA3ACIAAAAGAAAAAAA3ACMAAAAGAAAAAAA3ACQAAAAGAAAAAAA4AA0AAAABAAEAAAA4AB8AAAABAAEAAAA5AA0AAAABAAEAAAA5AB8AAAABAAEAAAA6AA0AAAABAAEAAAA6AB8AAAABAAEAAAA7AA0AAAABAAEAAAA7AB8AAAABAAEAAAA8AA0AAAABAAEAAAA8AB8AAAABAAEAAAA9AA0AAAABAAEAAAA9AB8AAAABAAEAAAA+AA0AAAABAAEAAAA+AB8AAAABAAEAAAA/AA0AAAABAAEAAAA/AB8AAAABAAEAAABAAA0AAAAAAAIAAABAAA4AAAAAAAEAAABAAA8AAAAAAAEAAABAABAAAAAAAAEAAABAABEAAAAAAAEAAABAABIAAAAAAAEAAABAABMAAAAAAAEAAABAABQAAAAAAAEAAABAABUAAAAAAAEAAABAABYAAAAAAAEAAABAABcAAAAAAAEAAABAABgAAAAAAAEAAABAABkAAAAAAAEAAABAABoAAAAAAAEAAABAABsAAAAAAAEAAABAABwAAAAAAAEAAABAAB0AAAAAAAEAAABAAB4AAAAAAAEAAABAAB8AAAABAAMAAAASAA0AAAABAAIAAAASAA4AAAAAAAEAAAASAA8AAAAAAAEAAAASABAAAAAAAAEAAAASABEAAAAAAAEAAAASABIAAAAAAAEAAAASABMAAAAAAAEAAAASABQAAAAAAAEAAAASABUAAAAAAAEAAAASABYAAAAAAAEAAAASABcAAAAAAAEAAAASABgAAAAAAAEAAAASABkAAAAAAAEAAAASABoAAAAAAAEAAAASABsAAAAAAAEAAAASABwAAAAAAAEAAAASAB0AAAAAAAEAAAASAB4AAAAAAAEAAAASAB8AAAAAAAMAAAATAA0AAAABAAEAAAATAB8AAAABAAEAAAAUAA0AAAABAAEAAAAUAB8AAAABAAEAAAAVAA0AAAABAAEAAAAVAB8AAAABAAEAAAAWAA0AAAABAAEAAAAWAB8AAAABAAEAAAAXAA0AAAABAAEAAAAXAB8AAAABAAEAAAAYAA0AAAABAAEAAAAYAB8AAAABAAEAAAAZAA0AAAABAAEAAAAZAB8AAAABAAEAAAAaAA0AAAABAAEAAAAaAB8AAAABAAEAAAAbAA0AAAABAAEAAAAbAB8AAAABAAEAAAAbACAAAAAGAAAAAAAbACEAAAAGAAAAAAAbACIAAAAGAAAAAAAbACMAAAAGAAAAAAAbACQAAAAGAAAAAAAcAA0AAAABAAEAAAAcAB8AAAABAAEAAAAdAA0AAAABAAEAAAAdAB8AAAABAAEAAAAeAA0AAAABAAEAAAAeAB8AAAABAAEAAAAfAA0AAAABAAEAAAAfAB8AAAABAAEAAAAgAA0AAAABAAEAAAAgAB8AAAABAAEAAAAhAA0AAAABAAEAAAAhAB8AAAABAAEAAAAiAA0AAAABAAEAAAAiAB8AAAABAAEAAAAjAA0AAAABAAEAAAAjAB8AAAABAAEAAAAkAA0AAAAAAAIAAAAkAA4AAAAAAAEAAAAkAA8AAAAAAAEAAAAkABAAAAAAAAEAAAAkABEAAAAAAAEAAAAkABIAAAAAAAEAAAAkABMAAAAAAAEAAAAkABQAAAAAAAEAAAAkABUAAAAAAAEAAAAkABYAAAAAAAEAAAAkABcAAAAAAAEAAAAkABgAAAAAAAEAAAAkABkAAAAAAAEAAAAkABoAAAAAAAEAAAAkABsAAAAAAAEAAAAkABwAAAAAAAEAAAAkAB0AAAAAAAEAAAAkAB4AAAAAAAEAAAAkAB8AAAABAAMAAAD2/w0AAAABAAIAAAD2/w4AAAAAAAEAAAD2/w8AAAAAAAEAAAD2/xAAAAAAAAEAAAD2/xEAAAAAAAEAAAD2/xIAAAAAAAEAAAD2/xMAAAAAAAEAAAD2/xQAAAAAAAEAAAD2/xUAAAAAAAEAAAD2/xYAAAAAAAEAAAD2/xcAAAAAAAEAAAD2/xgAAAAAAAEAAAD2/xkAAAAAAAEAAAD2/xoAAAAAAAEAAAD2/xsAAAAAAAEAAAD2/xwAAAAAAAEAAAD2/x0AAAAAAAEAAAD2/x4AAAAAAAEAAAD2/x8AAAAAAAMAAAD3/w0AAAABAAEAAAD3/x8AAAABAAEAAAD4/w0AAAABAAEAAAD4/x8AAAABAAEAAAD5/w0AAAABAAEAAAD5/x8AAAABAAEAAAD6/w0AAAABAAEAAAD6/x8AAAABAAEAAAD7/w0AAAABAAEAAAD7/x8AAAABAAEAAAD8/w0AAAABAAEAAAD8/x8AAAABAAEAAAD9/w0AAAABAAEAAAD9/x8AAAABAAEAAAD+/w0AAAABAAEAAAD+/x8AAAABAAEAAAD//w0AAAABAAEAAAD//x8AAAABAAEAAAD//yAAAAAGAAAAAAD//yEAAAAGAAAAAAD//yIAAAAGAAAAAAD//yMAAAAGAAAAAAD//yQAAAAGAAAAAAAAAA0AAAABAAEAAAAAAB8AAAABAAEAAAABAA0AAAABAAEAAAABAB8AAAABAAEAAAACAA0AAAABAAEAAAACAB8AAAABAAEAAAADAA0AAAABAAEAAAADAB8AAAABAAEAAAAEAA0AAAABAAEAAAAEAB8AAAABAAEAAAAFAA0AAAABAAEAAAAFAB8AAAABAAEAAAAGAA0AAAABAAEAAAAGAB8AAAABAAEAAAAHAA0AAAABAAEAAAAHAB8AAAABAAEAAAAIAA0AAAAAAAIAAAAIAA4AAAAAAAEAAAAIAA8AAAAAAAEAAAAIABAAAAAAAAEAAAAIABEAAAAAAAEAAAAIABIAAAAAAAEAAAAIABMAAAAAAAEAAAAIABQAAAAAAAEAAAAIABUAAAAAAAEAAAAIABYAAAAAAAEAAAAIABcAAAAAAAEAAAAIABgAAAAAAAEAAAAIABkAAAAAAAEAAAAIABoAAAAAAAEAAAAIABsAAAAAAAEAAAAIABwAAAAAAAEAAAAIAB0AAAAAAAEAAAAIAB4AAAAAAAEAAAAIAB8AAAABAAMAAAD2/yUAAAABAAIAAAD2/yYAAAAAAAEAAAD2/ycAAAAAAAEAAAD2/ygAAAAAAAEAAAD2/ykAAAAAAAEAAAD2/yoAAAAAAAEAAAD2/ysAAAAAAAEAAAD2/ywAAAAAAAEAAAD2/y0AAAAAAAEAAAD2/y4AAAAAAAEAAAD2/y8AAAAAAAEAAAD2/zAAAAAAAAEAAAD2/zEAAAAAAAEAAAD2/zIAAAAAAAEAAAD2/zMAAAAAAAEAAAD2/zQAAAAAAAEAAAD2/zUAAAAAAAEAAAD2/zYAAAAAAAEAAAD2/zcAAAAAAAMAAAD3/yUAAAABAAEAAAD3/zcAAAABAAEAAAD4/yUAAAABAAEAAAD4/zcAAAABAAEAAAD5/yUAAAABAAEAAAD5/zcAAAABAAEAAAD6/yUAAAABAAEAAAD6/zcAAAABAAEAAAD7/yUAAAABAAEAAAD7/zcAAAABAAEAAAD8/yUAAAABAAEAAAD8/zcAAAABAAEAAAD9/yUAAAABAAEAAAD9/zcAAAABAAEAAAD+/yUAAAABAAEAAAD+/zcAAAABAAEAAAD//yUAAAABAAEAAAD//zcAAAABAAEAAAD//zgAAAAGAAAAAAD//zkAAAAGAAAAAAD//zoAAAAGAAAAAAD//zsAAAAGAAAAAAD//zwAAAAGAAAAAAAAACUAAAABAAEAAAAAADcAAAABAAEAAAABACUAAAABAAEAAAABADcAAAABAAEAAAACACUAAAABAAEAAAACADcAAAABAAEAAAADACUAAAABAAEAAAADADcAAAABAAEAAAAEACUAAAABAAEAAAAEADcAAAABAAEAAAAFACUAAAABAAEAAAAFADcAAAABAAEAAAAGACUAAAABAAEAAAAGADcAAAABAAEAAAAHACUAAAABAAEAAAAHADcAAAABAAEAAAAIACUAAAAAAAIAAAAIACYAAAAAAAEAAAAIACcAAAAAAAEAAAAIACgAAAAAAAEAAAAIACkAAAAAAAEAAAAIACoAAAAAAAEAAAAIACsAAAAAAAEAAAAIACwAAAAAAAEAAAAIAC0AAAAAAAEAAAAIAC4AAAAAAAEAAAAIAC8AAAAAAAEAAAAIADAAAAAAAAEAAAAIADEAAAAAAAEAAAAIADIAAAAAAAEAAAAIADMAAAAAAAEAAAAIADQAAAAAAAEAAAAIADUAAAAAAAEAAAAIADYAAAAAAAEAAAAIADcAAAABAAMAAAASACUAAAABAAIAAAASACYAAAAAAAEAAAASACcAAAAAAAEAAAASACgAAAAAAAEAAAASACkAAAAAAAEAAAASACoAAAAAAAEAAAASACsAAAAAAAEAAAASACwAAAAAAAEAAAASAC0AAAAAAAEAAAASAC4AAAAAAAEAAAASAC8AAAAAAAEAAAASADAAAAAAAAEAAAASADEAAAAAAAEAAAASADIAAAAAAAEAAAASADMAAAAAAAEAAAASADQAAAAAAAEAAAASADUAAAAAAAEAAAASADYAAAAAAAEAAAASADcAAAAAAAMAAAATACUAAAABAAEAAAATADcAAAABAAEAAAAUACUAAAABAAEAAAAUADcAAAABAAEAAAAVACUAAAABAAEAAAAVADcAAAABAAEAAAAWACUAAAABAAEAAAAWADcAAAABAAEAAAAXACUAAAABAAEAAAAXADcAAAABAAEAAAAYACUAAAABAAEAAAAYADcAAAABAAEAAAAZACUAAAABAAEAAAAZADcAAAABAAEAAAAaACUAAAABAAEAAAAaADcAAAABAAEAAAAbACUAAAABAAEAAAAbADcAAAABAAEAAAAbADgAAAAGAAAAAAAbADkAAAAGAAAAAAAbADoAAAAGAAAAAAAbADsAAAAGAAAAAAAbADwAAAAGAAAAAAAcACUAAAABAAEAAAAcADcAAAABAAEAAAAdACUAAAABAAEAAAAdADcAAAABAAEAAAAeACUAAAABAAEAAAAeADcAAAABAAEAAAAfACUAAAABAAEAAAAfADcAAAABAAEAAAAgACUAAAABAAEAAAAgADcAAAABAAEAAAAhACUAAAABAAEAAAAhADcAAAABAAEAAAAiACUAAAABAAEAAAAiADcAAAABAAEAAAAjACUAAAABAAEAAAAjADcAAAABAAEAAAAkACUAAAAAAAIAAAAkACYAAAAAAAEAAAAkACcAAAAAAAEAAAAkACgAAAAAAAEAAAAkACkAAAAAAAEAAAAkACoAAAAAAAEAAAAkACsAAAAAAAEAAAAkACwAAAAAAAEAAAAkAC0AAAAAAAEAAAAkAC4AAAAAAAEAAAAkAC8AAAAAAAEAAAAkADAAAAAAAAEAAAAkADEAAAAAAAEAAAAkADIAAAAAAAEAAAAkADMAAAAAAAEAAAAkADQAAAAAAAEAAAAkADUAAAAAAAEAAAAkADYAAAAAAAEAAAAkADcAAAABAAMAAAAuACUAAAABAAIAAAAuACYAAAAAAAEAAAAuACcAAAAAAAEAAAAuACgAAAAAAAEAAAAuACkAAAAAAAEAAAAuACoAAAAAAAEAAAAuACsAAAAAAAEAAAAuACwAAAAAAAEAAAAuAC0AAAAAAAEAAAAuAC4AAAAAAAEAAAAuAC8AAAAAAAEAAAAuADAAAAAAAAEAAAAuADEAAAAAAAEAAAAuADIAAAAAAAEAAAAuADMAAAAAAAEAAAAuADQAAAAAAAEAAAAuADUAAAAAAAEAAAAuADYAAAAAAAEAAAAuADcAAAAAAAMAAAAvACUAAAABAAEAAAAvADcAAAABAAEAAAAwACUAAAABAAEAAAAwADcAAAABAAEAAAAxACUAAAABAAEAAAAxADcAAAABAAEAAAAyACUAAAABAAEAAAAyADcAAAABAAEAAAAzACUAAAABAAEAAAAzADcAAAABAAEAAAA0ACUAAAABAAEAAAA0ADcAAAABAAEAAAA1ACUAAAABAAEAAAA1ADcAAAABAAEAAAA2ACUAAAABAAEAAAA2ADcAAAABAAEAAAA3ACUAAAABAAEAAAA3ADcAAAABAAEAAAA3ADgAAAAGAAAAAAA3ADkAAAAGAAAAAAA3ADoAAAAGAAAAAAA3ADsAAAAGAAAAAAA3ADwAAAAGAAAAAAA4ACUAAAABAAEAAAA4ADcAAAABAAEAAAA5ACUAAAABAAEAAAA5ADcAAAABAAEAAAA6ACUAAAABAAEAAAA6ADcAAAABAAEAAAA7ACUAAAABAAEAAAA7ADcAAAABAAEAAAA8ACUAAAABAAEAAAA8ADcAAAABAAEAAAA9ACUAAAABAAEAAAA9ADcAAAABAAEAAAA+ACUAAAABAAEAAAA+ADcAAAABAAEAAAA/ACUAAAABAAEAAAA/ADcAAAABAAEAAABAACUAAAAAAAIAAABAACYAAAAAAAEAAABAACcAAAAAAAEAAABAACgAAAAAAAEAAABAACkAAAAAAAEAAABAACoAAAAAAAEAAABAACsAAAAAAAEAAABAACwAAAAAAAEAAABAAC0AAAAAAAEAAABAAC4AAAAAAAEAAABAAC8AAAAAAAEAAABAADAAAAAAAAEAAABAADEAAAAAAAEAAABAADIAAAAAAAEAAABAADMAAAAAAAEAAABAADQAAAAAAAEAAABAADUAAAAAAAEAAABAADYAAAAAAAEAAABAADcAAAABAAMAAABKACUAAAABAAIAAABKACYAAAAAAAEAAABKACcAAAAAAAEAAABKACgAAAAAAAEAAABKACkAAAAAAAEAAABKACoAAAAAAAEAAABKACsAAAAAAAEAAABKACwAAAAAAAEAAABKAC0AAAAAAAEAAABKAC4AAAAAAAEAAABKAC8AAAAAAAEAAABKADAAAAAAAAEAAABKADEAAAAAAAEAAABKADIAAAAAAAEAAABKADMAAAAAAAEAAABKADQAAAAAAAEAAABKADUAAAAAAAEAAABKADYAAAAAAAEAAABKADcAAAAAAAMAAABLACUAAAABAAEAAABLADcAAAABAAEAAABMACUAAAABAAEAAABMADcAAAABAAEAAABNACUAAAABAAEAAABNADcAAAABAAEAAABOACUAAAABAAEAAABOADcAAAABAAEAAABPACUAAAABAAEAAABPADcAAAABAAEAAABQACUAAAABAAEAAABQADcAAAABAAEAAABRACUAAAABAAEAAABRADcAAAABAAEAAABSACUAAAABAAEAAABSADcAAAABAAEAAABTACUAAAABAAEAAABTADcAAAABAAEAAABTADgAAAAGAAAAAABTADkAAAAGAAAAAABTADoAAAAGAAAAAABTADsAAAAGAAAAAABTADwAAAAGAAAAAABUACUAAAABAAEAAABUADcAAAABAAEAAABVACUAAAABAAEAAABVADcAAAABAAEAAABWACUAAAABAAEAAABWADcAAAABAAEAAABXACUAAAABAAEAAABXADcAAAABAAEAAABYACUAAAABAAEAAABYADcAAAABAAEAAABZACUAAAABAAEAAABZADcAAAABAAEAAABaACUAAAABAAEAAABaADcAAAABAAEAAABbACUAAAABAAEAAABbADcAAAABAAEAAABcACUAAAAAAAIAAABcACYAAAAAAAEAAABcACcAAAAAAAEAAABcACgAAAAAAAEAAABcACkAAAAAAAEAAABcACoAAAAAAAEAAABcACsAAAAAAAEAAABcACwAAAAAAAEAAABcAC0AAAAAAAEAAABcAC4AAAAAAAEAAABcAC8AAAAAAAEAAABcADAAAAAAAAEAAABcADEAAAAAAAEAAABcADIAAAAAAAEAAABcADMAAAAAAAEAAABcADQAAAAAAAEAAABcADUAAAAAAAEAAABcADYAAAAAAAEAAABcADcAAAABAAMAAABdAP3/AAAGAAAAAABeAP3/AAAGAAAAAABfAP3/AAAGAAAAAABgAP3/AAAGAAAAAABhAP3/AAAGAAAAAABiAP3/AAAGAAAAAABjAP3/AAAGAAAAAABkAP3/AAAGAAAAAABlAP3/AAAGAAAAAABmAPX/AAABAAIAAABmAPb/AAAAAAEAAABmAPf/AAAAAAEAAABmAPj/AAAAAAEAAABmAPn/AAAAAAEAAABmAPr/AAAAAAEAAABmAPv/AAAAAAEAAABmAPz/AAAAAAEAAABmAP3/AAAAAAEAAABmAP7/AAAAAAEAAABmAP//AAAAAAEAAABmAAAAAAAAAAEAAABmAAEAAAAAAAEAAABmAAIAAAAAAAEAAABmAAMAAAAAAAEAAABmAAQAAAAAAAEAAABmAAUAAAAAAAEAAABmAAYAAAAAAAEAAABmAAcAAAAAAAMAAABmAA0AAAABAAIAAABmAA4AAAAAAAEAAABmAA8AAAAAAAEAAABmABAAAAAAAAEAAABmABEAAAAAAAEAAABmABIAAAAAAAEAAABmABMAAAAAAAEAAABmABQAAAAAAAEAAABmABUAAAAAAAEAAABmABYAAAAAAAEAAABmABcAAAAAAAEAAABmABgAAAAAAAEAAABmABkAAAAAAAEAAABmABoAAAAAAAEAAABmABsAAAAAAAEAAABmABwAAAAAAAEAAABmAB0AAAAAAAEAAABmAB4AAAAAAAEAAABmAB8AAAAAAAMAAABmACUAAAABAAIAAABmACYAAAAAAAEAAABmACcAAAAAAAEAAABmACgAAAAAAAEAAABmACkAAAAAAAEAAABmACoAAAAAAAEAAABmACsAAAAAAAEAAABmACwAAAAAAAEAAABmAC0AAAAAAAEAAABmAC4AAAAAAAEAAABmAC8AAAAAAAEAAABmADAAAAAAAAEAAABmADEAAAAAAAEAAABmADIAAAAAAAEAAABmADMAAAAAAAEAAABmADQAAAAAAAEAAABmADUAAAAAAAEAAABmADYAAAAAAAEAAABmADcAAAAAAAMAAABnAPX/AAABAAEAAABnAAcAAAABAAEAAABnAA0AAAABAAEAAABnAB8AAAABAAEAAABnACUAAAABAAEAAABnADcAAAABAAEAAABoAPX/AAABAAEAAABoAAcAAAABAAEAAABoAA0AAAABAAEAAABoAB8AAAABAAEAAABoACUAAAABAAEAAABoADcAAAABAAEAAABpAPX/AAABAAEAAABpAAcAAAABAAEAAABpAA0AAAABAAEAAABpAB8AAAABAAEAAABpACUAAAABAAEAAABpADcAAAABAAEAAABqAPX/AAABAAEAAABqAAcAAAABAAEAAABqAA0AAAABAAEAAABqAB8AAAABAAEAAABqACUAAAABAAEAAABqADcAAAABAAEAAABrAPX/AAABAAEAAABrAAcAAAABAAEAAABrAA0AAAABAAEAAABrAB8AAAABAAEAAABrACUAAAABAAEAAABrADcAAAABAAEAAABsAPX/AAABAAEAAABsAAcAAAABAAEAAABsAA0AAAABAAEAAABsAB8AAAABAAEAAABsACUAAAABAAEAAABsADcAAAABAAEAAABtAPX/AAABAAEAAABtAAcAAAABAAEAAABtAA0AAAABAAEAAABtAB8AAAABAAEAAABtACUAAAABAAEAAABtADcAAAABAAEAAABuAPX/AAABAAEAAABuAAcAAAABAAEAAABuAA0AAAABAAEAAABuAB8AAAABAAEAAABuACUAAAABAAEAAABuADcAAAABAAEAAABvAPX/AAABAAEAAABvAAcAAAABAAEAAABvAAgAAAAGAAAAAABvAAkAAAAGAAAAAABvAAoAAAAGAAAAAABvAAsAAAAGAAAAAABvAAwAAAAGAAAAAABvAA0AAAABAAEAAABvAB8AAAABAAEAAABvACAAAAAGAAAAAABvACEAAAAGAAAAAABvACIAAAAGAAAAAABvACMAAAAGAAAAAABvACQAAAAGAAAAAABvACUAAAABAAEAAABvADcAAAABAAEAAABvADgAAAAGAAAAAABvADkAAAAGAAAAAABvADoAAAAGAAAAAABvADsAAAAGAAAAAABvADwAAAAGAAAAAABwAPX/AAABAAEAAABwAAcAAAABAAEAAABwAA0AAAABAAEAAABwAB8AAAABAAEAAABwACUAAAABAAEAAABwADcAAAABAAEAAABxAPX/AAABAAEAAABxAAcAAAABAAEAAABxAA0AAAABAAEAAABxAB8AAAABAAEAAABxACUAAAABAAEAAABxADcAAAABAAEAAAByAPX/AAABAAEAAAByAAcAAAABAAEAAAByAA0AAAABAAEAAAByAB8AAAABAAEAAAByACUAAAABAAEAAAByADcAAAABAAEAAABzAPX/AAABAAEAAABzAAcAAAABAAEAAABzAA0AAAABAAEAAABzAB8AAAABAAEAAABzACUAAAABAAEAAABzADcAAAABAAEAAAB0APX/AAABAAEAAAB0AAcAAAABAAEAAAB0AA0AAAABAAEAAAB0AB8AAAABAAEAAAB0ACUAAAABAAEAAAB0ADcAAAABAAEAAAB1APX/AAABAAEAAAB1AAcAAAABAAEAAAB1AA0AAAABAAEAAAB1AB8AAAABAAEAAAB1ACUAAAABAAEAAAB1ADcAAAABAAEAAAB2APX/AAABAAEAAAB2AAcAAAABAAEAAAB2AA0AAAABAAEAAAB2AB8AAAABAAEAAAB2ACUAAAABAAEAAAB2ADcAAAABAAEAAAB3APX/AAABAAEAAAB3AAcAAAABAAEAAAB3AA0AAAABAAEAAAB3AB8AAAABAAEAAAB3ACUAAAABAAEAAAB3ADcAAAABAAEAAAB4APX/AAAAAAIAAAB4APb/AAAAAAEAAAB4APf/AAAAAAEAAAB4APj/AAAAAAEAAAB4APn/AAAAAAEAAAB4APr/AAAAAAEAAAB4APv/AAAAAAEAAAB4APz/AAAAAAEAAAB4AP3/AAAAAAEAAAB4AP7/AAAAAAEAAAB4AP//AAAAAAEAAAB4AAAAAAAAAAEAAAB4AAEAAAAAAAEAAAB4AAIAAAAAAAEAAAB4AAMAAAAAAAEAAAB4AAQAAAAAAAEAAAB4AAUAAAAAAAEAAAB4AAYAAAAAAAEAAAB4AAcAAAABAAMAAAB4AA0AAAAAAAIAAAB4AA4AAAAAAAEAAAB4AA8AAAAAAAEAAAB4ABAAAAAAAAEAAAB4ABEAAAAAAAEAAAB4ABIAAAAAAAEAAAB4ABMAAAAAAAEAAAB4ABQAAAAAAAEAAAB4ABUAAAAAAAEAAAB4ABYAAAAAAAEAAAB4ABcAAAAAAAEAAAB4ABgAAAAAAAEAAAB4ABkAAAAAAAEAAAB4ABoAAAAAAAEAAAB4ABsAAAAAAAEAAAB4ABwAAAAAAAEAAAB4AB0AAAAAAAEAAAB4AB4AAAAAAAEAAAB4AB8AAAABAAMAAAB4ACUAAAAAAAIAAAB4ACYAAAAAAAEAAAB4ACcAAAAAAAEAAAB4ACgAAAAAAAEAAAB4ACkAAAAAAAEAAAB4ACoAAAAAAAEAAAB4ACsAAAAAAAEAAAB4ACwAAAAAAAEAAAB4AC0AAAAAAAEAAAB4AC4AAAAAAAEAAAB4AC8AAAAAAAEAAAB4ADAAAAAAAAEAAAB4ADEAAAAAAAEAAAB4ADIAAAAAAAEAAAB4ADMAAAAAAAEAAAB4ADQAAAAAAAEAAAB4ADUAAAAAAAEAAAB4ADYAAAAAAAEAAAB4ADcAAAABAAMAAAD2/z0AAAABAAIAAAD2/z4AAAAAAAEAAAD2/z8AAAAAAAEAAAD2/0AAAAAAAAEAAAD2/0EAAAAAAAEAAAD2/0IAAAAAAAEAAAD2/0MAAAAAAAEAAAD2/0QAAAAAAAEAAAD2/0UAAAAAAAEAAAD2/0YAAAAAAAEAAAD2/0cAAAAAAAEAAAD2/0gAAAAAAAEAAAD2/0kAAAAAAAEAAAD2/0oAAAAAAAEAAAD2/0sAAAAAAAEAAAD2/0wAAAAAAAEAAAD2/00AAAAAAAEAAAD2/04AAAAAAAEAAAD2/08AAAAAAAMAAAD3/z0AAAABAAEAAAD3/08AAAABAAEAAAD4/z0AAAABAAEAAAD4/08AAAABAAEAAAD5/z0AAAABAAEAAAD5/08AAAABAAEAAAD6/z0AAAABAAEAAAD6/08AAAABAAEAAAD7/z0AAAABAAEAAAD7/08AAAABAAEAAAD8/z0AAAABAAEAAAD8/08AAAABAAEAAAD9/z0AAAABAAEAAAD9/08AAAABAAEAAAD+/z0AAAABAAEAAAD+/08AAAABAAEAAAD//z0AAAABAAEAAAD//08AAAABAAEAAAD//1AAAAAGAAAAAAD//1EAAAAGAAAAAAD//1IAAAAGAAAAAAD//1MAAAAGAAAAAAD//1QAAAAGAAAAAAAAAD0AAAABAAEAAAAAAE8AAAABAAEAAAABAD0AAAABAAEAAAABAE8AAAABAAEAAAACAD0AAAABAAEAAAACAE8AAAABAAEAAAADAD0AAAABAAEAAAADAE8AAAABAAEAAAAEAD0AAAABAAEAAAAEAE8AAAABAAEAAAAFAD0AAAABAAEAAAAFAE8AAAABAAEAAAAGAD0AAAABAAEAAAAGAE8AAAABAAEAAAAHAD0AAAABAAEAAAAHAE8AAAABAAEAAAAIAD0AAAAAAAIAAAAIAD4AAAAAAAEAAAAIAD8AAAAAAAEAAAAIAEAAAAAAAAEAAAAIAEEAAAAAAAEAAAAIAEIAAAAAAAEAAAAIAEMAAAAAAAEAAAAIAEQAAAAAAAEAAAAIAEUAAAAAAAEAAAAIAEYAAAAAAAEAAAAIAEcAAAAAAAEAAAAIAEgAAAAAAAEAAAAIAEkAAAAAAAEAAAAIAEoAAAAAAAEAAAAIAEsAAAAAAAEAAAAIAEwAAAAAAAEAAAAIAE0AAAAAAAEAAAAIAE4AAAAAAAEAAAAIAE8AAAABAAMAAAASAD0AAAABAAIAAAASAD4AAAAAAAEAAAASAD8AAAAAAAEAAAASAEAAAAAAAAEAAAASAEEAAAAAAAEAAAASAEIAAAAAAAEAAAASAEMAAAAAAAEAAAASAEQAAAAAAAEAAAASAEUAAAAAAAEAAAASAEYAAAAAAAEAAAASAEcAAAAAAAEAAAASAEgAAAAAAAEAAAASAEkAAAAAAAEAAAASAEoAAAAAAAEAAAASAEsAAAAAAAEAAAASAEwAAAAAAAEAAAASAE0AAAAAAAEAAAASAE4AAAAAAAEAAAASAE8AAAAAAAMAAAATAD0AAAABAAEAAAATAE8AAAABAAEAAAAUAD0AAAABAAEAAAAUAE8AAAABAAEAAAAVAD0AAAABAAEAAAAVAE8AAAABAAEAAAAWAD0AAAABAAEAAAAWAE8AAAABAAEAAAAXAD0AAAABAAEAAAAXAE8AAAABAAEAAAAYAD0AAAABAAEAAAAYAE8AAAABAAEAAAAZAD0AAAABAAEAAAAZAE8AAAABAAEAAAAaAD0AAAABAAEAAAAaAE8AAAABAAEAAAAbAD0AAAABAAEAAAAbAE8AAAABAAEAAAAbAFAAAAAGAAAAAAAbAFEAAAAGAAAAAAAbAFIAAAAGAAAAAAAbAFMAAAAGAAAAAAAbAFQAAAAGAAAAAAAcAD0AAAABAAEAAAAcAE8AAAABAAEAAAAdAD0AAAABAAEAAAAdAE8AAAABAAEAAAAeAD0AAAABAAEAAAAeAE8AAAABAAEAAAAfAD0AAAABAAEAAAAfAE8AAAABAAEAAAAgAD0AAAABAAEAAAAgAE8AAAABAAEAAAAhAD0AAAABAAEAAAAhAE8AAAABAAEAAAAiAD0AAAABAAEAAAAiAE8AAAABAAEAAAAjAD0AAAABAAEAAAAjAE8AAAABAAEAAAAkAD0AAAAAAAIAAAAkAD4AAAAAAAEAAAAkAD8AAAAAAAEAAAAkAEAAAAAAAAEAAAAkAEEAAAAAAAEAAAAkAEIAAAAAAAEAAAAkAEMAAAAAAAEAAAAkAEQAAAAAAAEAAAAkAEUAAAAAAAEAAAAkAEYAAAAAAAEAAAAkAEcAAAAAAAEAAAAkAEgAAAAAAAEAAAAkAEkAAAAAAAEAAAAkAEoAAAAAAAEAAAAkAEsAAAAAAAEAAAAkAEwAAAAAAAEAAAAkAE0AAAAAAAEAAAAkAE4AAAAAAAEAAAAkAE8AAAABAAMAAAAuAD0AAAABAAIAAAAuAD4AAAAAAAEAAAAuAD8AAAAAAAEAAAAuAEAAAAAAAAEAAAAuAEEAAAAAAAEAAAAuAEIAAAAAAAEAAAAuAEMAAAAAAAEAAAAuAEQAAAAAAAEAAAAuAEUAAAAAAAEAAAAuAEYAAAAAAAEAAAAuAEcAAAAAAAEAAAAuAEgAAAAAAAEAAAAuAEkAAAAAAAEAAAAuAEoAAAAAAAEAAAAuAEsAAAAAAAEAAAAuAEwAAAAAAAEAAAAuAE0AAAAAAAEAAAAuAE4AAAAAAAEAAAAuAE8AAAAAAAMAAAAvAD0AAAABAAEAAAAvAE8AAAABAAEAAAAwAD0AAAABAAEAAAAwAE8AAAABAAEAAAAxAD0AAAABAAEAAAAxAE8AAAABAAEAAAAyAD0AAAABAAEAAAAyAE8AAAABAAEAAAAzAD0AAAABAAEAAAAzAE8AAAABAAEAAAA0AD0AAAABAAEAAAA0AE8AAAABAAEAAAA1AD0AAAABAAEAAAA1AE8AAAABAAEAAAA2AD0AAAABAAEAAAA2AE8AAAABAAEAAAA3AD0AAAABAAEAAAA3AE8AAAABAAEAAAA3AFAAAAAGAAAAAAA3AFEAAAAGAAAAAAA3AFIAAAAGAAAAAAA3AFMAAAAGAAAAAAA3AFQAAAAGAAAAAAA4AD0AAAABAAEAAAA4AE8AAAABAAEAAAA5AD0AAAABAAEAAAA5AE8AAAABAAEAAAA6AD0AAAABAAEAAAA6AE8AAAABAAEAAAA7AD0AAAABAAEAAAA7AE8AAAABAAEAAAA8AD0AAAABAAEAAAA8AE8AAAABAAEAAAA9AD0AAAABAAEAAAA9AE8AAAABAAEAAAA+AD0AAAABAAEAAAA+AE8AAAABAAEAAAA/AD0AAAABAAEAAAA/AE8AAAABAAEAAABAAD0AAAAAAAIAAABAAD4AAAAAAAEAAABAAD8AAAAAAAEAAABAAEAAAAAAAAEAAABAAEEAAAAAAAEAAABAAEIAAAAAAAEAAABAAEMAAAAAAAEAAABAAEQAAAAAAAEAAABAAEUAAAAAAAEAAABAAEYAAAAAAAEAAABAAEcAAAAAAAEAAABAAEgAAAAAAAEAAABAAEkAAAAAAAEAAABAAEoAAAAAAAEAAABAAEsAAAAAAAEAAABAAEwAAAAAAAEAAABAAE0AAAAAAAEAAABAAE4AAAAAAAEAAABAAE8AAAABAAMAAABKAD0AAAABAAIAAABKAD4AAAAAAAEAAABKAD8AAAAAAAEAAABKAEAAAAAAAAEAAABKAEEAAAAAAAEAAABKAEIAAAAAAAEAAABKAEMAAAAAAAEAAABKAEQAAAAAAAEAAABKAEUAAAAAAAEAAABKAEYAAAAAAAEAAABKAEcAAAAAAAEAAABKAEgAAAAAAAEAAABKAEkAAAAAAAEAAABKAEoAAAAAAAEAAABKAEsAAAAAAAEAAABKAEwAAAAAAAEAAABKAE0AAAAAAAEAAABKAE4AAAAAAAEAAABKAE8AAAAAAAMAAABLAD0AAAABAAEAAABLAE8AAAABAAEAAABMAD0AAAABAAEAAABMAE8AAAABAAEAAABNAD0AAAABAAEAAABNAE8AAAABAAEAAABOAD0AAAABAAEAAABOAE8AAAABAAEAAABPAD0AAAABAAEAAABPAE8AAAABAAEAAABQAD0AAAABAAEAAABQAE8AAAABAAEAAABRAD0AAAABAAEAAABRAE8AAAABAAEAAABSAD0AAAABAAEAAABSAE8AAAABAAEAAABTAD0AAAABAAEAAABTAE8AAAABAAEAAABTAFAAAAAGAAAAAABTAFEAAAAGAAAAAABTAFIAAAAGAAAAAABTAFMAAAAGAAAAAABTAFQAAAAGAAAAAABUAD0AAAABAAEAAABUAE8AAAABAAEAAABVAD0AAAABAAEAAABVAE8AAAABAAEAAABWAD0AAAABAAEAAABWAE8AAAABAAEAAABXAD0AAAABAAEAAABXAE8AAAABAAEAAABYAD0AAAABAAEAAABYAE8AAAABAAEAAABZAD0AAAABAAEAAABZAE8AAAABAAEAAABaAD0AAAABAAEAAABaAE8AAAABAAEAAABbAD0AAAABAAEAAABbAE8AAAABAAEAAABcAD0AAAAAAAIAAABcAD4AAAAAAAEAAABcAD8AAAAAAAEAAABcAEAAAAAAAAEAAABcAEEAAAAAAAEAAABcAEIAAAAAAAEAAABcAEMAAAAAAAEAAABcAEQAAAAAAAEAAABcAEUAAAAAAAEAAABcAEYAAAAAAAEAAABcAEcAAAAAAAEAAABcAEgAAAAAAAEAAABcAEkAAAAAAAEAAABcAEoAAAAAAAEAAABcAEsAAAAAAAEAAABcAEwAAAAAAAEAAABcAE0AAAAAAAEAAABcAE4AAAAAAAEAAABcAE8AAAABAAMAAABmAD0AAAABAAIAAABmAD4AAAAAAAEAAABmAD8AAAAAAAEAAABmAEAAAAAAAAEAAABmAEEAAAAAAAEAAABmAEIAAAAAAAEAAABmAEMAAAAAAAEAAABmAEQAAAAAAAEAAABmAEUAAAAAAAEAAABmAEYAAAAAAAEAAABmAEcAAAAAAAEAAABmAEgAAAAAAAEAAABmAEkAAAAAAAEAAABmAEoAAAAAAAEAAABmAEsAAAAAAAEAAABmAEwAAAAAAAEAAABmAE0AAAAAAAEAAABmAE4AAAAAAAEAAABmAE8AAAAAAAMAAABnAD0AAAABAAEAAABnAE8AAAABAAEAAABoAD0AAAABAAEAAABoAE8AAAABAAEAAABpAD0AAAABAAEAAABpAE8AAAABAAEAAABqAD0AAAABAAEAAABqAE8AAAABAAEAAABrAD0AAAABAAEAAABrAE8AAAABAAEAAABsAD0AAAABAAEAAABsAE8AAAABAAEAAABtAD0AAAABAAEAAABtAE8AAAABAAEAAABuAD0AAAABAAEAAABuAE8AAAABAAEAAABvAD0AAAABAAEAAABvAE8AAAABAAEAAABvAFAAAAAGAAAAAABvAFEAAAAGAAAAAABvAFIAAAAGAAAAAABvAFMAAAAGAAAAAABvAFQAAAAGAAAAAABwAD0AAAABAAEAAABwAE8AAAABAAEAAABxAD0AAAABAAEAAABxAE8AAAABAAEAAAByAD0AAAABAAEAAAByAE8AAAABAAEAAABzAD0AAAABAAEAAABzAE8AAAABAAEAAAB0AD0AAAABAAEAAAB0AE8AAAABAAEAAAB1AD0AAAABAAEAAAB1AE8AAAABAAEAAAB2AD0AAAABAAEAAAB2AE8AAAABAAEAAAB3AD0AAAABAAEAAAB3AE8AAAABAAEAAAB4AD0AAAAAAAIAAAB4AD4AAAAAAAEAAAB4AD8AAAAAAAEAAAB4AEAAAAAAAAEAAAB4AEEAAAAAAAEAAAB4AEIAAAAAAAEAAAB4AEMAAAAAAAEAAAB4AEQAAAAAAAEAAAB4AEUAAAAAAAEAAAB4AEYAAAAAAAEAAAB4AEcAAAAAAAEAAAB4AEgAAAAAAAEAAAB4AEkAAAAAAAEAAAB4AEoAAAAAAAEAAAB4AEsAAAAAAAEAAAB4AEwAAAAAAAEAAAB4AE0AAAAAAAEAAAB4AE4AAAAAAAEAAAB4AE8AAAABAAMAAAA=")
+tile_set = ExtResource("7_d3lxm")
+
+[node name="Store" type="Node" parent="." unique_id=785372725]
+
+[node name="RandomShopItemA" type="Node2D" parent="Store" unique_id=358761325]
+position = Vector2(0, -26)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("20_57k5q")
+
+[node name="AnimSprite2D" type="AnimatedSprite2D" parent="Store/RandomShopItemA" unique_id=586850036]
+z_index = 1
+position = Vector2(0, -12)
+sprite_frames = SubResource("SpriteFrames_lc25q")
+animation = &"bloombulb"
+
+[node name="Pedestal" type="AnimatedSprite2D" parent="Store/RandomShopItemA" unique_id=700520653]
+sprite_frames = SubResource("SpriteFrames_af6gq")
+
+[node name="InteractSprite" type="AnimatedSprite2D" parent="Store/RandomShopItemA" unique_id=2023091029]
+position = Vector2(0, -23.000002)
+rotation = 1.5707964
+scale = Vector2(0.66, 0.66)
+sprite_frames = SubResource("SpriteFrames_57k5q")
+autoplay = "default"
+
+[node name="DeathMessage" type="Label" parent="Store/RandomShopItemA" unique_id=351134187]
+unique_name_in_owner = true
+z_index = 999
+offset_left = -103.999985
+offset_top = 9.0
+offset_right = 1005.3292
+offset_bottom = 57.0
+scale = Vector2(0.18840215, 0.18840215)
+theme = ExtResource("33_wynwk")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 16
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 5
+text = "Item
+Cost"
+horizontal_alignment = 1
+
+[node name="LockedChest" type="Node2D" parent="Store" unique_id=1693394616]
+position = Vector2(0, 55)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Store/LockedChest" unique_id=1949848277]
+sprite_frames = SubResource("SpriteFrames_8xkei")
+autoplay = "default"
+
+[node name="Portal_Endless" type="Node2D" parent="Store" unique_id=1626821657]
+position = Vector2(60, -12)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Store/Portal_Endless" unique_id=493347457]
+sprite_frames = SubResource("SpriteFrames_3u1n0")
+
+[node name="1PotheadMaze" type="Node" parent="." unique_id=1943256749]
+
+[node name="PotheadA" parent="1PotheadMaze" unique_id=425616002 instance=ExtResource("17_8g3db")]
+position = Vector2(172, -67)
+current_zone = 1001
+
+[node name="PotheadB" parent="1PotheadMaze" unique_id=1682147812 instance=ExtResource("17_8g3db")]
+position = Vector2(269, 60)
+current_zone = 1001
+
+[node name="Motes17x18" type="Node2D" parent="1PotheadMaze" unique_id=1294945869]
+position = Vector2(224, 0)
+
+[node name="Mote2" parent="1PotheadMaze/Motes17x18" unique_id=1082971996 instance=ExtResource("13_di87v")]
+position = Vector2(-60.000008, -68.00001)
+
+[node name="Mote4" parent="1PotheadMaze/Motes17x18" unique_id=654566283 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000004, -68.00001)
+
+[node name="Mote5" parent="1PotheadMaze/Motes17x18" unique_id=2102235602 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -68)
+
+[node name="Mote6" parent="1PotheadMaze/Motes17x18" unique_id=1691667476 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -68)
+
+[node name="Mote7" parent="1PotheadMaze/Motes17x18" unique_id=640967667 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -68.00001)
+
+[node name="Mote8" parent="1PotheadMaze/Motes17x18" unique_id=1663738894 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -68)
+
+[node name="Mote9" parent="1PotheadMaze/Motes17x18" unique_id=1537900087 instance=ExtResource("13_di87v")]
+position = Vector2(-4.0000005, -68.00001)
+
+[node name="Mote10" parent="1PotheadMaze/Motes17x18" unique_id=1567852670 instance=ExtResource("13_di87v")]
+position = Vector2(3.999999, -68)
+
+[node name="Mote11" parent="1PotheadMaze/Motes17x18" unique_id=1241983080 instance=ExtResource("13_di87v")]
+position = Vector2(11.999999, -68.00001)
+
+[node name="Mote12" parent="1PotheadMaze/Motes17x18" unique_id=2082060470 instance=ExtResource("13_di87v")]
+position = Vector2(20, -68)
+
+[node name="Mote13" parent="1PotheadMaze/Motes17x18" unique_id=2067717039 instance=ExtResource("13_di87v")]
+position = Vector2(28, -68.00001)
+
+[node name="Mote14" parent="1PotheadMaze/Motes17x18" unique_id=645560253 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -68)
+
+[node name="Mote15" parent="1PotheadMaze/Motes17x18" unique_id=592464808 instance=ExtResource("13_di87v")]
+position = Vector2(44, -68.00001)
+
+[node name="Mote16" parent="1PotheadMaze/Motes17x18" unique_id=1383344170 instance=ExtResource("13_di87v")]
+position = Vector2(52, -68)
+
+[node name="Mote18" parent="1PotheadMaze/Motes17x18" unique_id=201674823 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -60.000004)
+
+[node name="Mote20" parent="1PotheadMaze/Motes17x18" unique_id=159672100 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -60.000004)
+
+[node name="Mote25" parent="1PotheadMaze/Motes17x18" unique_id=1371138205 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -60.000004)
+
+[node name="Mote27" parent="1PotheadMaze/Motes17x18" unique_id=1030522972 instance=ExtResource("13_di87v")]
+position = Vector2(4, -60.000004)
+
+[node name="Mote32" parent="1PotheadMaze/Motes17x18" unique_id=332127128 instance=ExtResource("13_di87v")]
+position = Vector2(44, -60.00002)
+
+[node name="Mote34" parent="1PotheadMaze/Motes17x18" unique_id=1256855318 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -60.00002)
+
+[node name="Mote35" parent="1PotheadMaze/Motes17x18" unique_id=231796757 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -52.000004)
+
+[node name="Mote37" parent="1PotheadMaze/Motes17x18" unique_id=1536017779 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -52.000004)
+
+[node name="Mote39" parent="1PotheadMaze/Motes17x18" unique_id=1680495390 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -52.000004)
+
+[node name="Mote40" parent="1PotheadMaze/Motes17x18" unique_id=1786313968 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -52.000004)
+
+[node name="Mote42" parent="1PotheadMaze/Motes17x18" unique_id=2074160971 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -52.000004)
+
+[node name="Mote43" parent="1PotheadMaze/Motes17x18" unique_id=351509275 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -52.00002)
+
+[node name="Mote44" parent="1PotheadMaze/Motes17x18" unique_id=1289638853 instance=ExtResource("13_di87v")]
+position = Vector2(4, -52.000004)
+
+[node name="Mote46" parent="1PotheadMaze/Motes17x18" unique_id=2009466655 instance=ExtResource("13_di87v")]
+position = Vector2(20, -52.000004)
+
+[node name="Mote47" parent="1PotheadMaze/Motes17x18" unique_id=555531190 instance=ExtResource("13_di87v")]
+position = Vector2(28, -52.00002)
+
+[node name="Mote49" parent="1PotheadMaze/Motes17x18" unique_id=768292845 instance=ExtResource("13_di87v")]
+position = Vector2(44, -52.00002)
+
+[node name="Mote51" parent="1PotheadMaze/Motes17x18" unique_id=1403932133 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -52.00002)
+
+[node name="Mote52" parent="1PotheadMaze/Motes17x18" unique_id=106918109 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -44.000004)
+
+[node name="Mote54" parent="1PotheadMaze/Motes17x18" unique_id=515755396 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -44.000004)
+
+[node name="Mote56" parent="1PotheadMaze/Motes17x18" unique_id=763826272 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -44.000004)
+
+[node name="Mote64" parent="1PotheadMaze/Motes17x18" unique_id=1394746943 instance=ExtResource("13_di87v")]
+position = Vector2(28, -44.00002)
+
+[node name="Mote66" parent="1PotheadMaze/Motes17x18" unique_id=2135141965 instance=ExtResource("13_di87v")]
+position = Vector2(44, -44.00002)
+
+[node name="Mote68" parent="1PotheadMaze/Motes17x18" unique_id=551894521 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -44.00002)
+
+[node name="Mote69" parent="1PotheadMaze/Motes17x18" unique_id=777085539 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -36.000004)
+
+[node name="Mote71" parent="1PotheadMaze/Motes17x18" unique_id=1173454198 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -36.000004)
+
+[node name="Mote73" parent="1PotheadMaze/Motes17x18" unique_id=1153110058 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -36.000004)
+
+[node name="Mote74" parent="1PotheadMaze/Motes17x18" unique_id=1250162399 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -36.000004)
+
+[node name="Mote75" parent="1PotheadMaze/Motes17x18" unique_id=694939873 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -36.00002)
+
+[node name="Mote76" parent="1PotheadMaze/Motes17x18" unique_id=589816567 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -36.000004)
+
+[node name="Mote77" parent="1PotheadMaze/Motes17x18" unique_id=1219039090 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -36.00002)
+
+[node name="Mote78" parent="1PotheadMaze/Motes17x18" unique_id=751755916 instance=ExtResource("13_di87v")]
+position = Vector2(4, -36.000004)
+
+[node name="Mote79" parent="1PotheadMaze/Motes17x18" unique_id=206754470 instance=ExtResource("13_di87v")]
+position = Vector2(12, -36.00002)
+
+[node name="Mote80" parent="1PotheadMaze/Motes17x18" unique_id=1726948761 instance=ExtResource("13_di87v")]
+position = Vector2(20, -36.000004)
+
+[node name="Mote81" parent="1PotheadMaze/Motes17x18" unique_id=603960849 instance=ExtResource("13_di87v")]
+position = Vector2(28, -36.00002)
+
+[node name="Mote83" parent="1PotheadMaze/Motes17x18" unique_id=1288171196 instance=ExtResource("13_di87v")]
+position = Vector2(44, -36.00002)
+
+[node name="Mote85" parent="1PotheadMaze/Motes17x18" unique_id=649226195 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -36.00002)
+
+[node name="Mote86" parent="1PotheadMaze/Motes17x18" unique_id=1066966140 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -28.00001)
+
+[node name="Mote87" parent="1PotheadMaze/Motes17x18" unique_id=1838939533 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -28.000025)
+
+[node name="Mote88" parent="1PotheadMaze/Motes17x18" unique_id=1953154374 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -28.00001)
+
+[node name="Mote90" parent="1PotheadMaze/Motes17x18" unique_id=814566061 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -28.00001)
+
+[node name="Mote91" parent="1PotheadMaze/Motes17x18" unique_id=1831834298 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -28.00001)
+
+[node name="Mote97" parent="1PotheadMaze/Motes17x18" unique_id=1529106690 instance=ExtResource("13_di87v")]
+position = Vector2(20, -28.00001)
+
+[node name="Mote98" parent="1PotheadMaze/Motes17x18" unique_id=1818905988 instance=ExtResource("13_di87v")]
+position = Vector2(28, -28.000025)
+
+[node name="Mote100" parent="1PotheadMaze/Motes17x18" unique_id=1249341976 instance=ExtResource("13_di87v")]
+position = Vector2(44, -28.000025)
+
+[node name="Mote101" parent="1PotheadMaze/Motes17x18" unique_id=1653183871 instance=ExtResource("13_di87v")]
+position = Vector2(52, -28.00001)
+
+[node name="Mote102" parent="1PotheadMaze/Motes17x18" unique_id=154649127 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -28.000025)
+
+[node name="Mote103" parent="1PotheadMaze/Motes17x18" unique_id=1980039940 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -20.00001)
+
+[node name="Mote105" parent="1PotheadMaze/Motes17x18" unique_id=344500702 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -20.00001)
+
+[node name="Mote107" parent="1PotheadMaze/Motes17x18" unique_id=1264411388 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -20.00001)
+
+[node name="Mote108" parent="1PotheadMaze/Motes17x18" unique_id=320561690 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -20.00001)
+
+[node name="Mote109" parent="1PotheadMaze/Motes17x18" unique_id=203113904 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -20.000025)
+
+[node name="Mote110" parent="1PotheadMaze/Motes17x18" unique_id=1990727572 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -20.00001)
+
+[node name="Mote111" parent="1PotheadMaze/Motes17x18" unique_id=957472945 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -20.000025)
+
+[node name="Mote112" parent="1PotheadMaze/Motes17x18" unique_id=1187208314 instance=ExtResource("13_di87v")]
+position = Vector2(4, -20.00001)
+
+[node name="Mote113" parent="1PotheadMaze/Motes17x18" unique_id=1849245044 instance=ExtResource("13_di87v")]
+position = Vector2(12, -20.000025)
+
+[node name="Mote114" parent="1PotheadMaze/Motes17x18" unique_id=1895864087 instance=ExtResource("13_di87v")]
+position = Vector2(20, -20.00001)
+
+[node name="Mote115" parent="1PotheadMaze/Motes17x18" unique_id=1470158824 instance=ExtResource("13_di87v")]
+position = Vector2(28, -20.000025)
+
+[node name="Mote117" parent="1PotheadMaze/Motes17x18" unique_id=1963383685 instance=ExtResource("13_di87v")]
+position = Vector2(44, -20.000025)
+
+[node name="Mote119" parent="1PotheadMaze/Motes17x18" unique_id=897134402 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -20.000025)
+
+[node name="Mote120" parent="1PotheadMaze/Motes17x18" unique_id=800917618 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -12.000012)
+
+[node name="Mote121" parent="1PotheadMaze/Motes17x18" unique_id=1570561821 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -12.000028)
+
+[node name="Mote122" parent="1PotheadMaze/Motes17x18" unique_id=391525527 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -12.000012)
+
+[node name="Mote125" parent="1PotheadMaze/Motes17x18" unique_id=504258948 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -12.000012)
+
+[node name="Mote131" parent="1PotheadMaze/Motes17x18" unique_id=1121632758 instance=ExtResource("13_di87v")]
+position = Vector2(20, -12.000012)
+
+[node name="Mote134" parent="1PotheadMaze/Motes17x18" unique_id=2084124 instance=ExtResource("13_di87v")]
+position = Vector2(44, -12.000028)
+
+[node name="Mote135" parent="1PotheadMaze/Motes17x18" unique_id=366189163 instance=ExtResource("13_di87v")]
+position = Vector2(52, -12.000012)
+
+[node name="Mote136" parent="1PotheadMaze/Motes17x18" unique_id=944471540 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -12.000028)
+
+[node name="Mote139" parent="1PotheadMaze/Motes17x18" unique_id=438062246 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -4.000014)
+
+[node name="Mote141" parent="1PotheadMaze/Motes17x18" unique_id=1770085002 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -4.000014)
+
+[node name="Mote142" parent="1PotheadMaze/Motes17x18" unique_id=1994606727 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -4.000014)
+
+[node name="Mote143" parent="1PotheadMaze/Motes17x18" unique_id=1737383447 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -4.000029)
+
+[node name="Mote144" parent="1PotheadMaze/Motes17x18" unique_id=1137693995 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -4.000014)
+
+[node name="Mote145" parent="1PotheadMaze/Motes17x18" unique_id=1638390998 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -4.000029)
+
+[node name="Mote146" parent="1PotheadMaze/Motes17x18" unique_id=826929970 instance=ExtResource("13_di87v")]
+position = Vector2(4, -4.000014)
+
+[node name="Mote147" parent="1PotheadMaze/Motes17x18" unique_id=724459155 instance=ExtResource("13_di87v")]
+position = Vector2(12, -4.000029)
+
+[node name="Mote148" parent="1PotheadMaze/Motes17x18" unique_id=1897924193 instance=ExtResource("13_di87v")]
+position = Vector2(20, -4.000014)
+
+[node name="Mote149" parent="1PotheadMaze/Motes17x18" unique_id=1815761248 instance=ExtResource("13_di87v")]
+position = Vector2(28, -4.000029)
+
+[node name="Mote151" parent="1PotheadMaze/Motes17x18" unique_id=1117525592 instance=ExtResource("13_di87v")]
+position = Vector2(44, -4.000029)
+
+[node name="Mote154" parent="1PotheadMaze/Motes17x18" unique_id=1879832822 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 3.999985)
+
+[node name="Mote155" parent="1PotheadMaze/Motes17x18" unique_id=140615248 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 3.9999697)
+
+[node name="Mote156" parent="1PotheadMaze/Motes17x18" unique_id=1046915146 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 3.999985)
+
+[node name="Mote159" parent="1PotheadMaze/Motes17x18" unique_id=1434266490 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 3.999985)
+
+[node name="Mote165" parent="1PotheadMaze/Motes17x18" unique_id=1539489193 instance=ExtResource("13_di87v")]
+position = Vector2(20, 3.999985)
+
+[node name="Mote168" parent="1PotheadMaze/Motes17x18" unique_id=1559916964 instance=ExtResource("13_di87v")]
+position = Vector2(44, 3.9999697)
+
+[node name="Mote169" parent="1PotheadMaze/Motes17x18" unique_id=898549021 instance=ExtResource("13_di87v")]
+position = Vector2(52, 3.999985)
+
+[node name="Mote170" parent="1PotheadMaze/Motes17x18" unique_id=734589905 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 3.9999697)
+
+[node name="Mote171" parent="1PotheadMaze/Motes17x18" unique_id=1459515797 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 11.999986)
+
+[node name="Mote173" parent="1PotheadMaze/Motes17x18" unique_id=494585833 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 11.999986)
+
+[node name="Mote176" parent="1PotheadMaze/Motes17x18" unique_id=1342336816 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 11.999986)
+
+[node name="Mote177" parent="1PotheadMaze/Motes17x18" unique_id=1774088071 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 11.99997)
+
+[node name="Mote181" parent="1PotheadMaze/Motes17x18" unique_id=1100337897 instance=ExtResource("13_di87v")]
+position = Vector2(12, 11.99997)
+
+[node name="Mote182" parent="1PotheadMaze/Motes17x18" unique_id=1021187969 instance=ExtResource("13_di87v")]
+position = Vector2(20, 11.999986)
+
+[node name="Mote185" parent="1PotheadMaze/Motes17x18" unique_id=271067887 instance=ExtResource("13_di87v")]
+position = Vector2(44, 11.99997)
+
+[node name="Mote187" parent="1PotheadMaze/Motes17x18" unique_id=814227538 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 11.99997)
+
+[node name="Mote188" parent="1PotheadMaze/Motes17x18" unique_id=1016917929 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 19.999987)
+
+[node name="Mote189" parent="1PotheadMaze/Motes17x18" unique_id=1621836419 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 19.999971)
+
+[node name="Mote190" parent="1PotheadMaze/Motes17x18" unique_id=1952068558 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 19.999987)
+
+[node name="Mote192" parent="1PotheadMaze/Motes17x18" unique_id=263151670 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 19.999987)
+
+[node name="Mote194" parent="1PotheadMaze/Motes17x18" unique_id=1842562182 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 19.999971)
+
+[node name="Mote195" parent="1PotheadMaze/Motes17x18" unique_id=1659743966 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 19.999987)
+
+[node name="Mote197" parent="1PotheadMaze/Motes17x18" unique_id=116753542 instance=ExtResource("13_di87v")]
+position = Vector2(4, 19.999987)
+
+[node name="Mote198" parent="1PotheadMaze/Motes17x18" unique_id=10117862 instance=ExtResource("13_di87v")]
+position = Vector2(12, 19.999971)
+
+[node name="Mote200" parent="1PotheadMaze/Motes17x18" unique_id=81487630 instance=ExtResource("13_di87v")]
+position = Vector2(28, 19.999971)
+
+[node name="Mote202" parent="1PotheadMaze/Motes17x18" unique_id=1614343013 instance=ExtResource("13_di87v")]
+position = Vector2(44, 19.999971)
+
+[node name="Mote203" parent="1PotheadMaze/Motes17x18" unique_id=1330722780 instance=ExtResource("13_di87v")]
+position = Vector2(52, 19.999987)
+
+[node name="Mote204" parent="1PotheadMaze/Motes17x18" unique_id=1908693247 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 19.999971)
+
+[node name="Mote205" parent="1PotheadMaze/Motes17x18" unique_id=1724513114 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 27.999987)
+
+[node name="Mote209" parent="1PotheadMaze/Motes17x18" unique_id=662470935 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 27.999987)
+
+[node name="Mote210" parent="1PotheadMaze/Motes17x18" unique_id=2122237846 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 27.999987)
+
+[node name="Mote211" parent="1PotheadMaze/Motes17x18" unique_id=450229460 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 27.999971)
+
+[node name="Mote212" parent="1PotheadMaze/Motes17x18" unique_id=1867967006 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 27.999987)
+
+[node name="Mote213" parent="1PotheadMaze/Motes17x18" unique_id=576292885 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 27.999971)
+
+[node name="Mote214" parent="1PotheadMaze/Motes17x18" unique_id=1701638992 instance=ExtResource("13_di87v")]
+position = Vector2(4, 27.999987)
+
+[node name="Mote215" parent="1PotheadMaze/Motes17x18" unique_id=1246030840 instance=ExtResource("13_di87v")]
+position = Vector2(12, 27.999971)
+
+[node name="Mote216" parent="1PotheadMaze/Motes17x18" unique_id=453502846 instance=ExtResource("13_di87v")]
+position = Vector2(20, 27.999987)
+
+[node name="Mote217" parent="1PotheadMaze/Motes17x18" unique_id=420837232 instance=ExtResource("13_di87v")]
+position = Vector2(28, 27.999971)
+
+[node name="Mote221" parent="1PotheadMaze/Motes17x18" unique_id=1945749606 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 27.999971)
+
+[node name="Mote222" parent="1PotheadMaze/Motes17x18" unique_id=1193273428 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 35.99999)
+
+[node name="Mote238" parent="1PotheadMaze/Motes17x18" unique_id=1714020357 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 35.999973)
+
+[node name="Mote239" parent="1PotheadMaze/Motes17x18" unique_id=992331183 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 43.99999)
+
+[node name="Mote240" parent="1PotheadMaze/Motes17x18" unique_id=547343453 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 43.999973)
+
+[node name="Mote241" parent="1PotheadMaze/Motes17x18" unique_id=1484106407 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 43.99999)
+
+[node name="Mote242" parent="1PotheadMaze/Motes17x18" unique_id=432156637 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 43.999973)
+
+[node name="Mote243" parent="1PotheadMaze/Motes17x18" unique_id=797642233 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 43.99999)
+
+[node name="Mote244" parent="1PotheadMaze/Motes17x18" unique_id=1499873736 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 43.99999)
+
+[node name="Mote246" parent="1PotheadMaze/Motes17x18" unique_id=1358964845 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 43.99999)
+
+[node name="Mote247" parent="1PotheadMaze/Motes17x18" unique_id=83590792 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 43.999973)
+
+[node name="Mote248" parent="1PotheadMaze/Motes17x18" unique_id=2082898017 instance=ExtResource("13_di87v")]
+position = Vector2(4, 43.99999)
+
+[node name="Mote250" parent="1PotheadMaze/Motes17x18" unique_id=2033909239 instance=ExtResource("13_di87v")]
+position = Vector2(20, 43.99999)
+
+[node name="Mote251" parent="1PotheadMaze/Motes17x18" unique_id=1213364589 instance=ExtResource("13_di87v")]
+position = Vector2(28, 43.999973)
+
+[node name="Mote252" parent="1PotheadMaze/Motes17x18" unique_id=204099976 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 43.99999)
+
+[node name="Mote253" parent="1PotheadMaze/Motes17x18" unique_id=1315337134 instance=ExtResource("13_di87v")]
+position = Vector2(44, 43.999973)
+
+[node name="Mote254" parent="1PotheadMaze/Motes17x18" unique_id=980566393 instance=ExtResource("13_di87v")]
+position = Vector2(52, 43.99999)
+
+[node name="Mote255" parent="1PotheadMaze/Motes17x18" unique_id=1804319958 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 43.999973)
+
+[node name="Mote256" parent="1PotheadMaze/Motes17x18" unique_id=367570859 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 51.99999)
+
+[node name="Mote261" parent="1PotheadMaze/Motes17x18" unique_id=1397635499 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 51.99999)
+
+[node name="Mote262" parent="1PotheadMaze/Motes17x18" unique_id=801831196 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 51.999973)
+
+[node name="Mote263" parent="1PotheadMaze/Motes17x18" unique_id=1333237732 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 51.99999)
+
+[node name="Mote265" parent="1PotheadMaze/Motes17x18" unique_id=939861610 instance=ExtResource("13_di87v")]
+position = Vector2(4, 51.99999)
+
+[node name="Mote266" parent="1PotheadMaze/Motes17x18" unique_id=1550166589 instance=ExtResource("13_di87v")]
+position = Vector2(12, 51.999973)
+
+[node name="Mote267" parent="1PotheadMaze/Motes17x18" unique_id=272024458 instance=ExtResource("13_di87v")]
+position = Vector2(20, 51.99999)
+
+[node name="Mote272" parent="1PotheadMaze/Motes17x18" unique_id=1617939500 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 51.999973)
+
+[node name="Mote274" parent="1PotheadMaze/Motes17x18" unique_id=309621116 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 59.999973)
+
+[node name="Mote275" parent="1PotheadMaze/Motes17x18" unique_id=2103956972 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 59.99999)
+
+[node name="Mote276" parent="1PotheadMaze/Motes17x18" unique_id=998447119 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 59.999973)
+
+[node name="Mote277" parent="1PotheadMaze/Motes17x18" unique_id=1725182728 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 59.99999)
+
+[node name="Mote278" parent="1PotheadMaze/Motes17x18" unique_id=18586464 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 59.99999)
+
+[node name="Mote284" parent="1PotheadMaze/Motes17x18" unique_id=1096412431 instance=ExtResource("13_di87v")]
+position = Vector2(20, 59.99999)
+
+[node name="Mote285" parent="1PotheadMaze/Motes17x18" unique_id=1365949057 instance=ExtResource("13_di87v")]
+position = Vector2(28, 59.999973)
+
+[node name="Mote286" parent="1PotheadMaze/Motes17x18" unique_id=1087633962 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 59.99999)
+
+[node name="Mote288" parent="1PotheadMaze/Motes17x18" unique_id=1823625398 instance=ExtResource("13_di87v")]
+position = Vector2(52, 59.99999)
+
+[node name="BreakableMoteJarEndless" parent="1PotheadMaze" unique_id=92079695 instance=ExtResource("15_08us5")]
+position = Vector2(180, -20)
+
+[node name="BreakableMoteJarEndless2" parent="1PotheadMaze" unique_id=87956438 instance=ExtResource("15_08us5")]
+position = Vector2(196, -60)
+
+[node name="BreakableMoteJarEndless3" parent="1PotheadMaze" unique_id=87089367 instance=ExtResource("15_08us5")]
+position = Vector2(244, -60)
+
+[node name="BreakableMoteJarEndless4" parent="1PotheadMaze" unique_id=1147697605 instance=ExtResource("15_08us5")]
+position = Vector2(260, -20)
+
+[node name="BreakableMoteJarEndless5" parent="1PotheadMaze" unique_id=707726963 instance=ExtResource("15_08us5")]
+position = Vector2(260, -4)
+
+[node name="BreakableMoteJarEndless6" parent="1PotheadMaze" unique_id=1457902402 instance=ExtResource("15_08us5")]
+position = Vector2(180, -4)
+
+[node name="BreakableMoteJarEndless7" parent="1PotheadMaze" unique_id=1953544126 instance=ExtResource("15_08us5")]
+position = Vector2(180, 20)
+
+[node name="BreakableMoteJarEndless8" parent="1PotheadMaze" unique_id=227054962 instance=ExtResource("15_08us5")]
+position = Vector2(260, 20)
+
+[node name="BreakableMoteJarEndless9" parent="1PotheadMaze" unique_id=1783220848 instance=ExtResource("15_08us5")]
+position = Vector2(244, 37)
+
+[node name="BreakableMoteJarEndless10" parent="1PotheadMaze" unique_id=953501906 instance=ExtResource("15_08us5")]
+position = Vector2(196, 37)
+
+[node name="MoteBig" parent="1PotheadMaze" unique_id=1497384980 instance=ExtResource("15_ysybj")]
+position = Vector2(156, 60)
+
+[node name="MoteBig2" parent="1PotheadMaze" unique_id=1823582253 instance=ExtResource("15_ysybj")]
+position = Vector2(284, 60)
+
+[node name="MoteBig3" parent="1PotheadMaze" unique_id=777940428 instance=ExtResource("15_ysybj")]
+position = Vector2(156, -68)
+
+[node name="MoteBig4" parent="1PotheadMaze" unique_id=166012889 instance=ExtResource("15_ysybj")]
+position = Vector2(284, -68)
+
+[node name="2BlackMoteMaze" type="Node" parent="." unique_id=132623461]
+
+[node name="BlackMote" parent="2BlackMoteMaze" unique_id=175138950 instance=ExtResource("38_smscj")]
+position = Vector2(448, -73)
+current_zone = 1002
+
+[node name="Motes17x17-343Total" type="Node2D" parent="2BlackMoteMaze" unique_id=549042163]
+position = Vector2(448, 0)
+
+[node name="Mote" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=629873019 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -68)
+
+[node name="Mote2" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1270705903 instance=ExtResource("13_di87v")]
+position = Vector2(-60.000008, -68.00001)
+
+[node name="Mote3" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=135051527 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -68)
+
+[node name="Mote4" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=618103116 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000004, -68.00001)
+
+[node name="Mote5" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1159024258 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -68)
+
+[node name="Mote6" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1579664835 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -68)
+
+[node name="Mote7" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=300485451 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -68.00001)
+
+[node name="Mote8" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=879732709 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -68)
+
+[node name="Mote9" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=444730028 instance=ExtResource("13_di87v")]
+position = Vector2(-4.0000005, -68.00001)
+
+[node name="Mote10" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=809918944 instance=ExtResource("13_di87v")]
+position = Vector2(3.999999, -68)
+
+[node name="Mote11" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=131737463 instance=ExtResource("13_di87v")]
+position = Vector2(11.999999, -68.00001)
+
+[node name="Mote12" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=512560725 instance=ExtResource("13_di87v")]
+position = Vector2(20, -68)
+
+[node name="Mote13" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1854248268 instance=ExtResource("13_di87v")]
+position = Vector2(28, -68.00001)
+
+[node name="Mote14" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=238822486 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -68)
+
+[node name="Mote15" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=165070763 instance=ExtResource("13_di87v")]
+position = Vector2(44, -68.00001)
+
+[node name="Mote16" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=52520523 instance=ExtResource("13_di87v")]
+position = Vector2(52, -68)
+
+[node name="Mote17" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1170521859 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -68.00001)
+
+[node name="Mote18" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=177722012 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -60.000004)
+
+[node name="Mote19" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1863257130 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -60.00002)
+
+[node name="Mote20" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1765660352 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -60.000004)
+
+[node name="Mote21" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1783726511 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -60.00002)
+
+[node name="Mote22" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=717546224 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -60.000004)
+
+[node name="Mote23" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=723859322 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -60.000004)
+
+[node name="Mote24" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=117140531 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -60.00002)
+
+[node name="Mote25" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1053337678 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -60.000004)
+
+[node name="Mote26" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=6911573 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -60.00002)
+
+[node name="Mote27" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1432143255 instance=ExtResource("13_di87v")]
+position = Vector2(4, -60.000004)
+
+[node name="Mote28" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1477822106 instance=ExtResource("13_di87v")]
+position = Vector2(12, -60.00002)
+
+[node name="Mote29" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=675713718 instance=ExtResource("13_di87v")]
+position = Vector2(20, -60.000004)
+
+[node name="Mote30" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1679813003 instance=ExtResource("13_di87v")]
+position = Vector2(28, -60.00002)
+
+[node name="Mote31" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=54366065 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -60.000004)
+
+[node name="Mote32" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=599770072 instance=ExtResource("13_di87v")]
+position = Vector2(44, -60.00002)
+
+[node name="Mote33" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=55432815 instance=ExtResource("13_di87v")]
+position = Vector2(52, -60.000004)
+
+[node name="Mote34" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=545713500 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -60.00002)
+
+[node name="Mote35" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1652709858 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -52.000004)
+
+[node name="Mote36" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=397201183 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -52.00002)
+
+[node name="Mote37" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2057057489 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -52.000004)
+
+[node name="Mote38" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2048474829 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -52.00002)
+
+[node name="Mote39" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=567450044 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -52.000004)
+
+[node name="Mote40" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=973719138 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -52.000004)
+
+[node name="Mote41" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1209667227 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -52.00002)
+
+[node name="Mote42" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1797687081 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -52.000004)
+
+[node name="Mote43" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=520803128 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -52.00002)
+
+[node name="Mote44" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1668750693 instance=ExtResource("13_di87v")]
+position = Vector2(4, -52.000004)
+
+[node name="Mote45" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1967702589 instance=ExtResource("13_di87v")]
+position = Vector2(12, -52.00002)
+
+[node name="Mote46" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=454221837 instance=ExtResource("13_di87v")]
+position = Vector2(20, -52.000004)
+
+[node name="Mote47" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1574026549 instance=ExtResource("13_di87v")]
+position = Vector2(28, -52.00002)
+
+[node name="Mote48" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=322733303 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -52.000004)
+
+[node name="Mote49" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=549150724 instance=ExtResource("13_di87v")]
+position = Vector2(44, -52.00002)
+
+[node name="Mote50" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2146189799 instance=ExtResource("13_di87v")]
+position = Vector2(52, -52.000004)
+
+[node name="Mote51" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1988118285 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -52.00002)
+
+[node name="Mote52" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2146859551 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -44.000004)
+
+[node name="Mote53" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1790976122 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -44.00002)
+
+[node name="Mote54" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=718480514 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -44.000004)
+
+[node name="Mote55" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1711458208 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -44.00002)
+
+[node name="Mote56" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1304068480 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -44.000004)
+
+[node name="Mote57" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=913327681 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -44.000004)
+
+[node name="Mote58" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1154167440 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -44.00002)
+
+[node name="Mote59" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1226651432 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -44.000004)
+
+[node name="Mote60" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1506872593 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -44.00002)
+
+[node name="Mote61" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=659323831 instance=ExtResource("13_di87v")]
+position = Vector2(4, -44.000004)
+
+[node name="Mote62" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=322074647 instance=ExtResource("13_di87v")]
+position = Vector2(12, -44.00002)
+
+[node name="Mote63" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1789689377 instance=ExtResource("13_di87v")]
+position = Vector2(20, -44.000004)
+
+[node name="Mote64" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1865456179 instance=ExtResource("13_di87v")]
+position = Vector2(28, -44.00002)
+
+[node name="Mote65" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=883038053 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -44.000004)
+
+[node name="Mote66" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=584403980 instance=ExtResource("13_di87v")]
+position = Vector2(44, -44.00002)
+
+[node name="Mote67" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1564377045 instance=ExtResource("13_di87v")]
+position = Vector2(52, -44.000004)
+
+[node name="Mote68" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=677349296 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -44.00002)
+
+[node name="Mote69" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1054651352 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -36.000004)
+
+[node name="Mote70" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1647011403 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -36.00002)
+
+[node name="Mote71" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1570374647 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -36.000004)
+
+[node name="Mote72" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1832402192 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -36.00002)
+
+[node name="Mote73" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1438069265 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -36.000004)
+
+[node name="Mote74" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=262276674 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -36.000004)
+
+[node name="Mote75" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1815724095 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -36.00002)
+
+[node name="Mote76" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=96884019 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -36.000004)
+
+[node name="Mote77" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1894158345 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -36.00002)
+
+[node name="Mote78" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1513560003 instance=ExtResource("13_di87v")]
+position = Vector2(4, -36.000004)
+
+[node name="Mote79" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1310810161 instance=ExtResource("13_di87v")]
+position = Vector2(12, -36.00002)
+
+[node name="Mote80" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1952059958 instance=ExtResource("13_di87v")]
+position = Vector2(20, -36.000004)
+
+[node name="Mote81" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=327919450 instance=ExtResource("13_di87v")]
+position = Vector2(28, -36.00002)
+
+[node name="Mote82" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1605500297 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -36.000004)
+
+[node name="Mote83" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=397510428 instance=ExtResource("13_di87v")]
+position = Vector2(44, -36.00002)
+
+[node name="Mote84" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1149080628 instance=ExtResource("13_di87v")]
+position = Vector2(52, -36.000004)
+
+[node name="Mote85" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1244204541 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -36.00002)
+
+[node name="Mote86" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1543183461 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -28.00001)
+
+[node name="Mote87" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=562262017 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -28.000025)
+
+[node name="Mote88" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1338370714 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -28.00001)
+
+[node name="Mote89" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=99772619 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -28.000025)
+
+[node name="Mote90" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1441361540 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -28.00001)
+
+[node name="Mote91" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=84529147 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -28.00001)
+
+[node name="Mote92" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=92646057 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -28.000025)
+
+[node name="Mote93" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=482205929 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -28.00001)
+
+[node name="Mote94" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=147991427 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -28.000025)
+
+[node name="Mote95" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1601546421 instance=ExtResource("13_di87v")]
+position = Vector2(4, -28.00001)
+
+[node name="Mote96" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1209326920 instance=ExtResource("13_di87v")]
+position = Vector2(12, -28.000025)
+
+[node name="Mote97" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1871642025 instance=ExtResource("13_di87v")]
+position = Vector2(20, -28.00001)
+
+[node name="Mote98" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=723756342 instance=ExtResource("13_di87v")]
+position = Vector2(28, -28.000025)
+
+[node name="Mote99" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1554055422 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -28.00001)
+
+[node name="Mote100" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1029164496 instance=ExtResource("13_di87v")]
+position = Vector2(44, -28.000025)
+
+[node name="Mote101" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=873131204 instance=ExtResource("13_di87v")]
+position = Vector2(52, -28.00001)
+
+[node name="Mote102" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1966875239 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -28.000025)
+
+[node name="Mote103" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=600634877 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -20.00001)
+
+[node name="Mote104" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1514178994 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -20.000025)
+
+[node name="Mote105" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=705500847 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -20.00001)
+
+[node name="Mote106" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=780208094 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -20.000025)
+
+[node name="Mote107" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=710467188 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -20.00001)
+
+[node name="Mote108" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1078830329 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -20.00001)
+
+[node name="Mote109" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1752355566 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -20.000025)
+
+[node name="Mote110" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=972790263 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -20.00001)
+
+[node name="Mote111" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2117420972 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -20.000025)
+
+[node name="Mote112" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1858025827 instance=ExtResource("13_di87v")]
+position = Vector2(4, -20.00001)
+
+[node name="Mote113" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2041228267 instance=ExtResource("13_di87v")]
+position = Vector2(12, -20.000025)
+
+[node name="Mote114" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=733579646 instance=ExtResource("13_di87v")]
+position = Vector2(20, -20.00001)
+
+[node name="Mote115" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2032007610 instance=ExtResource("13_di87v")]
+position = Vector2(28, -20.000025)
+
+[node name="Mote116" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1973542551 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -20.00001)
+
+[node name="Mote117" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1451712933 instance=ExtResource("13_di87v")]
+position = Vector2(44, -20.000025)
+
+[node name="Mote118" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1119792941 instance=ExtResource("13_di87v")]
+position = Vector2(52, -20.00001)
+
+[node name="Mote119" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=27448572 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -20.000025)
+
+[node name="Mote120" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=360238905 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -12.000012)
+
+[node name="Mote121" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1604067235 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -12.000028)
+
+[node name="Mote122" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2106935009 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -12.000012)
+
+[node name="Mote123" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=139936660 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -12.000028)
+
+[node name="Mote124" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1472176751 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -12.000012)
+
+[node name="Mote125" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1288406542 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -12.000012)
+
+[node name="Mote126" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=178428522 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -12.000028)
+
+[node name="Mote127" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1673543943 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -12.000012)
+
+[node name="Mote128" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=6040508 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -12.000028)
+
+[node name="Mote129" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=987260275 instance=ExtResource("13_di87v")]
+position = Vector2(4, -12.000012)
+
+[node name="Mote130" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1176927188 instance=ExtResource("13_di87v")]
+position = Vector2(12, -12.000028)
+
+[node name="Mote131" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=895787265 instance=ExtResource("13_di87v")]
+position = Vector2(20, -12.000012)
+
+[node name="Mote132" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=202888793 instance=ExtResource("13_di87v")]
+position = Vector2(28, -12.000028)
+
+[node name="Mote133" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1464450743 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -12.000012)
+
+[node name="Mote134" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=131725540 instance=ExtResource("13_di87v")]
+position = Vector2(44, -12.000028)
+
+[node name="Mote135" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1570449640 instance=ExtResource("13_di87v")]
+position = Vector2(52, -12.000012)
+
+[node name="Mote136" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=236695721 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -12.000028)
+
+[node name="Mote137" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=512046179 instance=ExtResource("13_di87v")]
+position = Vector2(-68, -4.000014)
+
+[node name="Mote138" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1913587631 instance=ExtResource("13_di87v")]
+position = Vector2(-60, -4.000029)
+
+[node name="Mote139" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1888244347 instance=ExtResource("13_di87v")]
+position = Vector2(-52, -4.000014)
+
+[node name="Mote140" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1575947067 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, -4.000029)
+
+[node name="Mote141" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=234569104 instance=ExtResource("13_di87v")]
+position = Vector2(-36, -4.000014)
+
+[node name="Mote142" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1857600596 instance=ExtResource("13_di87v")]
+position = Vector2(-28, -4.000014)
+
+[node name="Mote143" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=474886111 instance=ExtResource("13_di87v")]
+position = Vector2(-20, -4.000029)
+
+[node name="Mote144" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=642498391 instance=ExtResource("13_di87v")]
+position = Vector2(-12, -4.000014)
+
+[node name="Mote145" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1729713531 instance=ExtResource("13_di87v")]
+position = Vector2(-4, -4.000029)
+
+[node name="Mote146" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1054790806 instance=ExtResource("13_di87v")]
+position = Vector2(4, -4.000014)
+
+[node name="Mote147" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1313625581 instance=ExtResource("13_di87v")]
+position = Vector2(12, -4.000029)
+
+[node name="Mote148" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1813137011 instance=ExtResource("13_di87v")]
+position = Vector2(20, -4.000014)
+
+[node name="Mote149" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1567970143 instance=ExtResource("13_di87v")]
+position = Vector2(28, -4.000029)
+
+[node name="Mote150" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1207781744 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, -4.000014)
+
+[node name="Mote151" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2050165686 instance=ExtResource("13_di87v")]
+position = Vector2(44, -4.000029)
+
+[node name="Mote152" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=660579906 instance=ExtResource("13_di87v")]
+position = Vector2(52, -4.000014)
+
+[node name="Mote153" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1694119064 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, -4.000029)
+
+[node name="Mote154" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=871203947 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 3.999985)
+
+[node name="Mote155" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=316029242 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 3.9999697)
+
+[node name="Mote156" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1563126390 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 3.999985)
+
+[node name="Mote157" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=646262941 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 3.9999697)
+
+[node name="Mote158" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=978219262 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 3.999985)
+
+[node name="Mote159" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=123509968 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 3.999985)
+
+[node name="Mote160" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=350738608 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 3.9999697)
+
+[node name="Mote161" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1436831262 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 3.999985)
+
+[node name="Mote162" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=807927699 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 3.9999697)
+
+[node name="Mote163" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1042857661 instance=ExtResource("13_di87v")]
+position = Vector2(4, 3.999985)
+
+[node name="Mote164" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=6847963 instance=ExtResource("13_di87v")]
+position = Vector2(12, 3.9999697)
+
+[node name="Mote165" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=682750384 instance=ExtResource("13_di87v")]
+position = Vector2(20, 3.999985)
+
+[node name="Mote166" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=407766577 instance=ExtResource("13_di87v")]
+position = Vector2(28, 3.9999697)
+
+[node name="Mote167" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=640820909 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 3.999985)
+
+[node name="Mote168" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=772490322 instance=ExtResource("13_di87v")]
+position = Vector2(44, 3.9999697)
+
+[node name="Mote169" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1882758632 instance=ExtResource("13_di87v")]
+position = Vector2(52, 3.999985)
+
+[node name="Mote170" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=571530183 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 3.9999697)
+
+[node name="Mote171" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1453396102 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 11.999986)
+
+[node name="Mote172" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=872641603 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 11.99997)
+
+[node name="Mote173" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=438805502 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 11.999986)
+
+[node name="Mote174" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=539773131 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 11.99997)
+
+[node name="Mote175" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2117403030 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 11.999986)
+
+[node name="Mote176" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1264912844 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 11.999986)
+
+[node name="Mote177" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1202132063 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 11.99997)
+
+[node name="Mote178" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1410296876 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 11.999986)
+
+[node name="Mote179" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=958047416 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 11.99997)
+
+[node name="Mote180" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2075342629 instance=ExtResource("13_di87v")]
+position = Vector2(4, 11.999986)
+
+[node name="Mote181" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=265151567 instance=ExtResource("13_di87v")]
+position = Vector2(12, 11.99997)
+
+[node name="Mote182" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1408879356 instance=ExtResource("13_di87v")]
+position = Vector2(20, 11.999986)
+
+[node name="Mote183" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=86396082 instance=ExtResource("13_di87v")]
+position = Vector2(28, 11.99997)
+
+[node name="Mote184" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=462871773 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 11.999986)
+
+[node name="Mote185" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2029031680 instance=ExtResource("13_di87v")]
+position = Vector2(44, 11.99997)
+
+[node name="Mote186" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=44103825 instance=ExtResource("13_di87v")]
+position = Vector2(52, 11.999986)
+
+[node name="Mote187" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=204728992 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 11.99997)
+
+[node name="Mote188" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1924531038 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 19.999987)
+
+[node name="Mote189" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=904516849 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 19.999971)
+
+[node name="Mote190" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=168262782 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 19.999987)
+
+[node name="Mote191" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=456301377 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 19.999971)
+
+[node name="Mote192" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=538735574 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 19.999987)
+
+[node name="Mote193" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1408362263 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 19.999987)
+
+[node name="Mote194" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1553131399 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 19.999971)
+
+[node name="Mote195" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2024921275 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 19.999987)
+
+[node name="Mote196" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=149763080 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 19.999971)
+
+[node name="Mote197" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1911265697 instance=ExtResource("13_di87v")]
+position = Vector2(4, 19.999987)
+
+[node name="Mote198" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=996924727 instance=ExtResource("13_di87v")]
+position = Vector2(12, 19.999971)
+
+[node name="Mote199" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=882473706 instance=ExtResource("13_di87v")]
+position = Vector2(20, 19.999987)
+
+[node name="Mote200" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1771419300 instance=ExtResource("13_di87v")]
+position = Vector2(28, 19.999971)
+
+[node name="Mote201" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2020505710 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 19.999987)
+
+[node name="Mote202" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=779113472 instance=ExtResource("13_di87v")]
+position = Vector2(44, 19.999971)
+
+[node name="Mote203" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1275579446 instance=ExtResource("13_di87v")]
+position = Vector2(52, 19.999987)
+
+[node name="Mote204" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1552549709 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 19.999971)
+
+[node name="Mote205" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=861609747 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 27.999987)
+
+[node name="Mote206" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=453661515 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 27.999971)
+
+[node name="Mote207" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=743838809 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 27.999987)
+
+[node name="Mote208" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1446354024 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 27.999971)
+
+[node name="Mote209" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1618278397 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 27.999987)
+
+[node name="Mote210" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1900853958 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 27.999987)
+
+[node name="Mote211" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1631917280 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 27.999971)
+
+[node name="Mote212" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=29872976 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 27.999987)
+
+[node name="Mote213" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1832542311 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 27.999971)
+
+[node name="Mote214" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1145985477 instance=ExtResource("13_di87v")]
+position = Vector2(4, 27.999987)
+
+[node name="Mote215" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1870594754 instance=ExtResource("13_di87v")]
+position = Vector2(12, 27.999971)
+
+[node name="Mote216" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1840298091 instance=ExtResource("13_di87v")]
+position = Vector2(20, 27.999987)
+
+[node name="Mote217" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2023411623 instance=ExtResource("13_di87v")]
+position = Vector2(28, 27.999971)
+
+[node name="Mote218" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1062314500 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 27.999987)
+
+[node name="Mote219" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2024287348 instance=ExtResource("13_di87v")]
+position = Vector2(44, 27.999971)
+
+[node name="Mote220" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=536333277 instance=ExtResource("13_di87v")]
+position = Vector2(52, 27.999987)
+
+[node name="Mote221" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2120319494 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 27.999971)
+
+[node name="Mote222" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1425052422 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 35.99999)
+
+[node name="Mote223" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=515955776 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 35.999973)
+
+[node name="Mote224" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=758401542 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 35.99999)
+
+[node name="Mote225" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1616912435 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 35.999973)
+
+[node name="Mote226" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=345578284 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 35.99999)
+
+[node name="Mote227" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1688882996 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 35.99999)
+
+[node name="Mote228" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=598679180 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 35.999973)
+
+[node name="Mote229" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=123354903 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 35.99999)
+
+[node name="Mote230" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=571684238 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 35.999973)
+
+[node name="Mote231" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=206843414 instance=ExtResource("13_di87v")]
+position = Vector2(4, 35.99999)
+
+[node name="Mote232" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1857282609 instance=ExtResource("13_di87v")]
+position = Vector2(12, 35.999973)
+
+[node name="Mote233" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1662362328 instance=ExtResource("13_di87v")]
+position = Vector2(20, 35.99999)
+
+[node name="Mote234" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=728885081 instance=ExtResource("13_di87v")]
+position = Vector2(28, 35.999973)
+
+[node name="Mote235" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=492429133 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 35.99999)
+
+[node name="Mote236" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=970980744 instance=ExtResource("13_di87v")]
+position = Vector2(44, 35.999973)
+
+[node name="Mote237" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=113916588 instance=ExtResource("13_di87v")]
+position = Vector2(52, 35.99999)
+
+[node name="Mote238" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=149929973 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 35.999973)
+
+[node name="Mote239" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1867752675 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 43.99999)
+
+[node name="Mote240" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1175191413 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 43.999973)
+
+[node name="Mote241" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=631635158 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 43.99999)
+
+[node name="Mote242" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2103892747 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 43.999973)
+
+[node name="Mote243" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1332656877 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 43.99999)
+
+[node name="Mote244" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=856366879 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 43.99999)
+
+[node name="Mote245" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1271244381 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 43.999973)
+
+[node name="Mote246" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1375464513 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 43.99999)
+
+[node name="Mote247" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1577331411 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 43.999973)
+
+[node name="Mote248" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=995044502 instance=ExtResource("13_di87v")]
+position = Vector2(4, 43.99999)
+
+[node name="Mote249" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1534735942 instance=ExtResource("13_di87v")]
+position = Vector2(12, 43.999973)
+
+[node name="Mote250" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1654769582 instance=ExtResource("13_di87v")]
+position = Vector2(20, 43.99999)
+
+[node name="Mote251" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1395615247 instance=ExtResource("13_di87v")]
+position = Vector2(28, 43.999973)
+
+[node name="Mote252" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1913120262 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 43.99999)
+
+[node name="Mote253" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1643165322 instance=ExtResource("13_di87v")]
+position = Vector2(44, 43.999973)
+
+[node name="Mote254" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=290110354 instance=ExtResource("13_di87v")]
+position = Vector2(52, 43.99999)
+
+[node name="Mote255" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=236138866 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 43.999973)
+
+[node name="Mote256" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1718675066 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 51.99999)
+
+[node name="Mote257" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=942697675 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 51.999973)
+
+[node name="Mote258" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=926718082 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 51.99999)
+
+[node name="Mote259" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2055036987 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 51.999973)
+
+[node name="Mote260" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1406041590 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 51.99999)
+
+[node name="Mote261" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=331940110 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 51.99999)
+
+[node name="Mote262" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1857271951 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 51.999973)
+
+[node name="Mote263" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1980371299 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 51.99999)
+
+[node name="Mote264" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=611337133 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 51.999973)
+
+[node name="Mote265" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=426243346 instance=ExtResource("13_di87v")]
+position = Vector2(4, 51.99999)
+
+[node name="Mote266" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=821041154 instance=ExtResource("13_di87v")]
+position = Vector2(12, 51.999973)
+
+[node name="Mote267" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=531656177 instance=ExtResource("13_di87v")]
+position = Vector2(20, 51.99999)
+
+[node name="Mote268" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=59432860 instance=ExtResource("13_di87v")]
+position = Vector2(28, 51.999973)
+
+[node name="Mote269" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1758090611 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 51.99999)
+
+[node name="Mote270" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1201241258 instance=ExtResource("13_di87v")]
+position = Vector2(44, 51.999973)
+
+[node name="Mote271" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1657339624 instance=ExtResource("13_di87v")]
+position = Vector2(52, 51.99999)
+
+[node name="Mote272" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1635266343 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 51.999973)
+
+[node name="Mote273" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=628944133 instance=ExtResource("13_di87v")]
+position = Vector2(-68, 59.99999)
+
+[node name="Mote274" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=404598729 instance=ExtResource("13_di87v")]
+position = Vector2(-60, 59.999973)
+
+[node name="Mote275" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1671798898 instance=ExtResource("13_di87v")]
+position = Vector2(-52, 59.99999)
+
+[node name="Mote276" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=103901646 instance=ExtResource("13_di87v")]
+position = Vector2(-44.000008, 59.999973)
+
+[node name="Mote277" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2069980468 instance=ExtResource("13_di87v")]
+position = Vector2(-36, 59.99999)
+
+[node name="Mote278" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=1490235291 instance=ExtResource("13_di87v")]
+position = Vector2(-28, 59.99999)
+
+[node name="Mote279" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=436247673 instance=ExtResource("13_di87v")]
+position = Vector2(-20, 59.999973)
+
+[node name="Mote280" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=343854040 instance=ExtResource("13_di87v")]
+position = Vector2(-12, 59.99999)
+
+[node name="Mote281" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=720588178 instance=ExtResource("13_di87v")]
+position = Vector2(-4, 59.999973)
+
+[node name="Mote282" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=866387374 instance=ExtResource("13_di87v")]
+position = Vector2(4, 59.99999)
+
+[node name="Mote283" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=100138048 instance=ExtResource("13_di87v")]
+position = Vector2(12, 59.999973)
+
+[node name="Mote284" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=486838522 instance=ExtResource("13_di87v")]
+position = Vector2(20, 59.99999)
+
+[node name="Mote285" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=597253816 instance=ExtResource("13_di87v")]
+position = Vector2(28, 59.999973)
+
+[node name="Mote286" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=405399950 instance=ExtResource("13_di87v")]
+position = Vector2(35.999996, 59.99999)
+
+[node name="Mote287" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=953842950 instance=ExtResource("13_di87v")]
+position = Vector2(44, 59.999973)
+
+[node name="Mote288" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=520475359 instance=ExtResource("13_di87v")]
+position = Vector2(52, 59.99999)
+
+[node name="Mote289" parent="2BlackMoteMaze/Motes17x17-343Total" unique_id=2098795670 instance=ExtResource("13_di87v")]
+position = Vector2(60.000004, 59.999973)
+
+[node name="3MoteMouseMaze" type="Node" parent="." unique_id=500458933]
+
+[node name="Motemouse" parent="3MoteMouseMaze" unique_id=1324152628 instance=ExtResource("39_o83pp")]
+position = Vector2(672, 0)
+current_zone = 1003
+
+[node name="4LilJawerMaze" type="Node" parent="." unique_id=1949966608]
+
+[node name="Lil Jawer" parent="4LilJawerMaze" unique_id=1967846737 instance=ExtResource("40_t7k8l")]
+position = Vector2(896, -63)
+current_zone = 1004
+
+[node name="5WispflowerMaze" type="Node" parent="." unique_id=630823495]
+
+[node name="WispFire" parent="5WispflowerMaze" unique_id=205689274 node_paths=PackedStringArray("wisp_parent") instance=ExtResource("41_nfm0m")]
+position = Vector2(-5, 188)
+wisp_parent = NodePath("../WispBaseRefactor")
+
+[node name="WispBaseRefactor" parent="5WispflowerMaze" unique_id=1272729733 instance=ExtResource("42_242tg")]
+position = Vector2(-5, 188)
+current_zone = 1005
+
+[node name="6ShadowLurkerMaze" type="Node" parent="." unique_id=660720592]
+
+[node name="Lurker" parent="6ShadowLurkerMaze" unique_id=932862485 instance=ExtResource("43_242tg")]
+position = Vector2(219, 192)
+current_zone = 1006
+
+[node name="7MoteMuncherMaze" type="Node" parent="." unique_id=1963004298]
+
+[node name="Muncher" parent="7MoteMuncherMaze" unique_id=507696334 instance=ExtResource("44_xnd2r")]
+position = Vector2(447, 191)
+current_zone = 1007
+
+[node name="8ShadowSnakeMaze" type="Node" parent="." unique_id=627555405]
+
+[node name="SnakeH" parent="8ShadowSnakeMaze" unique_id=665566868 instance=ExtResource("45_w3ca7")]
+position = Vector2(622, 131)
+current_zone = 1008
+
+[node name="SnakeV" parent="8ShadowSnakeMaze" unique_id=1571673226 instance=ExtResource("46_qogks")]
+position = Vector2(668, 145)
+current_zone = 1008
+
+[node name="9SinkholeMaze" type="Node" parent="." unique_id=399894553]
+
+[node name="Sinkhole" parent="9SinkholeMaze" unique_id=696465493 instance=ExtResource("47_qogks")]
+position = Vector2(848, 144)
+current_zone = 1009
+
+[node name="10MimicMaze" type="Node" parent="." unique_id=959200825]
+
+[node name="Mimic" parent="10MimicMaze" unique_id=1879524217 instance=ExtResource("48_hd2wk")]
+position = Vector2(-2, 355)
+scale = Vector2(2, 2)
+current_zone = 1010
+
+[node name="11MuckmanMaze" type="Node" parent="." unique_id=716233081]
+
+[node name="Muckman" parent="11MuckmanMaze" unique_id=731796071 instance=ExtResource("49_78i32")]
+position = Vector2(221, 381)
+current_zone = 1011
+
+[node name="12OssuaryMaze" type="Node" parent="." unique_id=401506832]
+
+[node name="EnemyOssuary" parent="12OssuaryMaze" unique_id=220628567 instance=ExtResource("50_rk47l")]
+position = Vector2(444, 381)
+current_zone = 1012
+
+[node name="13GazerMaze" type="Node" parent="." unique_id=302865163]
+
+[node name="Gazer" parent="13GazerMaze" unique_id=1463209006 instance=ExtResource("51_4l1w5")]
+position = Vector2(732, 381)
+
+[node name="Gazer2" parent="13GazerMaze" unique_id=1668601467 instance=ExtResource("52_4q7mg")]
+position = Vector2(672, 382)
+
+[node name="14BurnoutMaze" type="Node" parent="." unique_id=1124587116]
+
+[node name="Burnout" parent="14BurnoutMaze" unique_id=880936881 instance=ExtResource("53_4q7mg")]
+position = Vector2(896, 383)
+current_zone = 1014
+
+[node name="15CrematorMaze" type="Node" parent="." unique_id=747333656]
+
+[node name="CrematingBearer" parent="15CrematorMaze" unique_id=1719407332 instance=ExtResource("54_m0g3d")]
+position = Vector2(-2, 499)
+current_zone = 1015
+target_direction = "down"
+
+[node name="16DouserMaze" type="Node" parent="." unique_id=1522052726]
+
+[node name="DousingBearer" parent="16DouserMaze" unique_id=629250747 instance=ExtResource("55_360la")]
+position = Vector2(-71, 566)
+
+[node name="17ShadeMaze" type="Node" parent="." unique_id=1472908589]
+
+[node name="ShadeMoteBearer" parent="17ShadeMaze" unique_id=1781194352 instance=ExtResource("56_6gffw")]
+position = Vector2(156, 505)
+current_zone = 1017
+
+[node name="18FreezerMaze" type="Node" parent="." unique_id=311463560]
+
+[node name="ChillerMotebearer" parent="18FreezerMaze" unique_id=1925357050 instance=ExtResource("57_mne48")]
+position = Vector2(445, 533)
+current_zone = 1018
+
+[node name="19RavenMaze" type="Node" parent="." unique_id=786498931]
+
+[node name="Raven" parent="19RavenMaze" unique_id=420925523 instance=ExtResource("58_di6rf")]
+position = Vector2(740, 502)
+current_zone = 1019
+
+[node name="Raven2" parent="19RavenMaze" unique_id=1978332672 instance=ExtResource("58_di6rf")]
+position = Vector2(596, 501)
+scale = Vector2(-1, 1)
+current_zone = 1019
+
+[editable path="Axis/RoamingCamera"]
+[editable path="1PotheadMaze/PotheadB"]
+[editable path="1PotheadMaze/PotheadB/FlashComponent"]
+[editable path="1PotheadMaze/PotheadB/HitboxMelee"]
+[editable path="1PotheadMaze/PotheadB/HitboxActivation"]
+[editable path="1PotheadMaze/PotheadB/InfoComponent"]

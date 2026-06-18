@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://cc6nvtyoxygxd"]
+
+[ext_resource type="Script" uid="uid://chs0t6j4wbh24" path="res://scripts/stop_music.gd" id="1_jbhk7"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="3_6e4fc"]
+[ext_resource type="PackedScene" uid="uid://bnw0y8tg5w2y0" path="res://scenes/door_abyss.tscn" id="5_dwhau"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player_refactor.tscn" id="7_yvd7e"]
+[ext_resource type="PackedScene" uid="uid://hagfimuirioj" path="res://scenes/door_town.tscn" id="8_owpwp"]
+[ext_resource type="PackedScene" uid="uid://dc5swdoqu3sf8" path="res://scenes/enemy_miniboss_amphora.tscn" id="8_uwl7g"]
+[ext_resource type="PackedScene" uid="uid://b1sy2h3btbeyu" path="res://scenes/mote.tscn" id="9_owpwp"]
+[ext_resource type="PackedScene" uid="uid://bey1fpg4pwrtk" path="res://scenes/door_woods.tscn" id="9_uwl7g"]
+[ext_resource type="PackedScene" uid="uid://n0t2n401tayi" path="res://scenes/zone_area.tscn" id="9_ynp7p"]
+[ext_resource type="PackedScene" uid="uid://bp3a3g3nh6x1t" path="res://scenes/moteBig.tscn" id="10_uwl7g"]
+
+[node name="enemyzoo" type="Node2D" unique_id=1321306669]
+script = ExtResource("1_jbhk7")
+
+[node name="Player" parent="." unique_id=354024012 instance=ExtResource("7_yvd7e")]
+current_zone = 998
+
+[node name="Roaming Camera" parent="." unique_id=1426891044 instance=ExtResource("3_6e4fc")]
+
+[node name="DoorAbyss4" parent="." unique_id=643791647 instance=ExtResource("5_dwhau")]
+position = Vector2(-25, -18)
+requirement = "souls"
+current_zone = 998
+isHidden = true
+
+[node name="WoodDoors5" parent="." unique_id=1563668814 instance=ExtResource("9_uwl7g")]
+position = Vector2(-25, -30)
+requirement = "souls"
+myGoal = 2
+current_zone = 998
+isHidden = true
+
+[node name="DoorTown5" parent="." unique_id=142126660 instance=ExtResource("8_owpwp")]
+position = Vector2(-25, -45)
+requirement = "souls"
+myGoal = 3
+current_zone = 998
+isHidden = true
+
+[node name="Area2D" parent="." unique_id=629873019 instance=ExtResource("9_owpwp")]
+position = Vector2(-9.000008, -46)
+
+[node name="Area2D2" parent="." unique_id=874368552 instance=ExtResource("9_owpwp")]
+position = Vector2(-9.000008, -29)
+
+[node name="Area2D3" parent="." unique_id=1597024621 instance=ExtResource("9_owpwp")]
+position = Vector2(-9.000008, -16)
+
+[node name="MiniBoss-Amphora" parent="." unique_id=1268537040 instance=ExtResource("8_uwl7g")]
+position = Vector2(29, -34)
+
+[node name="ZoneObject" parent="." unique_id=1390884356 instance=ExtResource("9_ynp7p")]
+position = Vector2(190, -4)
+myID = 999
+
+[node name="DoorAbyss5" parent="." unique_id=595385978 node_paths=PackedStringArray("target_enemy") instance=ExtResource("5_dwhau")]
+position = Vector2(60, -16)
+isHidden = true
+boss_Door = true
+target_enemy = NodePath("../MiniBoss-Amphora")
+
+[node name="WoodDoors6" parent="." unique_id=1309619316 node_paths=PackedStringArray("target_enemy") instance=ExtResource("9_uwl7g")]
+position = Vector2(60, -28)
+isHidden = true
+boss_Door = true
+target_enemy = NodePath("../MiniBoss-Amphora")
+
+[node name="DoorTown6" parent="." unique_id=1287596332 node_paths=PackedStringArray("target_enemy") instance=ExtResource("8_owpwp")]
+position = Vector2(60, -43)
+current_zone = 998
+isHidden = true
+boss_Door = true
+target_enemy = NodePath("../MiniBoss-Amphora")
+
+[node name="MoteBig" parent="." unique_id=1497384980 instance=ExtResource("10_uwl7g")]
+position = Vector2(4, -7)
+moteValue = 999
+
+[node name="ZoneObject2" parent="." unique_id=1816330485 instance=ExtResource("9_ynp7p")]
+position = Vector2(-147, -4)
+myID = 998

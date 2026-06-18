@@ -1,0 +1,31 @@
+[gd_scene load_steps=8 format=3 uid="uid://bgstqwd2qdacu"]
+
+[ext_resource type="Script" uid="uid://chs0t6j4wbh24" path="res://scripts/stop_music.gd" id="1_05voj"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="2_e2dyx"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player_refactor.tscn" id="3_c55q0"]
+[ext_resource type="PackedScene" uid="uid://0sw0yxchbigv" path="res://scenes/enemy_mimic.tscn" id="4_7drpu"]
+[ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/refactored/enemy_blackmote.tscn" id="11_llpm6"]
+[ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/refactored/enemy_gazer.tscn" id="18_vably"]
+[ext_resource type="PackedScene" uid="uid://ci0f64lv0xhyl" path="res://scenes/enemy_lurker.tscn" id="19_3v0qn"]
+
+[node name="enemyzoo" type="Node2D"]
+script = ExtResource("1_05voj")
+
+[node name="Roaming Camera" parent="." instance=ExtResource("2_e2dyx")]
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_c55q0")]
+respawn_time = 0.0
+
+[node name="Gazer" parent="." instance=ExtResource("18_vably")]
+position = Vector2(-25, -4)
+
+[node name="BlackMote" parent="." instance=ExtResource("11_llpm6")]
+position = Vector2(-47, -15)
+
+[node name="Lurker" parent="." instance=ExtResource("19_3v0qn")]
+position = Vector2(11, -23)
+
+[node name="Mimic" parent="." instance=ExtResource("4_7drpu")]
+position = Vector2(31, -9)
+
+[editable path="Roaming Camera"]

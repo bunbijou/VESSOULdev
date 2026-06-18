@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c4v8uhhedt7j0"]
+
+[ext_resource type="Script" uid="uid://ru1421oeocha" path="res://scripts/ng_spawn.gd" id="1_trptg"]
+
+[node name="NGSpawn" type="Node" unique_id=2135447296]
+script = ExtResource("1_trptg")

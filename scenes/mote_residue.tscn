@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://b8vtjuqg4vjo8"]
+
+[ext_resource type="Script" uid="uid://bea61ihvbocrq" path="res://scripts/mote_residue.gd" id="1_5sddj"]
+[ext_resource type="Texture2D" uid="uid://glhevt7cmdy4" path="res://sprites/items/mote_residue.png" id="1_phvbj"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="3_x8a52"]
+[ext_resource type="Texture2D" uid="uid://db2s1wiffrvja" path="res://sprites/particles/residue_particle.png" id="4_cvuen"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o46hg"]
+atlas = ExtResource("1_phvbj")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w3ce"]
+atlas = ExtResource("1_phvbj")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7oqr"]
+atlas = ExtResource("1_phvbj")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfqpc"]
+atlas = ExtResource("1_phvbj")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j3bu"]
+atlas = ExtResource("1_phvbj")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ag26"]
+atlas = ExtResource("1_phvbj")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0wst"]
+animations = [{
+"frames": [{
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_o46hg")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_8w3ce")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_u7oqr")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_cfqpc")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_0j3bu")
+}, {
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_8ag26")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_phvbj"]
+radius = 9.090908
+
+[node name="MoteResidue" type="Node2D" unique_id=838510361 node_paths=PackedStringArray("detection_area", "my_sprite", "value_label")]
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_5sddj")
+detection_area = NodePath("Area2D/CollisionShape2D")
+my_sprite = NodePath("AnimatedSprite2D")
+value_label = NodePath("soulLabel")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1651415372]
+position = Vector2(0, -9.090916)
+sprite_frames = SubResource("SpriteFrames_p0wst")
+autoplay = "default"
+frame_progress = 0.77664626
+
+[node name="Area2D" type="Area2D" parent="." unique_id=566234762]
+position = Vector2(0, -12.121223)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1798913685]
+position = Vector2(0, 9.090908)
+shape = SubResource("CircleShape2D_phvbj")
+
+[node name="soulLabel" type="Label" parent="." unique_id=1248431010]
+visible = false
+z_index = 999
+offset_left = -172.7273
+offset_top = -21.21212
+offset_right = 429.94873
+offset_bottom = 300.59586
+scale = Vector2(0.56567985, 0.56567985)
+theme = ExtResource("3_x8a52")
+theme_override_colors/font_color = Color(0, 0.94509804, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "+999"
+horizontal_alignment = 1
+
+[node name="HealParticle" type="CPUParticles2D" parent="." unique_id=200760376]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(0, -3.0303028)
+skew = 1.41859055e-05
+amount = 3
+texture = ExtResource("4_cvuen")
+lifetime = 2.0
+speed_scale = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 180.0
+gravity = Vector2(0, -10)
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_touch"]

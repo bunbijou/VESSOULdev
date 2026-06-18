@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://dyhe74i7hqy2f"]
+
+[ext_resource type="Script" uid="uid://377yl6urupv4" path="res://scripts/enemy_gazer.gd" id="1_agl3x"]
+[ext_resource type="Texture2D" uid="uid://ba6arm4uifbt4" path="res://sprites/enemy_gazer/sprGazerBody.png" id="2_05xbl"]
+[ext_resource type="Texture2D" uid="uid://7qkccac3grx3" path="res://sprites/enemy_gazer/sprGazerStun.png" id="3_6p1vq"]
+[ext_resource type="PackedScene" uid="uid://bf87qbc1dayg8" path="res://scenes/enemy_gazer_tendril.tscn" id="4_0moy4"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="5_ch88a"]
+[ext_resource type="PackedScene" uid="uid://b5mlkn2i1om8" path="res://scenes/StaticBodyComponent.tscn" id="6_2w5cn"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="7_05xbl"]
+[ext_resource type="PackedScene" uid="uid://bqwvt16oe40xu" path="res://scenes/particle_enemy_death.tscn" id="8_6p1vq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p7v7l"]
+radius = 104.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5k3d"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_15jw8"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll3xu"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7mku"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnmeh"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fo5bm"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vcir"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kgpn"]
+atlas = ExtResource("2_05xbl")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_awq7n"]
+atlas = ExtResource("3_6p1vq")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ojon"]
+atlas = ExtResource("3_6p1vq")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tu4f0"]
+animations = [{
+"frames": [{
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_s5k3d")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_15jw8")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_ll3xu")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_b7mku")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_lnmeh")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_fo5bm")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_7vcir")
+}, {
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_0kgpn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_awq7n")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_3ojon")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qo81k"]
+radius = 12.121211
+
+[node name="Gazer" type="Node2D" unique_id=1463209006 node_paths=PackedStringArray("hit_area")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_agl3x")
+hit_area = NodePath("HitboxComponent")
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("7_05xbl")]
+enemy = "Gazer"
+
+[node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+visible = true
+z_index = 1
+position = Vector2(0, -24)
+
+[node name="InteractArea2D" parent="InfoComponent" index="1" unique_id=373575630]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" index="0" unique_id=380245970]
+position = Vector2(4, 12)
+shape = SubResource("CircleShape2D_p7v7l")
+debug_color = Color(0.964189, 2.117753e-06, 0.49711794, 0.41960785)
+
+[node name="sprBase" type="AnimatedSprite2D" parent="." unique_id=1399166935]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(0.19833374, 0.11328125)
+scale = Vector2(1.005, 0.99999994)
+sprite_frames = SubResource("SpriteFrames_tu4f0")
+autoplay = "default"
+
+[node name="sprTendril" parent="." unique_id=887802901 node_paths=PackedStringArray("gazer_base") instance=ExtResource("4_0moy4")]
+unique_name_in_owner = true
+position = Vector2(0.19833374, -26)
+gazer_base = NodePath("..")
+
+[node name="Tendril" parent="." unique_id=202309001 node_paths=PackedStringArray("gazer_base") instance=ExtResource("4_0moy4")]
+position = Vector2(26.396637, 0.11325073)
+rotation = 1.5707964
+gazer_base = NodePath("..")
+
+[node name="Tendril2" parent="." unique_id=1422763425 node_paths=PackedStringArray("gazer_base") instance=ExtResource("4_0moy4")]
+position = Vector2(2.2135925, 24.217804)
+rotation = -3.1415927
+gazer_base = NodePath("..")
+
+[node name="Tendril3" parent="." unique_id=910312028 node_paths=PackedStringArray("gazer_base") instance=ExtResource("4_0moy4")]
+position = Vector2(-26, 0.113220215)
+rotation = -1.5707964
+gazer_base = NodePath("..")
+
+[node name="HitboxComponent" parent="." unique_id=966639159 instance=ExtResource("5_ch88a")]
+enemy_class = "Common"
+on_touch_effect = "None"
+hp = 4
+do_not_scale_with_ng = true
+
+[node name="Label" parent="HitboxComponent" index="0" unique_id=1613579812]
+offset_left = -10.000002
+offset_top = 16.0
+offset_right = 38.0
+offset_bottom = 48.0
+scale = Vector2(0.46362603, 0.46362603)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=919948540]
+shape = SubResource("CircleShape2D_p7v7l")
+
+[node name="StaticBodyComponent" parent="." unique_id=324360700 instance=ExtResource("6_2w5cn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodyComponent" unique_id=1903595750]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_qo81k")
+
+[node name="DeathParticle" parent="." unique_id=1493907157 instance=ExtResource("8_6p1vq")]
+unique_name_in_owner = true
+amount = 10
+emission_sphere_radius = 50.0
+
+[editable path="InfoComponent"]
+[editable path="HitboxComponent"]

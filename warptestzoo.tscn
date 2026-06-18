@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cfdvr4rb8715b"]
+
+[ext_resource type="Script" uid="uid://chs0t6j4wbh24" path="res://scripts/stop_music.gd" id="1_vwhb2"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="2_n2gsf"]
+[ext_resource type="PackedScene" uid="uid://urr577bgwvyu" path="res://scenes/level_warp.tscn" id="4_nb2ur"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="11_v06xg"]
+
+[node name="enemyzoo" type="Node2D" unique_id=2046326888]
+script = ExtResource("1_vwhb2")
+
+[node name="Roaming Camera" parent="." unique_id=1841647387 instance=ExtResource("2_n2gsf")]
+
+[node name="Player" parent="." unique_id=614056096 instance=ExtResource("11_v06xg")]
+position = Vector2(29, 14)
+respawn_time = 0.0
+temperature = "hot"
+
+[node name="SanctuaryWarp" parent="." unique_id=1018642825 instance=ExtResource("4_nb2ur")]
+position = Vector2(83, -63)
+scale = Vector2(1, 1)
+destination_scene = "res://sanctuary.tscn"
+myLabelText = "Final Boss"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(0, 131)
+
+[node name="DepthsWarp" parent="." unique_id=772096575 instance=ExtResource("4_nb2ur")]
+unique_name_in_owner = true
+position = Vector2(-3, -62)
+scale = Vector2(1, 1)
+monitorable = false
+destination_scene = "res://depths.tscn"
+myLabelText = "Gaping Jawer"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(0, 216)
+miniBossScene = "res://nullscn.tscn"
+
+[node name="WoodsWarp" parent="." unique_id=531529512 instance=ExtResource("4_nb2ur")]
+unique_name_in_owner = true
+position = Vector2(-78, -59)
+scale = Vector2(1, 1)
+monitorable = false
+destination_scene = "res://woods.tscn"
+myLabelText = "Blazing Stump"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(0, 17)
+miniBossScene = "res://nullscn.tscn"
+
+[node name="Warp To Boss" parent="." unique_id=1381516473 instance=ExtResource("4_nb2ur")]
+position = Vector2(-112, -82)
+scale = Vector2(1, 1)
+destination_scene = "res://chasm.tscn"
+myLabelText = "Abyss Presence"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(18, 525)
+miniBossScene = "res://nullscn.tsn"
+
+[node name="LenoreWarp" parent="." unique_id=1691633417 instance=ExtResource("4_nb2ur")]
+z_index = 1
+position = Vector2(-48, -81)
+scale = Vector2(1, 1)
+myLabelText = "Lenore"
+miniBossScene = "res://lenore.tscn"
+isBlack = true
+
+[node name="WoodsWarp2" parent="." unique_id=1426138954 instance=ExtResource("4_nb2ur")]
+position = Vector2(45, -81.99999)
+scale = Vector2(1, 1)
+destination_scene = "res://woods.tscn"
+myLabelText = "Frenzied Growth"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(152, -177)
+
+[node name="CollisionShape2D" parent="WoodsWarp2" index="0"]
+position = Vector2(0, -14)
+
+[node name="WarpToTown" parent="." unique_id=1473879720 instance=ExtResource("4_nb2ur")]
+visible = false
+position = Vector2(-132, 133)
+destination_scene = "res://town.tscn"
+myLabelText = "Return to Town"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(-153, -24)
+
+[node name="ClerestoryWarp" parent="." unique_id=1471076905 instance=ExtResource("4_nb2ur")]
+visible = false
+position = Vector2(-151, 77)
+destination_scene = "res://clerestory.tscn"
+myLabelText = "Censer"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(-88, 0)
+
+[node name="CatacombsWarp" parent="." unique_id=795029123 instance=ExtResource("4_nb2ur")]
+visible = false
+position = Vector2(-156, 62)
+destination_scene = "res://catacombs.tscn"
+myLabelText = "Catacombs"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(-201, -80)
+
+[node name="WoodsWarpHint" parent="." unique_id=1797929311 instance=ExtResource("4_nb2ur")]
+visible = false
+position = Vector2(-162, 37)
+scale = Vector2(0.52658075, 0.47495848)
+destination_scene = "res://woods.tscn"
+myLabelText = "Return to God's Wood"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(0, -158)
+
+[node name="ChasmWarp" parent="." unique_id=1048360410 instance=ExtResource("4_nb2ur")]
+unique_name_in_owner = true
+visible = false
+position = Vector2(-114.999985, 111.00003)
+scale = Vector2(1.2316107, 0.81282604)
+monitorable = false
+destination_scene = "res://chasm.tscn"
+myLabelText = "Return to chasm"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(7, 223)
+
+[node name="Abyss Warp" parent="." unique_id=2112916070 instance=ExtResource("4_nb2ur")]
+unique_name_in_owner = true
+visible = false
+z_index = 99
+position = Vector2(-35, 1)
+monitorable = false
+destination_scene = "res://abyss.tscn"
+myLabelText = "Return to Abyss"
+overridePlayerPosition = true
+newPlayerCoord = Vector2(160, -44)
+miniBossScene = "res://nullscn.tscn"
+
+[editable path="Roaming Camera"]
+[editable path="DepthsWarp"]
+[editable path="WoodsWarp2"]
+[editable path="WarpToTown"]

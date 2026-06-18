@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dihb2wel6eq8r"]
+
+[node name="SoulFlameParticle" type="CPUParticles2D" unique_id=1944566363]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(-1.3780222e-12, 6.890111e-13)
+scale = Vector2(1.5530301, 1.5530301)
+amount = 2
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2(0, -20)
+scale_amount_min = 0.5
+scale_amount_max = 0.5
+color = Color(1, 0.94509804, 0.9098039, 1)

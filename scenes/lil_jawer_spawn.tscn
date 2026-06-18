@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://4j0k3oocs83y"]
+
+[ext_resource type="Script" uid="uid://l7crp01dd4yu" path="res://scripts/lil_jawer_spawn.gd" id="1_jvvxl"]
+[ext_resource type="Texture2D" uid="uid://oq4kpe8iuvmb" path="res://sprites/enemy_motebearer/shadowShield.png" id="2_sevaj"]
+[ext_resource type="PackedScene" uid="uid://j4d4slt6j4al" path="res://scenes/particle_darkness.tscn" id="4_hwc1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvvxl"]
+atlas = ExtResource("2_sevaj")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m8ve"]
+atlas = ExtResource("2_sevaj")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53sb0"]
+atlas = ExtResource("2_sevaj")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwc1x"]
+atlas = ExtResource("2_sevaj")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ceobp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvvxl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4m8ve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_53sb0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwc1x")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LilJawerSpawn" type="Node2D" unique_id=476654071 node_paths=PackedStringArray("origin")]
+script = ExtResource("1_jvvxl")
+origin = NodePath("Origin")
+
+[node name="Origin" type="AnimatedSprite2D" parent="." unique_id=1991467846]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 1)
+z_index = -1
+scale = Vector2(0.33, 0.33)
+sprite_frames = SubResource("SpriteFrames_ceobp")
+autoplay = "default"
+frame_progress = 0.9060001
+
+[node name="DarknessParticles" parent="Origin" unique_id=1300369193 instance=ExtResource("4_hwc1x")]
+z_index = 101
+scale = Vector2(2, 2)
+emitting = false
+one_shot = true
+emission_sphere_radius = 19.2
+gravity = Vector2(0, -25)

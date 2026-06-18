@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://bgqumu14x6gii"]
+
+[ext_resource type="Script" uid="uid://dthc04nan4aew" path="res://scripts/censer_follower.gd" id="1_o4mcw"]
+[ext_resource type="Texture2D" uid="uid://dlqnrswnu285p" path="res://sprites/enemy_censer/candelabra_overlay.png" id="2_5ph42"]
+[ext_resource type="Texture2D" uid="uid://dqh3veqhlpbws" path="res://sprites/enemy_censer/candelabra.png" id="3_i2k5w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um2q3"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(0, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wu1q0"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(17, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne758"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(34, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k6xeq"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(51, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yl5lf"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(68, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhimm"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(85, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tojai"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(102, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_no0oh"]
+atlas = ExtResource("2_5ph42")
+region = Rect2(119, 0, 17, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_in6t2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um2q3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wu1q0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne758")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k6xeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yl5lf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhimm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tojai")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_no0oh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbvkf"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(0, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsfoy"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(17, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjbkk"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(34, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7c8my"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(51, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cn7d5"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(68, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m44if"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(85, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5sph"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(102, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0yl6"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(119, 0, 17, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l715r"]
+atlas = ExtResource("3_i2k5w")
+region = Rect2(136, 0, 17, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_um2q3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbvkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsfoy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjbkk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7c8my")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cn7d5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m44if")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5sph")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a0yl6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l715r")
+}],
+"loop": true,
+"name": &"defeat",
+"speed": 5.0
+}]
+
+[node name="Candelabra" type="Node2D" unique_id=379078099]
+script = ExtResource("1_o4mcw")
+id = "1"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=1310018273]
+unique_name_in_owner = true
+z_index = 999
+position = Vector2(0, 9)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_in6t2")
+autoplay = "default"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1840284509]
+unique_name_in_owner = true
+position = Vector2(0, 9)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_um2q3")
+autoplay = "default"
+frame_progress = 0.090450145

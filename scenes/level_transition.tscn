@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://f26avrfrllhc"]
+
+[ext_resource type="Texture2D" uid="uid://cerpryv6jq3yo" path="res://sprites/gui/sprTransition.png" id="1_oukt6"]
+[ext_resource type="Texture2D" uid="uid://bxps78yfwivmd" path="res://sprites/player/flash_wave.png" id="2_hp486"]
+[ext_resource type="Script" uid="uid://c5aqrcdcqq8aj" path="res://scripts/screen_transitions.gd" id="2_x8nmc"]
+
+[sub_resource type="Animation" id="Animation_ehkqn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g1nvf"]
+resource_name = "fadein"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wc2lj"]
+resource_name = "fadeout"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oukt6"]
+resource_name = "whiteOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 1.0666667, 2.9333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(18.892157, 18.892157, 18.892157, 0), Color(18.892157, 18.892157, 18.892157, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rcqdn"]
+_data = {
+&"RESET": SubResource("Animation_ehkqn"),
+&"fadein": SubResource("Animation_g1nvf"),
+&"fadeout": SubResource("Animation_wc2lj"),
+&"whiteOut": SubResource("Animation_oukt6")
+}
+
+[node name="FadeInFromBlack" type="TextureRect" unique_id=1788387423]
+process_mode = 3
+modulate = Color(0, 0, 0, 1)
+z_index = 4096
+offset_left = -1401.4941
+offset_top = -972.0
+offset_right = 8597.506
+offset_bottom = 9027.0
+texture = ExtResource("1_oukt6")
+stretch_mode = 1
+script = ExtResource("2_x8nmc")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1519278512]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_rcqdn")
+autoplay = &"fadein"
+
+[node name="ParticlesWhite" type="CPUParticles2D" parent="." unique_id=1858237342]
+unique_name_in_owner = true
+z_index = 999
+position = Vector2(1961.4941, 1924)
+scale = Vector2(4.211392, 4.211392)
+emitting = false
+amount = 100
+texture = ExtResource("2_hp486")
+lifetime = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(153.405, 15.57)
+gravity = Vector2(0, -500)
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+
+[node name="ParticlesBlack" type="CPUParticles2D" parent="." unique_id=1687831439]
+unique_name_in_owner = true
+z_index = 999
+position = Vector2(1961.4941, 828.0001)
+scale = Vector2(4.211392, 4.211392)
+emitting = false
+amount = 100
+texture = ExtResource("2_hp486")
+lifetime = 3.0
+emission_shape = 3
+emission_rect_extents = Vector2(153.405, 15.57)
+gravity = Vector2(0, 500)
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+color = Color(0, 0, 0, 1)
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="AnimationPlayer" to="." method="_on_animation_player_child_exiting_tree"]

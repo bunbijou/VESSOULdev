@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dvs6kn0r2msgf"]
+
+[ext_resource type="Texture2D" uid="uid://b3e0n2v36sjd0" path="res://sprites/particles/fog_cloud_big1.png" id="1_ps3ri"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=1783285545]
+z_index = 100
+scale = Vector2(1.0000001, 1.0000001)
+amount = 200
+texture = ExtResource("1_ps3ri")
+lifetime = 10.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(100, -100)
+gravity = Vector2(0, -1)
+color = Color(1, 1, 1, 0.09411765)

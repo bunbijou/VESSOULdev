@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8g33quee6pcj"
+path="res://godot/imported/kindling get (5).wav-208e7f425415ca297360348eff0ecf0b.sample"
+
+[deps]
+
+source_file="res://sounds/kindling get (5).wav"
+dest_files=["res://godot/imported/kindling get (5).wav-208e7f425415ca297360348eff0ecf0b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

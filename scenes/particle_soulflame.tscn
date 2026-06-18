@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bo3amhkgkayx4"]
+
+[ext_resource type="Texture2D" uid="uid://k2joe3cppuh8" path="res://sprites/particles/flame_variants_24.png" id="1_dxkdv"]
+[ext_resource type="Texture2D" uid="uid://qpaesqvdevt2" path="res://sprites/particles/flame_variants_22.png" id="2_8oetb"]
+[ext_resource type="Texture2D" uid="uid://cl05ln4yb2n8r" path="res://sprites/particles/flame_variants_23.png" id="3_gh4yb"]
+[ext_resource type="Texture2D" uid="uid://davy8ewo76wcn" path="res://sprites/particles/flame_variants_21.png" id="4_o6kpe"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_7sv6y"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_dxkdv")
+frame_1/texture = ExtResource("2_8oetb")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_gh4yb")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_o6kpe")
+frame_3/duration = 1.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=582314219]
+scale = Vector2(1.5530301, 1.5530301)
+amount = 10
+texture = SubResource("AnimatedTexture_7sv6y")
+speed_scale = 0.5
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 1.0
+spread = 180.0
+gravity = Vector2(0, -10)
+scale_amount_min = 0.05
+scale_amount_max = 0.25

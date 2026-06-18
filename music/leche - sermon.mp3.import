@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://q1u2d5xde8e1"
+path="res://godot/imported/leche - sermon.mp3-199b6dc053d4bf9ed99fcb937c0302ae.mp3str"
+
+[deps]
+
+source_file="res://music/leche - sermon.mp3"
+dest_files=["res://godot/imported/leche - sermon.mp3-199b6dc053d4bf9ed99fcb937c0302ae.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

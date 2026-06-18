@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d4h754q16jpud"]
+
+[ext_resource type="Script" uid="uid://crcl3fmscg7a8" path="res://scripts/scene_transition_test.gd" id="1_egmrv"]
+[ext_resource type="Texture2D" uid="uid://c2saqhv4rrmlm" path="res://sprites/items/mote_big_static.png" id="2_ee08k"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="3_271ji"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gl7t"]
+radius = 7.0
+
+[node name="Transition Test Node" type="Node2D" unique_id=133426267 node_paths=PackedStringArray("my_hitbox")]
+script = ExtResource("1_egmrv")
+my_hitbox = NodePath("HitboxComponent")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=802501827]
+modulate = Color(0.012617188, 0.012617188, 0.012617188, 0.337)
+texture = ExtResource("2_ee08k")
+
+[node name="HitboxComponent" parent="." unique_id=1108796297 instance=ExtResource("3_271ji")]
+on_touch_effect = "Alert"
+hp = 999
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=396166377]
+shape = SubResource("CircleShape2D_6gl7t")

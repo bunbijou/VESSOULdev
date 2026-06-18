@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://ug66vacmm4ld"]
+
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="1_smaa4"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="3_2ayky"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="4_fai58"]
+[ext_resource type="PackedScene" uid="uid://baljuibb6pcb8" path="res://scenes/Npc_Base.tscn" id="4_jn24l"]
+[ext_resource type="PackedScene" uid="uid://bege4j306y7s6" path="res://scenes/npc_resident.tscn" id="5_pbbs5"]
+
+[node name="npczoo" type="Node2D" unique_id=678461844]
+
+[node name="Player" parent="." unique_id=810502560 instance=ExtResource("1_smaa4")]
+position = Vector2(1, 31)
+position_override = true
+
+[node name="Roaming Camera" parent="." unique_id=1120594852 instance=ExtResource("3_2ayky")]
+
+[node name="Sculptor" parent="." unique_id=853341818 instance=ExtResource("4_jn24l")]
+position = Vector2(28, -5)
+npcID = "Sculptor"
+
+[node name="AnimatedSprite2D" parent="Sculptor" index="0" unique_id=1293592550]
+animation = &"SculptorFaceReveal"
+
+[node name="Jari" parent="." unique_id=430877499 instance=ExtResource("4_jn24l")]
+position = Vector2(75, -4)
+npcID = "Jari"
+
+[node name="AnimatedSprite2D" parent="Jari" index="0" unique_id=1293592550]
+animation = &"JariActive"
+
+[node name="Item Chest" parent="." unique_id=820627797 instance=ExtResource("4_fai58")]
+position = Vector2(130, 53)
+current_zone = 999
+locked = false
+
+[node name="Item Chest2" parent="." unique_id=1782870631 instance=ExtResource("4_fai58")]
+position = Vector2(76, 53)
+current_zone = 999
+locked = false
+item_type = 1
+
+[node name="Item Chest3" parent="." unique_id=797906060 instance=ExtResource("4_fai58")]
+position = Vector2(26, 55)
+current_zone = 999
+locked = false
+item_type = 2
+
+[node name="Item Chest4" parent="." unique_id=1883359317 instance=ExtResource("4_fai58")]
+position = Vector2(130, 73)
+current_zone = 999
+locked = false
+
+[node name="Item Chest5" parent="." unique_id=787822891 instance=ExtResource("4_fai58")]
+position = Vector2(76, 73)
+current_zone = 999
+locked = false
+item_type = 1
+
+[node name="Item Chest6" parent="." unique_id=1333723939 instance=ExtResource("4_fai58")]
+position = Vector2(26, 75)
+current_zone = 999
+locked = false
+item_type = 2
+
+[node name="Item Chest7" parent="." unique_id=1915017851 instance=ExtResource("4_fai58")]
+position = Vector2(130, 94)
+current_zone = 999
+locked = false
+
+[node name="Item Chest8" parent="." unique_id=1319163730 instance=ExtResource("4_fai58")]
+position = Vector2(76, 94)
+current_zone = 999
+locked = false
+item_type = 1
+
+[node name="Item Chest9" parent="." unique_id=234333012 instance=ExtResource("4_fai58")]
+position = Vector2(26, 96)
+current_zone = 999
+locked = false
+item_type = 2
+
+[node name="Item Chest10" parent="." unique_id=172295139 instance=ExtResource("4_fai58")]
+position = Vector2(26, 118)
+current_zone = 999
+locked = false
+item_type = 2
+
+[node name="Item Chest11" parent="." unique_id=499354673 instance=ExtResource("4_fai58")]
+position = Vector2(76, 118)
+current_zone = 999
+locked = false
+item_type = 1
+
+[node name="Item Chest12" parent="." unique_id=866882185 instance=ExtResource("4_fai58")]
+position = Vector2(76, 139)
+current_zone = 999
+locked = false
+item_type = 1
+
+[node name="Item Chest13" parent="." unique_id=90711520 instance=ExtResource("4_fai58")]
+position = Vector2(77, 160)
+current_zone = 999
+locked = false
+item_type = 1
+
+[node name="Item Chest14" parent="." unique_id=166643877 instance=ExtResource("4_fai58")]
+position = Vector2(130, 116)
+current_zone = 999
+locked = false
+
+[node name="Item Chest15" parent="." unique_id=2059458446 instance=ExtResource("4_fai58")]
+position = Vector2(130, 140)
+current_zone = 999
+locked = false
+
+[node name="Item Chest16" parent="." unique_id=1434875937 instance=ExtResource("4_fai58")]
+position = Vector2(130, 162)
+current_zone = 999
+locked = false
+
+[node name="Item Chest17" parent="." unique_id=1364524895 instance=ExtResource("4_fai58")]
+position = Vector2(153, 162)
+current_zone = 999
+locked = false
+
+[node name="Item Chest18" parent="." unique_id=1634251860 instance=ExtResource("4_fai58")]
+position = Vector2(152, 138)
+current_zone = 999
+locked = false
+
+[node name="Item Chest19" parent="." unique_id=975334419 instance=ExtResource("4_fai58")]
+position = Vector2(153, 113)
+current_zone = 999
+locked = false
+
+[node name="Item Chest20" parent="." unique_id=1236793912 instance=ExtResource("4_fai58")]
+position = Vector2(154, 95)
+current_zone = 999
+locked = false
+
+[node name="Item Chest21" parent="." unique_id=989460456 instance=ExtResource("4_fai58")]
+position = Vector2(154, 73)
+current_zone = 999
+locked = false
+
+[node name="Item Chest22" parent="." unique_id=733329763 instance=ExtResource("4_fai58")]
+position = Vector2(154, 54)
+current_zone = 999
+locked = false
+
+[node name="TownResident" parent="." unique_id=1836583508 instance=ExtResource("5_pbbs5")]
+position = Vector2(-192, 65)
+
+[editable path="Player"]
+[editable path="Sculptor"]
+[editable path="Jari"]

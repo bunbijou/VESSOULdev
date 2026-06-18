@@ -1,0 +1,289 @@
+[gd_scene format=3 uid="uid://ci0f64lv0xhyl"]
+
+[ext_resource type="Script" uid="uid://bwcm500q5jebm" path="res://scripts/enemy_lurker.gd" id="1_8hw12"]
+[ext_resource type="Texture2D" uid="uid://4qbnt751nl5x" path="res://sprites/enemy_lurker/sprEnemyShadowDweller.png" id="1_oat83"]
+[ext_resource type="Texture2D" uid="uid://drtuwnadio5a2" path="res://sprites/enemy_lurker/sprEnemyShadowDweller - Copy.png" id="2_ptvp5"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="3_4nhsu"]
+[ext_resource type="PackedScene" uid="uid://c4nnm60ixtdiq" path="res://scenes/flash_component.tscn" id="4_tkx2v"]
+[ext_resource type="PackedScene" uid="uid://dy3ugnta1kk6v" path="res://shade_shield.tscn" id="5_skvas"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="6_w0mw2"]
+[ext_resource type="PackedScene" uid="uid://bqwvt16oe40xu" path="res://scenes/particle_enemy_death.tscn" id="7_2qnu6"]
+[ext_resource type="Texture2D" uid="uid://chtt61w3qorsb" path="res://sprites/particles/dark_particle.png" id="8_ro132"]
+[ext_resource type="PackedScene" uid="uid://j4d4slt6j4al" path="res://scenes/particle_darkness.tscn" id="10_kx7ck"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kx7ck"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrsbj"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ptvp5"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mum8f"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1nc7"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bil4"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okity"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dbpy5"]
+atlas = ExtResource("2_ptvp5")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fad55"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_kx7ck")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_yrsbj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ptvp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mum8f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w1nc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bil4")
+}],
+"loop": false,
+"name": &"erupt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_okity")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_dbpy5")
+}],
+"loop": true,
+"name": &"float",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1ncr"]
+atlas = ExtResource("1_oat83")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm43e"]
+atlas = ExtResource("1_oat83")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y764g"]
+atlas = ExtResource("1_oat83")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diqpj"]
+atlas = ExtResource("1_oat83")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18cwg"]
+atlas = ExtResource("1_oat83")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q0sm"]
+atlas = ExtResource("1_oat83")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vaibh"]
+atlas = ExtResource("1_oat83")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jl0b4"]
+atlas = ExtResource("1_oat83")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yo2hm"]
+atlas = ExtResource("1_oat83")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n3s7e"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_g1ncr")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_bm43e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y764g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diqpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18cwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q0sm")
+}],
+"loop": false,
+"name": &"erupt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_8q0sm")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_vaibh")
+}],
+"loop": true,
+"name": &"float",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_jl0b4")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_yo2hm")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tkx2v"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w0mw2"]
+radius = 14.142136
+
+[sub_resource type="Gradient" id="Gradient_ptvp5"]
+
+[node name="Lurker" type="Node2D" unique_id=932862485 node_paths=PackedStringArray("my_sprite", "hit_area", "flash_component")]
+script = ExtResource("1_8hw12")
+my_sprite = NodePath("AnimatedSprite2D")
+hit_area = NodePath("HitboxComponent")
+flash_component = NodePath("FlashComponent")
+
+[node name="AnimatedSpriteOverlay" type="AnimatedSprite2D" parent="." unique_id=1760066086]
+unique_name_in_owner = true
+z_index = 999
+scale = Vector2(0.66, 0.66)
+sprite_frames = SubResource("SpriteFrames_fad55")
+animation = &"stun"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1537197088]
+unique_name_in_owner = true
+z_index = -5
+scale = Vector2(0.66, 0.66)
+sprite_frames = SubResource("SpriteFrames_n3s7e")
+animation = &"float"
+autoplay = "default"
+
+[node name="HitboxComponent" parent="." unique_id=882958078 instance=ExtResource("3_4nhsu")]
+enemy_class = "Common"
+on_touch_effect = "None"
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[node name="Label" parent="HitboxComponent" index="0" unique_id=1613579812]
+offset_left = -4.000004
+offset_top = -14.000003
+offset_right = 43.999996
+offset_bottom = 17.999996
+scale = Vector2(0.19663297, 0.19663297)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2026708851]
+shape = SubResource("CircleShape2D_tkx2v")
+
+[node name="FlashComponent" parent="." unique_id=428074501 instance=ExtResource("4_tkx2v")]
+position = Vector2(0, -2)
+
+[node name="FlashResidualEffect" parent="FlashComponent" index="0" unique_id=1164042164]
+position = Vector2(1, 0)
+frame = 12
+frame_progress = 1.0
+
+[node name="ShadeShield" parent="." unique_id=1561931441 instance=ExtResource("5_skvas")]
+z_index = -5
+scale = Vector2(0.5, 0.5)
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("6_w0mw2")]
+position = Vector2(0, -4)
+enemy = "ShadowLurker"
+
+[node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+
+[node name="InteractArea2D" parent="InfoComponent" index="1" unique_id=373575630]
+position = Vector2(0, -4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" index="0" unique_id=368141954]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_w0mw2")
+debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
+
+[node name="DeathParticle" parent="." unique_id=1493907157 instance=ExtResource("7_2qnu6")]
+unique_name_in_owner = true
+emission_sphere_radius = 10.0
+
+[node name="VoidParticle" type="CPUParticles2D" parent="." unique_id=1491938101]
+unique_name_in_owner = true
+z_index = 999
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 25
+texture = ExtResource("8_ro132")
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.15
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, -100)
+scale_amount_min = 0.1
+scale_amount_max = 0.75
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_ptvp5")
+
+[node name="SoulFlameParticle" parent="." unique_id=1300369193 instance=ExtResource("10_kx7ck")]
+z_index = -6
+emission_sphere_radius = 6.0
+
+[editable path="HitboxComponent"]
+[editable path="FlashComponent"]
+[editable path="InfoComponent"]

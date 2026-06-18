@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://dpsbtlek3fm53"]
+
+[ext_resource type="Script" uid="uid://ce7uxpbk2kwac" path="res://scripts/enemy_wisp_base.gd" id="1_pup06"]
+[ext_resource type="PackedScene" uid="uid://bqwvt16oe40xu" path="res://scenes/particle_enemy_death.tscn" id="2_3gbxq"]
+[ext_resource type="PackedScene" uid="uid://dy3ugnta1kk6v" path="res://shade_shield.tscn" id="2_72ioq"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="2_j38ve"]
+[ext_resource type="Texture2D" uid="uid://bic3murin7hqb" path="res://sprites/enemy_wispflower/spriteWispBaseIdle.png" id="3_i18kx"]
+[ext_resource type="Texture2D" uid="uid://bfphix5u4ee37" path="res://sprites/enemy_wispflower/spriteWispBaseStun.png" id="4_j38ve"]
+[ext_resource type="PackedScene" uid="uid://c4nnm60ixtdiq" path="res://scenes/flash_component.tscn" id="5_i18kx"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="6_qxd0h"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hs66v"]
+radius = 2.666668
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_46pci"]
+atlas = ExtResource("3_i18kx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sulv"]
+atlas = ExtResource("3_i18kx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1vax"]
+atlas = ExtResource("3_i18kx")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cfti"]
+atlas = ExtResource("3_i18kx")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i18kx"]
+atlas = ExtResource("4_j38ve")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ou6co"]
+atlas = ExtResource("4_j38ve")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jobir"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_46pci")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_7sulv")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_h1vax")
+}, {
+"duration": 2.5,
+"texture": SubResource("AtlasTexture_3cfti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_i18kx")
+}, {
+"duration": 0.8,
+"texture": SubResource("AtlasTexture_ou6co")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qxd0h"]
+radius = 36.05551
+
+[node name="WispBaseRefactor" type="Node2D" unique_id=1272729733 node_paths=PackedStringArray("my_sprite", "flash_component", "hit_area")]
+z_index = 100
+script = ExtResource("1_pup06")
+my_sprite = NodePath("AnimatedSprite2D")
+flash_component = NodePath("FlashComponent")
+hit_area = NodePath("HitboxComponent")
+
+[node name="ShadeShield" parent="." unique_id=1561931441 instance=ExtResource("2_72ioq")]
+unique_name_in_owner = true
+position = Vector2(0, 0.99999994)
+scale = Vector2(0.5, 0.5)
+
+[node name="DeathParticle" parent="." unique_id=1493907157 instance=ExtResource("2_3gbxq")]
+unique_name_in_owner = true
+scale_amount_min = 0.33
+scale_amount_max = 0.66
+
+[node name="HitboxComponent" parent="." unique_id=468530584 instance=ExtResource("2_j38ve")]
+enemy_class = "Common"
+on_touch_effect = "Hazard"
+hp = 2
+canMelee = true
+
+[node name="Label" parent="HitboxComponent" index="0" unique_id=1613579812]
+offset_left = -7.000002
+offset_top = -13.0
+offset_right = 41.0
+offset_bottom = 19.0
+scale = Vector2(0.29942432, 0.29942432)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1061098320]
+shape = SubResource("CircleShape2D_hs66v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1871462451]
+scale = Vector2(0.66, 0.66)
+sprite_frames = SubResource("SpriteFrames_jobir")
+autoplay = "default"
+frame_progress = 0.3778615
+
+[node name="FlashComponent" parent="." unique_id=1303014865 instance=ExtResource("5_i18kx")]
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("6_qxd0h")]
+enemy = "Wispflower"
+
+[node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=1505348233]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_qxd0h")
+debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
+
+[editable path="HitboxComponent"]
+[editable path="InfoComponent"]

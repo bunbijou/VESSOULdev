@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://jg3jocrkidfc"]
+
+[ext_resource type="Script" uid="uid://bnwgau5yuh1by" path="res://scripts/falling_mote_jar.gd" id="1_68ucy"]
+[ext_resource type="Texture2D" uid="uid://b1ok3iucgfag4" path="res://sprites/items/sprAbyssBrokenVessel.png" id="2_bd5q3"]
+[ext_resource type="PackedScene" uid="uid://cfk6540ej28ic" path="res://scenes/particle_abyss_fragment.tscn" id="2_yys5c"]
+[ext_resource type="PackedScene" uid="uid://bp3a3g3nh6x1t" path="res://scenes/moteBig.tscn" id="3_agj5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtykd"]
+atlas = ExtResource("2_bd5q3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udpnj"]
+atlas = ExtResource("2_bd5q3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nrht"]
+atlas = ExtResource("2_bd5q3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_my4ye"]
+atlas = ExtResource("2_bd5q3")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxidq"]
+atlas = ExtResource("2_bd5q3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3b7v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtykd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udpnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nrht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_my4ye")
+}],
+"loop": false,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxidq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FallingJar" type="Node2D" unique_id=159532900 node_paths=PackedStringArray("sprite", "my_mote")]
+z_index = 100
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_68ucy")
+sprite = NodePath("AnimatedSprite2D")
+my_mote = NodePath("MoteBig")
+
+[node name="ParticleAbyss" parent="." unique_id=83431102 instance=ExtResource("2_yys5c")]
+position = Vector2(0, -8)
+scale = Vector2(0.5, 0.5)
+amount = 15
+lifetime = 0.33
+emission_shape = 3
+emission_rect_extents = Vector2(15, 10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1123648638]
+rotation = -6.2831855
+sprite_frames = SubResource("SpriteFrames_x3b7v")
+autoplay = "default"
+
+[node name="MoteBig" parent="." unique_id=148383113 instance=ExtResource("3_agj5g")]
+z_index = -1
+
+[editable path="MoteBig"]

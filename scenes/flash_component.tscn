@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://c4nnm60ixtdiq"]
+
+[ext_resource type="Script" uid="uid://bc84edo8sl5qj" path="res://scripts/flash_component.gd" id="1_cgicn"]
+[ext_resource type="Texture2D" uid="uid://cwu3qjag34uuk" path="res://sprites/player/flash_residual.png" id="2_ya12e"]
+[ext_resource type="Texture2D" uid="uid://cwvtktbo4hgd4" path="res://sprites/environment/darkness0.png" id="3_3rmro"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fullw"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j1d6"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2eguo"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7pge7"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wrhbt"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsdwr"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkpgb"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kii4"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62vgn"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jl7e"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnym3"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(160, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrfw8"]
+atlas = ExtResource("2_ya12e")
+region = Rect2(176, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2xvc"]
+atlas = ExtResource("3_3rmro")
+region = Rect2(0, 4, 4, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g3vsr"]
+animations = [{
+"frames": [{
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_fullw")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_5j1d6")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_2eguo")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_7pge7")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_wrhbt")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_bsdwr")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_nkpgb")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_8kii4")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_62vgn")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_1jl7e")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_gnym3")
+}, {
+"duration": 0.51,
+"texture": SubResource("AtlasTexture_jrfw8")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"dazzle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2xvc")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="FlashComponent" type="Node2D" unique_id=405903204]
+script = ExtResource("1_cgicn")
+
+[node name="FlashResidualEffect" type="AnimatedSprite2D" parent="." unique_id=1164042164]
+unique_name_in_owner = true
+z_index = 999
+position = Vector2(0, 1)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_g3vsr")
+animation = &"dazzle"
+autoplay = "dazzle"

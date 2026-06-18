@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dewbvdwnceh8y"
+path="res://godot/imported/bunbijou - ethereal.mp3-5145f9d7ab85673570dce9a9ad30b7d1.mp3str"
+
+[deps]
+
+source_file="res://music/bunbijou - ethereal.mp3"
+dest_files=["res://godot/imported/bunbijou - ethereal.mp3-5145f9d7ab85673570dce9a9ad30b7d1.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

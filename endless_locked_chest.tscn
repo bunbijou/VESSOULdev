@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://cqmwbpt7li2sj"]
+
+[ext_resource type="Texture2D" uid="uid://dgwa3uxa2crtu" path="res://sprites/items/sprAbyssChest.png" id="1_wxypj"]
+[ext_resource type="Texture2D" uid="uid://d4k2vabof4da2" path="res://sprites/items/sprAbyssChestOpen.png" id="2_oapwx"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="3_brgrn"]
+[ext_resource type="Texture2D" uid="uid://covxnikexl6sw" path="res://sprites/gui/arrow2.png" id="4_i4c8g"]
+[ext_resource type="Texture2D" uid="uid://cd4mk147ucocv" path="res://sprites/gui/arrow1.png" id="5_p2gd2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jkc57"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yepfd"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k85lx"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nnetc"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omrv5"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ro40t"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibpxr"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75j1n"]
+atlas = ExtResource("1_wxypj")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xkei"]
+atlas = ExtResource("2_oapwx")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8xkei"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jkc57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yepfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k85lx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nnetc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omrv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ro40t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibpxr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75j1n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xkei")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_faryi"]
+animations = [{
+"frames": [{
+"duration": 2.5,
+"texture": ExtResource("4_i4c8g")
+}, {
+"duration": 2.5,
+"texture": ExtResource("5_p2gd2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LockedChest" type="Node2D" unique_id=1417389552]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1024788236]
+sprite_frames = SubResource("SpriteFrames_8xkei")
+autoplay = "default"
+
+[node name="ChestLabel" type="Label" parent="." unique_id=729999285]
+unique_name_in_owner = true
+z_index = 999
+offset_left = -556.0
+offset_top = -18.0
+offset_right = 553.3292
+offset_bottom = 30.0
+theme = ExtResource("3_brgrn")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 2
+theme_override_font_sizes/font_size = 16
+text = "#CHEST"
+horizontal_alignment = 1
+
+[node name="ChestInteractSprite" type="AnimatedSprite2D" parent="." unique_id=491740842]
+unique_name_in_owner = true
+position = Vector2(-63.999996, 34.00001)
+rotation = 1.5707964
+scale = Vector2(0.66, 0.66)
+sprite_frames = SubResource("SpriteFrames_faryi")
+autoplay = "default"

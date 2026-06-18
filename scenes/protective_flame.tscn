@@ -1,0 +1,176 @@
+[gd_scene format=3 uid="uid://dhi6c1q82cxlr"]
+
+[ext_resource type="Script" uid="uid://3odvrply1yk8" path="res://scripts/enemy_wisp_flame.gd" id="1_kpndx"]
+[ext_resource type="Texture2D" uid="uid://bmv4aw8xt734k" path="res://sprites/enemy_wispflower/spriteWispIdle.png" id="2_d4eqs"]
+[ext_resource type="Texture2D" uid="uid://8awxb1c4py5j" path="res://sprites/enemy_wispflower/spriteWispStun.png" id="3_m6q43"]
+[ext_resource type="Texture2D" uid="uid://cymw8qir873mn" path="res://sprites/particles/flame_variants_5.png" id="4_yygt1"]
+[ext_resource type="Texture2D" uid="uid://dk8rw483e4rs7" path="res://sprites/particles/flame_variants_6.png" id="5_algjs"]
+[ext_resource type="Texture2D" uid="uid://bi1b50sj21cl0" path="res://sprites/particles/flame_variants_7.png" id="6_afd1x"]
+[ext_resource type="Texture2D" uid="uid://clhbv4q8nmli8" path="res://sprites/particles/flame_variants_8.png" id="7_cycqy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ie7m"]
+atlas = ExtResource("2_d4eqs")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ya47j"]
+atlas = ExtResource("2_d4eqs")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hyejq"]
+atlas = ExtResource("2_d4eqs")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0dkt"]
+atlas = ExtResource("2_d4eqs")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdxul"]
+atlas = ExtResource("2_d4eqs")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6cx0"]
+atlas = ExtResource("3_m6q43")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xikek"]
+atlas = ExtResource("3_m6q43")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qd87q"]
+atlas = ExtResource("3_m6q43")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bmjww"]
+atlas = ExtResource("3_m6q43")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r35ej"]
+atlas = ExtResource("3_m6q43")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e7lhw"]
+animations = [{
+"frames": [{
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_5ie7m")
+}, {
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_ya47j")
+}, {
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_hyejq")
+}, {
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_j0dkt")
+}, {
+"duration": 0.81,
+"texture": SubResource("AtlasTexture_sdxul")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6cx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xikek")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qd87q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bmjww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r35ej")
+}],
+"loop": true,
+"name": &"fizzle",
+"speed": 5.0
+}]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_pcx3i"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("4_yygt1")
+frame_1/texture = ExtResource("5_algjs")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_afd1x")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_cycqy")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_yygt1"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("4_yygt1")
+frame_1/texture = ExtResource("5_algjs")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_afd1x")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_cycqy")
+frame_3/duration = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wtq4b"]
+radius = 6.666666
+
+[node name="WispFire" type="Node2D" unique_id=205689274 node_paths=PackedStringArray("my_sprite")]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_kpndx")
+my_sprite = NodePath("RotationChildAnimSpr")
+
+[node name="RotationChildAnimSpr" type="AnimatedSprite2D" parent="." unique_id=1345010852]
+unique_name_in_owner = true
+z_index = 100
+position = Vector2(0, -16.000002)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_e7lhw")
+autoplay = "default"
+
+[node name="IdleFlame" type="CPUParticles2D" parent="RotationChildAnimSpr" unique_id=1358262631]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(0, 2.2222214)
+rotation = -1.6436445
+skew = 1.41859055e-05
+amount = 5
+texture = SubResource("AnimatedTexture_pcx3i")
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, -10)
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+
+[node name="FireExplosion" type="CPUParticles2D" parent="RotationChildAnimSpr" unique_id=1991397253]
+unique_name_in_owner = true
+z_index = 1001
+position = Vector2(0, 2.2222214)
+rotation = 2.9959104
+scale = Vector2(0.999999, 1.0000011)
+emitting = false
+texture = SubResource("AnimatedTexture_yygt1")
+one_shot = true
+speed_scale = 3.0
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 4.78
+spread = 180.0
+gravity = Vector2(0, -10)
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+
+[node name="RotationChildArea2D" type="Area2D" parent="RotationChildAnimSpr" unique_id=1837680668]
+unique_name_in_owner = true
+scale = Vector2(3.333333, 3.333333)
+collision_mask = 2
+
+[node name="RotChildCollision" type="CollisionShape2D" parent="RotationChildAnimSpr/RotationChildArea2D" unique_id=1278303930]
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CircleShape2D_wtq4b")
+
+[connection signal="body_shape_entered" from="RotationChildAnimSpr/RotationChildArea2D" to="." method="_on_rotation_child_area_2d_body_shape_entered"]

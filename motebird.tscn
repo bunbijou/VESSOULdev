@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://ckofxm83iwuau"]
+
+[ext_resource type="Script" uid="uid://0doty3sj2hwy" path="res://scripts/motebird.gd" id="1_fi84g"]
+[ext_resource type="Texture2D" uid="uid://fy4nx0ldkgjj" path="res://sprites/environment/motebird.png" id="2_brcbn"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="3_brcbn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w57c1"]
+atlas = ExtResource("2_brcbn")
+region = Rect2(28, 0, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw02r"]
+atlas = ExtResource("2_brcbn")
+region = Rect2(35, 0, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6cx0"]
+atlas = ExtResource("2_brcbn")
+region = Rect2(0, 0, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceobp"]
+atlas = ExtResource("2_brcbn")
+region = Rect2(7, 0, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvnle"]
+atlas = ExtResource("2_brcbn")
+region = Rect2(14, 0, 7, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tt8m7"]
+atlas = ExtResource("2_brcbn")
+region = Rect2(21, 0, 7, 6)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kghux"]
+animations = [{
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_w57c1")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_sw02r")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_g6cx0")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ceobp")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_nvnle")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_tt8m7")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cqnhu"]
+radius = 52.153618
+
+[node name="Motebird" type="Node2D" unique_id=831509746 node_paths=PackedStringArray("sprite")]
+z_index = 999
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_fi84g")
+sprite = NodePath("AnimatedSprite2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2136492278]
+sprite_frames = SubResource("SpriteFrames_kghux")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.3289072
+
+[node name="HitboxComponent" parent="." unique_id=1108796297 instance=ExtResource("3_brcbn")]
+unique_name_in_owner = true
+on_touch_effect = "Alert"
+hp = 999
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1430886881]
+visible = false
+shape = SubResource("CircleShape2D_cqnhu")

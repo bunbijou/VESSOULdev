@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ddl21tq5uemur"
+path="res://godot/imported/POCHOWEK - Attuned.mp3-ce931c5d241a7410f40c87aee6b78ab0.mp3str"
+
+[deps]
+
+source_file="res://music/POCHOWEK - Attuned.mp3"
+dest_files=["res://godot/imported/POCHOWEK - Attuned.mp3-ce931c5d241a7410f40c87aee6b78ab0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

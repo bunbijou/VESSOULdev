@@ -1,0 +1,144 @@
+[gd_scene format=3 uid="uid://dvtq38f7f1x4u"]
+
+[ext_resource type="Texture2D" uid="uid://lglwdrfjw713" path="res://sprites/enemy_gapingjawer/sprEnemyGapingJarJarred.png" id="1_301ww"]
+[ext_resource type="Script" uid="uid://b4awjeahecw85" path="res://scripts/gaping_jawer_prebattle.gd" id="1_cy5ux"]
+[ext_resource type="Texture2D" uid="uid://chtt61w3qorsb" path="res://sprites/particles/dark_particle.png" id="3_s1q5k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehhb3"]
+atlas = ExtResource("1_301ww")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wk6qn"]
+atlas = ExtResource("1_301ww")
+region = Rect2(240, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uqmva"]
+atlas = ExtResource("1_301ww")
+region = Rect2(288, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0o2kd"]
+atlas = ExtResource("1_301ww")
+region = Rect2(336, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2oh3j"]
+atlas = ExtResource("1_301ww")
+region = Rect2(384, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0o7o"]
+atlas = ExtResource("1_301ww")
+region = Rect2(432, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fohpn"]
+atlas = ExtResource("1_301ww")
+region = Rect2(480, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyltx"]
+atlas = ExtResource("1_301ww")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kayy"]
+atlas = ExtResource("1_301ww")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egiiv"]
+atlas = ExtResource("1_301ww")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gucbv"]
+atlas = ExtResource("1_301ww")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_svwrf"]
+animations = [{
+"frames": [{
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_ehhb3")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_wk6qn")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_uqmva")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_0o2kd")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_2oh3j")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_q0o7o")
+}, {
+"duration": 0.71,
+"texture": SubResource("AtlasTexture_fohpn")
+}],
+"loop": false,
+"name": &"damage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 6.0,
+"texture": SubResource("AtlasTexture_pyltx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kayy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egiiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gucbv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cy5ux"]
+size = Vector2(20, 12)
+
+[sub_resource type="Gradient" id="Gradient_qaniw"]
+
+[node name="Gaping Jaw Jar" type="Node2D" unique_id=2088460652]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_cy5ux")
+
+[node name="aBottleSprite" type="AnimatedSprite2D" parent="." unique_id=259970051]
+unique_name_in_owner = true
+position = Vector2(16, 0)
+sprite_frames = SubResource("SpriteFrames_svwrf")
+animation = &"damage"
+autoplay = "default"
+frame = 5
+frame_progress = 0.41720623
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1401942612]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1049705105]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_cy5ux")
+
+[node name="DarknessExplosion" type="CPUParticles2D" parent="." unique_id=2016749944]
+unique_name_in_owner = true
+z_index = 1
+position = Vector2(18, 8)
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 2500
+texture = ExtResource("3_s1q5k")
+lifetime = 10.0
+speed_scale = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, -10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.1
+scale_amount_max = 0.75
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_qaniw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

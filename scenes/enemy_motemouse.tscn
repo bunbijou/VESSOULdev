@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://devmjxy5vj2"]
+
+[ext_resource type="Texture2D" uid="uid://bhu4wkods38f" path="res://sprites/enemy_motemouse/sprEnemyMotemouse.png" id="1_c7c0a"]
+[ext_resource type="Script" uid="uid://beqyrh75g0ddb" path="res://scripts/enemy_motemouse.gd" id="1_mtpoi"]
+[ext_resource type="PackedScene" uid="uid://dy3ugnta1kk6v" path="res://shade_shield.tscn" id="3_f8bx0"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="4_20mlu"]
+[ext_resource type="PackedScene" uid="uid://bqwvt16oe40xu" path="res://scenes/particle_enemy_death.tscn" id="5_wp6gl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y764g"]
+atlas = ExtResource("1_c7c0a")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bm43e"]
+atlas = ExtResource("1_c7c0a")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18cwg"]
+atlas = ExtResource("1_c7c0a")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diqpj"]
+atlas = ExtResource("1_c7c0a")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mtpoi"]
+animations = [{
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_y764g")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_bm43e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_18cwg")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_diqpj")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mtpoi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g61yj"]
+radius = 86.000565
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20mlu"]
+radius = 128.56126
+
+[node name="Motemouse" type="Node2D" unique_id=1324152628 node_paths=PackedStringArray("my_sprite")]
+z_index = -1
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_mtpoi")
+my_sprite = NodePath("animSprite")
+speed = 0.75
+
+[node name="animSprite" type="AnimatedSprite2D" parent="." unique_id=750351186]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_mtpoi")
+animation = &"stun"
+autoplay = "default"
+
+[node name="GrabBox" type="Area2D" parent="." unique_id=155637323]
+unique_name_in_owner = true
+scale = Vector2(0.35, 0.35)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrabBox" unique_id=964514070]
+shape = SubResource("CircleShape2D_mtpoi")
+
+[node name="DetectBox" type="Area2D" parent="." unique_id=177684225]
+unique_name_in_owner = true
+visible = false
+scale = Vector2(1.1162717, 1.1162717)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectBox" unique_id=329887460]
+shape = SubResource("CircleShape2D_g61yj")
+
+[node name="ShadeShield" parent="." unique_id=1561931441 instance=ExtResource("3_f8bx0")]
+visible = false
+scale = Vector2(0.4, 0.4)
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("4_20mlu")]
+enemy = "Motemouse"
+
+[node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+position = Vector2(0, -10)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=1377633617]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_20mlu")
+debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
+
+[node name="DeathParticle" parent="." unique_id=1493907157 instance=ExtResource("5_wp6gl")]
+unique_name_in_owner = true
+emission_sphere_radius = 7.0
+scale_amount_min = 0.15
+scale_amount_max = 0.3
+
+[connection signal="body_entered" from="GrabBox" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="DetectBox" to="." method="_on_detect_box_body_entered"]
+
+[editable path="InfoComponent"]

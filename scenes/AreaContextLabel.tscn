@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dsgiwy6bjqlih"]
+
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="1_aufja"]
+[ext_resource type="Script" uid="uid://qddxwh68udyd" path="res://scripts/WarpContext.gd" id="2_hoqxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vgdgp"]
+size = Vector2(10.999996, 29.000002)
+
+[node name="ContextLabel" type="Label" unique_id=2101976006]
+z_index = 4096
+offset_left = -220.0
+offset_top = -122.0
+offset_right = 52.0
+offset_bottom = -90.0
+scale = Vector2(0.14686017, 0.14686017)
+theme = ExtResource("1_aufja")
+text = "Return to Surface"
+script = ExtResource("2_hoqxo")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=937327717]
+position = Vector2(136.18387, 95.32881)
+scale = Vector2(13.618397, 13.618397)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1585666306]
+position = Vector2(-0.49999237, 6.999996)
+shape = SubResource("RectangleShape2D_vgdgp")
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]

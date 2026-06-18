@@ -1,0 +1,256 @@
+[gd_scene format=3 uid="uid://0lxvrn3fdd7e"]
+
+[ext_resource type="Script" uid="uid://bqx153ubo65mr" path="res://scripts/menu_simple.gd" id="1_0sl31"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="2_j5i3a"]
+[ext_resource type="Texture2D" uid="uid://w6c243bs23iu" path="res://sprites/gui/spr9CutMenu3.png" id="8_xy3av"]
+[ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="10_4jny4"]
+[ext_resource type="Texture2D" uid="uid://nfamgiy7kknr" path="res://sprites/environment/chasm.png" id="11_cf8ob"]
+
+[node name="menu" type="Node2D" unique_id=1819890557]
+script = ExtResource("1_0sl31")
+
+[node name="SimpleMenu" type="Control" parent="." unique_id=875192400]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -579.0
+offset_top = -235.0
+offset_right = 574.0
+offset_bottom = 404.0
+focus_neighbor_bottom = NodePath("LabelLanguage/LanguageOptionButton")
+focus_mode = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SimpleMenu" unique_id=211927389]
+layout_mode = 0
+offset_left = 205.0
+offset_top = 72.0
+offset_right = 951.0
+offset_bottom = 365.0
+texture = ExtResource("8_xy3av")
+
+[node name="LabelLanguage" type="Label" parent="SimpleMenu" unique_id=1734368476]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 281.0
+offset_top = 100.0
+offset_right = 434.0
+offset_bottom = 132.0
+theme = ExtResource("2_j5i3a")
+text = "#LANGUAGE:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LanguageOptionButton" type="OptionButton" parent="SimpleMenu/LabelLanguage" unique_id=446655110]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 176.0
+offset_top = -4.0
+offset_right = 502.0
+offset_bottom = 36.0
+focus_neighbor_top = NodePath("../../DemoStart")
+focus_neighbor_bottom = NodePath("../../LabelDisplay/OptionButton")
+focus_next = NodePath("../../LabelDisplay/OptionButton")
+focus_previous = NodePath("../../DemoStart")
+selected = 0
+item_count = 2
+popup/item_0/text = "English (Default)"
+popup/item_0/id = 0
+popup/item_1/text = "Pirate"
+popup/item_1/id = 1
+
+[node name="LabelDisplay" type="Label" parent="SimpleMenu" unique_id=824027651]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 297.0
+offset_top = 154.0
+offset_right = 461.0
+offset_bottom = 186.0
+theme = ExtResource("2_j5i3a")
+text = "Display:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="SimpleMenu/LabelDisplay" unique_id=1837508479]
+layout_mode = 0
+offset_left = 160.0
+offset_top = -6.0
+offset_right = 488.0
+offset_bottom = 34.0
+focus_neighbor_top = NodePath("../../LabelLanguage/LanguageOptionButton")
+focus_neighbor_bottom = NodePath("../../LabelMusic/MusicSlider")
+focus_next = NodePath("../../LabelMusic/MusicSlider")
+focus_previous = NodePath("../../LabelLanguage/LanguageOptionButton")
+selected = 0
+item_count = 3
+popup/item_0/text = "Fullscreen"
+popup/item_0/id = 0
+popup/item_1/text = "Windowed"
+popup/item_1/id = 1
+popup/item_2/text = "Borderless Windowed"
+popup/item_2/id = 2
+
+[node name="LabelMusic" type="Label" parent="SimpleMenu" unique_id=722380597]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 190.0
+offset_top = 204.0
+offset_right = 444.0
+offset_bottom = 236.0
+theme = ExtResource("2_j5i3a")
+text = "#MUSIC:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelMute1" type="Label" parent="SimpleMenu/LabelMusic" unique_id=1151431075]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 495.0
+offset_right = 668.0
+offset_bottom = 32.0
+theme = ExtResource("2_j5i3a")
+text = "#MUTE"
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="SimpleMenu/LabelMusic" unique_id=1275834571]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 266.0
+offset_top = 7.0
+offset_right = 551.0
+offset_bottom = 23.0
+focus_neighbor_top = NodePath("../../LabelDisplay/OptionButton")
+focus_neighbor_bottom = NodePath("../../LabelSFX/SFXSlider")
+focus_next = NodePath("../../LabelSFX/SFXSlider")
+focus_previous = NodePath("../../LabelDisplay/OptionButton")
+max_value = 1.0
+step = 0.05
+value = 0.5
+tick_count = 20
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="CheckBoxMusicMute" type="CheckBox" parent="SimpleMenu/LabelMusic" unique_id=1182088096]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = 461.0
+offset_top = 3.0
+offset_right = 485.0
+offset_bottom = 27.0
+
+[node name="LabelSFX" type="Label" parent="SimpleMenu" unique_id=2128601635]
+unique_name_in_owner = true
+z_index = 1
+layout_mode = 0
+offset_left = 200.0
+offset_top = 237.0
+offset_right = 445.0
+offset_bottom = 269.0
+theme = ExtResource("2_j5i3a")
+text = "#SFX:"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="LabelMute2" type="Label" parent="SimpleMenu/LabelSFX" unique_id=296600687]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 486.0
+offset_top = 2.0
+offset_right = 657.0
+offset_bottom = 34.0
+theme = ExtResource("2_j5i3a")
+text = "#MUTE"
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="SimpleMenu/LabelSFX" unique_id=1837771714]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 256.0
+offset_top = 8.0
+offset_right = 540.0
+offset_bottom = 24.0
+focus_neighbor_top = NodePath("../../LabelMusic/MusicSlider")
+focus_neighbor_bottom = NodePath("../../DemoStart")
+focus_next = NodePath("../../DemoStart")
+focus_previous = NodePath("../../LabelMusic/MusicSlider")
+max_value = 1.0
+step = 0.05
+value = 0.5
+tick_count = 20
+ticks_on_borders = true
+ticks_position = 3
+
+[node name="CheckBoxSFXMute" type="CheckBox" parent="SimpleMenu/LabelSFX" unique_id=1936272592]
+visible = false
+layout_mode = 0
+offset_left = 452.0
+offset_top = 4.0
+offset_right = 476.0
+offset_bottom = 28.0
+
+[node name="DemoStart" type="Button" parent="SimpleMenu" unique_id=267875444]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 381.99997
+offset_top = 295.0
+offset_right = 694.0
+offset_bottom = 335.0
+scale = Vector2(1.2638414, 1.2638414)
+focus_neighbor_top = NodePath("../LabelSFX/SFXSlider")
+focus_neighbor_bottom = NodePath("../LabelLanguage/LanguageOptionButton")
+focus_next = NodePath("../LabelLanguage/LanguageOptionButton")
+focus_previous = NodePath("../LabelSFX/SFXSlider")
+theme = ExtResource("2_j5i3a")
+text = "#START"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=793339667]
+
+[node name="LabelDemo" type="Label" parent="." unique_id=796752611]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 295.0
+offset_top = 280.0
+offset_right = 569.0
+offset_bottom = 319.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("2_j5i3a")
+text = "© BunSoft 2026"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Decor" type="Node2D" parent="." unique_id=422247451]
+metadata/_edit_lock_ = true
+
+[node name="DarknessRect" type="TextureRect" parent="Decor" unique_id=1825151214]
+modulate = Color(1, 1, 1, 0.74509805)
+z_index = -1
+offset_left = -593.0
+offset_top = -335.0
+offset_right = 609.0
+offset_bottom = 334.0
+mouse_filter = 2
+texture = ExtResource("10_4jny4")
+
+[node name="TextureRect" type="TextureRect" parent="Decor" unique_id=1614284215]
+z_index = -2
+offset_left = -606.0
+offset_top = -347.0
+offset_right = 1698.0
+offset_bottom = 949.0
+scale = Vector2(0.53, 0.53)
+texture = ExtResource("11_cf8ob")
+
+[connection signal="value_changed" from="SimpleMenu/LabelMusic/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SimpleMenu/LabelSFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="SimpleMenu/DemoStart" to="." method="_on_demo_start_pressed"]

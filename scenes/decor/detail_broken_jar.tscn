@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://clyxqasn8ksjf"]
+
+[ext_resource type="Texture2D" uid="uid://b1ok3iucgfag4" path="res://sprites/items/sprAbyssBrokenVessel.png" id="1_dwc2x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujhlk"]
+atlas = ExtResource("1_dwc2x")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rmah"]
+atlas = ExtResource("1_dwc2x")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yn65"]
+animations = [{
+"frames": [{
+"duration": 999.0,
+"texture": SubResource("AtlasTexture_ujhlk")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ujhlk")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rmah")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1233584913]
+z_index = 11
+scale = Vector2(0.35, 0.35)
+sprite_frames = SubResource("SpriteFrames_5yn65")
+animation = &"break"
+autoplay = "break"

@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bv1njmb31xd0d"]
+
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="1_7qp3a"]
+[ext_resource type="PackedScene" uid="uid://d1dwpeuwo1735" path="res://scenes/hazard_falling_rock.tscn" id="3_7qp3a"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="4_7qp3a"]
+[ext_resource type="Script" uid="uid://n4p1sbrbo8o2" path="res://falling_rock_test.gd" id="4_m34gn"]
+[ext_resource type="Texture2D" uid="uid://c2saqhv4rrmlm" path="res://sprites/items/mote_big_static.png" id="5_m34gn"]
+
+[node name="npczoo" type="Node2D" unique_id=678461844]
+
+[node name="Player" parent="." unique_id=810502560 instance=ExtResource("1_7qp3a")]
+position_override = true
+
+[node name="Roaming Camera" parent="." unique_id=39511994 instance=ExtResource("4_7qp3a")]
+position = Vector2(0, 17)
+
+[node name="FallingRock0" parent="." unique_id=1606726778 node_paths=PackedStringArray("target_enemy") instance=ExtResource("3_7qp3a")]
+position = Vector2(1, -68)
+target_enemy = NodePath("../Node2D")
+attack_area_0 = Vector2(-32, -3)
+attack_area_1 = Vector2(28, -2)
+attack_area_3 = Vector2(-31, 10)
+attack_area_4 = Vector2(34, 11)
+
+[node name="Node2D" type="Node2D" parent="." unique_id=941241209]
+position = Vector2(-60, -1)
+script = ExtResource("4_m34gn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=1257558594]
+texture = ExtResource("5_m34gn")
+
+[editable path="Player"]
+[editable path="Roaming Camera"]

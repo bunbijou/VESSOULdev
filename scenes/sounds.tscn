@@ -1,0 +1,2571 @@
+[gd_scene format=3 uid="uid://d4kdn0mx01cbw"]
+
+[ext_resource type="Script" uid="uid://812u0ya71vbu" path="res://scripts/sfx_controller.gd" id="1_c7dwg"]
+[ext_resource type="AudioStream" uid="uid://g7y7ybxslhel" path="res://sounds/soul.wav" id="2_2fd2w"]
+[ext_resource type="AudioStream" uid="uid://dsas5e1dcgfxk" path="res://sounds/painGeneric.wav" id="2_3dlc7"]
+[ext_resource type="AudioStream" uid="uid://bgvy15tb4oe1o" path="res://sounds/sndAmphora1.wav" id="2_6vi7t"]
+[ext_resource type="AudioStream" uid="uid://bmfjes0kt83ne" path="res://sounds/falling.wav" id="2_6xry7"]
+[ext_resource type="AudioStream" uid="uid://rclxgyobim12" path="res://sounds/muckHammer.wav" id="2_8q12k"]
+[ext_resource type="AudioStream" uid="uid://dniup84bx5l5n" path="res://sounds/lurkerGiggle.wav" id="2_auiaf"]
+[ext_resource type="AudioStream" uid="uid://bcdqwwe3xqvwp" path="res://sounds/dialogue.wav" id="2_b6pmj"]
+[ext_resource type="AudioStream" uid="uid://4juawlaf8k6b" path="res://sounds/warp_synth.wav" id="2_dkbig"]
+[ext_resource type="AudioStream" uid="uid://odnemen3plkf" path="res://sounds/LongTendrilSwipe.wav" id="2_m3m8n"]
+[ext_resource type="AudioStream" uid="uid://c1bkkinh85b60" path="res://sounds/impact1.mp3" id="2_pklj1"]
+[ext_resource type="AudioStream" uid="uid://cmugoajtgojq3" path="res://sounds/motemouse.wav" id="2_r3fd2"]
+[ext_resource type="AudioStream" uid="uid://bl6j548wciwwc" path="res://sounds/sndAmphoraDeath.wav" id="2_wgjio"]
+[ext_resource type="AudioStream" uid="uid://bdccbqc8lucvi" path="res://sounds/abyssal death.wav" id="2_y720q"]
+[ext_resource type="AudioStream" uid="uid://csuc7tbnlhawn" path="res://sounds/sndAmphoraPain.wav" id="3_5nmrk"]
+[ext_resource type="AudioStream" uid="uid://d1owb31hrc6cb" path="res://sounds/ThreeTendriLSwipe.wav" id="3_6rca6"]
+[ext_resource type="AudioStream" uid="uid://bd0djp600kyoj" path="res://sounds/mimicCrunch.wav" id="3_8q12k"]
+[ext_resource type="AudioStream" uid="uid://c1csb3g0qbc6j" path="res://sounds/abyssal pain1.wav" id="3_hvhk4"]
+[ext_resource type="AudioStream" uid="uid://d0sjo1fexewxt" path="res://sounds/heal.wav" id="3_mtu7q"]
+[ext_resource type="AudioStream" uid="uid://cjomljnjv8vb2" path="res://sounds/warble_synth.wav" id="3_segev"]
+[ext_resource type="AudioStream" uid="uid://ciqyx0jr5lw77" path="res://sounds/sndAmphora2.wav" id="3_tuew5"]
+[ext_resource type="AudioStream" uid="uid://cx00lc6bq0ds1" path="res://sounds/impact2.mp3" id="3_wdcwv"]
+[ext_resource type="AudioStream" uid="uid://ddhlrs7og8y4h" path="res://sounds/impact3.mp3" id="4_3dlc7"]
+[ext_resource type="AudioStream" uid="uid://bjhn2xrrit73" path="res://sounds/bell_small.wav" id="4_6pnvu"]
+[ext_resource type="AudioStream" uid="uid://iwm6j3ooxsbd" path="res://sounds/muncherEat.wav" id="4_b6pmj"]
+[ext_resource type="AudioStream" uid="uid://c38uvbqsifo0d" path="res://sounds/abyssal pain2.wav" id="4_m3m8n"]
+[ext_resource type="AudioStream" uid="uid://d0n4ti3iv2dk0" path="res://sounds/playerCrack.wav" id="4_ueasx"]
+[ext_resource type="AudioStream" uid="uid://dxgnf7vchos65" path="res://sounds/abyssal pain3.wav" id="5_6rca6"]
+[ext_resource type="AudioStream" uid="uid://dlq5l7kuqbk23" path="res://sounds/crack.wav" id="5_6vi7t"]
+[ext_resource type="AudioStream" uid="uid://cb4bib4d3i3k" path="res://sounds/pumpkinSplat.wav" id="5_6xry7"]
+[ext_resource type="AudioStream" uid="uid://coglksy2vvt4r" path="res://sounds/glass_break.wav" id="5_amk40"]
+[ext_resource type="AudioStream" uid="uid://bdm0r3240vxc6" path="res://sounds/impact4.mp3" id="5_m60uj"]
+[ext_resource type="AudioStream" uid="uid://d3icxcxsk4hku" path="res://sounds/shadowSnakehiss.wav" id="5_r3fd2"]
+[ext_resource type="AudioStream" uid="uid://beahf31enx2ma" path="res://sounds/abyssal pain4.wav" id="6_6xry7"]
+[ext_resource type="AudioStream" uid="uid://cdytebmhssoyf" path="res://sounds/whoosh_synth.wav" id="6_083ol"]
+[ext_resource type="AudioStream" uid="uid://dsjgj75010wbu" path="res://sounds/douser_splash.wav" id="6_e0rai"]
+[ext_resource type="AudioStream" uid="uid://nm8cobbu1274" path="res://sounds/enemyDeath.mp3" id="6_wdcwv"]
+[ext_resource type="AudioStream" uid="uid://ccpt301khfnaf" path="res://sounds/dooropen.wav" id="7_wgjio"]
+[ext_resource type="AudioStream" uid="uid://cywnenio310a3" path="res://sounds/empowered.wav" id="8_5nmrk"]
+[ext_resource type="AudioStream" uid="uid://ewoqeepj73g6" path="res://sounds/abyssal war cry.wav" id="8_sxgn1"]
+[ext_resource type="AudioStream" uid="uid://b30anuknwqfu3" path="res://sounds/extinguish.wav" id="9_yaidq"]
+[ext_resource type="AudioStream" uid="uid://8v6wt1bkswuq" path="res://sounds/flash.wav" id="10_mtu7q"]
+[ext_resource type="AudioStream" uid="uid://cal5tg0nujdx5" path="res://sounds/sculptor_murmur.wav" id="32_segev"]
+[ext_resource type="AudioStream" uid="uid://cck3cvgth7nct" path="res://sounds/jari_murmur.wav" id="33_6pnvu"]
+[ext_resource type="AudioStream" uid="uid://ow1qoi0w0pd5" path="res://sounds/samael_djinn_murmur.wav" id="33_87k5i"]
+[ext_resource type="AudioStream" uid="uid://qbfsqiytwyr2" path="res://sounds/zenith_murmur.wav" id="34_083ol"]
+[ext_resource type="AudioStream" uid="uid://dhb45to4mshsl" path="res://sounds/lenore_murmur.wav" id="34_j8o6u"]
+[ext_resource type="AudioStream" uid="uid://c26qdjulr6kr8" path="res://sounds/nadir_murmur.wav" id="35_ay0c2"]
+[ext_resource type="AudioStream" uid="uid://bqldp0v6n636n" path="res://sounds/jari_purr.wav" id="38_3a6ug"]
+[ext_resource type="AudioStream" uid="uid://ionj8vtodtuo" path="res://sounds/lailun_murmur.wav" id="38_6884e"]
+[ext_resource type="AudioStream" uid="uid://bcirpadelxdsj" path="res://sounds/joviel_murmur.wav" id="38_txhci"]
+[ext_resource type="AudioStream" uid="uid://cpjqdpefyn651" path="res://sounds/barrelby_murmur.wav" id="39_fwin2"]
+[ext_resource type="AudioStream" uid="uid://cmves2uiqi31b" path="res://sounds/flash_fail.wav" id="51_8slkp"]
+[ext_resource type="AudioStream" uid="uid://c37bid3t3u3dk" path="res://sounds/samael_anger.wav" id="53_oy48k"]
+[ext_resource type="AudioStream" uid="uid://der5xtg4bp8jb" path="res://sounds/samael_incant_fire.wav" id="54_il3vg"]
+[ext_resource type="AudioStream" uid="uid://dnk17wogksanu" path="res://sounds/samael_incant_sphere.wav" id="55_wm4er"]
+[ext_resource type="AudioStream" uid="uid://dv5dqasofwxk" path="res://sounds/samael_incant_spire.wav" id="56_vv6cb"]
+[ext_resource type="AudioStream" uid="uid://nl57n1eyptle" path="res://sounds/samael_jump.wav" id="57_2q3ae"]
+[ext_resource type="AudioStream" uid="uid://dd807m6d6ff7" path="res://sounds/samael_stun_1.wav" id="58_de1v8"]
+[ext_resource type="AudioStream" uid="uid://cj1s028owrt8c" path="res://sounds/samael_stun_2.wav" id="59_f5oh4"]
+[ext_resource type="AudioStream" uid="uid://d2r2vr7muqb5k" path="res://sounds/samael_stun_3.wav" id="60_s2alt"]
+[ext_resource type="AudioStream" uid="uid://cy52cvfd8bof8" path="res://sounds/samael_stun_4.wav" id="61_ff07d"]
+[ext_resource type="AudioStream" uid="uid://cg3a5cmrc0jvn" path="res://sounds/samael_victory_1.wav" id="62_g5dso"]
+[ext_resource type="AudioStream" uid="uid://bkaa01pv421de" path="res://sounds/samael_victory_2.wav" id="63_jhoec"]
+[ext_resource type="AudioStream" uid="uid://dkysdtn7sfpuy" path="res://sounds/samael_victory_3.wav" id="64_1hsuy"]
+[ext_resource type="AudioStream" uid="uid://vuxaucgih4rd" path="res://sounds/samael_victory_4.wav" id="65_5fh7f"]
+[ext_resource type="AudioStream" uid="uid://71qjvpd7ddw2" path="res://sounds/samael_land_1.wav" id="66_de1v8"]
+[ext_resource type="AudioStream" uid="uid://ddnqh5nuhrjpi" path="res://sounds/samael_land_2.wav" id="67_f5oh4"]
+[ext_resource type="AudioStream" uid="uid://pkcs7wgjwja7" path="res://sounds/samael_land_3.wav" id="68_s2alt"]
+[ext_resource type="AudioStream" uid="uid://drtbowjmucic6" path="res://sounds/samael_land_4.wav" id="69_ff07d"]
+[ext_resource type="AudioStream" uid="uid://5mhg2h4cr8mj" path="res://sounds/samael_land_5.wav" id="70_g5dso"]
+[ext_resource type="AudioStream" uid="uid://dsmt2ih23lkw0" path="res://sounds/pew_break_1.wav" id="71_g5dso"]
+[ext_resource type="AudioStream" uid="uid://be8hlupcyv54s" path="res://sounds/pew_break_2.wav" id="72_jhoec"]
+[ext_resource type="AudioStream" uid="uid://caggdpqn174jf" path="res://sounds/pew_break_3.wav" id="73_1hsuy"]
+[ext_resource type="AudioStream" uid="uid://c6t3yd2moe0j1" path="res://sounds/pew_break_4.wav" id="74_5fh7f"]
+[ext_resource type="AudioStream" uid="uid://c4q171i8ruaf4" path="res://sounds/sanctuary_floor_break.wav" id="75_5fh7f"]
+[ext_resource type="AudioStream" uid="uid://ba8n3gointf05" path="res://sounds/sanctuary_collapse.wav" id="76_bp8ua"]
+[ext_resource type="AudioStream" uid="uid://xyhtrpsdlqu8" path="res://sounds/spell_spire_emerge.wav" id="77_r1att"]
+[ext_resource type="AudioStream" uid="uid://din2iejlnxx6p" path="res://sounds/spell_fireball_quick.wav" id="78_bp8ua"]
+[ext_resource type="AudioStream" uid="uid://d1eg1ek0cfki5" path="res://sounds/celestial_sphere.mp3" id="78_pu8uc"]
+[ext_resource type="AudioStream" uid="uid://b07mwpdjnkm06" path="res://sounds/cremator_explosion.wav" id="79_d1lui"]
+[ext_resource type="AudioStream" uid="uid://7cl6k3n8uwjx" path="res://sounds/frenzygrowth_fire_breath.wav" id="80_4gjup"]
+[ext_resource type="AudioStream" uid="uid://duknjrpuox2e7" path="res://sounds/frenzygrowth_seed_spit.wav" id="81_2sj0h"]
+[ext_resource type="AudioStream" uid="uid://c33idd3qmp10h" path="res://sounds/frenzygrowth_death.wav" id="82_g80er"]
+[ext_resource type="AudioStream" uid="uid://re217fiwq8ww" path="res://sounds/frenzygrowth_giggle_1.wav" id="83_54l83"]
+[ext_resource type="AudioStream" uid="uid://c2me4o6bhhxrr" path="res://sounds/frenzygrowth_giggle_2.wav" id="84_tcwt6"]
+[ext_resource type="AudioStream" uid="uid://dwprvwu5oqfwn" path="res://sounds/frenzygrowth_giggle_3.wav" id="85_rtohy"]
+[ext_resource type="AudioStream" uid="uid://ds02svi35806v" path="res://sounds/frenzygrowth_giggle_4.wav" id="86_fdtbe"]
+[ext_resource type="AudioStream" uid="uid://5riud4olau75" path="res://sounds/frenzygrowth_jab_1.wav" id="87_ls76e"]
+[ext_resource type="AudioStream" uid="uid://oh5bin8v5hiw" path="res://sounds/frenzygrowth_jab_2.wav" id="88_a616n"]
+[ext_resource type="AudioStream" uid="uid://b1mdt576ju6fo" path="res://sounds/frenzygrowth_pain.wav" id="89_w1gfk"]
+[ext_resource type="AudioStream" uid="uid://cbdf14oboswry" path="res://sounds/frenzygrowth_pain_2.wav" id="90_kc3k5"]
+[ext_resource type="AudioStream" uid="uid://cwh1wddui41kw" path="res://sounds/frenzygrowth_pain_3.wav" id="91_bik56"]
+[ext_resource type="AudioStream" uid="uid://be5r3h7tv2wdw" path="res://sounds/frenzygrowth_roar.wav" id="92_a5j6g"]
+[ext_resource type="AudioStream" uid="uid://dfyp4o774i6ta" path="res://sounds/frenzygrowth_swipe_1.wav" id="93_700o8"]
+[ext_resource type="AudioStream" uid="uid://ba7kct533wpfe" path="res://sounds/frenzygrowth_swipe_2.wav" id="94_7xa1h"]
+[ext_resource type="AudioStream" uid="uid://4kpnphgu8sde" path="res://sounds/undead_emerge.wav" id="95_w1gfk"]
+[ext_resource type="AudioStream" uid="uid://c8dyaww4w642k" path="res://sounds/pothead_death.wav" id="96_kc3k5"]
+[ext_resource type="AudioStream" uid="uid://c15t6tvs8rqbr" path="res://sounds/pothead_pain_1.wav" id="97_bik56"]
+[ext_resource type="AudioStream" uid="uid://ds5wf1gq4esqb" path="res://sounds/pothead_pain_2.wav" id="98_a5j6g"]
+[ext_resource type="AudioStream" uid="uid://cr8w6mnqrg35p" path="res://sounds/pothead_pain_3.wav" id="99_700o8"]
+[ext_resource type="AudioStream" uid="uid://c52jgkrmjgong" path="res://sounds/pothead_pain_4.wav" id="100_7xa1h"]
+[ext_resource type="AudioStream" uid="uid://bv02aaxoopfda" path="res://sounds/pothead_snore.mp3" id="101_w1gfk"]
+[ext_resource type="AudioStream" uid="uid://de2l5uhtgdhpm" path="res://sounds/burnout_death.wav" id="102_7xa1h"]
+[ext_resource type="AudioStream" uid="uid://d03daf5x676i" path="res://sounds/burnout_pain_1.wav" id="103_1h70y"]
+[ext_resource type="AudioStream" uid="uid://7y258qxsbct7" path="res://sounds/burnout_pain_2.wav" id="104_or2xe"]
+[ext_resource type="AudioStream" uid="uid://dmchxbxl0u32" path="res://sounds/burnout_pain_3.wav" id="105_0qmhs"]
+[ext_resource type="AudioStream" uid="uid://cwusqtxe806mj" path="res://sounds/burnout_pain_4.wav" id="106_iseib"]
+[ext_resource type="AudioStream" uid="uid://dp8s4m0vyfjma" path="res://sounds/fire_crackle_loop.mp3" id="107_1h70y"]
+[ext_resource type="AudioStream" uid="uid://bwunq82vdeka5" path="res://sounds/ossuary_alert.wav" id="108_f27xs"]
+[ext_resource type="AudioStream" uid="uid://b4c6yraptuxim" path="res://sounds/ossuary_chase_loop.mp3" id="109_pu8uc"]
+[ext_resource type="AudioStream" uid="uid://bgq3k1m0somly" path="res://sounds/ossuary_explode_add.wav" id="110_xg3cq"]
+[ext_resource type="AudioStream" uid="uid://huscajbjlxv4" path="res://sounds/ossuary_pain_1.wav" id="111_nadp4"]
+[ext_resource type="AudioStream" uid="uid://dwutllpw5d7lm" path="res://sounds/ossuary_pain_2.wav" id="112_v8j7m"]
+[ext_resource type="AudioStream" uid="uid://drhffnijgfu1t" path="res://sounds/ossuary_pain_3.wav" id="113_uuco5"]
+[ext_resource type="AudioStream" uid="uid://bmc51hde0g5g2" path="res://sounds/ossuary_snore_loop.mp3" id="114_4bxya"]
+[ext_resource type="AudioStream" uid="uid://cnl0xk7uh76t1" path="res://sounds/djinn_charge_1.wav" id="116_ljfvt"]
+[ext_resource type="AudioStream" uid="uid://6yujuv8oa6p3" path="res://sounds/djinn_charge_2.wav" id="117_xq471"]
+[ext_resource type="AudioStream" uid="uid://ciche3kmbm6y8" path="res://sounds/djinn_confusion.wav" id="118_wr4p8"]
+[ext_resource type="AudioStream" uid="uid://b8vysrdhpu24v" path="res://sounds/djinn_pain_1.wav" id="119_nke2h"]
+[ext_resource type="AudioStream" uid="uid://c4hgjagxbc5kd" path="res://sounds/djinn_pain_2.wav" id="120_l4lun"]
+[ext_resource type="AudioStream" uid="uid://brit58rsexl20" path="res://sounds/djinn_pain_3.wav" id="121_hxrtb"]
+[ext_resource type="AudioStream" uid="uid://b5lady4ird6q1" path="res://sounds/djinn_pain_4.wav" id="122_f78ei"]
+[ext_resource type="AudioStream" uid="uid://c7j86dosy8ify" path="res://sounds/djinn_warcry.wav" id="123_e0rai"]
+[ext_resource type="AudioStream" uid="uid://cv00loygq1k8u" path="res://sounds/censer_death.wav" id="124_e0rai"]
+[ext_resource type="AudioStream" uid="uid://bdijxqap6jmvi" path="res://sounds/censer_pain.wav" id="125_2un7y"]
+[ext_resource type="AudioStream" uid="uid://c24mqcq20wtrt" path="res://sounds/censer_pain_2.wav" id="126_5wdp1"]
+[ext_resource type="AudioStream" uid="uid://cv84v40tpym2l" path="res://sounds/censer_pain_3.wav" id="127_phxxv"]
+[ext_resource type="AudioStream" uid="uid://bfjflng77jgex" path="res://sounds/door_town_close.mp3" id="128_f78ei"]
+[ext_resource type="AudioStream" uid="uid://bjrvrjw7vrl4r" path="res://sounds/censer_pain_4.wav" id="128_rdm0a"]
+[ext_resource type="AudioStream" uid="uid://cfmlftlfgrnwc" path="res://sounds/censer_swing.wav" id="129_2neae"]
+[ext_resource type="AudioStream" uid="uid://cdnmr0ofaxukf" path="res://sounds/abyss_door_close.wav" id="129_e0rai"]
+[ext_resource type="AudioStream" uid="uid://lwd57eemfjfp" path="res://sounds/woods_door_open.mp3" id="130_2un7y"]
+[ext_resource type="AudioStream" uid="uid://bww1gj0nl1mmr" path="res://sounds/censer_warcry.wav" id="130_avk48"]
+[ext_resource type="AudioStream" uid="uid://t5n54lwk3h2l" path="res://sounds/door_town_open.mp3" id="130_b4le8"]
+[ext_resource type="AudioStream" uid="uid://dwqjyymovte2x" path="res://sounds/blazing_death.wav" id="131_2hhse"]
+[ext_resource type="AudioStream" uid="uid://dvvahcpro1gjp" path="res://sounds/blazing_empowered_add.wav" id="132_k6er2"]
+[ext_resource type="AudioStream" uid="uid://dabio7x7xexso" path="res://sounds/blazing_pain_1.wav" id="133_f38bj"]
+[ext_resource type="AudioStream" uid="uid://cblpcxrqthxst" path="res://sounds/blazing_pain_2.wav" id="134_1t623"]
+[ext_resource type="AudioStream" uid="uid://fdvgn5nn5ur8" path="res://sounds/blazing_pain_3.wav" id="135_rgypw"]
+[ext_resource type="AudioStream" uid="uid://dpet01wl34r8f" path="res://sounds/blazing_pain_4.wav" id="136_6rpwc"]
+[ext_resource type="AudioStream" uid="uid://drgow1bv48ecf" path="res://sounds/blazing_roar.wav" id="137_i4tal"]
+[ext_resource type="AudioStream" uid="uid://bia6vscgjdkoq" path="res://sounds/gazer_death.wav" id="138_6rpwc"]
+[ext_resource type="AudioStream" uid="uid://cryualjrk2f0n" path="res://sounds/gazer_pain_1.wav" id="139_i4tal"]
+[ext_resource type="AudioStream" uid="uid://d13tmauskavf1" path="res://sounds/gazer_pain_2.wav" id="140_5rxrd"]
+[ext_resource type="AudioStream" uid="uid://dt2u5sonucoo0" path="res://sounds/gazer_pain_3.wav" id="141_ty8jb"]
+[ext_resource type="AudioStream" uid="uid://cl6ks62jppoq1" path="res://sounds/gazer_pain_4.wav" id="142_5dj8f"]
+[ext_resource type="AudioStream" uid="uid://b2td28323lxsv" path="res://sounds/jawer_death.wav" id="143_8qgel"]
+[ext_resource type="AudioStream" uid="uid://dlsiy60fquhc0" path="res://sounds/jawer_fade_out.wav" id="144_cjfjc"]
+[ext_resource type="AudioStream" uid="uid://re2iumylwgt8" path="res://sounds/jawer_laugh_intro.wav" id="145_jgyv3"]
+[ext_resource type="AudioStream" uid="uid://pnwvbugk852k" path="res://sounds/jawer_laugh_short.wav" id="146_csvjp"]
+[ext_resource type="AudioStream" uid="uid://bdjkwkdjor25v" path="res://sounds/jawer_pain_1.wav" id="147_3cx4j"]
+[ext_resource type="AudioStream" uid="uid://c053lnu50uqj" path="res://sounds/jawer_pain_2.wav" id="148_6grh6"]
+[ext_resource type="AudioStream" uid="uid://c8a8pi166aamy" path="res://sounds/jawer_pain_3.wav" id="149_o2yob"]
+[ext_resource type="AudioStream" uid="uid://b4snsn16ubvvj" path="res://sounds/jawer_pain_4.wav" id="150_cdckh"]
+[ext_resource type="AudioStream" uid="uid://bbri4ir7roryy" path="res://sounds/jawer_reappear.wav" id="151_h654c"]
+[ext_resource type="AudioStream" uid="uid://1gm04q0jaida" path="res://sounds/upgrade_jari.wav" id="152_0tvpp"]
+[ext_resource type="AudioStream" uid="uid://crnif5r78xdb7" path="res://sounds/upgrade_sculptor.wav" id="153_yj1nb"]
+[ext_resource type="AudioStream" uid="uid://bqrkkv0njrtms" path="res://sounds/upgrade_zn.wav" id="154_ydbt4"]
+[ext_resource type="AudioStream" uid="uid://mirvl3k5x6y3" path="res://sounds/raven_alert.wav" id="155_yqhhy"]
+[ext_resource type="AudioStream" uid="uid://xj1hnmqp7x5t" path="res://sounds/raven_death.wav" id="156_62rlu"]
+[ext_resource type="AudioStream" uid="uid://ck8y4xhr1vhdo" path="res://sounds/raven_pain.wav" id="157_73oxn"]
+[ext_resource type="AudioStream" uid="uid://uqp452ykkupl" path="res://sounds/motebearer_chiller_cast_freeze.wav" id="158_s7hip"]
+[ext_resource type="AudioStream" uid="uid://tjl0f3aax7v4" path="res://sounds/motebearer_cremator_dispel_add.wav" id="159_xw2ck"]
+[ext_resource type="AudioStream" uid="uid://bthjln0aypjy5" path="res://sounds/motebearer_dispel.wav" id="160_oi5w7"]
+[ext_resource type="AudioStream" uid="uid://dgprf0mwadbjs" path="res://sounds/motebearer_shade_reveal.wav" id="160_yj1nb"]
+[ext_resource type="AudioStream" uid="uid://1epq1cqai5dy" path="res://sounds/mote_bonus.wav" id="161_3a6ug"]
+[ext_resource type="AudioStream" uid="uid://c3k3lt74ijneu" path="res://sounds/motebearer_dispel_no_cloth.wav" id="161_ydbt4"]
+[ext_resource type="AudioStream" uid="uid://c0wwtyi3f5k31" path="res://sounds/motemouse_death.wav" id="162_fyrqw"]
+[ext_resource type="AudioStream" uid="uid://dyd1o25gq2yb8" path="res://sounds/crack_variant_1.wav" id="165_oi5w7"]
+[ext_resource type="AudioStream" uid="uid://b8wn6u4fperk8" path="res://sounds/crack_variant_2.wav" id="166_3a6ug"]
+[ext_resource type="AudioStream" uid="uid://caek2r7nygohj" path="res://sounds/crack_variant_3.wav" id="167_fyrqw"]
+[ext_resource type="AudioStream" uid="uid://ch3t8o6hyx48i" path="res://sounds/crack_variant_4.wav" id="168_61xh3"]
+[ext_resource type="AudioStream" uid="uid://d4dyo00nxftvl" path="res://sounds/crack_variant_5.wav" id="169_fj18f"]
+[ext_resource type="AudioStream" uid="uid://13bdx5fo6e5a" path="res://sounds/crack_variant_6.wav" id="170_lyjg2"]
+[ext_resource type="AudioStream" uid="uid://ky6j3y1ksv8a" path="res://sounds/bloombulb get (1).wav" id="172_80hua"]
+[ext_resource type="AudioStream" uid="uid://wrloc2hbx22t" path="res://sounds/bloombulb get (2).wav" id="173_6ado4"]
+[ext_resource type="AudioStream" uid="uid://cdk04efamt8s7" path="res://sounds/kindling get (1).wav" id="174_ctogo"]
+[ext_resource type="AudioStream" uid="uid://b1d1dobai5gdr" path="res://sounds/kindling get (2).wav" id="175_i44cf"]
+[ext_resource type="AudioStream" uid="uid://hg3qa0srxjdl" path="res://sounds/kindling get (3).wav" id="176_auio5"]
+[ext_resource type="AudioStream" uid="uid://cvwjl8vbhkwse" path="res://sounds/kindling get (4).wav" id="177_b4le8"]
+[ext_resource type="AudioStream" uid="uid://8g33quee6pcj" path="res://sounds/kindling get (5).wav" id="178_ja4vg"]
+[ext_resource type="AudioStream" uid="uid://bmowqbu1kv1vy" path="res://sounds/kindling get (6).wav" id="179_s3ybg"]
+[ext_resource type="AudioStream" uid="uid://cvu4p78ade0gp" path="res://sounds/kindling get (7).wav" id="180_nfrgb"]
+[ext_resource type="AudioStream" uid="uid://binorkmltwf6c" path="res://sounds/kindling get (8).wav" id="181_mubk7"]
+[ext_resource type="AudioStream" uid="uid://db73hr8w37yrc" path="res://sounds/tome get (2).wav" id="182_8b2jf"]
+[ext_resource type="AudioStream" uid="uid://d3r4waaoaixol" path="res://sounds/chest_open.wav" id="183_6ado4"]
+[ext_resource type="AudioStream" uid="uid://pasprequnqvt" path="res://sounds/samael_laugh_ominous.wav" id="184_auio5"]
+[ext_resource type="AudioStream" uid="uid://bncnasl26rxfx" path="res://sounds/zenith_hmm.wav" id="185_b4le8"]
+[ext_resource type="AudioStream" uid="uid://cgewq055b68r0" path="res://sounds/nadir_snort.wav" id="186_ja4vg"]
+[ext_resource type="AudioStream" uid="uid://xbwjrw1u27lf" path="res://sounds/freeze_jingle.wav" id="188_ja4vg"]
+[ext_resource type="AudioStream" uid="uid://xrqmu61aiamw" path="res://sounds/menu_accept.wav" id="189_mubk7"]
+[ext_resource type="AudioStream" uid="uid://dgq5q3ck6m17n" path="res://sounds/menu_cancel.wav" id="190_8b2jf"]
+[ext_resource type="AudioStream" uid="uid://v4vnnkkt4s20" path="res://sounds/menu_move.wav" id="191_8slkp"]
+[ext_resource type="AudioStream" uid="uid://1sf4yihuccb0" path="res://sounds/respawn.wav" id="192_8b2jf"]
+[ext_resource type="AudioStream" uid="uid://dabdib2to2fsr" path="res://sounds/enemy_slain.wav" id="194_dl88h"]
+[ext_resource type="AudioStream" uid="uid://bjqgn10g2cu2w" path="res://sounds/hit_wood_1.wav" id="195_sbn4u"]
+[ext_resource type="AudioStream" uid="uid://jf845rvq48cr" path="res://sounds/hit_wood_2.wav" id="196_keqwy"]
+[ext_resource type="AudioStream" uid="uid://b365nlui2vy7" path="res://sounds/hit_wood_3.wav" id="197_m2okb"]
+[ext_resource type="AudioStream" uid="uid://b8or2e40pybf" path="res://sounds/rock_crumble.wav" id="198_keqwy"]
+[ext_resource type="AudioStream" uid="uid://bm37f0so5msqt" path="res://sounds/explosion_chunky.wav" id="199_q3rr1"]
+[ext_resource type="AudioStream" uid="uid://mwdspqvwntek" path="res://sounds/key_drop.wav" id="200_7kjuu"]
+[ext_resource type="AudioStream" uid="uid://ehgs7i0y4g83" path="res://sounds/metal_hit_1.wav" id="201_ajp8a"]
+[ext_resource type="AudioStream" uid="uid://i2telomf3cwk" path="res://sounds/metal_hit_2.wav" id="202_ifqs8"]
+[ext_resource type="AudioStream" uid="uid://baay3k5sqyacb" path="res://sounds/metal_hit_3.wav" id="203_6884e"]
+[ext_resource type="AudioStream" uid="uid://1bs5dqjoy02i" path="res://sounds/metal_hit_4.wav" id="204_ab5dq"]
+[ext_resource type="AudioStream" uid="uid://8hxe8d6bukgo" path="res://sounds/mote_absorb.wav" id="205_ifqs8"]
+[ext_resource type="AudioStream" uid="uid://k8nlx0ms5mad" path="res://sounds/crack_new.wav" id="207_74jvo"]
+[ext_resource type="AudioStream" uid="uid://b6bo8ur6qf4cr" path="res://sounds/vesselflower_death_1.wav" id="208_mkcmw"]
+[ext_resource type="AudioStream" uid="uid://d285gaoitt8no" path="res://sounds/vesselflower_death_2.wav" id="209_fwin2"]
+[ext_resource type="AudioStream" uid="uid://ddb0lc1mtfa8v" path="res://sounds/vesselflower_death_3.wav" id="210_kqff6"]
+[ext_resource type="AudioStream" uid="uid://vecq36o7dhc2" path="res://sounds/mimic_death.wav" id="210_mkcmw"]
+[ext_resource type="AudioStream" uid="uid://bx757hli4ugq5" path="res://sounds/muckman_activate.wav" id="211_18smr"]
+[ext_resource type="AudioStream" uid="uid://cii3n7rp3qga6" path="res://sounds/snake_death.wav" id="211_p062a"]
+[ext_resource type="AudioStream" uid="uid://dj80l3qlp45qh" path="res://sounds/snake_hiss_alt_1.wav" id="212_1sbry"]
+[ext_resource type="AudioStream" uid="uid://ddocvtrnhsynd" path="res://sounds/muckman_death.wav" id="212_ucp2l"]
+[ext_resource type="AudioStream" uid="uid://f4wgvc5fujbi" path="res://sounds/snake_hiss_alt_2.wav" id="213_cl5o2"]
+[ext_resource type="AudioStream" uid="uid://bvgdylyjg6ghv" path="res://sounds/muckman_pain_1.wav" id="213_rdjhi"]
+[ext_resource type="AudioStream" uid="uid://dilk6kwnkynwt" path="res://sounds/muckman_pain_2.wav" id="214_bct7m"]
+[ext_resource type="AudioStream" uid="uid://skdrtd5me5ys" path="res://sounds/snake_pain_1.wav" id="214_dr5ul"]
+[ext_resource type="AudioStream" uid="uid://icxcr07a2amq" path="res://sounds/snake_pain_2.wav" id="215_3cfye"]
+[ext_resource type="AudioStream" uid="uid://du7nfyldt05ak" path="res://sounds/muckman_pain_3.wav" id="215_nun3g"]
+[ext_resource type="AudioStream" uid="uid://dijkjm2c5bm6o" path="res://sounds/muckman_pain_4.wav" id="216_2xu01"]
+[ext_resource type="AudioStream" uid="uid://bb8h78il4ea34" path="res://sounds/snake_pain_alt.wav" id="216_7okhc"]
+[ext_resource type="AudioStream" uid="uid://dr75bylx1x5sx" path="res://sounds/ebon_groan_1.wav" id="217_hobyr"]
+[ext_resource type="AudioStream" uid="uid://bapf0t5aleeaa" path="res://sounds/wisp_flame_extinguish.wav" id="217_x0ygl"]
+[ext_resource type="AudioStream" uid="uid://caruac8bemnpj" path="res://sounds/ebon_groan_2.wav" id="218_gs62f"]
+[ext_resource type="AudioStream" uid="uid://tei5o2rt7ysw" path="res://sounds/sinkhole_death.wav" id="218_iwfhf"]
+[ext_resource type="AudioStream" uid="uid://ci87gvhwxcd51" path="res://sounds/sinkhole_pain_1.wav" id="219_e5kuf"]
+[ext_resource type="AudioStream" uid="uid://exjmohkbgl82" path="res://sounds/ebon_groan_3.wav" id="219_uhgrc"]
+[ext_resource type="AudioStream" uid="uid://ctr87p2xe7xtf" path="res://sounds/ebon_laugh_1.wav" id="220_1sb10"]
+[ext_resource type="AudioStream" uid="uid://bxunajvdwu3gf" path="res://sounds/sinkhole_pain_2.wav" id="220_t2wi1"]
+[ext_resource type="AudioStream" uid="uid://halogvqorh43" path="res://sounds/sinkhole_pain_3.wav" id="221_8dxvg"]
+[ext_resource type="AudioStream" uid="uid://b1mitjlt7hwt2" path="res://sounds/ebon_laugh_2.wav" id="221_75eo4"]
+[ext_resource type="AudioStream" uid="uid://34ivvng1ufk5" path="res://sounds/sinkhole_pain_4.wav" id="222_13f8x"]
+[ext_resource type="AudioStream" uid="uid://cvhpw7qwds0mg" path="res://sounds/ebon_laugh_3.wav" id="222_kvchs"]
+[ext_resource type="AudioStream" uid="uid://cjll8ijt2b1ij" path="res://sounds/samael_reflect.wav" id="223_na2u4"]
+[ext_resource type="AudioStream" uid="uid://tndhwgwbtyyx" path="res://sounds/ebon_laugh_4.wav" id="223_ohhv0"]
+[ext_resource type="AudioStream" uid="uid://d23tbfh30g7r7" path="res://sounds/ebon_pain_2.wav" id="224_6j5cg"]
+[ext_resource type="AudioStream" uid="uid://c8qcyevc3prs5" path="res://sounds/ebon_parry.wav" id="224_v58gx"]
+[ext_resource type="AudioStream" uid="uid://dhkh580unlqnn" path="res://sounds/motemuncher_anger_1.wav" id="225_e2o2e"]
+[ext_resource type="AudioStream" uid="uid://did82ow08bwcw" path="res://sounds/ebon_pain_3.wav" id="225_xmqvi"]
+[ext_resource type="AudioStream" uid="uid://c230bawjrfyey" path="res://sounds/motemuncher_anger_2.wav" id="226_d2rix"]
+[ext_resource type="AudioStream" uid="uid://d15hmnblwew5q" path="res://sounds/motemuncher_anger_3.wav" id="227_cy3k8"]
+[ext_resource type="AudioStream" uid="uid://bho0duuoi1avi" path="res://sounds/motemuncher_anger_4.wav" id="228_tisv3"]
+[ext_resource type="AudioStream" uid="uid://bstkrlwechk6n" path="res://sounds/motemuncher_death.wav" id="229_y3uui"]
+[ext_resource type="AudioStream" uid="uid://dcsw6k8vfru4l" path="res://sounds/motemuncher_pain_1.wav" id="230_dikyo"]
+[ext_resource type="AudioStream" uid="uid://bud8ipscbvu1g" path="res://sounds/motemuncher_pain_2.wav" id="231_rgdk0"]
+[ext_resource type="AudioStream" uid="uid://cwq0ju1tqrdbu" path="res://sounds/motemuncher_pain_3.wav" id="232_olj4p"]
+[ext_resource type="AudioStream" uid="uid://chq6pb42sevdc" path="res://sounds/motemuncher_pain_4.wav" id="233_bdljt"]
+[ext_resource type="AudioStream" uid="uid://md0165qdhasw" path="res://sounds/shadow_snake_death.wav" id="234_tfwd8"]
+[ext_resource type="AudioStream" uid="uid://bf1sh1a7ibj65" path="res://sounds/shadow_snake_pain_1.wav" id="235_j8fk0"]
+[ext_resource type="AudioStream" uid="uid://ujd2ibgf4rdn" path="res://sounds/shadow_snake_pain_2.wav" id="236_eoeig"]
+[ext_resource type="AudioStream" uid="uid://bh56c6jhyhqyu" path="res://sounds/shadow_snake_pain_3.wav" id="237_kvrf5"]
+[ext_resource type="AudioStream" uid="uid://cg0bdtpmlkohx" path="res://sounds/shadow_snake_pain_4.wav" id="238_qrklh"]
+[ext_resource type="AudioStream" uid="uid://befjec7y7yl03" path="res://sounds/samael_refusal.wav" id="239_ufnsi"]
+[ext_resource type="AudioStream" uid="uid://cojs3vdxeajfi" path="res://sounds/endless_dawn_death_1.wav" id="240_g12uf"]
+[ext_resource type="AudioStream" uid="uid://cabdtjctv17vy" path="res://sounds/endless_dawn_death_2.wav" id="241_bkwt2"]
+[ext_resource type="AudioStream" uid="uid://firffy4jaa64" path="res://sounds/endless_dawn_death_3.wav" id="242_8nudd"]
+[ext_resource type="AudioStream" uid="uid://bofh8vgc78tgm" path="res://sounds/endless_dawn_death_4.wav" id="243_l00lj"]
+[ext_resource type="AudioStream" uid="uid://54hsfh7saufg" path="res://sounds/endless_dawn_pain_1.wav" id="244_if2dv"]
+[ext_resource type="AudioStream" uid="uid://biiduxukydhp1" path="res://sounds/endless_dawn_pain_2.wav" id="245_60365"]
+[ext_resource type="AudioStream" uid="uid://3ovxj3qg0sty" path="res://sounds/endless_dawn_pain_3.wav" id="246_tdm27"]
+[ext_resource type="AudioStream" uid="uid://cd0xd53ut8kao" path="res://sounds/endless_dawn_spawn_1.wav" id="247_um0l5"]
+[ext_resource type="AudioStream" uid="uid://bh25axretx5lb" path="res://sounds/endless_dawn_spawn_2.wav" id="248_igwbo"]
+[ext_resource type="AudioStream" uid="uid://b6unfjhlrlkdn" path="res://sounds/endless_dawn_spawn_3.wav" id="249_cm46d"]
+[ext_resource type="AudioStream" uid="uid://cbm7r4v4pamm6" path="res://sounds/endless_dawn_spawn_4.wav" id="250_3t0rb"]
+[ext_resource type="AudioStream" uid="uid://mpxlxy28fc8i" path="res://sounds/endless_dusk_death_1.wav" id="251_ynuxi"]
+[ext_resource type="AudioStream" uid="uid://3nc68ex0wcfh" path="res://sounds/endless_dusk_death_2.wav" id="252_ujc1y"]
+[ext_resource type="AudioStream" uid="uid://dj0u1v3mwy7e8" path="res://sounds/endless_dusk_death_3.wav" id="253_ygas3"]
+[ext_resource type="AudioStream" uid="uid://fisiajw47gyi" path="res://sounds/endless_dusk_death_4.wav" id="254_vjqou"]
+[ext_resource type="AudioStream" uid="uid://d3d847wxj0aik" path="res://sounds/endless_dusk_pain_1.wav" id="255_dn331"]
+[ext_resource type="AudioStream" uid="uid://dpm44kn2glgg4" path="res://sounds/endless_dusk_pain_2.wav" id="256_317tx"]
+[ext_resource type="AudioStream" uid="uid://c4t24tu44vmkh" path="res://sounds/endless_dusk_pain_3.wav" id="257_6e1ws"]
+[ext_resource type="AudioStream" uid="uid://b804sh86lbgcx" path="res://sounds/endless_dusk_pain_4.wav" id="258_pmg5s"]
+[ext_resource type="AudioStream" uid="uid://c2kmn7danm7lx" path="res://sounds/endless_dusk_spawn_1.wav" id="259_sy32q"]
+[ext_resource type="AudioStream" uid="uid://c3jwro8tobh4u" path="res://sounds/endless_dusk_spawn_2.wav" id="260_ud0cl"]
+[ext_resource type="AudioStream" uid="uid://dbgd50r6p8t23" path="res://sounds/endless_dusk_spawn_3.wav" id="261_te2cx"]
+[ext_resource type="AudioStream" uid="uid://djdyh3un5hhni" path="res://sounds/endless_dusk_spawn_4.wav" id="262_71dhc"]
+[ext_resource type="AudioStream" uid="uid://221cmeu3tkc4" path="res://sounds/endless_twilight_death_1.wav" id="263_uc6au"]
+[ext_resource type="AudioStream" uid="uid://1n4fjbti0ci" path="res://sounds/endless_twilight_death_2.wav" id="264_ic1xb"]
+[ext_resource type="AudioStream" uid="uid://cttgx30hbddf0" path="res://sounds/endless_twilight_death_3.wav" id="265_rhack"]
+[ext_resource type="AudioStream" uid="uid://cjqxm1ityq8nv" path="res://sounds/endless_twilight_pain_1.wav" id="266_2g0t3"]
+[ext_resource type="AudioStream" uid="uid://dc3ai04jnken0" path="res://sounds/endless_twilight_pain_2.wav" id="267_m03th"]
+[ext_resource type="AudioStream" uid="uid://530iugw44x1b" path="res://sounds/endless_twilight_pain_3.wav" id="268_nms6y"]
+[ext_resource type="AudioStream" uid="uid://ll0b86ygexvf" path="res://sounds/endless_twilight_spawn_1.wav" id="269_voeto"]
+[ext_resource type="AudioStream" uid="uid://cb2ow8hh6ixwv" path="res://sounds/endless_twilight_spawn_2.wav" id="270_r8u1x"]
+[ext_resource type="AudioStream" uid="uid://b8bfghg3cwgp2" path="res://sounds/endless_twilight_spawn_3.wav" id="271_g0j4d"]
+[ext_resource type="AudioStream" uid="uid://cxw55r42145g7" path="res://sounds/lurker_cast_1.wav" id="272_56lxl"]
+[ext_resource type="AudioStream" uid="uid://bsa7y70l0cdw5" path="res://sounds/lurker_cast_2.wav" id="273_4ioqv"]
+[ext_resource type="AudioStream" uid="uid://cwkg3lq85amhb" path="res://sounds/lurker_cast_3.wav" id="274_ker8r"]
+[ext_resource type="AudioStream" uid="uid://dedqhcqe4pu2r" path="res://sounds/lurker_channel_loop.mp3" id="275_g2j8y"]
+[ext_resource type="AudioStream" uid="uid://bjhcevsgyprib" path="res://sounds/lurker_death.wav" id="276_fkcqt"]
+[ext_resource type="AudioStream" uid="uid://ceg2cmwfgjd0r" path="res://sounds/lurker_leech_1.wav" id="277_q50fj"]
+[ext_resource type="AudioStream" uid="uid://m1jn2sc0ebxo" path="res://sounds/lurker_leech_2.wav" id="278_v4mdv"]
+[ext_resource type="AudioStream" uid="uid://olg372baxj76" path="res://sounds/lurker_leech_3.wav" id="279_akf4k"]
+[ext_resource type="AudioStream" uid="uid://bh3yeoye0r83q" path="res://sounds/lurker_leech_4.wav" id="280_wa03v"]
+[ext_resource type="AudioStream" uid="uid://d2rk3ualp6cn5" path="res://sounds/lurker_pain.wav" id="281_3skh5"]
+[ext_resource type="AudioStream" uid="uid://covbiymgedw6a" path="res://sounds/lurker_start.wav" id="282_0hmgc"]
+[ext_resource type="AudioStream" uid="uid://frb611mc52q0" path="res://sounds/lenore_pain_1.wav" id="283_wub2b"]
+[ext_resource type="AudioStream" uid="uid://bw3n3xxrvexu5" path="res://sounds/lenore_pain_2.wav" id="284_46hko"]
+[ext_resource type="AudioStream" uid="uid://v33br7con6xd" path="res://sounds/lenore_pain_3.wav" id="285_eh7bs"]
+[ext_resource type="AudioStream" uid="uid://ri4bv61spfco" path="res://sounds/lenore_pain_4.wav" id="286_nmidx"]
+[ext_resource type="AudioStream" uid="uid://crskte3pqxora" path="res://sounds/lenore_place_1.wav" id="287_6xoka"]
+[ext_resource type="AudioStream" uid="uid://ckolhjechuy6a" path="res://sounds/lenore_place_2.wav" id="288_r0gdt"]
+[ext_resource type="AudioStream" uid="uid://d3b3siic4vbk4" path="res://sounds/lenore_place_3.wav" id="289_32iuh"]
+[ext_resource type="AudioStream" uid="uid://bqf4kyy5e3idh" path="res://sounds/lenore_place_4.wav" id="290_rd6kb"]
+[ext_resource type="AudioStream" uid="uid://3cxkvu4spvfs" path="res://sounds/lenore_prayerful_strike_1.wav" id="291_4tst4"]
+[ext_resource type="AudioStream" uid="uid://dpib2ltvvi3to" path="res://sounds/lenore_prayerful_strike_2.wav" id="292_xdaqi"]
+[ext_resource type="AudioStream" uid="uid://patm3dqbkiyd" path="res://sounds/lenore_prayerful_strike_3.wav" id="293_33ujp"]
+[ext_resource type="AudioStream" uid="uid://blbmb12vmpyul" path="res://sounds/lenore_slap_1.wav" id="294_bpy74"]
+[ext_resource type="AudioStream" uid="uid://halwmsbdau7v" path="res://sounds/lenore_slap_2.wav" id="295_sh4d6"]
+[ext_resource type="AudioStream" uid="uid://glnx3c3rhsvg" path="res://sounds/lenore_slap_3.wav" id="296_y5ixa"]
+[ext_resource type="AudioStream" uid="uid://cv0u3oobtv4qd" path="res://sounds/lenore_warcry.wav" id="297_2bs20"]
+[ext_resource type="AudioStream" uid="uid://bw81se170jmuu" path="res://sounds/lenore_claw_1.wav" id="298_pr6af"]
+[ext_resource type="AudioStream" uid="uid://d0u1s3jr60qy" path="res://sounds/lenore_claw_2.wav" id="299_na41l"]
+[ext_resource type="AudioStream" uid="uid://28wdn05mhno5" path="res://sounds/lenore_death.wav" id="300_kkqfe"]
+[ext_resource type="AudioStream" uid="uid://bvuoas8khrdnx" path="res://sounds/lenore_dig_1.wav" id="301_tnr16"]
+[ext_resource type="AudioStream" uid="uid://6i5kwkwpblw3" path="res://sounds/lenore_dig_2.wav" id="302_48qst"]
+[ext_resource type="AudioStream" uid="uid://cuxtlikwhmarl" path="res://sounds/lenore_dig_3.wav" id="303_i3nsm"]
+[ext_resource type="AudioStream" uid="uid://chdbfsw1wnkh0" path="res://sounds/friendly_mote_murmur.wav" id="304_bkwt2"]
+[ext_resource type="AudioStream" uid="uid://bkvt00xi374ua" path="res://sounds/teddy.wav" id="314_8nudd"]
+
+[node name="SFXController" type="Node" unique_id=2000885593]
+process_mode = 3
+script = ExtResource("1_c7dwg")
+
+[node name="Warp" type="AudioStreamPlayer" parent="." unique_id=217084734]
+unique_name_in_owner = true
+stream = ExtResource("2_dkbig")
+volume_db = -15.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Warble" type="AudioStreamPlayer" parent="." unique_id=1022523293]
+unique_name_in_owner = true
+stream = ExtResource("3_segev")
+pitch_scale = 0.5
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="Bell" type="AudioStreamPlayer" parent="." unique_id=1887395969]
+unique_name_in_owner = true
+stream = ExtResource("4_6pnvu")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="GlassBreak" type="AudioStreamPlayer" parent="." unique_id=435055082]
+unique_name_in_owner = true
+stream = ExtResource("5_amk40")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Splash" type="AudioStreamPlayer" parent="." unique_id=6130784]
+unique_name_in_owner = true
+stream = ExtResource("6_e0rai")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="Whoosh" type="AudioStreamPlayer" parent="." unique_id=1485592468]
+unique_name_in_owner = true
+stream = ExtResource("6_083ol")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="PainGeneric" type="AudioStreamPlayer" parent="." unique_id=1953401723]
+unique_name_in_owner = true
+stream = ExtResource("2_3dlc7")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Impact1" type="AudioStreamPlayer" parent="." unique_id=965599544]
+unique_name_in_owner = true
+stream = ExtResource("2_pklj1")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Impact2" type="AudioStreamPlayer" parent="." unique_id=1753832158]
+unique_name_in_owner = true
+stream = ExtResource("3_wdcwv")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Impact3" type="AudioStreamPlayer" parent="." unique_id=1600242168]
+unique_name_in_owner = true
+stream = ExtResource("4_3dlc7")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Impact4" type="AudioStreamPlayer" parent="." unique_id=1565042471]
+unique_name_in_owner = true
+stream = ExtResource("5_m60uj")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="EnemyDeath" type="AudioStreamPlayer" parent="." unique_id=943278423]
+unique_name_in_owner = true
+stream = ExtResource("6_wdcwv")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MouseSqueak" type="AudioStreamPlayer" parent="." unique_id=1357369058]
+unique_name_in_owner = true
+stream = ExtResource("2_r3fd2")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Dialogue" type="AudioStreamPlayer" parent="." unique_id=1885667608]
+unique_name_in_owner = true
+stream = ExtResource("2_b6pmj")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MuckHammer" type="AudioStreamPlayer" parent="." unique_id=1546521306]
+unique_name_in_owner = true
+stream = ExtResource("2_8q12k")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LurkerGiggle" type="AudioStreamPlayer" parent="." unique_id=627853730]
+unique_name_in_owner = true
+stream = ExtResource("2_auiaf")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MimicCrunch" type="AudioStreamPlayer" parent="." unique_id=1853492701]
+unique_name_in_owner = true
+stream = ExtResource("3_8q12k")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MuncherEat" type="AudioStreamPlayer" parent="." unique_id=219746525]
+unique_name_in_owner = true
+stream = ExtResource("4_b6pmj")
+volume_db = 15.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="ShadowSnakehiss" type="AudioStreamPlayer" parent="." unique_id=1671063302]
+unique_name_in_owner = true
+stream = ExtResource("5_r3fd2")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Falling" type="AudioStreamPlayer" parent="." unique_id=1891857920]
+unique_name_in_owner = true
+stream = ExtResource("2_6xry7")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LongTendrilSwipe" type="AudioStreamPlayer" parent="." unique_id=1012198240]
+unique_name_in_owner = true
+stream = ExtResource("2_m3m8n")
+volume_db = -15.0
+pitch_scale = 0.52
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="ThreeTendrilSwipe" type="AudioStreamPlayer" parent="." unique_id=1218898193]
+unique_name_in_owner = true
+stream = ExtResource("3_6rca6")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="AbyssalDeath" type="AudioStreamPlayer" parent="." unique_id=1087925393]
+unique_name_in_owner = true
+stream = ExtResource("2_y720q")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="PumpkinSplat" type="AudioStreamPlayer" parent="." unique_id=164104852]
+unique_name_in_owner = true
+stream = ExtResource("5_6xry7")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="AbyssalPain1" type="AudioStreamPlayer" parent="." unique_id=539289662]
+unique_name_in_owner = true
+stream = ExtResource("3_hvhk4")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="AbyssalPain2" type="AudioStreamPlayer" parent="." unique_id=391297133]
+unique_name_in_owner = true
+stream = ExtResource("4_m3m8n")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="AbyssalPain3" type="AudioStreamPlayer" parent="." unique_id=367508590]
+unique_name_in_owner = true
+stream = ExtResource("5_6rca6")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="AbyssalPain4" type="AudioStreamPlayer" parent="." unique_id=1582906693]
+unique_name_in_owner = true
+stream = ExtResource("6_6xry7")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="AbyssalWarCry" type="AudioStreamPlayer" parent="." unique_id=990104287]
+unique_name_in_owner = true
+stream = ExtResource("8_sxgn1")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SculptorMurmur" type="AudioStreamPlayer" parent="." unique_id=207652793]
+unique_name_in_owner = true
+stream = ExtResource("32_segev")
+volume_db = 20.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelSpriteMurmur" type="AudioStreamPlayer" parent="." unique_id=597569360]
+unique_name_in_owner = true
+stream = ExtResource("32_segev")
+volume_db = 15.0
+pitch_scale = 1.5
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="DjinnMurmur" type="AudioStreamPlayer" parent="." unique_id=735035164]
+unique_name_in_owner = true
+stream = ExtResource("33_87k5i")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LenoreMurmur" type="AudioStreamPlayer" parent="." unique_id=121863083]
+unique_name_in_owner = true
+stream = ExtResource("34_j8o6u")
+volume_db = 15.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="JariMurmur" type="AudioStreamPlayer" parent="." unique_id=848469158]
+unique_name_in_owner = true
+stream = ExtResource("33_6pnvu")
+volume_db = 20.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="ZenithMurmur" type="AudioStreamPlayer" parent="." unique_id=1622552110]
+unique_name_in_owner = true
+stream = ExtResource("34_083ol")
+volume_db = 20.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="NadirMurmur" type="AudioStreamPlayer" parent="." unique_id=306767814]
+unique_name_in_owner = true
+stream = ExtResource("35_ay0c2")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="JovielMurmur" type="AudioStreamPlayer" parent="." unique_id=494645171]
+unique_name_in_owner = true
+stream = ExtResource("38_txhci")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LailunMurmur" type="AudioStreamPlayer" parent="." unique_id=1816203995]
+unique_name_in_owner = true
+stream = ExtResource("38_6884e")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="BarrelbyMurmur" type="AudioStreamPlayer" parent="." unique_id=1578641049]
+unique_name_in_owner = true
+stream = ExtResource("39_fwin2")
+volume_db = 10.0
+pitch_scale = 1.5
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="JariPurr" type="AudioStreamPlayer" parent="." unique_id=308469777]
+unique_name_in_owner = true
+stream = ExtResource("38_3a6ug")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SndAmphoraDeath" type="AudioStreamPlayer" parent="." unique_id=851764061]
+unique_name_in_owner = true
+stream = ExtResource("2_wgjio")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SndAmphoraPain" type="AudioStreamPlayer" parent="." unique_id=1393102639]
+unique_name_in_owner = true
+stream = ExtResource("3_5nmrk")
+volume_db = -20.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SndAmphora1" type="AudioStreamPlayer" parent="." unique_id=728348055]
+unique_name_in_owner = true
+stream = ExtResource("2_6vi7t")
+volume_db = -7.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SndAmphora2" type="AudioStreamPlayer" parent="." unique_id=696399334]
+unique_name_in_owner = true
+stream = ExtResource("3_tuew5")
+volume_db = -7.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="sfxMoteCollect" type="AudioStreamPlayer" parent="." unique_id=1443648870]
+unique_name_in_owner = true
+stream = ExtResource("2_2fd2w")
+volume_db = -5.333
+max_polyphony = 999
+bus = &"SFX"
+
+[node name="sfxPlayerHeal" type="AudioStreamPlayer" parent="." unique_id=906517523]
+unique_name_in_owner = true
+stream = ExtResource("3_mtu7q")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="sfxPlayerDamage" type="AudioStreamPlayer" parent="." unique_id=1573737534]
+unique_name_in_owner = true
+stream = ExtResource("4_ueasx")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="sfxVesselBreak" type="AudioStreamPlayer" parent="." unique_id=1259554869]
+unique_name_in_owner = true
+stream = ExtResource("5_6vi7t")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="sfxDoorOpen" type="AudioStreamPlayer" parent="." unique_id=2091849509]
+unique_name_in_owner = true
+stream = ExtResource("7_wgjio")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="sfxPlayerEmpowered" type="AudioStreamPlayer" parent="." unique_id=353233476]
+unique_name_in_owner = true
+stream = ExtResource("8_5nmrk")
+bus = &"SFX Reverb"
+
+[node name="sfxPlayerExtinguished" type="AudioStreamPlayer" parent="." unique_id=597840224]
+unique_name_in_owner = true
+stream = ExtResource("9_yaidq")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="sfxPlayerFlash" type="AudioStreamPlayer" parent="." unique_id=973998346]
+unique_name_in_owner = true
+stream = ExtResource("10_mtu7q")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FlashFail" type="AudioStreamPlayer" parent="." unique_id=1769805320]
+unique_name_in_owner = true
+stream = ExtResource("51_8slkp")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelAnger" type="AudioStreamPlayer" parent="." unique_id=834511283]
+unique_name_in_owner = true
+stream = ExtResource("53_oy48k")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelIncantFire" type="AudioStreamPlayer" parent="." unique_id=931248081]
+unique_name_in_owner = true
+stream = ExtResource("54_il3vg")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelIncantSphere" type="AudioStreamPlayer" parent="." unique_id=1029698554]
+unique_name_in_owner = true
+stream = ExtResource("55_wm4er")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelIncantSpire" type="AudioStreamPlayer" parent="." unique_id=1749465743]
+unique_name_in_owner = true
+stream = ExtResource("56_vv6cb")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelJump" type="AudioStreamPlayer" parent="." unique_id=1979732566]
+unique_name_in_owner = true
+stream = ExtResource("57_2q3ae")
+volume_db = 5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SamaelStun1" type="AudioStreamPlayer" parent="." unique_id=1490313154]
+unique_name_in_owner = true
+stream = ExtResource("58_de1v8")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelStun2" type="AudioStreamPlayer" parent="." unique_id=1331263575]
+unique_name_in_owner = true
+stream = ExtResource("59_f5oh4")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelStun3" type="AudioStreamPlayer" parent="." unique_id=317601676]
+unique_name_in_owner = true
+stream = ExtResource("60_s2alt")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelStun4" type="AudioStreamPlayer" parent="." unique_id=405754791]
+unique_name_in_owner = true
+stream = ExtResource("61_ff07d")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelVictory1" type="AudioStreamPlayer" parent="." unique_id=136008692]
+unique_name_in_owner = true
+stream = ExtResource("62_g5dso")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelVictory2" type="AudioStreamPlayer" parent="." unique_id=1786769852]
+unique_name_in_owner = true
+stream = ExtResource("63_jhoec")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelVictory3" type="AudioStreamPlayer" parent="." unique_id=1716458137]
+unique_name_in_owner = true
+stream = ExtResource("64_1hsuy")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelVictory4" type="AudioStreamPlayer" parent="." unique_id=766788469]
+unique_name_in_owner = true
+stream = ExtResource("65_5fh7f")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelLand1" type="AudioStreamPlayer" parent="." unique_id=1397383155]
+unique_name_in_owner = true
+stream = ExtResource("66_de1v8")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelLand2" type="AudioStreamPlayer" parent="." unique_id=1984253229]
+unique_name_in_owner = true
+stream = ExtResource("67_f5oh4")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelLand3" type="AudioStreamPlayer" parent="." unique_id=2130945795]
+unique_name_in_owner = true
+stream = ExtResource("68_s2alt")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelLand4" type="AudioStreamPlayer" parent="." unique_id=258223160]
+unique_name_in_owner = true
+stream = ExtResource("69_ff07d")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelLand5" type="AudioStreamPlayer" parent="." unique_id=486587834]
+unique_name_in_owner = true
+stream = ExtResource("70_g5dso")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="PewBreak1" type="AudioStreamPlayer" parent="." unique_id=208812048]
+unique_name_in_owner = true
+stream = ExtResource("71_g5dso")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="PewBreak2" type="AudioStreamPlayer" parent="." unique_id=46344248]
+unique_name_in_owner = true
+stream = ExtResource("72_jhoec")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="PewBreak3" type="AudioStreamPlayer" parent="." unique_id=82264121]
+unique_name_in_owner = true
+stream = ExtResource("73_1hsuy")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="PewBreak4" type="AudioStreamPlayer" parent="." unique_id=1182630267]
+unique_name_in_owner = true
+stream = ExtResource("74_5fh7f")
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SanctuaryFloorBreak" type="AudioStreamPlayer" parent="." unique_id=2049066194]
+unique_name_in_owner = true
+stream = ExtResource("75_5fh7f")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SanctuaryCollapse" type="AudioStreamPlayer" parent="." unique_id=1387687202]
+unique_name_in_owner = true
+stream = ExtResource("76_bp8ua")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SpellSpireEmerge" type="AudioStreamPlayer" parent="." unique_id=1554995171]
+unique_name_in_owner = true
+stream = ExtResource("77_r1att")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CelestialSphere" type="AudioStreamPlayer" parent="." unique_id=2132623409]
+unique_name_in_owner = true
+stream = ExtResource("78_pu8uc")
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="FireSmall" type="AudioStreamPlayer" parent="." unique_id=1698706903]
+unique_name_in_owner = true
+stream = ExtResource("78_bp8ua")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CrematorExplosion1" type="AudioStreamPlayer" parent="." unique_id=885951171]
+unique_name_in_owner = true
+stream = ExtResource("79_d1lui")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CrematorExplosion2" type="AudioStreamPlayer" parent="." unique_id=430382689]
+unique_name_in_owner = true
+stream = ExtResource("79_d1lui")
+volume_db = -10.0
+pitch_scale = 1.2
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CrematorExplosion3" type="AudioStreamPlayer" parent="." unique_id=214714618]
+unique_name_in_owner = true
+stream = ExtResource("79_d1lui")
+volume_db = -10.0
+pitch_scale = 0.9
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CrematorExplosion4" type="AudioStreamPlayer" parent="." unique_id=1987219685]
+unique_name_in_owner = true
+stream = ExtResource("79_d1lui")
+volume_db = -10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CrematorExplosion5" type="AudioStreamPlayer" parent="." unique_id=170869982]
+unique_name_in_owner = true
+stream = ExtResource("79_d1lui")
+volume_db = -10.0
+pitch_scale = 1.1
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthFireBreath" type="AudioStreamPlayer" parent="." unique_id=127623806]
+unique_name_in_owner = true
+stream = ExtResource("80_4gjup")
+volume_db = -20.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthSeedSpit" type="AudioStreamPlayer" parent="." unique_id=1461185468]
+unique_name_in_owner = true
+stream = ExtResource("81_2sj0h")
+volume_db = -20.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthDeath" type="AudioStreamPlayer" parent="." unique_id=1690713925]
+unique_name_in_owner = true
+stream = ExtResource("82_g80er")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthGiggle1" type="AudioStreamPlayer" parent="." unique_id=1135356766]
+unique_name_in_owner = true
+stream = ExtResource("83_54l83")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthGiggle2" type="AudioStreamPlayer" parent="." unique_id=1214593403]
+unique_name_in_owner = true
+stream = ExtResource("84_tcwt6")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthGiggle3" type="AudioStreamPlayer" parent="." unique_id=1093576931]
+unique_name_in_owner = true
+stream = ExtResource("85_rtohy")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthGiggle4" type="AudioStreamPlayer" parent="." unique_id=1285960716]
+unique_name_in_owner = true
+stream = ExtResource("86_fdtbe")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthJab1" type="AudioStreamPlayer" parent="." unique_id=570994222]
+unique_name_in_owner = true
+stream = ExtResource("87_ls76e")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthJab2" type="AudioStreamPlayer" parent="." unique_id=1041625762]
+unique_name_in_owner = true
+stream = ExtResource("88_a616n")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthPain" type="AudioStreamPlayer" parent="." unique_id=1883950708]
+unique_name_in_owner = true
+stream = ExtResource("89_w1gfk")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthPain2" type="AudioStreamPlayer" parent="." unique_id=1535643310]
+unique_name_in_owner = true
+stream = ExtResource("90_kc3k5")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthPain3" type="AudioStreamPlayer" parent="." unique_id=318514129]
+unique_name_in_owner = true
+stream = ExtResource("91_bik56")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthRoar" type="AudioStreamPlayer" parent="." unique_id=1262051817]
+unique_name_in_owner = true
+stream = ExtResource("92_a5j6g")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthSwipe1" type="AudioStreamPlayer" parent="." unique_id=1168013641]
+unique_name_in_owner = true
+stream = ExtResource("93_700o8")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FrenzygrowthSwipe2" type="AudioStreamPlayer" parent="." unique_id=1479129037]
+unique_name_in_owner = true
+stream = ExtResource("94_7xa1h")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="UndeadEmerge" type="AudioStreamPlayer" parent="." unique_id=2067976866]
+unique_name_in_owner = true
+stream = ExtResource("95_w1gfk")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="PotheadDeath" type="AudioStreamPlayer" parent="." unique_id=1622667198]
+unique_name_in_owner = true
+stream = ExtResource("96_kc3k5")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="PotheadPain1" type="AudioStreamPlayer" parent="." unique_id=1770130515]
+unique_name_in_owner = true
+stream = ExtResource("97_bik56")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="PotheadPain2" type="AudioStreamPlayer" parent="." unique_id=199638930]
+unique_name_in_owner = true
+stream = ExtResource("98_a5j6g")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="PotheadPain3" type="AudioStreamPlayer" parent="." unique_id=1146170729]
+unique_name_in_owner = true
+stream = ExtResource("99_700o8")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="PotheadPain4" type="AudioStreamPlayer" parent="." unique_id=2131800006]
+unique_name_in_owner = true
+stream = ExtResource("100_7xa1h")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="PotheadSnore" type="AudioStreamPlayer" parent="." unique_id=817027845]
+unique_name_in_owner = true
+stream = ExtResource("101_w1gfk")
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+parameters/looping = true
+
+[node name="BurnoutDeath" type="AudioStreamPlayer" parent="." unique_id=1014550140]
+unique_name_in_owner = true
+stream = ExtResource("102_7xa1h")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BurnoutPain1" type="AudioStreamPlayer" parent="." unique_id=1893117297]
+unique_name_in_owner = true
+stream = ExtResource("103_1h70y")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BurnoutPain2" type="AudioStreamPlayer" parent="." unique_id=1927224506]
+unique_name_in_owner = true
+stream = ExtResource("104_or2xe")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BurnoutPain3" type="AudioStreamPlayer" parent="." unique_id=1746309346]
+unique_name_in_owner = true
+stream = ExtResource("105_0qmhs")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BurnoutPain4" type="AudioStreamPlayer" parent="." unique_id=1508482316]
+unique_name_in_owner = true
+stream = ExtResource("106_iseib")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FireCrackleLoop" type="AudioStreamPlayer" parent="." unique_id=36665490]
+unique_name_in_owner = true
+stream = ExtResource("107_1h70y")
+volume_db = 5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="OssuaryAlert" type="AudioStreamPlayer" parent="." unique_id=111917102]
+unique_name_in_owner = true
+stream = ExtResource("108_f27xs")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="OssuaryChaseLoop" type="AudioStreamPlayer" parent="." unique_id=1780820139]
+unique_name_in_owner = true
+stream = ExtResource("109_pu8uc")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="OssuaryExplodeAdd" type="AudioStreamPlayer" parent="." unique_id=120339303]
+unique_name_in_owner = true
+stream = ExtResource("110_xg3cq")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="OssuaryPain1" type="AudioStreamPlayer" parent="." unique_id=52480935]
+unique_name_in_owner = true
+stream = ExtResource("111_nadp4")
+volume_db = 5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="OssuaryPain2" type="AudioStreamPlayer" parent="." unique_id=650099005]
+unique_name_in_owner = true
+stream = ExtResource("112_v8j7m")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="OssuaryPain3" type="AudioStreamPlayer" parent="." unique_id=1174016900]
+unique_name_in_owner = true
+stream = ExtResource("113_uuco5")
+volume_db = 5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="OssuarySnoreLoop" type="AudioStreamPlayer" parent="." unique_id=2036874036]
+unique_name_in_owner = true
+stream = ExtResource("114_4bxya")
+volume_db = 10.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnCharge1" type="AudioStreamPlayer" parent="." unique_id=1356454265]
+unique_name_in_owner = true
+stream = ExtResource("116_ljfvt")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnCharge2" type="AudioStreamPlayer" parent="." unique_id=2126756164]
+unique_name_in_owner = true
+stream = ExtResource("117_xq471")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnConfusion" type="AudioStreamPlayer" parent="." unique_id=2078471706]
+unique_name_in_owner = true
+stream = ExtResource("118_wr4p8")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnPain1" type="AudioStreamPlayer" parent="." unique_id=1598786391]
+unique_name_in_owner = true
+stream = ExtResource("119_nke2h")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnPain2" type="AudioStreamPlayer" parent="." unique_id=1808980450]
+unique_name_in_owner = true
+stream = ExtResource("120_l4lun")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnPain3" type="AudioStreamPlayer" parent="." unique_id=1572293249]
+unique_name_in_owner = true
+stream = ExtResource("121_hxrtb")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnPain4" type="AudioStreamPlayer" parent="." unique_id=1490163124]
+unique_name_in_owner = true
+stream = ExtResource("122_f78ei")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DjinnWarcry" type="AudioStreamPlayer" parent="." unique_id=1297207519]
+unique_name_in_owner = true
+stream = ExtResource("123_e0rai")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CenserDeath" type="AudioStreamPlayer" parent="." unique_id=759045295]
+unique_name_in_owner = true
+stream = ExtResource("124_e0rai")
+volume_db = 24.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CenserPain" type="AudioStreamPlayer" parent="." unique_id=220768625]
+unique_name_in_owner = true
+stream = ExtResource("125_2un7y")
+volume_db = 10.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CenserPain2" type="AudioStreamPlayer" parent="." unique_id=1152480457]
+unique_name_in_owner = true
+stream = ExtResource("126_5wdp1")
+volume_db = 10.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CenserPain3" type="AudioStreamPlayer" parent="." unique_id=175525119]
+unique_name_in_owner = true
+stream = ExtResource("127_phxxv")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CenserPain4" type="AudioStreamPlayer" parent="." unique_id=165962973]
+unique_name_in_owner = true
+stream = ExtResource("128_rdm0a")
+volume_db = 20.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CenserSwing" type="AudioStreamPlayer" parent="." unique_id=665112390]
+unique_name_in_owner = true
+stream = ExtResource("129_2neae")
+volume_db = 10.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CenserWarcry" type="AudioStreamPlayer" parent="." unique_id=701586655]
+unique_name_in_owner = true
+stream = ExtResource("130_avk48")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DoorTownClose" type="AudioStreamPlayer" parent="." unique_id=2036376107]
+unique_name_in_owner = true
+stream = ExtResource("128_f78ei")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="DoorTownOpen" type="AudioStreamPlayer" parent="." unique_id=688045003]
+unique_name_in_owner = true
+stream = ExtResource("130_b4le8")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="WoodsDoorOpen" type="AudioStreamPlayer" parent="." unique_id=1958272213]
+unique_name_in_owner = true
+stream = ExtResource("130_2un7y")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="AbyssDoorClose" type="AudioStreamPlayer" parent="." unique_id=2026244069]
+unique_name_in_owner = true
+stream = ExtResource("129_e0rai")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BlazingDeath" type="AudioStreamPlayer" parent="." unique_id=1402919643]
+unique_name_in_owner = true
+stream = ExtResource("131_2hhse")
+volume_db = 24.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BlazingEmpoweredAdd" type="AudioStreamPlayer" parent="." unique_id=1172333829]
+unique_name_in_owner = true
+stream = ExtResource("132_k6er2")
+volume_db = 15.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BlazingPain1" type="AudioStreamPlayer" parent="." unique_id=289793996]
+unique_name_in_owner = true
+stream = ExtResource("133_f38bj")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BlazingPain2" type="AudioStreamPlayer" parent="." unique_id=905394471]
+unique_name_in_owner = true
+stream = ExtResource("134_1t623")
+volume_db = 15.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BlazingPain3" type="AudioStreamPlayer" parent="." unique_id=211958498]
+unique_name_in_owner = true
+stream = ExtResource("135_rgypw")
+volume_db = 15.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BlazingPain4" type="AudioStreamPlayer" parent="." unique_id=1703780403]
+unique_name_in_owner = true
+stream = ExtResource("136_6rpwc")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="BlazingRoar" type="AudioStreamPlayer" parent="." unique_id=1093020264]
+unique_name_in_owner = true
+stream = ExtResource("137_i4tal")
+volume_db = 10.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="GazerDeath" type="AudioStreamPlayer" parent="." unique_id=88639900]
+unique_name_in_owner = true
+stream = ExtResource("138_6rpwc")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="GazerPain1" type="AudioStreamPlayer" parent="." unique_id=997236776]
+unique_name_in_owner = true
+stream = ExtResource("139_i4tal")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="GazerPain2" type="AudioStreamPlayer" parent="." unique_id=1743113187]
+unique_name_in_owner = true
+stream = ExtResource("140_5rxrd")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="GazerPain3" type="AudioStreamPlayer" parent="." unique_id=2085650032]
+unique_name_in_owner = true
+stream = ExtResource("141_ty8jb")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="GazerPain4" type="AudioStreamPlayer" parent="." unique_id=1145886785]
+unique_name_in_owner = true
+stream = ExtResource("142_5dj8f")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerDeath" type="AudioStreamPlayer" parent="." unique_id=1079873030]
+unique_name_in_owner = true
+stream = ExtResource("143_8qgel")
+volume_db = 5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerFadeOut" type="AudioStreamPlayer" parent="." unique_id=1944629825]
+unique_name_in_owner = true
+stream = ExtResource("144_cjfjc")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerLaughIntro" type="AudioStreamPlayer" parent="." unique_id=1823305167]
+unique_name_in_owner = true
+stream = ExtResource("145_jgyv3")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerLaughShort" type="AudioStreamPlayer" parent="." unique_id=2129095500]
+unique_name_in_owner = true
+stream = ExtResource("146_csvjp")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerPain1" type="AudioStreamPlayer" parent="." unique_id=657740752]
+unique_name_in_owner = true
+stream = ExtResource("147_3cx4j")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerPain2" type="AudioStreamPlayer" parent="." unique_id=1494981070]
+unique_name_in_owner = true
+stream = ExtResource("148_6grh6")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerPain3" type="AudioStreamPlayer" parent="." unique_id=689428913]
+unique_name_in_owner = true
+stream = ExtResource("149_o2yob")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerPain4" type="AudioStreamPlayer" parent="." unique_id=912536590]
+unique_name_in_owner = true
+stream = ExtResource("150_cdckh")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="JawerReappear" type="AudioStreamPlayer" parent="." unique_id=658003080]
+unique_name_in_owner = true
+stream = ExtResource("151_h654c")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="UpgradeJari" type="AudioStreamPlayer" parent="." unique_id=1922387958]
+unique_name_in_owner = true
+stream = ExtResource("152_0tvpp")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="UpgradeSculptor" type="AudioStreamPlayer" parent="." unique_id=425404775]
+unique_name_in_owner = true
+stream = ExtResource("153_yj1nb")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="UpgradeZn" type="AudioStreamPlayer" parent="." unique_id=1682665898]
+unique_name_in_owner = true
+stream = ExtResource("154_ydbt4")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="RavenAlert" type="AudioStreamPlayer" parent="." unique_id=925273739]
+unique_name_in_owner = true
+stream = ExtResource("155_yqhhy")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="RavenDeath" type="AudioStreamPlayer" parent="." unique_id=1593189141]
+unique_name_in_owner = true
+stream = ExtResource("156_62rlu")
+volume_db = 5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="RavenPain" type="AudioStreamPlayer" parent="." unique_id=1803405379]
+unique_name_in_owner = true
+stream = ExtResource("157_73oxn")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MotebearerChillerCastFreeze" type="AudioStreamPlayer" parent="." unique_id=1086924310]
+unique_name_in_owner = true
+stream = ExtResource("158_s7hip")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotebearerCrematorDispelAdd" type="AudioStreamPlayer" parent="." unique_id=1013338468]
+unique_name_in_owner = true
+stream = ExtResource("159_xw2ck")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotebearerShadeReveal" type="AudioStreamPlayer" parent="." unique_id=1734275391]
+unique_name_in_owner = true
+stream = ExtResource("160_yj1nb")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotebearerDispelNoCloth" type="AudioStreamPlayer" parent="." unique_id=288259112]
+unique_name_in_owner = true
+stream = ExtResource("161_ydbt4")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MotebearerDispel" type="AudioStreamPlayer" parent="." unique_id=2025577587]
+unique_name_in_owner = true
+stream = ExtResource("160_oi5w7")
+volume_db = -10.0
+pitch_scale = 0.88
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MoteBonus" type="AudioStreamPlayer" parent="." unique_id=2090257112]
+unique_name_in_owner = true
+stream = ExtResource("161_3a6ug")
+volume_db = 20.0
+pitch_scale = 1.88
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MotemouseDeath" type="AudioStreamPlayer" parent="." unique_id=1285451046]
+unique_name_in_owner = true
+stream = ExtResource("162_fyrqw")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="CrackVariant1" type="AudioStreamPlayer" parent="." unique_id=419337660]
+unique_name_in_owner = true
+stream = ExtResource("165_oi5w7")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="CrackVariant2" type="AudioStreamPlayer" parent="." unique_id=1086019426]
+unique_name_in_owner = true
+stream = ExtResource("166_3a6ug")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="CrackVariant3" type="AudioStreamPlayer" parent="." unique_id=928497432]
+unique_name_in_owner = true
+stream = ExtResource("167_fyrqw")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="CrackVariant4" type="AudioStreamPlayer" parent="." unique_id=1055535723]
+unique_name_in_owner = true
+stream = ExtResource("168_61xh3")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="CrackVariant5" type="AudioStreamPlayer" parent="." unique_id=1557773585]
+unique_name_in_owner = true
+stream = ExtResource("169_fj18f")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="CrackVariant6" type="AudioStreamPlayer" parent="." unique_id=1474769969]
+unique_name_in_owner = true
+stream = ExtResource("170_lyjg2")
+volume_db = -10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="BloomBulbGet" type="AudioStreamPlayer" parent="." unique_id=1923629572]
+unique_name_in_owner = true
+stream = ExtResource("172_80hua")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="BloomBulbGet2" type="AudioStreamPlayer" parent="." unique_id=836957764]
+unique_name_in_owner = true
+stream = ExtResource("173_6ado4")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet" type="AudioStreamPlayer" parent="." unique_id=1210297498]
+unique_name_in_owner = true
+stream = ExtResource("174_ctogo")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet2" type="AudioStreamPlayer" parent="." unique_id=62453176]
+unique_name_in_owner = true
+stream = ExtResource("175_i44cf")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet3" type="AudioStreamPlayer" parent="." unique_id=596304112]
+unique_name_in_owner = true
+stream = ExtResource("176_auio5")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet4" type="AudioStreamPlayer" parent="." unique_id=1620586963]
+unique_name_in_owner = true
+stream = ExtResource("177_b4le8")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet5" type="AudioStreamPlayer" parent="." unique_id=1022492661]
+unique_name_in_owner = true
+stream = ExtResource("178_ja4vg")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet6" type="AudioStreamPlayer" parent="." unique_id=1669082962]
+unique_name_in_owner = true
+stream = ExtResource("179_s3ybg")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet7" type="AudioStreamPlayer" parent="." unique_id=171989040]
+unique_name_in_owner = true
+stream = ExtResource("180_nfrgb")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KindlingGet8" type="AudioStreamPlayer" parent="." unique_id=753603077]
+unique_name_in_owner = true
+stream = ExtResource("181_mubk7")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="TomeGet" type="AudioStreamPlayer" parent="." unique_id=945843462]
+unique_name_in_owner = true
+stream = ExtResource("182_8b2jf")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="ChestOpen" type="AudioStreamPlayer" parent="." unique_id=1119366150]
+unique_name_in_owner = true
+stream = ExtResource("183_6ado4")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelLaughOminous" type="AudioStreamPlayer" parent="." unique_id=323770701]
+unique_name_in_owner = true
+stream = ExtResource("184_auio5")
+volume_db = -5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="ZenithHmm" type="AudioStreamPlayer" parent="." unique_id=608109466]
+unique_name_in_owner = true
+stream = ExtResource("185_b4le8")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="NadirSnort" type="AudioStreamPlayer" parent="." unique_id=1631361530]
+unique_name_in_owner = true
+stream = ExtResource("186_ja4vg")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="FreezeJingle" type="AudioStreamPlayer" parent="." unique_id=587681987]
+unique_name_in_owner = true
+stream = ExtResource("188_ja4vg")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MenuAccept" type="AudioStreamPlayer" parent="." unique_id=1452944408]
+unique_name_in_owner = true
+stream = ExtResource("189_mubk7")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MenuCancel" type="AudioStreamPlayer" parent="." unique_id=2143732566]
+unique_name_in_owner = true
+stream = ExtResource("190_8b2jf")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MenuMove" type="AudioStreamPlayer" parent="." unique_id=1387729849]
+unique_name_in_owner = true
+stream = ExtResource("191_8slkp")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="Respawn" type="AudioStreamPlayer" parent="." unique_id=490190001]
+unique_name_in_owner = true
+stream = ExtResource("192_8b2jf")
+pitch_scale = 1.33
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EnemySlain" type="AudioStreamPlayer" parent="." unique_id=1905935477]
+unique_name_in_owner = true
+stream = ExtResource("194_dl88h")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="HitWood1" type="AudioStreamPlayer" parent="." unique_id=39970868]
+unique_name_in_owner = true
+stream = ExtResource("195_sbn4u")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="HitWood2" type="AudioStreamPlayer" parent="." unique_id=1316957369]
+unique_name_in_owner = true
+stream = ExtResource("196_keqwy")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="HitWood3" type="AudioStreamPlayer" parent="." unique_id=387983614]
+unique_name_in_owner = true
+stream = ExtResource("197_m2okb")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="RockCrumble" type="AudioStreamPlayer" parent="." unique_id=2001619061]
+unique_name_in_owner = true
+stream = ExtResource("198_keqwy")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="ExplosionChunky" type="AudioStreamPlayer" parent="." unique_id=897549581]
+unique_name_in_owner = true
+stream = ExtResource("199_q3rr1")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="KeyDrop" type="AudioStreamPlayer" parent="." unique_id=560568214]
+unique_name_in_owner = true
+stream = ExtResource("200_7kjuu")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MetalHit1" type="AudioStreamPlayer" parent="." unique_id=541432517]
+unique_name_in_owner = true
+stream = ExtResource("201_ajp8a")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MetalHit2" type="AudioStreamPlayer" parent="." unique_id=1426732415]
+unique_name_in_owner = true
+stream = ExtResource("202_ifqs8")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MetalHit3" type="AudioStreamPlayer" parent="." unique_id=1661826067]
+unique_name_in_owner = true
+stream = ExtResource("203_6884e")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MetalHit4" type="AudioStreamPlayer" parent="." unique_id=1224367809]
+unique_name_in_owner = true
+stream = ExtResource("204_ab5dq")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MoteAbsorb" type="AudioStreamPlayer" parent="." unique_id=1029365500]
+unique_name_in_owner = true
+stream = ExtResource("205_ifqs8")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="VesselflowerDeath1" type="AudioStreamPlayer" parent="." unique_id=1236218599]
+unique_name_in_owner = true
+stream = ExtResource("208_mkcmw")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="VesselflowerDeath2" type="AudioStreamPlayer" parent="." unique_id=1084960671]
+unique_name_in_owner = true
+stream = ExtResource("209_fwin2")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="VesselflowerDeath3" type="AudioStreamPlayer" parent="." unique_id=339585932]
+unique_name_in_owner = true
+stream = ExtResource("210_kqff6")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MuckmanActivate" type="AudioStreamPlayer" parent="." unique_id=1135668075]
+unique_name_in_owner = true
+stream = ExtResource("211_18smr")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MuckmanDeath" type="AudioStreamPlayer" parent="." unique_id=1797438509]
+unique_name_in_owner = true
+stream = ExtResource("212_ucp2l")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MuckmanPain1" type="AudioStreamPlayer" parent="." unique_id=1667825475]
+unique_name_in_owner = true
+stream = ExtResource("213_rdjhi")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MuckmanPain2" type="AudioStreamPlayer" parent="." unique_id=585968496]
+unique_name_in_owner = true
+stream = ExtResource("214_bct7m")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MuckmanPain3" type="AudioStreamPlayer" parent="." unique_id=225009482]
+unique_name_in_owner = true
+stream = ExtResource("215_nun3g")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MuckmanPain4" type="AudioStreamPlayer" parent="." unique_id=945969641]
+unique_name_in_owner = true
+stream = ExtResource("216_2xu01")
+volume_db = 15.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="WispFlameExtinguish" type="AudioStreamPlayer" parent="." unique_id=1022121330]
+unique_name_in_owner = true
+stream = ExtResource("217_x0ygl")
+volume_db = 24.0
+pitch_scale = 0.75
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SinkholeDeath" type="AudioStreamPlayer" parent="." unique_id=905339387]
+unique_name_in_owner = true
+stream = ExtResource("218_iwfhf")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SinkholePain1" type="AudioStreamPlayer" parent="." unique_id=1601654571]
+unique_name_in_owner = true
+stream = ExtResource("219_e5kuf")
+volume_db = 24.0
+pitch_scale = 0.9
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SinkholePain2" type="AudioStreamPlayer" parent="." unique_id=1867704715]
+unique_name_in_owner = true
+stream = ExtResource("220_t2wi1")
+volume_db = 24.0
+pitch_scale = 0.9
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SinkholePain3" type="AudioStreamPlayer" parent="." unique_id=1390350789]
+unique_name_in_owner = true
+stream = ExtResource("221_8dxvg")
+volume_db = 24.0
+pitch_scale = 0.9
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SinkholePain4" type="AudioStreamPlayer" parent="." unique_id=62645762]
+unique_name_in_owner = true
+stream = ExtResource("222_13f8x")
+volume_db = 24.0
+pitch_scale = 0.9
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="SamaelReflect" type="AudioStreamPlayer" parent="." unique_id=813289059]
+unique_name_in_owner = true
+stream = ExtResource("223_na2u4")
+pitch_scale = 0.85
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EbonParry" type="AudioStreamPlayer" parent="." unique_id=1803863366]
+unique_name_in_owner = true
+stream = ExtResource("224_v58gx")
+volume_db = -5.0
+pitch_scale = 0.6
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="MotemuncherAnger1" type="AudioStreamPlayer" parent="." unique_id=185806710]
+unique_name_in_owner = true
+stream = ExtResource("225_e2o2e")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherAnger2" type="AudioStreamPlayer" parent="." unique_id=1028222410]
+unique_name_in_owner = true
+stream = ExtResource("226_d2rix")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherAnger3" type="AudioStreamPlayer" parent="." unique_id=1998011287]
+unique_name_in_owner = true
+stream = ExtResource("227_cy3k8")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherAnger4" type="AudioStreamPlayer" parent="." unique_id=750145145]
+unique_name_in_owner = true
+stream = ExtResource("228_tisv3")
+volume_db = 10.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherDeath" type="AudioStreamPlayer" parent="." unique_id=43489205]
+unique_name_in_owner = true
+stream = ExtResource("229_y3uui")
+volume_db = 24.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherPain1" type="AudioStreamPlayer" parent="." unique_id=1159002986]
+unique_name_in_owner = true
+stream = ExtResource("230_dikyo")
+volume_db = 15.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherPain2" type="AudioStreamPlayer" parent="." unique_id=620382477]
+unique_name_in_owner = true
+stream = ExtResource("231_rgdk0")
+volume_db = 15.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherPain3" type="AudioStreamPlayer" parent="." unique_id=624092886]
+unique_name_in_owner = true
+stream = ExtResource("232_olj4p")
+volume_db = 15.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="MotemuncherPain4" type="AudioStreamPlayer" parent="." unique_id=1285431667]
+unique_name_in_owner = true
+stream = ExtResource("233_bdljt")
+volume_db = 15.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="ShadowSnakeDeath" type="AudioStreamPlayer" parent="." unique_id=1363359204]
+unique_name_in_owner = true
+stream = ExtResource("234_tfwd8")
+volume_db = 15.0
+pitch_scale = 1.5
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="ShadowSnakePain1" type="AudioStreamPlayer" parent="." unique_id=2048999538]
+unique_name_in_owner = true
+stream = ExtResource("235_j8fk0")
+volume_db = 15.0
+pitch_scale = 1.5
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="ShadowSnakePain2" type="AudioStreamPlayer" parent="." unique_id=1806648264]
+unique_name_in_owner = true
+stream = ExtResource("236_eoeig")
+volume_db = 20.0
+pitch_scale = 1.5
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="ShadowSnakePain3" type="AudioStreamPlayer" parent="." unique_id=791483682]
+unique_name_in_owner = true
+stream = ExtResource("237_kvrf5")
+volume_db = 15.0
+pitch_scale = 1.5
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="ShadowSnakePain4" type="AudioStreamPlayer" parent="." unique_id=1887049992]
+unique_name_in_owner = true
+stream = ExtResource("238_qrklh")
+volume_db = 15.0
+pitch_scale = 1.5
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="SamaelRefusal" type="AudioStreamPlayer" parent="." unique_id=2036038525]
+unique_name_in_owner = true
+stream = ExtResource("239_ufnsi")
+volume_db = 24.0
+pitch_scale = 0.85
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnDeath1" type="AudioStreamPlayer" parent="." unique_id=1361642213]
+unique_name_in_owner = true
+stream = ExtResource("240_g12uf")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnDeath2" type="AudioStreamPlayer" parent="." unique_id=1691558911]
+unique_name_in_owner = true
+stream = ExtResource("241_bkwt2")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnDeath3" type="AudioStreamPlayer" parent="." unique_id=779696230]
+unique_name_in_owner = true
+stream = ExtResource("242_8nudd")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnDeath4" type="AudioStreamPlayer" parent="." unique_id=235395712]
+unique_name_in_owner = true
+stream = ExtResource("243_l00lj")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnPain1" type="AudioStreamPlayer" parent="." unique_id=1391868475]
+unique_name_in_owner = true
+stream = ExtResource("244_if2dv")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnPain2" type="AudioStreamPlayer" parent="." unique_id=1542769059]
+unique_name_in_owner = true
+stream = ExtResource("245_60365")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnPain3" type="AudioStreamPlayer" parent="." unique_id=22360820]
+unique_name_in_owner = true
+stream = ExtResource("246_tdm27")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnSpawn1" type="AudioStreamPlayer" parent="." unique_id=2059928691]
+unique_name_in_owner = true
+stream = ExtResource("247_um0l5")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnSpawn2" type="AudioStreamPlayer" parent="." unique_id=1053946104]
+unique_name_in_owner = true
+stream = ExtResource("248_igwbo")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnSpawn3" type="AudioStreamPlayer" parent="." unique_id=1418463062]
+unique_name_in_owner = true
+stream = ExtResource("249_cm46d")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDawnSpawn4" type="AudioStreamPlayer" parent="." unique_id=1316021504]
+unique_name_in_owner = true
+stream = ExtResource("250_3t0rb")
+volume_db = 7.0
+pitch_scale = 2.0
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskDeath1" type="AudioStreamPlayer" parent="." unique_id=942985126]
+unique_name_in_owner = true
+stream = ExtResource("251_ynuxi")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskDeath2" type="AudioStreamPlayer" parent="." unique_id=1647160510]
+unique_name_in_owner = true
+stream = ExtResource("252_ujc1y")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskDeath3" type="AudioStreamPlayer" parent="." unique_id=307969074]
+unique_name_in_owner = true
+stream = ExtResource("253_ygas3")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskDeath4" type="AudioStreamPlayer" parent="." unique_id=1148608163]
+unique_name_in_owner = true
+stream = ExtResource("254_vjqou")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskPain1" type="AudioStreamPlayer" parent="." unique_id=316338563]
+unique_name_in_owner = true
+stream = ExtResource("255_dn331")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskPain2" type="AudioStreamPlayer" parent="." unique_id=1262649181]
+unique_name_in_owner = true
+stream = ExtResource("256_317tx")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskPain3" type="AudioStreamPlayer" parent="." unique_id=1280709323]
+unique_name_in_owner = true
+stream = ExtResource("257_6e1ws")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskPain4" type="AudioStreamPlayer" parent="." unique_id=1273781475]
+unique_name_in_owner = true
+stream = ExtResource("258_pmg5s")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskSpawn1" type="AudioStreamPlayer" parent="." unique_id=74244947]
+unique_name_in_owner = true
+stream = ExtResource("259_sy32q")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskSpawn2" type="AudioStreamPlayer" parent="." unique_id=522814581]
+unique_name_in_owner = true
+stream = ExtResource("260_ud0cl")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskSpawn3" type="AudioStreamPlayer" parent="." unique_id=1502402140]
+unique_name_in_owner = true
+stream = ExtResource("261_te2cx")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessDuskSpawn4" type="AudioStreamPlayer" parent="." unique_id=680343984]
+unique_name_in_owner = true
+stream = ExtResource("262_71dhc")
+volume_db = 5.0
+pitch_scale = 0.8
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="EndlessTwilightDeath1" type="AudioStreamPlayer" parent="." unique_id=1452432951]
+unique_name_in_owner = true
+stream = ExtResource("263_uc6au")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightDeath2" type="AudioStreamPlayer" parent="." unique_id=2041140888]
+unique_name_in_owner = true
+stream = ExtResource("264_ic1xb")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightDeath3" type="AudioStreamPlayer" parent="." unique_id=1330028641]
+unique_name_in_owner = true
+stream = ExtResource("265_rhack")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightPain1" type="AudioStreamPlayer" parent="." unique_id=1754115121]
+unique_name_in_owner = true
+stream = ExtResource("266_2g0t3")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightPain2" type="AudioStreamPlayer" parent="." unique_id=773971787]
+unique_name_in_owner = true
+stream = ExtResource("267_m03th")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightPain3" type="AudioStreamPlayer" parent="." unique_id=1078681987]
+unique_name_in_owner = true
+stream = ExtResource("268_nms6y")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightSpawn1" type="AudioStreamPlayer" parent="." unique_id=1407477375]
+unique_name_in_owner = true
+stream = ExtResource("269_voeto")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightSpawn2" type="AudioStreamPlayer" parent="." unique_id=1508390826]
+unique_name_in_owner = true
+stream = ExtResource("270_r8u1x")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="EndlessTwilightSpawn3" type="AudioStreamPlayer" parent="." unique_id=1564904051]
+unique_name_in_owner = true
+stream = ExtResource("271_g0j4d")
+max_polyphony = 5
+bus = &"SFX Distort"
+
+[node name="LurkerCast1" type="AudioStreamPlayer" parent="." unique_id=627743234]
+unique_name_in_owner = true
+stream = ExtResource("272_56lxl")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LurkerCast2" type="AudioStreamPlayer" parent="." unique_id=1624155938]
+unique_name_in_owner = true
+stream = ExtResource("273_4ioqv")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LurkerCast3" type="AudioStreamPlayer" parent="." unique_id=854651019]
+unique_name_in_owner = true
+stream = ExtResource("274_ker8r")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LurkerChannelLoop" type="AudioStreamPlayer" parent="." unique_id=1035603783]
+unique_name_in_owner = true
+stream = ExtResource("275_g2j8y")
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LurkerDeath" type="AudioStreamPlayer" parent="." unique_id=83170914]
+unique_name_in_owner = true
+stream = ExtResource("276_fkcqt")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LurkerLeech1" type="AudioStreamPlayer" parent="." unique_id=1661761141]
+unique_name_in_owner = true
+stream = ExtResource("277_q50fj")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LurkerLeech2" type="AudioStreamPlayer" parent="." unique_id=1136303343]
+unique_name_in_owner = true
+stream = ExtResource("278_v4mdv")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LurkerLeech3" type="AudioStreamPlayer" parent="." unique_id=1687385902]
+unique_name_in_owner = true
+stream = ExtResource("279_akf4k")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LurkerLeech4" type="AudioStreamPlayer" parent="." unique_id=491383176]
+unique_name_in_owner = true
+stream = ExtResource("280_wa03v")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LurkerPain" type="AudioStreamPlayer" parent="." unique_id=38890544]
+unique_name_in_owner = true
+stream = ExtResource("281_3skh5")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LurkerStart" type="AudioStreamPlayer" parent="." unique_id=1895072762]
+unique_name_in_owner = true
+stream = ExtResource("282_0hmgc")
+max_polyphony = 5
+bus = &"SFX"
+
+[node name="LenorePain1" type="AudioStreamPlayer" parent="." unique_id=1839421969]
+unique_name_in_owner = true
+stream = ExtResource("283_wub2b")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePain2" type="AudioStreamPlayer" parent="." unique_id=646129154]
+unique_name_in_owner = true
+stream = ExtResource("284_46hko")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePain3" type="AudioStreamPlayer" parent="." unique_id=1515634838]
+unique_name_in_owner = true
+stream = ExtResource("285_eh7bs")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePain4" type="AudioStreamPlayer" parent="." unique_id=1139797222]
+unique_name_in_owner = true
+stream = ExtResource("286_nmidx")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePlace1" type="AudioStreamPlayer" parent="." unique_id=767051856]
+unique_name_in_owner = true
+stream = ExtResource("287_6xoka")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePlace2" type="AudioStreamPlayer" parent="." unique_id=1430716848]
+unique_name_in_owner = true
+stream = ExtResource("288_r0gdt")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePlace3" type="AudioStreamPlayer" parent="." unique_id=204543199]
+unique_name_in_owner = true
+stream = ExtResource("289_32iuh")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePlace4" type="AudioStreamPlayer" parent="." unique_id=82381529]
+unique_name_in_owner = true
+stream = ExtResource("290_rd6kb")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePrayerfulStrike1" type="AudioStreamPlayer" parent="." unique_id=1297301631]
+unique_name_in_owner = true
+stream = ExtResource("291_4tst4")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePrayerfulStrike2" type="AudioStreamPlayer" parent="." unique_id=1676172350]
+unique_name_in_owner = true
+stream = ExtResource("292_xdaqi")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenorePrayerfulStrike3" type="AudioStreamPlayer" parent="." unique_id=1818332451]
+unique_name_in_owner = true
+stream = ExtResource("293_33ujp")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreSlap1" type="AudioStreamPlayer" parent="." unique_id=638946431]
+unique_name_in_owner = true
+stream = ExtResource("294_bpy74")
+volume_db = -15.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreSlap2" type="AudioStreamPlayer" parent="." unique_id=1207682869]
+unique_name_in_owner = true
+stream = ExtResource("295_sh4d6")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreSlap3" type="AudioStreamPlayer" parent="." unique_id=283209507]
+unique_name_in_owner = true
+stream = ExtResource("296_y5ixa")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreWarcry" type="AudioStreamPlayer" parent="." unique_id=1741568144]
+unique_name_in_owner = true
+stream = ExtResource("297_2bs20")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreClaw1" type="AudioStreamPlayer" parent="." unique_id=1653637866]
+unique_name_in_owner = true
+stream = ExtResource("298_pr6af")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreClaw2" type="AudioStreamPlayer" parent="." unique_id=1387486555]
+unique_name_in_owner = true
+stream = ExtResource("299_na41l")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreDeath" type="AudioStreamPlayer" parent="." unique_id=830395311]
+unique_name_in_owner = true
+stream = ExtResource("300_kkqfe")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreDig1" type="AudioStreamPlayer" parent="." unique_id=1761666197]
+unique_name_in_owner = true
+stream = ExtResource("301_tnr16")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreDig2" type="AudioStreamPlayer" parent="." unique_id=285324480]
+unique_name_in_owner = true
+stream = ExtResource("302_48qst")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="LenoreDig3" type="AudioStreamPlayer" parent="." unique_id=115794675]
+unique_name_in_owner = true
+stream = ExtResource("303_i3nsm")
+volume_db = -5.0
+max_polyphony = 5
+bus = &"SFX Reverb"
+
+[node name="FriendlyMoteMurmur" type="AudioStreamPlayer" parent="." unique_id=39585839]
+unique_name_in_owner = true
+stream = ExtResource("304_bkwt2")
+max_polyphony = 999
+bus = &"SFX"
+
+[node name="MimicPain" type="AudioStreamPlayer" parent="." unique_id=1250322603]
+unique_name_in_owner = true
+stream = ExtResource("207_74jvo")
+bus = &"SFX"
+
+[node name="MimicDeath" type="AudioStreamPlayer" parent="." unique_id=193322812]
+unique_name_in_owner = true
+stream = ExtResource("210_mkcmw")
+bus = &"SFX"
+
+[node name="EbonCharge" type="AudioStreamPlayer" parent="." unique_id=424926086]
+unique_name_in_owner = true
+stream = ExtResource("217_hobyr")
+volume_db = -5.0
+pitch_scale = 1.2
+bus = &"SFX Reverb"
+
+[node name="EbonFire" type="AudioStreamPlayer" parent="." unique_id=1087711456]
+unique_name_in_owner = true
+stream = ExtResource("218_gs62f")
+volume_db = -5.0
+pitch_scale = 1.2
+bus = &"SFX Reverb"
+
+[node name="EbonLaugh1" type="AudioStreamPlayer" parent="." unique_id=1525101062]
+unique_name_in_owner = true
+stream = ExtResource("220_1sb10")
+volume_db = -5.0
+pitch_scale = 1.2
+bus = &"SFX Reverb"
+
+[node name="EbonLaugh2" type="AudioStreamPlayer" parent="." unique_id=1453289723]
+unique_name_in_owner = true
+stream = ExtResource("221_75eo4")
+volume_db = -5.0
+pitch_scale = 1.2
+bus = &"SFX Reverb"
+
+[node name="EbonLaugh3" type="AudioStreamPlayer" parent="." unique_id=1215151391]
+unique_name_in_owner = true
+stream = ExtResource("222_kvchs")
+volume_db = -5.0
+pitch_scale = 1.2
+bus = &"SFX Reverb"
+
+[node name="EbonLaugh4" type="AudioStreamPlayer" parent="." unique_id=1977189623]
+unique_name_in_owner = true
+stream = ExtResource("223_ohhv0")
+volume_db = -5.0
+pitch_scale = 1.2
+bus = &"SFX Reverb"
+
+[node name="EbonPain" type="AudioStreamPlayer" parent="." unique_id=1396656923]
+unique_name_in_owner = true
+stream = ExtResource("225_xmqvi")
+pitch_scale = 1.2
+bus = &"SFX Reverb"
+
+[node name="Teddy" type="AudioStreamPlayer" parent="." unique_id=717852018]
+unique_name_in_owner = true
+stream = ExtResource("314_8nudd")
+bus = &"SFX"
+
+[node name="Unused" type="Node" parent="." unique_id=1761077907]
+
+[node name="DarkHiss" type="AudioStreamPlayer" parent="Unused" unique_id=123813113]
+stream = ExtResource("211_p062a")
+volume_db = 24.0
+bus = &"SFX Reverb"
+
+[node name="CritterPain" type="AudioStreamPlayer" parent="Unused" unique_id=2053983749]
+stream = ExtResource("219_uhgrc")
+pitch_scale = 1.55
+
+[node name="CritterPain2" type="AudioStreamPlayer" parent="Unused" unique_id=573959643]
+stream = ExtResource("224_6j5cg")
+bus = &"SFX"
+
+[node name="SmallCritterPain" type="AudioStreamPlayer" parent="Unused" unique_id=350426234]
+stream = ExtResource("216_7okhc")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="Hiss" type="AudioStreamPlayer" parent="Unused" unique_id=675610486]
+stream = ExtResource("213_cl5o2")
+bus = &"SFX"
+
+[node name="Hiss2" type="AudioStreamPlayer" parent="Unused" unique_id=1796101440]
+stream = ExtResource("214_dr5ul")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="Hiss3" type="AudioStreamPlayer" parent="Unused" unique_id=2013824544]
+stream = ExtResource("215_3cfye")
+volume_db = 10.0
+bus = &"SFX"
+
+[node name="Hiss4" type="AudioStreamPlayer" parent="Unused" unique_id=732989301]
+stream = ExtResource("212_1sbry")
+volume_db = 10.0
+bus = &"SFX"

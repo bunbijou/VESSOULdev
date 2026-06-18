@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://dwx0fuuris80m"]
+
+[ext_resource type="Script" uid="uid://4qgh1v88rx7t" path="res://scripts/warp_lenore.gd" id="1_6stt0"]
+[ext_resource type="Texture2D" uid="uid://bgeqbolvtbor" path="res://sprites/environment/warp_lenore.png" id="2_l38va"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="4_6jehd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iwn2"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6stt0"]
+atlas = ExtResource("2_l38va")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tqs1"]
+atlas = ExtResource("2_l38va")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnkx4"]
+atlas = ExtResource("2_l38va")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6jehd"]
+atlas = ExtResource("2_l38va")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sophf"]
+atlas = ExtResource("2_l38va")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a0bt6"]
+atlas = ExtResource("2_l38va")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fn00n"]
+animations = [{
+"frames": [{
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_6stt0")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_3tqs1")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_gnkx4")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_6jehd")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_sophf")
+}, {
+"duration": 0.7,
+"texture": SubResource("AtlasTexture_a0bt6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_677n6"]
+resource_name = "black"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1.0717735),
+"update": 1,
+"values": [&"default"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("DestinationLabel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_jb6sp"]
+resource_name = "hidden"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("DestinationLabel:text")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d0rjv"]
+_data = {
+&"black": SubResource("Animation_677n6"),
+&"hidden": SubResource("Animation_jb6sp")
+}
+
+[node name="Area2D" type="Area2D" unique_id=1207936856 node_paths=PackedStringArray("anim", "my_sprite", "myLabel")]
+scale = Vector2(0.5, 0.5)
+disable_mode = 1
+collision_mask = 2
+script = ExtResource("1_6stt0")
+anim = NodePath("AnimationPlayer")
+my_sprite = NodePath("AnimatedSprite2D")
+myLabel = NodePath("DestinationLabel")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1118815053]
+shape = SubResource("RectangleShape2D_7iwn2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1088363373]
+z_index = 998
+sprite_frames = SubResource("SpriteFrames_fn00n")
+autoplay = "default"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=603760891]
+libraries/ = SubResource("AnimationLibrary_d0rjv")
+
+[node name="DestinationLabel" type="Label" parent="." unique_id=1285725817]
+z_index = 999
+offset_left = -48.0
+offset_top = -20.0
+offset_right = 96.0
+offset_bottom = 12.0
+scale = Vector2(0.6900401, 0.6900401)
+theme = ExtResource("4_6jehd")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

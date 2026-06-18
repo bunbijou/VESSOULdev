@@ -1,0 +1,577 @@
+[gd_scene load_steps=20 format=4 uid="uid://dt0ad6ck60lq2"]
+
+[ext_resource type="Script" uid="uid://bhfooejcc0o6i" path="res://game_manager.gd" id="1_m7jmp"]
+[ext_resource type="PackedScene" uid="uid://dqhivaxq24w4h" path="res://scenes/player.tscn" id="2_m7jmp"]
+[ext_resource type="Texture2D" uid="uid://clvywyf61j11p" path="res://sprites/abyss tile.png" id="2_xlvrw"]
+[ext_resource type="PackedScene" uid="uid://b1sy2h3btbeyu" path="res://scenes/soul.tscn" id="3_y2354"]
+[ext_resource type="AudioStream" uid="uid://dkp8jsor6hfft" path="res://sounds/abyss no loop.ogg" id="4_y2354"]
+[ext_resource type="Script" uid="uid://bgsbaugnmdgpp" path="res://hungertimer.gd" id="5_5c1cw"]
+[ext_resource type="Script" uid="uid://syv5pbx27jic" path="res://vessel_flower.gd" id="6_xlvrw"]
+[ext_resource type="Texture2D" uid="uid://bhbq0r8esofp5" path="res://sprites/vesselflower_dormant.png" id="6_y2354"]
+[ext_resource type="Texture2D" uid="uid://qj5biq0d4f0p" path="res://sprites/vessel_flower.png" id="7_ni31j"]
+[ext_resource type="Texture2D" uid="uid://kpylegk7hvgs" path="res://sprites/vesselflower_dormant_ripe.png" id="9_73fnb"]
+[ext_resource type="AudioStream" uid="uid://cxnd5eiqq67om" path="res://sounds/flowercrack.wav" id="10_5juve"]
+[ext_resource type="AudioStream" uid="uid://c4fetl1cil6w5" path="res://sounds/flowerbloom.wav" id="11_fy5k1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mytjs"]
+texture = ExtResource("2_xlvrw")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_15f6m"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mytjs")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73fnb"]
+
+[sub_resource type="Animation" id="Animation_ni31j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlowerDormant:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FlowerBloom:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlowerWaiting:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_xlvrw"]
+resource_name = "bloom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlowerDormant:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FlowerBloom:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlowerWaiting:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("BloomSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimationPlayer:active")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(5.1666665),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_5juve"]
+resource_name = "waiting"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlowerWaiting:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FlowerBloom:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FlowerDormant:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CrackSFX:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_73fnb"]
+_data = {
+&"RESET": SubResource("Animation_ni31j"),
+&"bloom": SubResource("Animation_xlvrw"),
+&"waiting": SubResource("Animation_5juve")
+}
+
+[node name="PacGame" type="Node"]
+
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_m7jmp")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(557, 503)
+tile_map_data = PackedByteArray("AAD+//3/AAABAAEAAAD///3/AAACAAEAAAAAAP3/AAACAAEAAAABAP3/AAACAAEAAAACAP3/AAACAAEAAAADAP3/AAACAAEAAAAEAP3/AAABAAEAAAD+//z/AAABAAEAAAACAPn/AAACAAEAAAAAAPn/AAABAAEAAAABAPn/AAACAAEAAAD9//n/AAABAAEAAAD+//n/AAACAAEAAAD9//v/AAABAAEAAAD+//v/AAACAAEAAAAFAPn/AAABAAEAAAAGAPn/AAACAAEAAAAFAPv/AAABAAEAAAAGAPv/AAACAAEAAAAHAPn/AAACAAEAAAAIAPn/AAABAAEAAAAJAPn/AAACAAEAAAAHAPv/AAACAAEAAAAIAPv/AAABAAEAAAAJAPv/AAACAAEAAAD6//n/AAABAAEAAAD7//n/AAABAAEAAAD6//v/AAABAAEAAAD7//v/AAACAAEAAAAJAPz/AAABAAEAAAAJAP3/AAABAAEAAAAJAP7/AAABAAEAAAAJAP//AAABAAEAAAAJAAAAAAABAAEAAAAJAAEAAAABAAEAAAAJAAIAAAABAAEAAAAIAAIAAAABAAEAAAAHAAIAAAABAAEAAAAGAAIAAAABAAEAAAAFAAIAAAABAAEAAAAEAAIAAAABAAEAAAADAAIAAAABAAEAAAACAAIAAAABAAEAAAABAAIAAAABAAEAAAAAAAIAAAABAAEAAAD//wIAAAABAAEAAAD+/wIAAAABAAEAAAD9/wIAAAABAAEAAAD8/wIAAAABAAEAAAD7/wIAAAABAAEAAAD6/wIAAAABAAEAAAD5/wIAAAABAAEAAAD5/wEAAAABAAEAAAD5/wAAAAABAAEAAAD5////AAABAAEAAAD5//7/AAABAAEAAAD5//3/AAABAAEAAAD5//z/AAABAAEAAAD6//z/AAABAAEAAAD7//z/AAABAAEAAAD8//z/AAABAAEAAAD9//z/AAABAAEAAAD9//3/AAABAAEAAAD9//7/AAABAAEAAAD+//7/AAABAAEAAAD///7/AAABAAEAAAAAAP7/AAABAAEAAAABAP7/AAABAAEAAAACAP7/AAABAAEAAAADAP7/AAABAAEAAAAEAP7/AAABAAEAAAAGAP3/AAABAAEAAAAGAPz/AAABAAEAAAAFAPz/AAABAAEAAAAHAPz/AAABAAEAAAAIAPz/AAABAAEAAAAIAP3/AAABAAEAAAAIAP7/AAABAAEAAAAHAP7/AAABAAEAAAAHAP3/AAABAAEAAAAFAP7/AAABAAEAAAAGAP7/AAABAAEAAAAHAP//AAABAAEAAAAIAP//AAABAAEAAAAGAP//AAABAAEAAAAFAP//AAABAAEAAAAEAP//AAABAAEAAAADAP//AAABAAEAAAACAP//AAABAAEAAAABAP//AAABAAEAAAAAAP//AAABAAEAAAD/////AAABAAEAAAD+////AAABAAEAAAD9////AAABAAEAAAD8////AAABAAEAAAD8//7/AAABAAEAAAD8//3/AAABAAEAAAD7//3/AAABAAEAAAD6//3/AAABAAEAAAD6//7/AAABAAEAAAD7//7/AAABAAEAAAD7////AAABAAEAAAD6////AAABAAEAAAD6/wAAAAABAAEAAAD7/wAAAAABAAEAAAD8/wAAAAABAAEAAAD9/wAAAAABAAEAAAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAAAAAAAAAABAAEAAAABAAAAAAABAAEAAAACAAAAAAABAAEAAAADAAAAAAABAAEAAAAEAAAAAAABAAEAAAAFAAAAAAABAAEAAAAGAAAAAAABAAEAAAAHAAAAAAABAAEAAAAIAAAAAAABAAEAAAAIAAEAAAABAAEAAAAHAAEAAAABAAEAAAAGAAEAAAABAAEAAAAFAAEAAAABAAEAAAAEAAEAAAABAAEAAAADAAEAAAABAAEAAAACAAEAAAABAAEAAAABAAEAAAABAAEAAAAAAAEAAAABAAEAAAD//wEAAAABAAEAAAD+/wEAAAABAAEAAAD9/wEAAAABAAEAAAD8/wEAAAABAAEAAAD7/wEAAAABAAEAAAD6/wEAAAABAAEAAAD5//j/AAABAAEAAAD5//f/AAABAAEAAAD5//b/AAABAAEAAAD5//X/AAABAAEAAAD5//T/AAABAAEAAAD6//T/AAABAAEAAAD7//T/AAABAAEAAAD8//T/AAABAAEAAAD9//T/AAABAAEAAAD+//T/AAABAAEAAAD///T/AAABAAEAAAAAAPT/AAABAAEAAAABAPT/AAABAAEAAAACAPT/AAABAAEAAAADAPT/AAABAAEAAAAEAPT/AAABAAEAAAAFAPT/AAABAAEAAAAGAPT/AAABAAEAAAAHAPT/AAABAAEAAAAIAPT/AAABAAEAAAAJAPT/AAABAAEAAAAJAPX/AAABAAEAAAAJAPb/AAABAAEAAAAJAPf/AAABAAEAAAAJAPj/AAABAAEAAAAIAPj/AAABAAEAAAAHAPj/AAABAAEAAAAGAPj/AAABAAEAAAAFAPj/AAABAAEAAAAFAPf/AAABAAEAAAAGAPf/AAABAAEAAAAHAPf/AAABAAEAAAAIAPf/AAABAAEAAAAIAPb/AAABAAEAAAAHAPb/AAABAAEAAAAGAPb/AAABAAEAAAAFAPb/AAABAAEAAAAEAPb/AAABAAEAAAAFAPX/AAABAAEAAAAGAPX/AAABAAEAAAAHAPX/AAABAAEAAAAIAPX/AAABAAEAAAAEAPX/AAABAAEAAAADAPX/AAABAAEAAAACAPX/AAABAAEAAAABAPX/AAABAAEAAAAAAPX/AAABAAEAAAD///X/AAABAAEAAAD+//X/AAABAAEAAAD9//X/AAABAAEAAAD8//X/AAABAAEAAAD7//X/AAABAAEAAAD6//X/AAABAAEAAAD6//b/AAABAAEAAAD7//b/AAABAAEAAAD8//b/AAABAAEAAAD9//b/AAABAAEAAAD+//b/AAABAAEAAAD///b/AAABAAEAAAAAAPb/AAABAAEAAAABAPb/AAABAAEAAAACAPb/AAABAAEAAAADAPb/AAABAAEAAAD9//f/AAABAAEAAAD8//j/AAABAAEAAAD7//j/AAABAAEAAAD6//j/AAABAAEAAAD6//f/AAABAAEAAAD7//f/AAABAAEAAAD8//f/AAABAAEAAAD9//j/AAABAAEAAAD3/wIAAAABAAEAAAD3/wEAAAABAAEAAAD3/wAAAAABAAEAAAD3////AAABAAEAAAD3//7/AAABAAEAAAD3//3/AAABAAEAAAD3//z/AAABAAEAAAD3//v/AAABAAEAAAD3//r/AAABAAEAAAD3//n/AAABAAEAAAD3//j/AAABAAEAAAD3//f/AAABAAEAAAD3//b/AAABAAEAAAD3//X/AAABAAEAAAD3//T/AAABAAEAAAD3//P/AAABAAEAAAD3//L/AAABAAEAAAD4//L/AAABAAEAAAD5//L/AAABAAEAAAD6//L/AAABAAEAAAD7//L/AAABAAEAAAD8//L/AAABAAEAAAD9//L/AAABAAEAAAD+//L/AAABAAEAAAD///L/AAABAAEAAAAAAPL/AAABAAEAAAAAAPH/AAABAAEAAAAAAPD/AAABAAEAAAACAPD/AAABAAEAAAACAPH/AAABAAEAAAACAPL/AAABAAEAAAADAPL/AAABAAEAAAAEAPL/AAABAAEAAAAFAPL/AAABAAEAAAAGAPL/AAABAAEAAAAHAPL/AAABAAEAAAAIAPL/AAABAAEAAAAJAPL/AAABAAEAAAAKAPL/AAABAAEAAAALAPL/AAABAAEAAAALAPP/AAABAAEAAAALAPT/AAABAAEAAAALAPX/AAABAAEAAAALAPb/AAABAAEAAAALAPf/AAABAAEAAAALAPj/AAABAAEAAAALAPn/AAABAAEAAAALAPr/AAABAAEAAAALAPv/AAABAAEAAAALAPz/AAABAAEAAAALAP3/AAABAAEAAAALAP7/AAABAAEAAAALAP//AAABAAEAAAALAAAAAAABAAEAAAALAAEAAAABAAEAAAALAAIAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAAKAAQAAAABAAEAAAAJAAQAAAABAAEAAAAIAAQAAAABAAEAAAAHAAQAAAABAAEAAAAGAAQAAAABAAEAAAAFAAQAAAABAAEAAAAEAAQAAAABAAEAAAADAAQAAAABAAEAAAACAAQAAAABAAEAAAABAAQAAAABAAEAAAAAAAQAAAABAAEAAAD//wQAAAABAAEAAAD+/wQAAAABAAEAAAD9/wQAAAABAAEAAAD8/wQAAAABAAEAAAD7/wQAAAABAAEAAAD6/wQAAAABAAEAAAD5/wQAAAABAAEAAAD4/wQAAAABAAEAAAD3/wQAAAABAAEAAAD3/wMAAAABAAEAAAD8//n/AAABAAEAAAD8//v/AAABAAEAAAD5//v/AAABAAEAAAD5//n/AAABAAEAAAD+//j/AAACAAEAAAD+//f/AAACAAEAAAD///f/AAACAAEAAAAAAPf/AAACAAEAAAABAPf/AAACAAEAAAACAPf/AAACAAEAAAADAPf/AAACAAEAAAAEAPf/AAACAAEAAAAEAPz/AAACAAEAAAAEAPv/AAACAAEAAAAEAPj/AAACAAEAAAAEAPn/AAACAAEAAAAFAP3/AAABAAEAAAA=")
+tile_set = SubResource("TileSet_15f6m")
+
+[node name="Player" parent="." instance=ExtResource("2_m7jmp")]
+position = Vector2(605, 372)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+stream = ExtResource("4_y2354")
+autoplay = true
+bus = &"Music"
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+position_smoothing_enabled = true
+
+[node name="soulsLabel" type="Label" parent="Player/Camera2D"]
+offset_left = -300.10907
+offset_top = 65.24121
+offset_right = 302.56696
+offset_bottom = 331.80798
+theme_override_font_sizes/font_size = 25
+text = "Souls: x"
+horizontal_alignment = 1
+
+[node name="powerLabel" type="Label" parent="Player/Camera2D"]
+offset_left = -304.45847
+offset_top = 91.337524
+offset_right = 298.21756
+offset_bottom = 357.9043
+theme_override_font_sizes/font_size = 25
+horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="Player"]
+script = ExtResource("5_5c1cw")
+
+[node name="Souls" type="Node" parent="."]
+
+[node name="soul" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(572, 259)
+
+[node name="soul2" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(536, 296)
+
+[node name="soul3" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(539, 261)
+
+[node name="soul4" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(604, 259)
+
+[node name="soul5" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(636, 259)
+
+[node name="soul6" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(668, 259)
+
+[node name="soul7" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(669, 292)
+
+[node name="soul8" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(665, 324)
+
+[node name="soul9" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(539, 325)
+
+[node name="soul10" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(572, 325)
+
+[node name="soul11" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(636, 325)
+
+[node name="soul12" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(605, 325)
+
+[node name="soul13" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(316, 136)
+
+[node name="soul16" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(896, 137)
+
+[node name="soul18" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(734, 328)
+
+[node name="soul19" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(767, 328)
+
+[node name="soul20" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(831, 328)
+
+[node name="soul21" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(800, 328)
+
+[node name="soul22" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(892, 103)
+
+[node name="soul23" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(779, 102)
+
+[node name="soul24" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(804, 102)
+
+[node name="soul25" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(859, 103)
+
+[node name="soul26" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(828, 102)
+
+[node name="soul27" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(754, 101)
+
+[node name="soul28" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(628, 102)
+
+[node name="soul29" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(661, 102)
+
+[node name="soul30" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(725, 102)
+
+[node name="soul31" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(694, 102)
+
+[node name="soul32" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(601, 101)
+
+[node name="soul33" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(475, 102)
+
+[node name="soul34" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(508, 102)
+
+[node name="soul35" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(572, 102)
+
+[node name="soul36" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(541, 102)
+
+[node name="soul37" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(318, 103)
+
+[node name="soul38" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(351, 103)
+
+[node name="soul39" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(415, 103)
+
+[node name="soul40" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(384, 103)
+
+[node name="soul41" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(444, 102)
+
+[node name="soul42" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(473, 326)
+
+[node name="soul43" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(380, 327)
+
+[node name="soul44" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(444, 327)
+
+[node name="soul45" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(413, 327)
+
+[node name="soul46" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 169)
+
+[node name="soul47" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 199)
+
+[node name="soul48" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 232)
+
+[node name="soul49" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 265)
+
+[node name="soul50" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 296)
+
+[node name="soul51" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 327)
+
+[node name="soul52" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(348, 327)
+
+[node name="soul53" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 361)
+
+[node name="soul54" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 393)
+
+[node name="soul55" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 423)
+
+[node name="soul56" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(316, 456)
+
+[node name="soul57" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 487)
+
+[node name="soul58" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(316, 519)
+
+[node name="soul59" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(318, 553)
+
+[node name="soul60" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(317, 583)
+
+[node name="soul61" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(318, 615)
+
+[node name="soul62" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(349, 615)
+
+[node name="soul63" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(383, 616)
+
+[node name="soul64" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(413, 616)
+
+[node name="soul65" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(447, 616)
+
+[node name="soul66" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(478, 617)
+
+[node name="soul67" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(509, 617)
+
+[node name="soul68" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(544, 616)
+
+[node name="soul69" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(575, 616)
+
+[node name="soul70" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(606, 616)
+
+[node name="soul71" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(639, 616)
+
+[node name="soul72" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(671, 617)
+
+[node name="soul73" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(702, 616)
+
+[node name="soul74" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(735, 616)
+
+[node name="soul75" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(766, 616)
+
+[node name="soul76" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(796, 615)
+
+[node name="soul77" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(830, 614)
+
+[node name="soul78" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(861, 614)
+
+[node name="soul79" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(892, 616)
+
+[node name="soul80" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(893, 583)
+
+[node name="soul81" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(893, 552)
+
+[node name="soul82" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 520)
+
+[node name="soul83" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(895, 491)
+
+[node name="soul84" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 456)
+
+[node name="soul85" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(893, 423)
+
+[node name="soul86" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 392)
+
+[node name="soul87" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(863, 327)
+
+[node name="soul88" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 360)
+
+[node name="soul89" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 328)
+
+[node name="soul90" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(893, 297)
+
+[node name="soul91" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 265)
+
+[node name="soul92" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 232)
+
+[node name="soul93" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(894, 200)
+
+[node name="soul94" parent="Souls" instance=ExtResource("3_y2354")]
+position = Vector2(893, 168)
+
+[node name="VesselFlower" type="Node" parent="."]
+
+[node name="Area2D" type="Area2D" parent="VesselFlower"]
+collision_mask = 2
+script = ExtResource("6_xlvrw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VesselFlower/Area2D"]
+position = Vector2(605, 347)
+shape = SubResource("CircleShape2D_73fnb")
+
+[node name="FlowerDormant" type="Sprite2D" parent="VesselFlower/Area2D"]
+position = Vector2(605, 343)
+scale = Vector2(0.2265625, 0.2265625)
+texture = ExtResource("6_y2354")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VesselFlower/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_73fnb")
+}
+
+[node name="FlowerBloom" type="Sprite2D" parent="VesselFlower/Area2D"]
+visible = false
+position = Vector2(605, 345.00003)
+scale = Vector2(0.203125, 0.203125)
+texture = ExtResource("7_ni31j")
+
+[node name="FlowerWaiting" type="Sprite2D" parent="VesselFlower/Area2D"]
+visible = false
+position = Vector2(605, 343)
+scale = Vector2(0.21875009, 0.21875009)
+texture = ExtResource("9_73fnb")
+
+[node name="CrackSFX" type="AudioStreamPlayer2D" parent="VesselFlower/Area2D"]
+stream = ExtResource("10_5juve")
+bus = &"SFX"
+
+[node name="BloomSFX" type="AudioStreamPlayer2D" parent="VesselFlower/Area2D"]
+stream = ExtResource("11_fy5k1")
+bus = &"SFX"
+
+[connection signal="timeout" from="Player/Timer" to="GameManager" method="_on_timer_timeout"]

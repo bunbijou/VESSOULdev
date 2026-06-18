@@ -1,0 +1,204 @@
+[gd_scene format=3 uid="uid://1ubhju31xuyr"]
+
+[ext_resource type="Script" uid="uid://btol2tukxu7j0" path="res://scripts/mote.gd" id="1_bxwqk"]
+[ext_resource type="AudioStream" uid="uid://g7y7ybxslhel" path="res://sounds/soul.wav" id="2_s22qd"]
+[ext_resource type="Texture2D" uid="uid://d13n6tjmmx01p" path="res://sprites/particles/mote_particle_generic_1.png" id="3_0ua4o"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="4_ag7og"]
+[ext_resource type="Texture2D" uid="uid://bsbytahb21hwc" path="res://sprites/particles/mote_particle_generic_2.png" id="4_dmfth"]
+[ext_resource type="Texture2D" uid="uid://b14jch3l2lhxn" path="res://sprites/particles/mote_particle_generic_3.png" id="5_80fen"]
+[ext_resource type="Texture2D" uid="uid://e1h2j6fuslji" path="res://sprites/particles/mote_particle_generic_4.png" id="6_3c64s"]
+[ext_resource type="Texture2D" uid="uid://i7ibkc4bw0v0" path="res://sprites/particles/mote_particle_generic_5.png" id="7_u82m8"]
+[ext_resource type="Texture2D" uid="uid://dmobxex2poost" path="res://sprites/particles/mote_particle_generic_6.png" id="8_gos4a"]
+[ext_resource type="Texture2D" uid="uid://c6ar335x5h5q2" path="res://sprites/particles/mote_particle_generic_7.png" id="9_mvwy6"]
+[ext_resource type="Texture2D" uid="uid://c5jd2e0titu8o" path="res://sprites/particles/mote_particle_generic_8.png" id="10_juhff"]
+[ext_resource type="Texture2D" uid="uid://dwtqaitgbvvhr" path="res://sprites/particles/mote_particle_generic_9.png" id="11_yw7w5"]
+[ext_resource type="Texture2D" uid="uid://du64qqpevxx0i" path="res://sprites/particles/mote_particle_generic_10.png" id="12_xgtf6"]
+[ext_resource type="Texture2D" uid="uid://dn30fo8v856i2" path="res://sprites/particles/mote_particle_generic_11.png" id="13_emf13"]
+[ext_resource type="Texture2D" uid="uid://d4kcd2suxuj38" path="res://sprites/particles/mote_particle_generic_12.png" id="14_uxohe"]
+[ext_resource type="Texture2D" uid="uid://bund8c4c22ig2" path="res://sprites/particles/mote_particle_generic_13.png" id="15_if3k0"]
+[ext_resource type="Texture2D" uid="uid://ogkurrmehagd" path="res://sprites/particles/mote_particle_generic_14.png" id="16_qqvto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iwn2"]
+size = Vector2(2, 2)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yn65"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_0ua4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dmfth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_80fen")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3c64s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u82m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_gos4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mvwy6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_juhff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yw7w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_xgtf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_emf13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_uxohe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_if3k0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_qqvto")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_n6usl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_dt1lx"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [true]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("PickupSound:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6usl"]
+_data = {
+&"RESET": SubResource("Animation_n6usl"),
+&"pickup": SubResource("Animation_dt1lx")
+}
+
+[node name="Area2D" type="Area2D" unique_id=1794746354 node_paths=PackedStringArray("mySprite")]
+scale = Vector2(2, 2)
+collision_mask = 6
+script = ExtResource("1_bxwqk")
+mySprite = NodePath("AnimatedSprite2D")
+type = "Mote"
+animation = "Sprite2D-Wavy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=186990483]
+shape = SubResource("RectangleShape2D_7iwn2")
+
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=126995997]
+stream = ExtResource("2_s22qd")
+volume_db = -80.0
+max_polyphony = 10
+bus = &"SFX"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1479928275]
+unique_name_in_owner = true
+z_index = 10
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_5yn65")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.063718125
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1814652204]
+libraries/ = SubResource("AnimationLibrary_n6usl")
+
+[node name="soulLabel" type="Label" parent="." unique_id=1976351612]
+unique_name_in_owner = true
+visible = false
+z_index = 999
+offset_left = -45.5
+offset_top = -3.0
+offset_right = 557.176
+offset_bottom = 318.80798
+scale = Vector2(0.14959668, 0.14959668)
+theme = ExtResource("4_ag7og")
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_font_sizes/font_size = 16
+text = "999"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

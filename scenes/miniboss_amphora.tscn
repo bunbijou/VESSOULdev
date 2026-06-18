@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://dc5swdoqu3sf8"]
+
+[ext_resource type="Script" uid="uid://cck1vps3igpgk" path="res://scripts/miniboss_amphora.gd" id="1_l2o1a"]
+[ext_resource type="Texture2D" uid="uid://chirh28nn1k2a" path="res://sprites/enemy_amphora/spriteAbyssVessel.png" id="1_ti8aq"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="3_l670g"]
+[ext_resource type="Texture2D" uid="uid://bi4bmkkxgwpcp" path="res://sprites/enemy_amphora/amphora_remnant.png" id="3_yrooy"]
+[ext_resource type="Texture2D" uid="uid://chrk0lywkyrn0" path="res://sprites/particles/AmphoraMote.png" id="4_g637t"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="5_qjnj8"]
+[ext_resource type="Texture2D" uid="uid://chtt61w3qorsb" path="res://sprites/particles/dark_particle.png" id="6_s3roe"]
+[ext_resource type="Texture2D" uid="uid://mxubsyyyujco" path="res://sprites/particles/light_particle.png" id="8_5nxr7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ti8aq"]
+radius = 6.0
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l2o1a"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l2o1a"]
+radius = 4.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu5en"]
+atlas = ExtResource("1_ti8aq")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhus6"]
+atlas = ExtResource("1_ti8aq")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iu8y6"]
+atlas = ExtResource("1_ti8aq")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0fu1"]
+atlas = ExtResource("1_ti8aq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5nxr7"]
+atlas = ExtResource("3_yrooy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y43iu"]
+atlas = ExtResource("1_ti8aq")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8mky"]
+atlas = ExtResource("1_ti8aq")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y43iu"]
+animations = [{
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_hu5en")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_bhus6")
+}],
+"loop": true,
+"name": &"attack1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_iu8y6")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_bhus6")
+}],
+"loop": true,
+"name": &"attack2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0fu1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5nxr7")
+}],
+"loop": true,
+"name": &"remnant",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_y43iu")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_j8mky")
+}],
+"loop": true,
+"name": &"stun",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qjnj8"]
+radius = 62.1289
+
+[sub_resource type="Gradient" id="Gradient_yrooy"]
+
+[node name="MiniBoss-Amphora" type="Node2D" unique_id=1268537040 node_paths=PackedStringArray("my_sprite", "hit_area", "collision_area")]
+script = ExtResource("1_l2o1a")
+my_sprite = NodePath("AnimatedSprite2D")
+hit_area = NodePath("Area2D")
+collision_area = NodePath("StaticBody2D")
+health = 4
+
+[node name="Area2D" type="Area2D" parent="." unique_id=996993618]
+visible = false
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1343269241]
+shape = SubResource("CircleShape2D_ti8aq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=674493504]
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_l2o1a")
+
+[node name="AmphoraCollisionShape" type="CollisionShape2D" parent="StaticBody2D" unique_id=584619178]
+unique_name_in_owner = true
+shape = SubResource("CircleShape2D_l2o1a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=448044821]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_y43iu")
+autoplay = "default"
+
+[node name="Label" type="Label" parent="." unique_id=681484488]
+visible = false
+offset_left = -5.0
+offset_top = -10.0
+offset_right = 43.0
+offset_bottom = 22.0
+scale = Vector2(0.21541099, 0.21541099)
+theme = ExtResource("3_l670g")
+text = "HP"
+horizontal_alignment = 1
+
+[node name="OrbitParticles" type="CPUParticles2D" parent="." unique_id=1757846745]
+unique_name_in_owner = true
+z_index = -1
+texture = ExtResource("4_g637t")
+speed_scale = 0.1
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(0, 0)
+gravity = Vector2(0, -1)
+initial_velocity_max = 58.06
+orbit_velocity_min = 1.0
+orbit_velocity_max = 1.0
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("5_qjnj8")]
+enemy = "Amphora"
+
+[node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+position = Vector2(0, -7)
+scale = Vector2(0.5, 0.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=1716256181]
+position = Vector2(0, 18)
+shape = SubResource("CircleShape2D_qjnj8")
+debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
+
+[node name="DarknessExplosion" type="CPUParticles2D" parent="." unique_id=649131850]
+unique_name_in_owner = true
+z_index = 1
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 50
+texture = ExtResource("6_s3roe")
+lifetime = 3.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, -10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.05
+scale_amount_max = 0.5
+color = Color(0, 0, 0, 1)
+color_ramp = SubResource("Gradient_yrooy")
+
+[node name="MoteExplosion" type="CPUParticles2D" parent="." unique_id=815529600]
+unique_name_in_owner = true
+z_index = 2
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 50
+texture = ExtResource("8_5nxr7")
+lifetime = 3.0
+speed_scale = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, -1000)
+initial_velocity_max = 100.0
+scale_amount_min = 0.05
+scale_amount_max = 0.5
+
+[node name="LiquidExplosion" type="CPUParticles2D" parent="." unique_id=885046745]
+unique_name_in_owner = true
+z_index = 2
+rotation = -1.6436445
+skew = 1.41859055e-05
+emitting = false
+amount = 50
+texture = ExtResource("4_g637t")
+lifetime = 3.0
+speed_scale = 0.5
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(20, 0)
+spread = 180.0
+gravity = Vector2(0, -10)
+initial_velocity_max = 100.0
+scale_amount_min = 0.05
+scale_amount_max = 0.5
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+
+[editable path="InfoComponent"]

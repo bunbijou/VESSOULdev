@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bdccbqc8lucvi"
+path="res://godot/imported/abyssal death.wav-2690815478da6277e3eb9e2db2f4c014.sample"
+
+[deps]
+
+source_file="res://sounds/abyssal death.wav"
+dest_files=["res://godot/imported/abyssal death.wav-2690815478da6277e3eb9e2db2f4c014.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

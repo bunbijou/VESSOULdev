@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://7gu80gnm74w7"]
+
+[ext_resource type="Texture2D" uid="uid://l73g6prl6mxb" path="res://sprites/particles/flame_variants_13.png" id="1_vp4qn"]
+[ext_resource type="Texture2D" uid="uid://csdkmgvdpy4pv" path="res://sprites/particles/flame_variants_14.png" id="2_cvxee"]
+[ext_resource type="Texture2D" uid="uid://dlid6vi7ia1w3" path="res://sprites/particles/flame_variants_15.png" id="3_11mvu"]
+[ext_resource type="Texture2D" uid="uid://d0f6kqay1h0w1" path="res://sprites/particles/flame_variants_16.png" id="4_oy5yt"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_e0b6m"]
+frames = 4
+frame_0/texture = ExtResource("1_vp4qn")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("2_cvxee")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("3_11mvu")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("4_oy5yt")
+frame_3/duration = 0.1
+
+[node name="ZenithFlame" type="CPUParticles2D" unique_id=1663480174]
+emitting = false
+amount = 25
+texture = SubResource("AnimatedTexture_e0b6m")
+lifetime = 0.5
+one_shot = true
+speed_scale = 0.5
+emission_shape = 3
+emission_rect_extents = Vector2(5, 1)
+gravity = Vector2(0, 250)
+scale_amount_min = 0.5
+scale_amount_max = 0.5

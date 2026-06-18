@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://718bihprufdo"
+path="res://godot/imported/dylg - options.mp3-822c8e7189b28d40cbc31fae0c26faa0.mp3str"
+
+[deps]
+
+source_file="res://music/dylg - options.mp3"
+dest_files=["res://godot/imported/dylg - options.mp3-822c8e7189b28d40cbc31fae0c26faa0.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

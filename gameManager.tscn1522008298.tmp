@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://tdy3vqfujqx5"]
+
+[ext_resource type="Script" uid="uid://bhfooejcc0o6i" path="res://scripts/game_manager.gd" id="1_d8p07"]
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_d8p07")
+souls = null

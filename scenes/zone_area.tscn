@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://n0t2n401tayi"]
+
+[ext_resource type="Script" uid="uid://dhqye6wf1bfx3" path="res://scripts/zoneArea.gd" id="1_8bbou"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8w8v"]
+size = Vector2(274, 242)
+
+[node name="ZoneObject" type="Node2D" unique_id=1390884356]
+script = ExtResource("1_8bbou")
+myID = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=106298760]
+scale = Vector2(1.2217511, 0.9306587)
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1672481877]
+modulate = Color(1, 1, 1, 0.49803922)
+position = Vector2(1, -5)
+shape = SubResource("RectangleShape2D_o8w8v")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

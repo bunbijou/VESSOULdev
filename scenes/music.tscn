@@ -1,0 +1,235 @@
+[gd_scene format=3 uid="uid://b56x0khmr12yl"]
+
+[ext_resource type="Script" uid="uid://bd5wdlhlpnoef" path="res://scripts/zone_background_music.gd" id="1_ps2xu"]
+[ext_resource type="AudioStream" uid="uid://b5i1u1cerw8up" path="res://music/incantation.mp3" id="2_f3qbb"]
+[ext_resource type="AudioStream" uid="uid://dwwu8l1wd65dj" path="res://music/DylgForge.mp3" id="2_fk3fu"]
+[ext_resource type="AudioStream" uid="uid://5hp7m3uwmy1m" path="res://music/BunbijouTomorrow.mp3" id="2_jd055"]
+[ext_resource type="AudioStream" uid="uid://q1u2d5xde8e1" path="res://music/leche - sermon.mp3" id="2_n1vr6"]
+[ext_resource type="AudioStream" uid="uid://b8o2ubm7evt18" path="res://music/pochowek - flute 2.mp3" id="2_pikw4"]
+[ext_resource type="AudioStream" uid="uid://4eh6tdebuohn" path="res://music/BunbijouMoon.mp3" id="2_ttw8n"]
+[ext_resource type="AudioStream" uid="uid://fmjt4kdgul8b" path="res://music/DylGDrive.mp3" id="3_acncd"]
+[ext_resource type="AudioStream" uid="uid://dn078qjji1e41" path="res://music/DylgKiller.mp3" id="3_gd8ew"]
+[ext_resource type="AudioStream" uid="uid://b24w1ocafj5il" path="res://music/pochowek - flute.mp3" id="3_umrpn"]
+[ext_resource type="AudioStream" uid="uid://d3a2bwwomjx6r" path="res://music/bunbijou - this abyss.ogg" id="4_6v72m"]
+[ext_resource type="AudioStream" uid="uid://l5m35f1vl7um" path="res://music/DylGSoul.mp3" id="4_jd055"]
+[ext_resource type="AudioStream" uid="uid://bcnjn4j8lu2dn" path="res://music/DylgMarket.mp3" id="4_ttw8n"]
+[ext_resource type="AudioStream" uid="uid://t4isukb5t1uh" path="res://music/DylgPalette.mp3" id="5_lgu12"]
+[ext_resource type="AudioStream" uid="uid://ew1tkjwqcjj0" path="res://music/DylgTraining.mp3" id="6_acncd"]
+[ext_resource type="AudioStream" uid="uid://b2j1wbi215nf4" path="res://sounds/jingle.wav" id="6_hfgy7"]
+[ext_resource type="AudioStream" uid="uid://ky027kii8ufw" path="res://music/bunbijou - unnerve.mp3" id="8_2tr5p"]
+[ext_resource type="AudioStream" uid="uid://r0ce5nxa17ka" path="res://music/armaments.mp3" id="8_ae6xy"]
+[ext_resource type="AudioStream" uid="uid://co76x8qwcjxhe" path="res://music/bunbijou - sacrosanct.mp3" id="9_8wwf8"]
+[ext_resource type="AudioStream" uid="uid://dewbvdwnceh8y" path="res://music/bunbijou - ethereal.mp3" id="9_mjdr4"]
+[ext_resource type="AudioStream" uid="uid://cve1u3ph0x0js" path="res://music/dylg-vessel shift bijou mix.mp3" id="10_f3qbb"]
+[ext_resource type="AudioStream" uid="uid://ddl21tq5uemur" path="res://music/POCHOWEK - Attuned.mp3" id="10_q1l1v"]
+[ext_resource type="AudioStream" uid="uid://dc5wf81j3r3n3" path="res://music/pochowek - desolation.mp3" id="10_umrpn"]
+[ext_resource type="AudioStream" uid="uid://df6dq0qdty82e" path="res://music/dylg - bamboo.mp3" id="11_606xt"]
+[ext_resource type="AudioStream" uid="uid://t5ujqtkma48c" path="res://music/dylg - brawl.mp3" id="12_8fohi"]
+[ext_resource type="AudioStream" uid="uid://dgsnrqm61cfu8" path="res://music/dylg - echos.mp3" id="13_f3qbb"]
+[ext_resource type="AudioStream" uid="uid://d1rglxrfrfnn7" path="res://music/dylg - grimoire.mp3" id="14_ae6xy"]
+[ext_resource type="AudioStream" uid="uid://cyjar8gfcktl0" path="res://music/dylg - icicles.mp3" id="15_pikw4"]
+[ext_resource type="AudioStream" uid="uid://cdqg7jhhxe77y" path="res://music/dylg - kamidogu.mp3" id="16_umrpn"]
+[ext_resource type="AudioStream" uid="uid://by1u0p5emnpb" path="res://sounds/trial_loop.mp3" id="17_cqp5t"]
+[ext_resource type="AudioStream" uid="uid://p8kf6gmjexc0" path="res://music/whale song.wav" id="17_mjdr4"]
+[ext_resource type="AudioStream" uid="uid://bb16cxlewaesi" path="res://music/dylg - leviathan.mp3" id="17_q1l1v"]
+[ext_resource type="AudioStream" uid="uid://bybswemr42ky4" path="res://music/dylg - miracle.mp3" id="18_mjdr4"]
+[ext_resource type="AudioStream" uid="uid://6nhk62qsb4gq" path="res://music/dylg - mouse.mp3" id="19_me6fa"]
+[ext_resource type="AudioStream" uid="uid://718bihprufdo" path="res://music/dylg - options.mp3" id="20_amp7g"]
+[ext_resource type="AudioStream" uid="uid://du1om6nu2dvpg" path="res://music/dylg - phantoms.mp3" id="21_0rvsy"]
+[ext_resource type="AudioStream" uid="uid://dqre72ab7x256" path="res://sounds/bunbijou - chimera.mp3" id="28_mjdr4"]
+
+[node name="Node" type="Node" unique_id=1521874918 node_paths=PackedStringArray("abyss_main", "gods_wood", "church_town", "success_jingle", "abyss_chasm_ambience", "abyss_chasm_music", "catacombs", "battle_1", "battle_2", "battle_3", "menu_theme", "battle_frenzygrowth", "samael_theme", "jari_theme", "samael_battle", "descent_battle", "djinn_battle", "ending_bad", "ending_good", "zn_theme", "impostor_theme")]
+process_mode = 3
+script = ExtResource("1_ps2xu")
+abyss_main = NodePath("BunbijouThisAbyss")
+gods_wood = NodePath("DylgVesselShift")
+church_town = NodePath("LecheSermon")
+success_jingle = NodePath("BunbijouSuccessJingle")
+abyss_chasm_ambience = NodePath("WhaleSong")
+abyss_chasm_music = NodePath("BunbijouChasm")
+catacombs = NodePath("BunbijouSacrosanct")
+battle_1 = NodePath("DylgPhantoms")
+battle_2 = NodePath("DylgKamidogu")
+battle_3 = NodePath("DylgIcicles")
+menu_theme = NodePath("BunbijouEthereal")
+battle_frenzygrowth = NodePath("DylgBamboo")
+samael_theme = NodePath("PochowekFlute2")
+jari_theme = NodePath("DylgMouse")
+samael_battle = NodePath("DylgGrimoire")
+descent_battle = NodePath("DylgMiracle")
+djinn_battle = NodePath("DylgEchos")
+ending_bad = NodePath("PochowekDesolation")
+ending_good = NodePath("PochowekAttuned")
+zn_theme = NodePath("BunbijouChimera")
+impostor_theme = NodePath("PochowekMidiFlute")
+
+[node name="WhaleSong" type="AudioStreamPlayer" parent="." unique_id=1205285059]
+stream = ExtResource("17_mjdr4")
+bus = &"MusicNoReverb"
+
+[node name="TrialLoop" type="AudioStreamPlayer" parent="." unique_id=1222291511]
+unique_name_in_owner = true
+stream = ExtResource("17_cqp5t")
+bus = &"Music"
+
+[node name="LecheSermon" type="AudioStreamPlayer" parent="." unique_id=148132288]
+stream = ExtResource("2_n1vr6")
+bus = &"MusicNoReverb"
+
+[node name="PochowekMidiFlute" type="AudioStreamPlayer" parent="." unique_id=478344157]
+unique_name_in_owner = true
+stream = ExtResource("3_umrpn")
+pitch_scale = 0.5
+bus = &"MusicDistort"
+
+[node name="PochowekFlute2" type="AudioStreamPlayer" parent="." unique_id=601764365]
+stream = ExtResource("2_pikw4")
+bus = &"MusicNoReverb"
+
+[node name="PochowekAttuned" type="AudioStreamPlayer" parent="." unique_id=360116800]
+stream = ExtResource("10_q1l1v")
+bus = &"MusicNoReverb"
+
+[node name="PochowekDesolation" type="AudioStreamPlayer" parent="." unique_id=554925653]
+stream = ExtResource("10_umrpn")
+bus = &"MusicNoReverb"
+
+[node name="BunbijouEthereal" type="AudioStreamPlayer" parent="." unique_id=900602146]
+stream = ExtResource("9_mjdr4")
+mix_target = 1
+bus = &"MusicNoReverb"
+
+[node name="BunbijouChimera" type="AudioStreamPlayer" parent="." unique_id=800456104]
+stream = ExtResource("28_mjdr4")
+bus = &"MusicNoReverb"
+
+[node name="BunbijouTomorrow" type="AudioStreamPlayer" parent="." unique_id=298547514]
+unique_name_in_owner = true
+stream = ExtResource("2_jd055")
+bus = &"MusicNoReverb"
+
+[node name="BunbijouMoon" type="AudioStreamPlayer" parent="." unique_id=1983664476]
+unique_name_in_owner = true
+stream = ExtResource("2_ttw8n")
+bus = &"MusicNoReverb"
+
+[node name="BunbijouThisAbyss" type="AudioStreamPlayer" parent="." unique_id=1481141715]
+stream = ExtResource("4_6v72m")
+volume_db = 5.0
+bus = &"MusicNoReverb"
+
+[node name="BunbijouSuccessJingle" type="AudioStreamPlayer" parent="." unique_id=2147203141]
+stream = ExtResource("6_hfgy7")
+volume_db = 5.0
+bus = &"MusicNoReverb"
+
+[node name="BunbijouChasm" type="AudioStreamPlayer" parent="." unique_id=315502529]
+stream = ExtResource("8_2tr5p")
+bus = &"MusicNoReverb"
+
+[node name="BunbijouSacrosanct" type="AudioStreamPlayer" parent="." unique_id=2034820320]
+stream = ExtResource("9_8wwf8")
+bus = &"MusicNoReverb"
+
+[node name="DylgBamboo" type="AudioStreamPlayer" parent="." unique_id=2066974543]
+stream = ExtResource("11_606xt")
+bus = &"MusicNoReverb"
+
+[node name="DylgEchos" type="AudioStreamPlayer" parent="." unique_id=525970933]
+unique_name_in_owner = true
+stream = ExtResource("13_f3qbb")
+bus = &"MusicNoReverb"
+
+[node name="DylgGrimoire" type="AudioStreamPlayer" parent="." unique_id=284391722]
+unique_name_in_owner = true
+stream = ExtResource("14_ae6xy")
+bus = &"MusicNoReverb"
+
+[node name="DylgIcicles" type="AudioStreamPlayer" parent="." unique_id=1556850565]
+stream = ExtResource("15_pikw4")
+bus = &"MusicNoReverb"
+
+[node name="DylgKamidogu" type="AudioStreamPlayer" parent="." unique_id=1023589251]
+stream = ExtResource("16_umrpn")
+bus = &"MusicNoReverb"
+
+[node name="DylgMouse" type="AudioStreamPlayer" parent="." unique_id=2051189378]
+stream = ExtResource("19_me6fa")
+bus = &"MusicNoReverb"
+
+[node name="DylgPhantoms" type="AudioStreamPlayer" parent="." unique_id=1714889452]
+unique_name_in_owner = true
+stream = ExtResource("21_0rvsy")
+bus = &"MusicNoReverb"
+
+[node name="DylGDrive" type="AudioStreamPlayer" parent="." unique_id=1408131909]
+unique_name_in_owner = true
+stream = ExtResource("3_acncd")
+bus = &"MusicNoReverb"
+
+[node name="DylGSoul" type="AudioStreamPlayer" parent="." unique_id=1143270690]
+unique_name_in_owner = true
+stream = ExtResource("4_jd055")
+bus = &"MusicNoReverb"
+
+[node name="DylgKiller" type="AudioStreamPlayer" parent="." unique_id=448173936]
+unique_name_in_owner = true
+stream = ExtResource("3_gd8ew")
+volume_db = 15.0
+bus = &"MusicNoReverb"
+
+[node name="DylgForge" type="AudioStreamPlayer" parent="." unique_id=557653593]
+unique_name_in_owner = true
+stream = ExtResource("2_fk3fu")
+bus = &"MusicNoReverb"
+
+[node name="DylgMarket" type="AudioStreamPlayer" parent="." unique_id=1338122470]
+unique_name_in_owner = true
+stream = ExtResource("4_ttw8n")
+bus = &"MusicNoReverb"
+
+[node name="DylgPalette" type="AudioStreamPlayer" parent="." unique_id=848434658]
+unique_name_in_owner = true
+stream = ExtResource("5_lgu12")
+bus = &"MusicNoReverb"
+
+[node name="DylgTraining" type="AudioStreamPlayer" parent="." unique_id=237104670]
+unique_name_in_owner = true
+stream = ExtResource("6_acncd")
+bus = &"MusicNoReverb"
+
+[node name="DylgLeviathan" type="AudioStreamPlayer" parent="." unique_id=1552294500]
+unique_name_in_owner = true
+stream = ExtResource("17_q1l1v")
+bus = &"MusicNoReverb"
+
+[node name="DylgBrawl" type="AudioStreamPlayer" parent="." unique_id=1521597466]
+unique_name_in_owner = true
+stream = ExtResource("12_8fohi")
+bus = &"MusicNoReverb"
+
+[node name="DylgOptions" type="AudioStreamPlayer" parent="." unique_id=1840593443]
+unique_name_in_owner = true
+stream = ExtResource("20_amp7g")
+bus = &"MusicNoReverb"
+
+[node name="DylgMiracle" type="AudioStreamPlayer" parent="." unique_id=820612722]
+unique_name_in_owner = true
+stream = ExtResource("18_mjdr4")
+bus = &"MusicNoReverb"
+
+[node name="DylGArmaments" type="AudioStreamPlayer" parent="." unique_id=450876871]
+unique_name_in_owner = true
+stream = ExtResource("8_ae6xy")
+bus = &"MusicNoReverb"
+
+[node name="DylgIncantation" type="AudioStreamPlayer" parent="." unique_id=1148333134]
+unique_name_in_owner = true
+stream = ExtResource("2_f3qbb")
+bus = &"MusicNoReverb"
+
+[node name="DylgVesselShift" type="AudioStreamPlayer" parent="." unique_id=1713152405]
+stream = ExtResource("10_f3qbb")
+bus = &"MusicNoReverb"
+
+[connection signal="finished" from="WhaleSong" to="." method="_on_bgm_deep_abyss_finished"]

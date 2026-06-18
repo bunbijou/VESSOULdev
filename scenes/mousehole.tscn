@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://newdmkoejnat"]
+
+[ext_resource type="Script" uid="uid://bmyi860qxosa8" path="res://scripts/motemouse_spawn.gd" id="1_a04e1"]
+[ext_resource type="Texture2D" uid="uid://bmtanhwgtt17l" path="res://sprites/enemy_motemouse/mouse_hole.png" id="2_1e0dj"]
+
+[node name="Mousehole" type="Node2D" unique_id=67329612 node_paths=PackedStringArray("hole")]
+z_index = 1
+script = ExtResource("1_a04e1")
+hole = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=590180452]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_1e0dj")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1043405070]
+visible = false
+collision_mask = 2
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

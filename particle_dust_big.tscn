@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bumrxyqpnpx4p"]
+
+[ext_resource type="Texture2D" uid="uid://cgvm7sp4hk3d5" path="res://sprites/particles/cloud1.png" id="1_rnxuq"]
+
+[node name="DustParticleBig" type="CPUParticles2D" unique_id=920726612]
+unique_name_in_owner = true
+z_index = 50
+position = Vector2(0, -2)
+amount = 50
+texture = ExtResource("1_rnxuq")
+lifetime = 10.0
+explosiveness = 1.0
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(25, 17.63)
+spread = 180.0
+gravity = Vector2(0, 10)
+initial_velocity_min = 5.0
+initial_velocity_max = 5.0
+linear_accel_max = 100.0
+tangential_accel_min = -50.0
+tangential_accel_max = 50.0
+scale_amount_min = 0.5
+color = Color(9.947678, 8.961672, 11.215399, 0.02745098)

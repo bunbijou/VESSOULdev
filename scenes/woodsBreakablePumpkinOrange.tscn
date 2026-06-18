@@ -1,0 +1,238 @@
+[gd_scene format=3 uid="uid://ccn1jqxwdikgd"]
+
+[ext_resource type="Script" uid="uid://bvex8r00ropuq" path="res://scripts/mote_jar.gd" id="1_5528e"]
+[ext_resource type="Texture2D" uid="uid://bw4n3okapo4uw" path="res://sprites/environment/sprWoodsPumpkinOrange.png" id="2_36eas"]
+[ext_resource type="Texture2D" uid="uid://bunweegr8k0x1" path="res://sprites/particles/seed_inert_4.png" id="3_yg8wq"]
+[ext_resource type="Texture2D" uid="uid://dlb3s040erwco" path="res://sprites/particles/seed_inert_3.png" id="4_qltub"]
+[ext_resource type="Texture2D" uid="uid://c0wo3emmu3eeh" path="res://sprites/particles/seed_inert_2.png" id="5_jw32m"]
+[ext_resource type="Texture2D" uid="uid://cu6xhsi2nymw5" path="res://sprites/particles/seed_inert_1.png" id="6_s1trb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xctr8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iwn2"]
+size = Vector2(40, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fdok4"]
+atlas = ExtResource("2_36eas")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yg8wq"]
+atlas = ExtResource("2_36eas")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qltub"]
+atlas = ExtResource("2_36eas")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jw32m"]
+atlas = ExtResource("2_36eas")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s1trb"]
+atlas = ExtResource("2_36eas")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5yn65"]
+animations = [{
+"frames": [{
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_fdok4")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_yg8wq")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_qltub")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_jw32m")
+}, {
+"duration": 0.61,
+"texture": SubResource("AtlasTexture_s1trb")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_s1trb")
+}],
+"loop": true,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.41,
+"texture": SubResource("AtlasTexture_fdok4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_n6usl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8rmah"]
+resource_name = "empty"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("animSprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"empty"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StaticBody2D/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.03333333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_dt1lx"]
+resource_name = "pickup"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("animSprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"break"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n6usl"]
+_data = {
+&"RESET": SubResource("Animation_n6usl"),
+&"empty": SubResource("Animation_8rmah"),
+&"pickup": SubResource("Animation_dt1lx")
+}
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_0x8um"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("3_yg8wq")
+frame_1/texture = ExtResource("4_qltub")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("5_jw32m")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("6_s1trb")
+frame_3/duration = 1.0
+
+[node name="Area2D" type="Area2D" unique_id=194779223]
+z_index = 100
+scale = Vector2(0.25, 0.25)
+disable_mode = 1
+collision_mask = 2
+script = ExtResource("1_5528e")
+pumpkin = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=579875584]
+unique_name_in_owner = true
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_xctr8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1923422223]
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_7iwn2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490004182]
+shape = SubResource("RectangleShape2D_7iwn2")
+
+[node name="animSprite" type="AnimatedSprite2D" parent="." unique_id=624207516]
+z_index = 11
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_5yn65")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=271309184]
+libraries/ = SubResource("AnimationLibrary_n6usl")
+autoplay = &"RESET"
+
+[node name="ParticlePumpkin" type="CPUParticles2D" parent="." unique_id=1924320583]
+unique_name_in_owner = true
+z_index = 999
+position = Vector2(0, -4)
+scale = Vector2(0.5, 0.5)
+skew = 1.41859055e-05
+emitting = false
+amount = 15
+texture = SubResource("AnimatedTexture_0x8um")
+lifetime = 0.33
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 27.95
+spread = 180.0
+gravity = Vector2(0, 100)
+initial_velocity_max = 100.0
+scale_amount_min = 0.25
+scale_amount_max = 0.25
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

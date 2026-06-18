@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://dlnmouxhutn1m"]
+
+[ext_resource type="Script" uid="uid://ds0hafbjkokce" path="res://scripts/stalagtite.gd" id="1_g1wvp"]
+[ext_resource type="Texture2D" uid="uid://cfe0psyd5sltv" path="res://sprites/environment/spr_rock_fingers.png" id="2_jqsh6"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="3_ef7in"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py6hd"]
+atlas = ExtResource("2_jqsh6")
+region = Rect2(80, 0, 16, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3v1m"]
+atlas = ExtResource("2_jqsh6")
+region = Rect2(32, 0, 16, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cahsy"]
+atlas = ExtResource("2_jqsh6")
+region = Rect2(0, 0, 16, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbbt6"]
+atlas = ExtResource("2_jqsh6")
+region = Rect2(64, 0, 16, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uemkx"]
+atlas = ExtResource("2_jqsh6")
+region = Rect2(16, 0, 16, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4iga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_py6hd")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3v1m")
+}],
+"loop": true,
+"name": &"index",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cahsy")
+}],
+"loop": true,
+"name": &"middle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbbt6")
+}],
+"loop": true,
+"name": &"pinky",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uemkx")
+}],
+"loop": true,
+"name": &"ring",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrijg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agp8t"]
+size = Vector2(13, 11)
+
+[node name="PinkyFinger" type="Node2D" unique_id=873718385 node_paths=PackedStringArray("anim", "collision_area", "effect_area")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_g1wvp")
+appearance = "pinky"
+anim = NodePath("AnimatedSprite2D")
+collision_area = NodePath("StaticBody2D/CollisionShape2D")
+effect_area = NodePath("HitboxComponent2/CollisionShape2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1337389451]
+z_index = 50
+sprite_frames = SubResource("SpriteFrames_v4iga")
+animation = &"pinky"
+
+[node name="HitboxComponent2" parent="." unique_id=1020530819 instance=ExtResource("3_ef7in")]
+collision_mask = 4
+on_touch_effect = "None"
+hp = 999
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent2" unique_id=2045716706]
+position = Vector2(0, 26)
+shape = SubResource("CircleShape2D_xrijg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=154705815]
+collision_layer = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=339327264]
+position = Vector2(-0.5, 25.5)
+shape = SubResource("RectangleShape2D_agp8t")
+
+[connection signal="body_entered" from="HitboxComponent2" to="." method="_on_boss_touch"]

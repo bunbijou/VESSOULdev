@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dy3ugnta1kk6v"]
+
+[ext_resource type="Script" uid="uid://b0s6ntf3chbld" path="res://scripts/shade_shield.gd" id="1_luceg"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="2_newsm"]
+[ext_resource type="Texture2D" uid="uid://oq4kpe8iuvmb" path="res://sprites/enemy_motebearer/shadowShield.png" id="3_8r1nt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyoaa"]
+atlas = ExtResource("3_8r1nt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp7ki"]
+atlas = ExtResource("3_8r1nt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tvxe"]
+atlas = ExtResource("3_8r1nt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys6s1"]
+atlas = ExtResource("3_8r1nt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_20yca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyoaa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sp7ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2tvxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys6s1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2jyf0"]
+radius = 32.741306
+
+[node name="ShadeShield" type="Node2D" unique_id=1561931441]
+script = ExtResource("1_luceg")
+
+[node name="ShieldArea" parent="." unique_id=1108796297 instance=ExtResource("2_newsm")]
+unique_name_in_owner = true
+position = Vector2(0, -2)
+scale = Vector2(0.3958815, 0.3958815)
+on_touch_effect = "None"
+hp = 999
+hitstun = 0.0
+
+[node name="ShieldSprite" type="AnimatedSprite2D" parent="ShieldArea" unique_id=595429084]
+z_index = -1
+sprite_frames = SubResource("SpriteFrames_20yca")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShieldArea" unique_id=1126260569]
+shape = SubResource("CircleShape2D_2jyf0")
+debug_color = Color(0, 0, 0, 0.41960785)

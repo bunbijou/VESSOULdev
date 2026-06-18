@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://jjs5gda6awlb"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" unique_id=399791468]
+speed_scale = 1.5
+emission_shape = 1
+emission_sphere_radius = 12.49
+gravity = Vector2(0, -10)
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+damping_max = 8.333

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3pcvmy16cwlq"
+path="res://godot/imported/whale song.mp3-3f39f26e02b8d581491199e7be18acba.mp3str"
+
+[deps]
+
+source_file="res://music/whale song.mp3"
+dest_files=["res://godot/imported/whale song.mp3-3f39f26e02b8d581491199e7be18acba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

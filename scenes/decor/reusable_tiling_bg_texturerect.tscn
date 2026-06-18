@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cddkb37kjs778"]
+
+[ext_resource type="Texture2D" uid="uid://b4pmu2xolkmfb" path="res://sprites/environment/spriteAbyssBGExterior.png" id="1_r3pov"]
+
+[node name="BGTextureTiling" type="TextureRect" unique_id=1727308531]
+self_modulate = Color(0.29523852, 0.29523852, 0.29523852, 1)
+z_index = -999
+offset_left = -647.0
+offset_top = -407.0
+offset_right = 2951.0
+offset_bottom = 1703.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_r3pov")
+stretch_mode = 1
+metadata/_edit_lock_ = true

@@ -1,0 +1,696 @@
+[gd_scene format=3 uid="uid://dcftakyagt2hy"]
+
+[ext_resource type="Script" uid="uid://bon3tgmaeylq1" path="res://scripts/endless_game_over.gd" id="1_pn7gr"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="3_745m4"]
+[ext_resource type="FontFile" uid="uid://hmecu4n4j2t8" path="res://fonts/ModernDOS9x16.ttf" id="4_kjrwi"]
+[ext_resource type="Texture2D" uid="uid://dsyp7wa2n4wpl" path="res://sprites/endless/game_over.png" id="5_g1o2j"]
+[ext_resource type="Texture2D" uid="uid://deuxhjf1h6ium" path="res://sprites/particles/sprLightAnim.png" id="6_13ri0"]
+[ext_resource type="Texture2D" uid="uid://cymw8qir873mn" path="res://sprites/particles/flame_variants_5.png" id="8_lh3sh"]
+[ext_resource type="Texture2D" uid="uid://b7u0msussydm6" path="res://sprites/environment/fire_gradient.png" id="8_pn7gr"]
+[ext_resource type="Texture2D" uid="uid://chlkt5h3rfgvs" path="res://sprites/particles/bubble.png" id="8_rfk0n"]
+[ext_resource type="Texture2D" uid="uid://dqbpdj16gmrsw" path="res://sprites/particles/sparkle_particle_8.png" id="8_ul33i"]
+[ext_resource type="Texture2D" uid="uid://tciv75dv2fvm" path="res://sprites/environment/water1.png" id="9_o64fd"]
+[ext_resource type="Texture2D" uid="uid://dk8rw483e4rs7" path="res://sprites/particles/flame_variants_6.png" id="9_xmx0r"]
+[ext_resource type="Texture2D" uid="uid://w6c243bs23iu" path="res://sprites/gui/spr9CutMenu3.png" id="9_y0fv6"]
+[ext_resource type="Texture2D" uid="uid://cr3ashffmbwld" path="res://sprites/environment/water2.png" id="10_d6l0x"]
+[ext_resource type="Texture2D" uid="uid://b7tbhjkinfxka" path="res://sprites/environment/punishment_bg.png" id="10_ffm1n"]
+[ext_resource type="Texture2D" uid="uid://bi1b50sj21cl0" path="res://sprites/particles/flame_variants_7.png" id="10_y70k4"]
+[ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="11_3xhsb"]
+[ext_resource type="Texture2D" uid="uid://clhbv4q8nmli8" path="res://sprites/particles/flame_variants_8.png" id="11_j7qqf"]
+[ext_resource type="Texture2D" uid="uid://bbdk75glsjoyi" path="res://sprites/environment/water11.png" id="11_ul33i"]
+[ext_resource type="Texture2D" uid="uid://biqk1sgmhcl5y" path="res://sprites/environment/water12.png" id="12_ffm1n"]
+[ext_resource type="Texture2D" uid="uid://6y1u2r8xhbi1" path="res://sprites/environment/water3.png" id="13_rfw1q"]
+[ext_resource type="Texture2D" uid="uid://bm658k77serd1" path="res://sprites/environment/water4.png" id="14_fuo4b"]
+[ext_resource type="Texture2D" uid="uid://yq2cm07pciak" path="res://sprites/environment/water5.png" id="15_0rh64"]
+[ext_resource type="Texture2D" uid="uid://d0hswjwypus36" path="res://sprites/environment/water6.png" id="16_l3r63"]
+[ext_resource type="Texture2D" uid="uid://cpcjmen2ftw0q" path="res://sprites/environment/water7.png" id="17_gclwy"]
+[ext_resource type="Texture2D" uid="uid://d13xorslymmj2" path="res://sprites/environment/water8.png" id="18_225wn"]
+[ext_resource type="Texture2D" uid="uid://ge4vrddnrloe" path="res://sprites/environment/water9.png" id="19_e3ck8"]
+[ext_resource type="Texture2D" uid="uid://cn1exf26s8pdo" path="res://sprites/environment/water10.png" id="20_x6h7m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y35fp"]
+atlas = ExtResource("6_13ri0")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dj72i"]
+atlas = ExtResource("6_13ri0")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6b2wv"]
+atlas = ExtResource("6_13ri0")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tov5d"]
+atlas = ExtResource("6_13ri0")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epn8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y35fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dj72i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6b2wv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tov5d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_0xryv"]
+frames = 12
+speed_scale = 3.9
+frame_0/texture = ExtResource("9_o64fd")
+frame_1/texture = ExtResource("10_d6l0x")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("13_rfw1q")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("14_fuo4b")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("15_0rh64")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("16_l3r63")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("17_gclwy")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("18_225wn")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("19_e3ck8")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("20_x6h7m")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("11_ul33i")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("12_ffm1n")
+frame_11/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_3hr8p"]
+frames = 4
+frame_0/texture = ExtResource("8_lh3sh")
+frame_0/duration = 0.1
+frame_1/texture = ExtResource("9_xmx0r")
+frame_1/duration = 0.1
+frame_2/texture = ExtResource("10_y70k4")
+frame_2/duration = 0.1
+frame_3/texture = ExtResource("11_j7qqf")
+frame_3/duration = 0.1
+
+[node name="gameover" type="Node2D" unique_id=1819890557]
+script = ExtResource("1_pn7gr")
+
+[node name="MenuControl" type="Control" parent="." unique_id=359954297]
+unique_name_in_owner = true
+z_index = 999
+layout_mode = 3
+anchors_preset = 0
+offset_left = -574.0
+offset_top = -310.0
+offset_right = 572.0
+offset_bottom = 335.0
+focus_neighbor_bottom = NodePath("MainMenu")
+focus_mode = 2
+
+[node name="GameOverText" type="Label" parent="MenuControl" unique_id=1337683135]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 31.0
+offset_right = 1112.0
+offset_bottom = 161.0
+theme = ExtResource("3_745m4")
+theme_override_colors/font_color = Color(1, 0, 0.3019608, 1)
+theme_override_font_sizes/font_size = 128
+text = "#GAME_OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="Button" parent="MenuControl" unique_id=631323314]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 254.0
+offset_top = 524.0
+offset_right = 500.34607
+offset_bottom = 564.0
+scale = Vector2(1.2638414, 1.2638414)
+focus_neighbor_left = NodePath("../Restart")
+focus_neighbor_right = NodePath("../Restart")
+theme = ExtResource("3_745m4")
+theme_override_fonts/font = ExtResource("4_kjrwi")
+text = "#MAIN MENU"
+
+[node name="Restart" type="Button" parent="MenuControl" unique_id=101853260]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 584.0
+offset_top = 524.0
+offset_right = 830.34607
+offset_bottom = 564.0
+scale = Vector2(1.2638414, 1.2638414)
+focus_neighbor_left = NodePath("../MainMenu")
+focus_neighbor_right = NodePath("../MainMenu")
+theme = ExtResource("3_745m4")
+theme_override_fonts/font = ExtResource("4_kjrwi")
+text = "#START AGAIN"
+
+[node name="BottomBoundingBox" type="NinePatchRect" parent="MenuControl" unique_id=1712988770]
+z_index = -1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 15.0
+offset_right = 1138.0
+offset_bottom = 607.0
+texture = ExtResource("9_y0fv6")
+
+[node name="StatsLabel" type="Label" parent="MenuControl" unique_id=1133906870]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 55.0
+offset_top = 146.0
+offset_right = 1096.0
+offset_bottom = 514.0
+theme = ExtResource("3_745m4")
+theme_override_constants/line_spacing = 7
+theme_override_fonts/font = ExtResource("4_kjrwi")
+theme_override_font_sizes/font_size = 32
+text = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+autowrap_mode = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="MenuControl" unique_id=1984701611]
+visible = false
+position = Vector2(576, 97)
+scale = Vector2(0.43137234, 0.43137228)
+texture = ExtResource("5_g1o2j")
+
+[node name="lightSprite" type="AnimatedSprite2D" parent="MenuControl" unique_id=667412965]
+unique_name_in_owner = true
+visible = false
+z_index = 999
+position = Vector2(645, 100)
+sprite_frames = SubResource("SpriteFrames_epn8x")
+autoplay = "default"
+frame_progress = 0.9804717
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=793339667]
+
+[node name="DecorDawn" type="Node2D" parent="." unique_id=607095259]
+unique_name_in_owner = true
+z_index = -2
+
+[node name="CPUParticlesDown" type="CPUParticles2D" parent="DecorDawn" unique_id=1821355276]
+position = Vector2(-519, -473)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown2" type="CPUParticles2D" parent="DecorDawn" unique_id=1057766988]
+position = Vector2(-507.13794, -418.77216)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown3" type="CPUParticles2D" parent="DecorDawn" unique_id=1229451031]
+position = Vector2(-401.85315, -456.67468)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown4" type="CPUParticles2D" parent="DecorDawn" unique_id=315514029]
+position = Vector2(-309.2025, -414.56076)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown5" type="CPUParticles2D" parent="DecorDawn" unique_id=750964582]
+position = Vector2(-161.8038, -456.67468)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown6" type="CPUParticles2D" parent="DecorDawn" unique_id=1147503285]
+position = Vector2(-35.46205, -418.77216)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown7" type="CPUParticles2D" parent="DecorDawn" unique_id=364429311]
+position = Vector2(145.6278, -486.15445)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown8" type="CPUParticles2D" parent="DecorDawn" unique_id=643086494]
+position = Vector2(234.06702, -431.40634)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown9" type="CPUParticles2D" parent="DecorDawn" unique_id=354409100]
+position = Vector2(326.71765, -490.36584)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown10" type="CPUParticles2D" parent="DecorDawn" unique_id=628144210]
+position = Vector2(410.9455, -431.40634)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown11" type="CPUParticles2D" parent="DecorDawn" unique_id=1191161661]
+position = Vector2(507.8075, -503)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown12" type="CPUParticles2D" parent="DecorDawn" unique_id=1277860920]
+position = Vector2(364.00006, -476)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_rfk0n")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, 2500)
+scale_amount_max = 5.0
+
+[node name="RiverTextureRect" type="TextureRect" parent="DecorDawn" unique_id=466068186]
+z_index = -999
+offset_left = -592.0
+offset_top = -363.99997
+offset_right = 3329.2117
+offset_bottom = 1899.6362
+texture = SubResource("AnimatedTexture_0xryv")
+stretch_mode = 1
+
+[node name="DecorDusk" type="Node2D" parent="." unique_id=422247451]
+unique_name_in_owner = true
+visible = false
+z_index = -2
+
+[node name="CPUParticlesDown" type="CPUParticles2D" parent="DecorDusk" unique_id=1160034236]
+position = Vector2(-455.00006, 341)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown2" type="CPUParticles2D" parent="DecorDusk" unique_id=1355508285]
+position = Vector2(-443.138, 395.22784)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown3" type="CPUParticles2D" parent="DecorDusk" unique_id=235666309]
+position = Vector2(-337.8532, 357.32532)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown4" type="CPUParticles2D" parent="DecorDusk" unique_id=1321057846]
+position = Vector2(-245.20258, 399.43924)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown5" type="CPUParticles2D" parent="DecorDusk" unique_id=891241287]
+position = Vector2(-97.80386, 357.32532)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown6" type="CPUParticles2D" parent="DecorDusk" unique_id=1838252957]
+position = Vector2(28.537884, 395.22784)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown7" type="CPUParticles2D" parent="DecorDusk" unique_id=2046926732]
+position = Vector2(209.62775, 327.84555)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown8" type="CPUParticles2D" parent="DecorDusk" unique_id=552249539]
+position = Vector2(298.06696, 382.59366)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown9" type="CPUParticles2D" parent="DecorDusk" unique_id=1725129045]
+position = Vector2(390.7176, 323.63416)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown10" type="CPUParticles2D" parent="DecorDusk" unique_id=375556030]
+position = Vector2(474.94543, 382.59366)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown11" type="CPUParticles2D" parent="DecorDusk" unique_id=951481983]
+position = Vector2(571.80743, 311)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="CPUParticlesDown12" type="CPUParticles2D" parent="DecorDusk" unique_id=1079651793]
+position = Vector2(428, 338)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = SubResource("AnimatedTexture_3hr8p")
+lifetime = 3.0
+speed_scale = 0.25
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(0, -500)
+scale_amount_min = 3.0
+scale_amount_max = 5.0
+
+[node name="DarknessRect" type="TextureRect" parent="DecorDusk" unique_id=1825151214]
+z_index = -2
+offset_left = -593.0
+offset_top = -335.0
+offset_right = 609.0
+offset_bottom = 334.0
+mouse_filter = 2
+texture = ExtResource("11_3xhsb")
+
+[node name="TextureRect" type="TextureRect" parent="DecorDusk" unique_id=1614284215]
+z_index = -2
+offset_left = 577.0
+offset_top = 337.3694
+offset_right = 2881.0
+offset_bottom = 1451.0474
+rotation = -3.1415927
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_pn7gr")
+
+[node name="DecorTwilight" type="Node2D" parent="." unique_id=1363623833]
+unique_name_in_owner = true
+visible = false
+z_index = -2
+
+[node name="CPUParticlesDown" type="CPUParticles2D" parent="DecorTwilight" unique_id=428694368]
+position = Vector2(-992.99994, 365)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown2" type="CPUParticles2D" parent="DecorTwilight" unique_id=1699581141]
+position = Vector2(-981.1379, 419.22784)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown3" type="CPUParticles2D" parent="DecorTwilight" unique_id=480570419]
+position = Vector2(-875.8531, 381.32532)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown4" type="CPUParticles2D" parent="DecorTwilight" unique_id=1503386445]
+position = Vector2(-783.20245, 423.43924)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown5" type="CPUParticles2D" parent="DecorTwilight" unique_id=568502068]
+position = Vector2(-635.8037, 381.32532)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown6" type="CPUParticles2D" parent="DecorTwilight" unique_id=1249366100]
+position = Vector2(-509.462, 419.22784)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown7" type="CPUParticles2D" parent="DecorTwilight" unique_id=1278766829]
+position = Vector2(-328.37213, 351.84555)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown8" type="CPUParticles2D" parent="DecorTwilight" unique_id=1168976901]
+position = Vector2(-239.93292, 406.59366)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown9" type="CPUParticles2D" parent="DecorTwilight" unique_id=699876139]
+position = Vector2(-147.28229, 347.63416)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown10" type="CPUParticles2D" parent="DecorTwilight" unique_id=666100864]
+position = Vector2(-63.054443, 406.59366)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown11" type="CPUParticles2D" parent="DecorTwilight" unique_id=370180030]
+position = Vector2(33.807556, 335)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="CPUParticlesDown12" type="CPUParticles2D" parent="DecorTwilight" unique_id=1988450895]
+position = Vector2(-109.99988, 362)
+scale = Vector2(4.211392, 4.211392)
+amount = 25
+texture = ExtResource("8_ul33i")
+lifetime = 5.0
+speed_scale = 0.1
+emission_shape = 3
+emission_rect_extents = Vector2(35.805, 5.105)
+gravity = Vector2(100, -100)
+
+[node name="DarknessRect" type="TextureRect" parent="DecorTwilight" unique_id=1124104962]
+z_index = -2
+offset_left = -593.0
+offset_top = -335.0
+offset_right = 609.0
+offset_bottom = 334.0
+mouse_filter = 2
+texture = ExtResource("11_3xhsb")
+
+[node name="TextureRect" type="TextureRect" parent="DecorTwilight" unique_id=1311350425]
+z_index = -2
+offset_left = 577.0
+offset_top = 337.3694
+offset_right = 2881.0
+offset_bottom = 1451.0474
+rotation = -3.1415927
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_ffm1n")
+
+[connection signal="pressed" from="MenuControl/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MenuControl/Restart" to="." method="_on_restart_pressed"]

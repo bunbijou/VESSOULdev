@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://ug66vacmm4ld"]
+
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="1_cyp4p"]
+[ext_resource type="PackedScene" uid="uid://dqhivaxq24w4h" path="res://scenes/player.tscn" id="2_hs1r6"]
+[ext_resource type="PackedScene" uid="uid://bcs87den2w0h5" path="res://scenes/save_point.tscn" id="3_ebp4a"]
+[ext_resource type="PackedScene" uid="uid://baljuibb6pcb8" path="res://scenes/Npc_Base.tscn" id="4_hs1r6"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="5_ebp4a"]
+
+[node name="npczoo" type="Node2D"]
+
+[node name="Roaming Camera" parent="." node_paths=PackedStringArray("targetPlayer") instance=ExtResource("1_cyp4p")]
+targetPlayer = NodePath("../Player")
+
+[node name="SavePoint" parent="." instance=ExtResource("3_ebp4a")]
+position = Vector2(-105, 55)
+
+[node name="Player" parent="." instance=ExtResource("2_hs1r6")]
+unique_name_in_owner = true
+position = Vector2(0, 43)
+activeZone = 999
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(5, 5)
+
+[node name="sculptor" parent="." instance=ExtResource("4_hs1r6")]
+position = Vector2(-92, -12)
+
+[node name="jari" parent="." instance=ExtResource("4_hs1r6")]
+position = Vector2(-55, -12)
+npcID = 1
+
+[node name="zenith" parent="." instance=ExtResource("4_hs1r6")]
+position = Vector2(-13, -12)
+npcID = 2
+
+[node name="zenith2" parent="." instance=ExtResource("4_hs1r6")]
+position = Vector2(14, -12)
+npcID = 2
+isNadir = true
+
+[node name="Item Chest" parent="." instance=ExtResource("5_ebp4a")]
+position = Vector2(-13, 36)
+zoneID = 999
+isLocked = false
+
+[node name="Item Chest3" parent="." instance=ExtResource("5_ebp4a")]
+position = Vector2(10, 36)
+zoneID = 999
+isLocked = false
+
+[node name="Item Chest2" parent="." instance=ExtResource("5_ebp4a")]
+position = Vector2(-56, 36)
+zoneID = 999
+myType = 1
+isLocked = false
+
+[node name="Item Chest4" parent="." instance=ExtResource("5_ebp4a")]
+position = Vector2(-92, 36)
+zoneID = 999
+myType = 2
+isLocked = false

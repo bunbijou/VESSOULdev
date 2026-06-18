@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://bpwt7dvr5q4fy"]
+
+[ext_resource type="Script" uid="uid://1d5mpqdreyf7" path="res://scripts/flame_wheel.gd" id="1_g6rwp"]
+[ext_resource type="Texture2D" uid="uid://cxxvp3xf1c4mi" path="res://sprites/particles/fireball_big_1.png" id="2_t1s7n"]
+[ext_resource type="Texture2D" uid="uid://7eobalioj0og" path="res://sprites/particles/fireball_big_2.png" id="3_qbn08"]
+[ext_resource type="Texture2D" uid="uid://ceuel23am2q5c" path="res://sprites/particles/fireball_big_3.png" id="4_e3os6"]
+[ext_resource type="Texture2D" uid="uid://bx4d6hwkkpj6l" path="res://sprites/particles/fireball_big_4.png" id="5_7rp12"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="7_qbn08"]
+[ext_resource type="PackedScene" uid="uid://dihb2wel6eq8r" path="res://scenes/particle_soul_flame_small.tscn" id="7_t1s7n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6jws3"]
+animations = [{
+"frames": [{
+"duration": 0.8,
+"texture": ExtResource("2_t1s7n")
+}, {
+"duration": 0.8,
+"texture": ExtResource("3_qbn08")
+}, {
+"duration": 0.8,
+"texture": ExtResource("4_e3os6")
+}, {
+"duration": 0.8,
+"texture": ExtResource("5_7rp12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e3os6"]
+
+[node name="FlameWheel" type="Node2D" unique_id=1824458883]
+scale = Vector2(0.33, 0.33)
+script = ExtResource("1_g6rwp")
+
+[node name="WheelRot" type="Node2D" parent="." unique_id=692821613]
+unique_name_in_owner = true
+
+[node name="WheelShape" type="Node2D" parent="WheelRot" unique_id=111782471]
+unique_name_in_owner = true
+
+[node name="Node1" type="Node2D" parent="WheelRot/WheelShape" unique_id=2004023811]
+unique_name_in_owner = true
+
+[node name="Node2" type="Node2D" parent="WheelRot/WheelShape" unique_id=1702768793]
+unique_name_in_owner = true
+
+[node name="Node3" type="Node2D" parent="WheelRot/WheelShape" unique_id=50950262]
+unique_name_in_owner = true
+
+[node name="Node4" type="Node2D" parent="WheelRot/WheelShape" unique_id=2032851458]
+unique_name_in_owner = true
+
+[node name="Node5" type="Node2D" parent="WheelRot/WheelShape" unique_id=1169864356]
+unique_name_in_owner = true
+
+[node name="Node6" type="Node2D" parent="WheelRot/WheelShape" unique_id=436853204]
+unique_name_in_owner = true
+
+[node name="Node7" type="Node2D" parent="WheelRot/WheelShape" unique_id=862308945]
+unique_name_in_owner = true
+
+[node name="Node8" type="Node2D" parent="WheelRot/WheelShape" unique_id=914927755]
+unique_name_in_owner = true
+
+[node name="FireNode1" type="AnimatedSprite2D" parent="WheelRot" unique_id=931023636]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.28099778
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode1" unique_id=1944566363 instance=ExtResource("7_t1s7n")]
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode1" unique_id=1108796297 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode1/HitboxComponent" unique_id=437670699]
+shape = SubResource("CircleShape2D_e3os6")
+
+[node name="FireNode2" type="AnimatedSprite2D" parent="WheelRot" unique_id=924100289]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.74355066
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode2" unique_id=1765644083 instance=ExtResource("7_t1s7n")]
+unique_name_in_owner = false
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode2" unique_id=34303479 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode2/HitboxComponent" unique_id=139943123]
+shape = SubResource("CircleShape2D_e3os6")
+
+[node name="FireNode3" type="AnimatedSprite2D" parent="WheelRot" unique_id=1568033238]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.74355066
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode3" unique_id=601160763 instance=ExtResource("7_t1s7n")]
+unique_name_in_owner = false
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode3" unique_id=274938526 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode3/HitboxComponent" unique_id=1250908542]
+shape = SubResource("CircleShape2D_e3os6")
+
+[node name="FireNode4" type="AnimatedSprite2D" parent="WheelRot" unique_id=715465380]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.74355066
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode4" unique_id=1972417847 instance=ExtResource("7_t1s7n")]
+unique_name_in_owner = false
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode4" unique_id=652558839 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode4/HitboxComponent" unique_id=917701722]
+shape = SubResource("CircleShape2D_e3os6")
+
+[node name="FireNode5" type="AnimatedSprite2D" parent="WheelRot" unique_id=1703591767]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.74355066
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode5" unique_id=1978663363 instance=ExtResource("7_t1s7n")]
+unique_name_in_owner = false
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode5" unique_id=1073932860 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode5/HitboxComponent" unique_id=1223612851]
+shape = SubResource("CircleShape2D_e3os6")
+
+[node name="FireNode6" type="AnimatedSprite2D" parent="WheelRot" unique_id=1820476005]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.74355066
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode6" unique_id=1293525832 instance=ExtResource("7_t1s7n")]
+unique_name_in_owner = false
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode6" unique_id=607804911 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode6/HitboxComponent" unique_id=472653602]
+shape = SubResource("CircleShape2D_e3os6")
+
+[node name="FireNode7" type="AnimatedSprite2D" parent="WheelRot" unique_id=1572485467]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.74355066
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode7" unique_id=1245583568 instance=ExtResource("7_t1s7n")]
+unique_name_in_owner = false
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode7" unique_id=1348849031 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode7/HitboxComponent" unique_id=1405510206]
+shape = SubResource("CircleShape2D_e3os6")
+
+[node name="FireNode8" type="AnimatedSprite2D" parent="WheelRot" unique_id=466651408]
+unique_name_in_owner = true
+z_index = 999
+sprite_frames = SubResource("SpriteFrames_6jws3")
+autoplay = "default"
+frame_progress = 0.74355066
+
+[node name="SoulFlameParticle" parent="WheelRot/FireNode8" unique_id=2050817354 instance=ExtResource("7_t1s7n")]
+unique_name_in_owner = false
+emission_sphere_radius = 6.15
+color = Color(1, 0, 0.3019608, 1)
+
+[node name="HitboxComponent" parent="WheelRot/FireNode8" unique_id=529932579 instance=ExtResource("7_qbn08")]
+visible = true
+on_touch_effect = "Burning"
+hp = 999
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WheelRot/FireNode8/HitboxComponent" unique_id=2022670681]
+shape = SubResource("CircleShape2D_e3os6")

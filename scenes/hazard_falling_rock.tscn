@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://d1dwpeuwo1735"]
+
+[ext_resource type="Script" uid="uid://vagn3vdexsvm" path="res://scripts/falling_spire.gd" id="1_qh5l7"]
+[ext_resource type="Texture2D" uid="uid://cehmhonbsw5ib" path="res://sprites/environment/falling_stalagtite.png" id="2_5h7fx"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="4_cnxat"]
+[ext_resource type="Texture2D" uid="uid://8go86amt3cq0" path="res://sprites/particles/fragment_abyss_1.png" id="5_7kasj"]
+[ext_resource type="Texture2D" uid="uid://coh13jqy88j6i" path="res://sprites/particles/fragment_abyss_2.png" id="6_wy3ao"]
+[ext_resource type="Texture2D" uid="uid://b3pkrcss0jjt8" path="res://sprites/particles/fragment_abyss_3.png" id="7_rbmhi"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="8_7kasj"]
+[ext_resource type="Texture2D" uid="uid://dl3v50bd5tsa7" path="res://sprites/particles/fragment_abyss_4.png" id="8_65mak"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kasj"]
+atlas = ExtResource("2_5h7fx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy3ao"]
+atlas = ExtResource("2_5h7fx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbmhi"]
+atlas = ExtResource("2_5h7fx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_65mak"]
+atlas = ExtResource("2_5h7fx")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn3kb"]
+atlas = ExtResource("2_5h7fx")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okmmi"]
+atlas = ExtResource("2_5h7fx")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gtw4a"]
+atlas = ExtResource("2_5h7fx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x3b7v"]
+animations = [{
+"frames": [{
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_7kasj")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_wy3ao")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_rbmhi")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_65mak")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_gn3kb")
+}, {
+"duration": 0.4,
+"texture": SubResource("AtlasTexture_okmmi")
+}],
+"loop": false,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gtw4a")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g5oht"]
+size = Vector2(32, 30)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gn3kb"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("5_7kasj")
+frame_1/texture = ExtResource("6_wy3ao")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("7_rbmhi")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("8_65mak")
+frame_3/duration = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wy3ao"]
+radius = 52.153618
+
+[node name="FallingRock0" type="Node2D" unique_id=1606726778 node_paths=PackedStringArray("sprite", "hit_area")]
+z_index = 100
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qh5l7")
+delay = 5.0
+sprite = NodePath("AnimatedSprite2D")
+hit_area = NodePath("HitboxComponent")
+attack_area_0 = Vector2(-98, 42)
+attack_area_1 = Vector2(98, 42)
+attack_area_3 = Vector2(-98, 134)
+attack_area_4 = Vector2(98, 134)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=667995980]
+position = Vector2(0, -9)
+rotation = -6.2831855
+sprite_frames = SubResource("SpriteFrames_x3b7v")
+animation = &"break"
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[node name="HitboxComponent" parent="." unique_id=23293963 instance=ExtResource("4_cnxat")]
+position = Vector2(0, -13)
+collision_mask = 6
+hp = 999
+hitstun = 0.0
+do_not_scale_with_ng = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1000280271]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_g5oht")
+
+[node name="BreakParticle" type="CPUParticles2D" parent="." unique_id=962507391]
+unique_name_in_owner = true
+z_index = 50
+position = Vector2(0, -28)
+emitting = false
+amount = 50
+texture = SubResource("AnimatedTexture_gn3kb")
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.37
+gravity = Vector2(0, 100)
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+scale_amount_min = 0.25
+scale_amount_max = 0.75
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("8_7kasj")]
+enemy = "falling rocks"
+no_interact = true
+
+[node name="InteractArea2D" parent="InfoComponent" index="1" unique_id=373575630]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" index="0" unique_id=1922859915]
+position = Vector2(0, 12)
+shape = SubResource("CircleShape2D_wy3ao")
+debug_color = Color(0.95207125, 9.62615e-08, 0.562937, 0.41960785)
+
+[editable path="HitboxComponent"]
+[editable path="InfoComponent"]

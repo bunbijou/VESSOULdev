@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cfk6540ej28ic"]
+
+[ext_resource type="Texture2D" uid="uid://8go86amt3cq0" path="res://sprites/particles/fragment_abyss_1.png" id="1_11qbh"]
+[ext_resource type="Texture2D" uid="uid://coh13jqy88j6i" path="res://sprites/particles/fragment_abyss_2.png" id="2_gormg"]
+[ext_resource type="Texture2D" uid="uid://b3pkrcss0jjt8" path="res://sprites/particles/fragment_abyss_3.png" id="3_cwpr2"]
+[ext_resource type="Texture2D" uid="uid://dl3v50bd5tsa7" path="res://sprites/particles/fragment_abyss_4.png" id="4_kxcvc"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gn3kb"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("1_11qbh")
+frame_1/texture = ExtResource("2_gormg")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_cwpr2")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_kxcvc")
+frame_3/duration = 1.0
+
+[node name="ParticleAbyss" type="CPUParticles2D" unique_id=83431102]
+unique_name_in_owner = true
+z_index = 50
+position = Vector2(0, -28)
+emitting = false
+amount = 50
+texture = SubResource("AnimatedTexture_gn3kb")
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.5
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.37
+gravity = Vector2(0, 100)
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+scale_amount_min = 0.25
+scale_amount_max = 0.75

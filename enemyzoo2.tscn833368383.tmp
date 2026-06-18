@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://brobs4nlrfvnn"]
+
+[ext_resource type="Script" uid="uid://chs0t6j4wbh24" path="res://stop_music.gd" id="1_ffr7v"]
+[ext_resource type="PackedScene" uid="uid://dqhivaxq24w4h" path="res://scenes/player.tscn" id="1_ujd3w"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="2_ffr7v"]
+[ext_resource type="PackedScene" uid="uid://cddkb37kjs778" path="res://scenes/decor/TilingBGSprite.tscn" id="3_11jy7"]
+[ext_resource type="Texture2D" uid="uid://bj1rmvturo8fh" path="res://sprites/sprBGAbyssRing.png" id="4_4yhxv"]
+[ext_resource type="PackedScene" uid="uid://dkaqt6xv57exq" path="res://scenes/chill_cloud.tscn" id="6_q2era"]
+[ext_resource type="PackedScene" uid="uid://dob8imwpcj6ct" path="res://scenes/enemy_chiller_motebearer.tscn" id="7_0nice"]
+[ext_resource type="PackedScene" uid="uid://su4bm6s57ea0" path="res://scenes/enemy_chillermote.tscn" id="8_vfj64"]
+[ext_resource type="PackedScene" uid="uid://dufonq4vijj51" path="res://enemy_shade_motebearer.tscn" id="9_5ah02"]
+[ext_resource type="PackedScene" uid="uid://cg6a4qhevagv8" path="res://scenes/enemy_shademote.tscn" id="10_mchpf"]
+[ext_resource type="PackedScene" uid="uid://3vmb5wy6vcqd" path="res://scenes/enemy_douser_motebearer.tscn" id="11_sl4md"]
+[ext_resource type="PackedScene" uid="uid://dm4npa58y84ks" path="res://scenes/enemy_dousermote.tscn" id="12_4lu61"]
+
+[node name="enemyzoo" type="Node2D"]
+script = ExtResource("1_ffr7v")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("1_ujd3w")]
+unique_name_in_owner = true
+position = Vector2(-1, 28)
+
+[node name="Roaming Camera" parent="." instance=ExtResource("2_ffr7v")]
+
+[node name="GlobalCamera" parent="Roaming Camera" index="0"]
+zoom = Vector2(6, 6)
+
+[node name="BGTextureTiling" parent="." instance=ExtResource("3_11jy7")]
+visible = false
+offset_left = -663.0
+offset_top = -417.0
+offset_right = 2935.0
+offset_bottom = 1693.0
+texture = ExtResource("4_4yhxv")
+
+[node name="ChillCloud" parent="." instance=ExtResource("6_q2era")]
+visible = true
+position = Vector2(-54, 3)
+spd = 0.15
+
+[node name="ChillerMotebearer" parent="." node_paths=PackedStringArray("childMote", "chillCloud") instance=ExtResource("7_0nice")]
+position = Vector2(-55, 1)
+childMote = NodePath("ChillMote2")
+chillCloud = NodePath("../ChillCloud")
+
+[node name="ChillMote2" parent="ChillerMotebearer" instance=ExtResource("8_vfj64")]
+
+[node name="ShadeMoteBearer" parent="." node_paths=PackedStringArray("childMote") instance=ExtResource("9_5ah02")]
+childMote = NodePath("ShadeMote")
+
+[node name="ShadeMote" parent="ShadeMoteBearer" instance=ExtResource("10_mchpf")]
+scale = Vector2(1, 1)
+
+[node name="DousingBearer" parent="." node_paths=PackedStringArray("childMote") instance=ExtResource("11_sl4md")]
+position = Vector2(-53, -40)
+childMote = NodePath("DouseMote")
+
+[node name="DouseMote" parent="DousingBearer" instance=ExtResource("12_4lu61")]
+position = Vector2(-6, 4)
+
+[editable path="Roaming Camera"]

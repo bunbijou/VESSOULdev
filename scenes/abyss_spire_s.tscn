@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://bypj6e5vifrpt"]
+
+[ext_resource type="Script" uid="uid://c5abulf4w3x23" path="res://scripts/abyss_spire.gd" id="1_wj0st"]
+[ext_resource type="Texture2D" uid="uid://cynpxb6kwsnte" path="res://sprites/environment/stalagtite_small.png" id="2_mfme6"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="3_86o40"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewhqw"]
+atlas = ExtResource("2_mfme6")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yomy"]
+atlas = ExtResource("2_mfme6")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ho6iw"]
+atlas = ExtResource("2_mfme6")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14osr"]
+atlas = ExtResource("2_mfme6")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lviu1"]
+atlas = ExtResource("2_mfme6")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_er5q7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ewhqw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_7yomy")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_ho6iw")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_14osr")
+}, {
+"duration": 0.5,
+"texture": SubResource("AtlasTexture_lviu1")
+}],
+"loop": false,
+"name": &"emerge",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6nrht"]
+size = Vector2(16, 16)
+
+[node name="AbyssSpireS" type="Node2D" unique_id=1624656540 node_paths=PackedStringArray("sprite", "hit_area")]
+scale = Vector2(0.49999997, 0.5)
+script = ExtResource("1_wj0st")
+sprite = NodePath("AnimatedSprite2D")
+hit_area = NodePath("HitboxComponent")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=302183202]
+z_index = 50
+sprite_frames = SubResource("SpriteFrames_er5q7")
+animation = &"emerge"
+frame = 3
+frame_progress = 1.0
+
+[node name="HitboxComponent" parent="." unique_id=125294056 instance=ExtResource("3_86o40")]
+on_touch_effect = "Hazard"
+hp = 999
+hitstun = 0.0
+
+[node name="Label" parent="HitboxComponent" index="0" unique_id=1613579812]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=1636023449]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_6nrht")
+
+[editable path="HitboxComponent"]

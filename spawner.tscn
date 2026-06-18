@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c87dwh4053bnh"]
+
+[ext_resource type="Script" uid="uid://ccfmdwbnuhiix" path="res://scripts/spawner.gd" id="1_yp5lu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whcbc"]
+radius = 19.104973
+
+[node name="Spawner" type="Node2D" unique_id=715641092]
+script = ExtResource("1_yp5lu")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1596371630]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=929982117]
+shape = SubResource("CircleShape2D_whcbc")
+
+[node name="Label" type="Label" parent="." unique_id=1891103774]
+unique_name_in_owner = true
+offset_left = -19.0
+offset_top = -23.0
+offset_right = 21.0
+theme_override_font_sizes/font_size = 8
+text = "Test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

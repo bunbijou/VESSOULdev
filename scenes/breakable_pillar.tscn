@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://gvswyd0wgfnx"]
+
+[ext_resource type="Script" uid="uid://cybilfsd2r3s1" path="res://scripts/breakable.gd" id="1_7gyk0"]
+[ext_resource type="Texture2D" uid="uid://t4lglmk57yvb" path="res://sprites/environment/spr_sanctuary_pillar.png" id="2_uo4a8"]
+[ext_resource type="Texture2D" uid="uid://cgvm7sp4hk3d5" path="res://sprites/particles/cloud1.png" id="3_y47nq"]
+[ext_resource type="PackedScene" uid="uid://cfk6540ej28ic" path="res://scenes/particle_abyss_fragment.tscn" id="4_ltyd5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtykd"]
+atlas = ExtResource("2_uo4a8")
+region = Rect2(48, 0, 48, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttt7m"]
+atlas = ExtResource("2_uo4a8")
+region = Rect2(0, 0, 48, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udpnj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtykd")
+}],
+"loop": true,
+"name": &"break",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttt7m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5pvdl"]
+size = Vector2(20, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaytx"]
+size = Vector2(21, 18)
+
+[node name="Node2D" type="Node2D" unique_id=1376871788 node_paths=PackedStringArray("anim", "collision_area", "effect_area", "break_particle", "break_particle_aux")]
+script = ExtResource("1_7gyk0")
+anim = NodePath("AnimatedSprite2D")
+collision_area = NodePath("StaticBody2D/CollisionShape2D")
+effect_area = NodePath("Area2D/CollisionShape2D")
+fade_time = 999
+break_particle = NodePath("BreakParticle")
+break_particle_aux = NodePath("BreakParticle2")
+break_sound = "stone"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1264689942]
+z_index = 50
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_udpnj")
+autoplay = "default"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=817308137]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1062720111]
+position = Vector2(0, 27)
+shape = SubResource("RectangleShape2D_5pvdl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=685462799]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1442730224]
+position = Vector2(-0.5, 23)
+shape = SubResource("RectangleShape2D_gaytx")
+
+[node name="BreakParticle" type="CPUParticles2D" parent="." unique_id=238275709]
+unique_name_in_owner = true
+z_index = 50
+position = Vector2(0, -2)
+emitting = false
+amount = 50
+texture = ExtResource("3_y47nq")
+lifetime = 3.0
+one_shot = true
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(8.41, 25.84)
+gravity = Vector2(0, 10)
+radial_accel_min = 5.0
+radial_accel_max = 5.0
+scale_amount_min = 0.66
+scale_amount_max = 0.66
+color = Color(9.947678, 8.961672, 11.215399, 0.02745098)
+
+[node name="BreakParticle2" parent="." unique_id=83431102 instance=ExtResource("4_ltyd5")]
+position = Vector2(0, -5)
+scale = Vector2(0.5, 0.5)
+lifetime = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(15, 50.145)
+color = Color(4.5019746, 2.5899277, 1.8673433, 1)
+
+[connection signal="area_entered" from="Area2D" to="." method="_boss_touch"]

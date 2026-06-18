@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dr7mpwhis5i3n"]
+
+[ext_resource type="Script" uid="uid://ic2of10dfac" path="res://scripts/global_destinations.gd" id="1_25uct"]
+
+[node name="Node" type="Node" unique_id=1060247940]
+script = ExtResource("1_25uct")
+AbyssNewGame = Vector2(0, 320)
+AmphoraRoom = Vector2(160, -44)
+ChasmStart = Vector2(18, 525)
+WoodsStart = Vector2(0, 17)
+WoodsGate = Vector2(0, -158)
+WoodsSewer = Vector2(152, -177)
+WoodsToChasm = Vector2(7, 223)
+DepthsEntrance = Vector2(0, 216)
+TownEntrance = Vector2(-1, 36)
+SanctuaryEntrance = Vector2(0, 131)
+CatacombsEntrance = Vector2(-201, -80)
+ClerestoryEntrance = Vector2(-88, 0)
+CatacombsToTown = Vector2(-153, -24)

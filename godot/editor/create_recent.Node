@@ -1,0 +1,14 @@
+AnimationPlayer
+Node2D
+Label
+TextureRect
+Camera2D
+Node
+Sprite2D
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+CPUParticles2D
+Control
+SubViewport
+ColorRect

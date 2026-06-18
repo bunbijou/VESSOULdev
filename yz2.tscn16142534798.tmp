@@ -1,0 +1,222 @@
+[gd_scene load_steps=44 format=3 uid="uid://bgstqwd2qdacu"]
+
+[ext_resource type="Script" uid="uid://chs0t6j4wbh24" path="res://scripts/stop_music.gd" id="1_05voj"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="2_e2dyx"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player_refactor.tscn" id="3_c55q0"]
+[ext_resource type="PackedScene" uid="uid://dma38uah41cri" path="res://scenes/enemy_sinkhole.tscn" id="5_lgi8g"]
+[ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://wisp_base_refactor.tscn" id="6_gt72s"]
+[ext_resource type="PackedScene" uid="uid://d0x6qnh5lpmxi" path="res://randomized_flower.tscn" id="7_05voj"]
+[ext_resource type="PackedScene" uid="uid://ccn1jqxwdikgd" path="res://scenes/woodsBreakablePumpkinOrange.tscn" id="8_e2dyx"]
+[ext_resource type="PackedScene" uid="uid://dxp20r58sx8kd" path="res://scenes/woodsBreakablePumpkinBlue.tscn" id="9_c55q0"]
+[ext_resource type="PackedScene" uid="uid://c2op14ntvn4jh" path="res://scenes/woodsBreakablePumpkinBeige.tscn" id="10_7drpu"]
+[ext_resource type="PackedScene" uid="uid://bp3a3g3nh6x1t" path="res://scenes/moteBig.tscn" id="11_hbuao"]
+[ext_resource type="PackedScene" uid="uid://b1sy2h3btbeyu" path="res://scenes/mote.tscn" id="12_j4kep"]
+[ext_resource type="PackedScene" uid="uid://bcs87den2w0h5" path="res://scenes/save_point.tscn" id="13_7drpu"]
+[ext_resource type="PackedScene" uid="uid://bege4j306y7s6" path="res://scenes/npc_resident.tscn" id="14_hbuao"]
+[ext_resource type="PackedScene" uid="uid://baljuibb6pcb8" path="res://scenes/Npc_Base.tscn" id="15_j4kep"]
+[ext_resource type="PackedScene" uid="uid://bge0tlm3pu4q1" path="res://scenes/miniboss_stump.tscn" id="16_5hdps"]
+[ext_resource type="PackedScene" uid="uid://bb3ilnmk7fe8v" path="res://scenes/miniboss_gapingjawer.tscn" id="17_np4ir"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="18_htp8n"]
+[ext_resource type="PackedScene" uid="uid://dvtq38f7f1x4u" path="res://scenes/enemy_gapingJawJar.tscn" id="19_vably"]
+[ext_resource type="PackedScene" uid="uid://urr577bgwvyu" path="res://scenes/level_warp.tscn" id="20_3v0qn"]
+[ext_resource type="PackedScene" uid="uid://cddkb37kjs778" path="res://scenes/decor/reusable_tiling_bg_texturerect.tscn" id="20_x06dy"]
+[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame.tscn" id="22_44ltn"]
+[ext_resource type="PackedScene" uid="uid://bwo41youuh3dj" path="res://scenes/enemy_snake_vertical.tscn" id="23_0m5sr"]
+[ext_resource type="PackedScene" uid="uid://dfhlspi5ovb6s" path="res://scenes/enemy_snake_horizontal.tscn" id="24_5uuo7"]
+[ext_resource type="PackedScene" uid="uid://dufonq4vijj51" path="res://scenes/enemy_shade_motebearer.tscn" id="25_7gkej"]
+[ext_resource type="PackedScene" uid="uid://cblhrfo1vo4hc" path="res://scenes/enemy_raven.tscn" id="26_c82xk"]
+[ext_resource type="PackedScene" uid="uid://cxcpv33kak8ss" path="res://scenes/enemy_pothead.tscn" id="27_m7ldp"]
+[ext_resource type="PackedScene" uid="uid://c1gkksgdijph5" path="res://scenes/enemy_ossuary.tscn" id="28_uswlj"]
+[ext_resource type="PackedScene" uid="uid://fwkag6l68oqp" path="res://scenes/enemy_muncher.tscn" id="29_08n5l"]
+[ext_resource type="PackedScene" uid="uid://bel4hr3nbvu58" path="res://scenes/enemy_muckman_spear.tscn" id="30_aa0qn"]
+[ext_resource type="PackedScene" uid="uid://dggt33yc1kxxi" path="res://scenes/enemy_muckman_hammer.tscn" id="31_2p4ja"]
+[ext_resource type="PackedScene" uid="uid://devmjxy5vj2" path="res://scenes/enemy_motemouse.tscn" id="32_pula2"]
+[ext_resource type="PackedScene" uid="uid://dc5swdoqu3sf8" path="res://scenes/enemy_miniboss_amphora.tscn" id="33_nxko3"]
+[ext_resource type="PackedScene" uid="uid://0sw0yxchbigv" path="res://scenes/enemy_mimic.tscn" id="34_tr0df"]
+[ext_resource type="PackedScene" uid="uid://ci0f64lv0xhyl" path="res://scenes/enemy_lurker.tscn" id="35_p0q13"]
+[ext_resource type="PackedScene" uid="uid://45qq33mwpfjc" path="res://scenes/enemy_lil_jawer.tscn" id="36_nrbah"]
+[ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/enemy_gazer.tscn" id="37_amicu"]
+[ext_resource type="PackedScene" uid="uid://3vmb5wy6vcqd" path="res://scenes/enemy_douser_motebearer.tscn" id="38_6d1fk"]
+[ext_resource type="PackedScene" uid="uid://gesx21b6ie28" path="res://scenes/enemy_cremator_motebearer.tscn" id="39_afis2"]
+[ext_resource type="PackedScene" uid="uid://dob8imwpcj6ct" path="res://scenes/enemy_chiller_motebearer.tscn" id="40_wcsah"]
+[ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/enemy_blackmote.tscn" id="41_gy7da"]
+[ext_resource type="PackedScene" uid="uid://ba0n7m617hfu6" path="res://scenes/ebon_vessel.tscn" id="42_ic7j4"]
+[ext_resource type="PackedScene" uid="uid://cj8pghgcc4b2a" path="res://scenes/boss_frenzied_growth.tscn" id="43_kmmhh"]
+[ext_resource type="PackedScene" uid="uid://c2w4r2seeoty3" path="res://scenes/abyss_snail.tscn" id="44_xws0d"]
+
+[node name="enemyzoo" type="Node2D"]
+script = ExtResource("1_05voj")
+metadata/_edit_lock_ = true
+
+[node name="BGTextureTiling" parent="." instance=ExtResource("20_x06dy")]
+offset_left = -625.0
+offset_top = -425.0
+offset_right = 2973.0
+offset_bottom = 1685.0
+
+[node name="Roaming Camera" parent="." instance=ExtResource("2_e2dyx")]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("3_c55q0")]
+respawn_time = 0.0
+metadata/_edit_lock_ = true
+
+[node name="Sinkhole" parent="." instance=ExtResource("5_lgi8g")]
+position = Vector2(-22, -3)
+
+[node name="WispBaseRefactor" parent="." instance=ExtResource("6_gt72s")]
+position = Vector2(36, 40)
+
+[node name="AnimatedSprite2D" parent="." instance=ExtResource("7_05voj")]
+position = Vector2(-10, 32)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D2" parent="." instance=ExtResource("7_05voj")]
+position = Vector2(36, -10)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D3" parent="." instance=ExtResource("7_05voj")]
+position = Vector2(-70, -32)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D4" parent="." instance=ExtResource("7_05voj")]
+position = Vector2(-89, 6)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D5" parent="." instance=ExtResource("7_05voj")]
+position = Vector2(10, -54)
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D6" parent="." instance=ExtResource("7_05voj")]
+position = Vector2(88, 20)
+scale = Vector2(0.5, 0.5)
+
+[node name="Area2D" parent="." instance=ExtResource("8_e2dyx")]
+position = Vector2(-74, 48)
+
+[node name="Area2D2" parent="." instance=ExtResource("9_c55q0")]
+position = Vector2(55, 9)
+
+[node name="Area2D3" parent="." instance=ExtResource("10_7drpu")]
+position = Vector2(-18, -49)
+
+[node name="MoteBig" parent="." instance=ExtResource("11_hbuao")]
+position = Vector2(4, 21)
+moteValue = 999
+
+[node name="Area2D4" parent="." instance=ExtResource("12_j4kep")]
+position = Vector2(-6, 19)
+scale = Vector2(0.66, 0.66)
+
+[node name="SavePoint" parent="." instance=ExtResource("13_7drpu")]
+position = Vector2(-38, 41)
+
+[node name="TownResident" parent="." instance=ExtResource("14_hbuao")]
+position = Vector2(-47, -1)
+message = "Racism."
+
+[node name="NPC" parent="." instance=ExtResource("15_j4kep")]
+position = Vector2(15, 49)
+npcID = "Jari"
+
+[node name="MinibossStump" parent="." instance=ExtResource("16_5hdps")]
+position = Vector2(40, -22.000002)
+movement_target = [Vector2(54, -42), Vector2(69, -41), Vector2(69.00001, -22.000006), Vector2(40, -22.000002)]
+
+[node name="GapingJawer" parent="." node_paths=PackedStringArray("targetPreBattle", "battleReward") instance=ExtResource("17_np4ir")]
+position = Vector2(90, -47)
+targetPreBattle = NodePath("../Gaping Jaw Jar")
+battleReward = NodePath("../Item Chest")
+
+[node name="Item Chest" parent="." instance=ExtResource("18_htp8n")]
+position = Vector2(46, -78)
+current_zone = 999
+
+[node name="Gaping Jaw Jar" parent="." instance=ExtResource("19_vably")]
+position = Vector2(85, -17)
+
+[node name="Area2D5" parent="." instance=ExtResource("20_3v0qn")]
+position = Vector2(80, 13)
+
+[node name="Item Chest2" parent="." instance=ExtResource("18_htp8n")]
+position = Vector2(153, -37)
+current_zone = 999
+
+[node name="WispFire" parent="." node_paths=PackedStringArray("wisp_parent") instance=ExtResource("22_44ltn")]
+position = Vector2(36, 39)
+wisp_parent = NodePath("../WispBaseRefactor")
+
+[node name="SnakeVertical" parent="." instance=ExtResource("23_0m5sr")]
+position = Vector2(139, 48)
+
+[node name="SnakeVertical2" parent="." instance=ExtResource("24_5uuo7")]
+position = Vector2(163, 21)
+
+[node name="Sinkhole2" parent="." instance=ExtResource("5_lgi8g")]
+position = Vector2(-48, -42)
+
+[node name="ShadeMoteBearer" parent="." instance=ExtResource("25_7gkej")]
+position = Vector2(72, 57)
+
+[node name="Raven" parent="." instance=ExtResource("26_c82xk")]
+position = Vector2(-33, -65)
+
+[node name="Pothead" parent="." instance=ExtResource("27_m7ldp")]
+position = Vector2(19, -26)
+
+[node name="EnemyOssuary" parent="." instance=ExtResource("28_uswlj")]
+position = Vector2(-88, -24)
+
+[node name="Muncher" parent="." instance=ExtResource("29_08n5l")]
+position = Vector2(105, 70)
+
+[node name="MurkmanSpear" parent="." instance=ExtResource("30_aa0qn")]
+position = Vector2(70, 97)
+isLeader = true
+
+[node name="MurkmanClub" parent="." node_paths=PackedStringArray("leaderTarget") instance=ExtResource("31_2p4ja")]
+position = Vector2(200, 94)
+leaderTarget = NodePath("../MurkmanSpear")
+
+[node name="Motemouse" parent="." instance=ExtResource("32_pula2")]
+position = Vector2(-41, 101)
+
+[node name="MiniBoss-Amphora" parent="." instance=ExtResource("33_nxko3")]
+position = Vector2(-97, 64)
+
+[node name="Mimic" parent="." instance=ExtResource("34_tr0df")]
+position = Vector2(-112, 81)
+
+[node name="Lurker" parent="." instance=ExtResource("35_p0q13")]
+position = Vector2(-141, 79)
+
+[node name="Lil Jawer" parent="." instance=ExtResource("36_nrbah")]
+position = Vector2(-123, 59)
+
+[node name="Gazer" parent="." instance=ExtResource("37_amicu")]
+position = Vector2(-163, 48)
+
+[node name="DousingBearer" parent="." instance=ExtResource("38_6d1fk")]
+position = Vector2(-122, 105)
+
+[node name="CrematingBearer" parent="." instance=ExtResource("39_afis2")]
+position = Vector2(243, 0)
+target_direction = "left"
+
+[node name="ChillerMotebearer" parent="." instance=ExtResource("40_wcsah")]
+position = Vector2(125, -96)
+
+[node name="BlackMote" parent="." instance=ExtResource("41_gy7da")]
+position = Vector2(109, 24)
+
+[node name="EbonVessel" parent="." instance=ExtResource("42_ic7j4")]
+position = Vector2(21, 19)
+
+[node name="BossFrenzyGrowth" parent="." instance=ExtResource("43_kmmhh")]
+position = Vector2(195, -97)
+
+[node name="AbyssSnail" parent="." instance=ExtResource("44_xws0d")]
+position = Vector2(54, -11)
+point_b = Vector2(30, 0)
+
+[editable path="Roaming Camera"]

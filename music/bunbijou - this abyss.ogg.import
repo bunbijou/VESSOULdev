@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://d3a2bwwomjx6r"
+path="res://godot/imported/bunbijou - this abyss.ogg-3116e5c78f22d86537ec2fe307e4d845.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/bunbijou - this abyss.ogg"
+dest_files=["res://godot/imported/bunbijou - this abyss.ogg-3116e5c78f22d86537ec2fe307e4d845.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

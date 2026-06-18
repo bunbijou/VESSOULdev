@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cl2s6y6g72ju5"]
+
+[ext_resource type="Script" uid="uid://cgmijmqnljxv0" path="res://scripts/demo_end.gd" id="1_g6r3j"]
+[ext_resource type="Texture2D" uid="uid://b5xajxa208i4h" path="res://sprites/gui/flash_progress.png" id="2_g6r3j"]
+
+[node name="demo_end" type="Node2D" unique_id=104623368]
+process_mode = 3
+script = ExtResource("1_g6r3j")
+
+[node name="BGTextureRect" type="TextureRect" parent="." unique_id=1787947175]
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
+z_index = -1000
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("2_g6r3j")
+metadata/_edit_use_anchors_ = true

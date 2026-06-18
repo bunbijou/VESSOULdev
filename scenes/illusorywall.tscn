@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://b03vsnh0whgig"]
+
+[ext_resource type="Texture2D" uid="uid://dkpnfatq81dr8" path="res://sprites/environment/spriteAbyssFlashWall.png" id="2_cpdio"]
+[ext_resource type="Script" uid="uid://b2li6w2dg7fm1" path="res://scripts/illusoryWall.gd" id="3_1qsqm"]
+[ext_resource type="Texture2D" uid="uid://bjaarkgn4ungw" path="res://sprites/environment/spriteAbyssFlashWall-sheet.png" id="4_cpdio"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_l1k48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xlvrw"]
+size = Vector2(77.93819, 2.135293)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yy8rw"]
+atlas = ExtResource("2_cpdio")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cpdio"]
+atlas = ExtResource("2_cpdio")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qsqm"]
+atlas = ExtResource("2_cpdio")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1222m"]
+atlas = ExtResource("2_cpdio")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_confu"]
+atlas = ExtResource("2_cpdio")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_un2r7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy8rw")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_cpdio")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yy8rw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cpdio")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qsqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1222m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_confu")
+}],
+"loop": true,
+"name": &"fade",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D" unique_id=411708445 node_paths=PackedStringArray("mySprite")]
+scale = Vector2(0.355, 0.355)
+script = ExtResource("3_1qsqm")
+mySprite = NodePath("AnimatedSprite2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=682383569]
+rotation = -3.1415925
+scale = Vector2(0.61442703, -10.553687)
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_l1k48")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1805997268]
+position = Vector2(2.2922983, 2.1316282e-14)
+shape = SubResource("RectangleShape2D_xlvrw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1650247418]
+unique_name_in_owner = true
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_un2r7")
+metadata/_edit_group_ = true

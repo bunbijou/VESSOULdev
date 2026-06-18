@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://d3n6ldvapljkc"]
+
+[ext_resource type="Texture2D" uid="uid://bxowqiiuus43g" path="res://sprites/endless/endless_axis.png" id="1_3u70s"]
+[ext_resource type="Script" uid="uid://pk7jyy6kprqg" path="res://scripts/hide_in_game.gd" id="1_7yoqp"]
+
+[node name="0Center" type="Node2D" unique_id=153228341]
+z_index = 999
+scale = Vector2(1.1, 1.1)
+script = ExtResource("1_7yoqp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=610280725]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3u70s")

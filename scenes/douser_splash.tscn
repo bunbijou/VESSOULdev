@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://b6isnm7gv88yl"]
+
+[ext_resource type="Script" uid="uid://bt50l3tx50afx" path="res://scripts/douser_splash.gd" id="1_rx0m1"]
+[ext_resource type="Texture2D" uid="uid://tciv75dv2fvm" path="res://sprites/environment/water1.png" id="2_rx0m1"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="3_8lpqt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y5fu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rx0m1")
+}],
+"loop": false,
+"name": &"dispel",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a117s"]
+size = Vector2(84, 76)
+
+[node name="DouserSplash" type="Node2D" unique_id=76675566]
+z_index = 99
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_rx0m1")
+
+[node name="DebugSprite" type="AnimatedSprite2D" parent="." unique_id=2053948324]
+visible = false
+modulate = Color(0.8156863, 0.8156863, 0.8156863, 0.48235294)
+scale = Vector2(1.3362741, 1.2430491)
+sprite_frames = SubResource("SpriteFrames_y5fu8")
+animation = &"dispel"
+
+[node name="SplashHitbox" parent="." unique_id=1473486463 instance=ExtResource("3_8lpqt")]
+unique_name_in_owner = true
+collision_layer = 5
+on_touch_effect = "Dousing"
+hp = 999
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SplashHitbox" unique_id=272068336]
+shape = SubResource("RectangleShape2D_a117s")
+
+[connection signal="body_entered" from="SplashHitbox" to="." method="_on_splash_hitbox_body_entered"]
+
+[editable path="SplashHitbox"]

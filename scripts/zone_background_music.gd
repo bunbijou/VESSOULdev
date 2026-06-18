@@ -1,0 +1,144 @@
+##GLOBAL - BgmController
+extends Node
+var default : AudioStreamPlayer
+@export_category("Note: These are triggered by zones")
+@export var abyss_main : AudioStreamPlayer
+@export var gods_wood : AudioStreamPlayer
+@export var church_town : AudioStreamPlayer
+@export var success_jingle : AudioStreamPlayer
+@export var abyss_chasm_ambience : AudioStreamPlayer
+@export var abyss_chasm_music : AudioStreamPlayer
+@export var catacombs : AudioStreamPlayer
+@export var battle_1 : AudioStreamPlayer
+@export var battle_2 : AudioStreamPlayer
+@export var battle_3 : AudioStreamPlayer
+@export var menu_theme : AudioStreamPlayer
+@export var battle_frenzygrowth : AudioStreamPlayer
+@export var samael_theme : AudioStreamPlayer
+@export var jari_theme : AudioStreamPlayer
+@export var samael_battle : AudioStreamPlayer
+@export var descent_battle : AudioStreamPlayer
+@export var djinn_battle : AudioStreamPlayer
+@export var ending_bad : AudioStreamPlayer
+@export var ending_good : AudioStreamPlayer
+@export var zn_theme : AudioStreamPlayer
+@export var impostor_theme : AudioStreamPlayer
+@onready var track_leviathan = %DylgLeviathan
+@onready var track_brawl = %DylgBrawl
+@onready var track_options = %DylgOptions
+@onready var track_armaments = %DylGArmaments
+@onready var track_forge = %DylgForge
+@onready var track_killer = %DylgKiller
+@onready var track_market = %DylgMarket
+@onready var track_palette = %DylgPalette
+@onready var track_training = %DylgTraining
+@onready var track_moon = %BunbijouMoon
+@onready var track_drive = %DylGDrive
+@onready var track_soul = %DylGSoul
+@onready var track_tomorrow = %BunbijouTomorrow
+@onready var track_echoes = %DylgEchos
+@onready var track_phantoms = %DylgPhantoms
+@onready var track_grimoire = %DylgGrimoire
+@onready var track_incantation = %DylgIncantation
+@onready var track_miracle = %DylgMiracle
+@onready var track_trial = %TrialLoop
+#@onready var track_maze_ruler = %MazeRulerTheme
+
+func _ready() -> void:
+	default = abyss_main
+
+func begin_playing(input: Array[AudioStreamPlayer]): #
+	## Random sound variants
+	var variant_count : int = len(input)
+	var music_selection : AudioStreamPlayer
+	if variant_count >= 2:
+		randomize()
+		music_selection = input.pick_random()
+	else: music_selection = input[0]
+	if !music_selection.playing:
+		music_selection.play()
+
+#func _process(_delta: float) -> void:
+	#if get_tree().paused == true:
+		#abyss_main.stream_paused = false
+		#church_town.stop()
+		#gods_wood.stream_paused = false
+		#abyss_chasm_ambience.stream_paused = false
+		#abyss_chasm_music.stream_paused = false
+		#catacombs.stream_paused = false
+		#battle_1.stream_paused = false
+		#battle_2.stream_paused = false
+		#battle_3.stream_paused = false
+		#battle_frenzygrowth.stream_paused = false
+		#jari_theme.stream_paused = false
+		#samael_battle.stream_paused = false
+		#descent_battle.stream_paused = false
+		#djinn_battle.stream_paused = false
+		#menu_theme.stream_paused = false
+		#ending_bad.stream_paused = false
+		#ending_good.stream_paused = false
+		#samael_theme.stream_paused = false
+		#zn_theme.stream_paused = false
+		#impostor_theme.stream_paused = false
+		#track_leviathan.stream_paused = false
+		#track_brawl.stream_paused = false
+		#track_options.stream_paused = false
+		#track_armaments.stream_paused = false
+		#track_forge.stream_paused = false
+		#track_killer.stream_paused = false
+		#track_market.stream_paused = false
+		#track_palette.stream_paused = false
+		#track_training.stream_paused = false
+		#track_moon.stream_paused = false
+		#track_drive.stream_paused = false
+		#track_soul.stream_paused = false
+		#track_tomorrow.stream_paused = false
+
+func play_random():
+	begin_playing([%DylgLeviathan,%DylgBrawl,%DylgTraining,%DylGArmaments,%DylgKiller])
+
+func stopAll():
+	abyss_main.stop()
+	church_town.stop()
+	gods_wood.stop()
+	abyss_chasm_ambience.stop()
+	abyss_chasm_music.stop()
+	catacombs.stop()
+	battle_1.stop()
+	battle_2.stop()
+	battle_3.stop()
+	battle_frenzygrowth.stop()
+	jari_theme.stop()
+	samael_battle.stop()
+	descent_battle.stop()
+	djinn_battle.stop()
+	menu_theme.stop()
+	ending_bad.stop()
+	ending_good.stop()
+	samael_theme.stop()
+	zn_theme.stop()
+	impostor_theme.stop()
+	track_leviathan.stop()
+	track_brawl.stop()
+	track_options.stop()
+	track_armaments.stop()
+	track_forge.stop()
+	track_killer.stop()
+	track_market.stop()
+	track_palette.stop()
+	track_training.stop()
+	track_moon.stop()
+	track_drive.stop()
+	track_soul.stop()
+	track_tomorrow.stop()
+	track_echoes.stop()
+	track_grimoire.stop()
+	track_incantation.stop()
+	track_miracle.stop()
+	track_phantoms.stop()
+	track_trial.stop()
+
+func _on_bgm_deep_abyss_finished() -> void:
+	default.play()
+	default.stop() 
+	print("Called the obscure on_deep_abyss_finished function")

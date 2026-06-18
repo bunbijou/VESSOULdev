@@ -1,0 +1,297 @@
+[gd_scene format=3 uid="uid://cb5hxhotivyxv"]
+
+[ext_resource type="FontFile" uid="uid://ceayvjdcktnqg" path="res://fonts/Vessoultitle-Regular.ttf" id="1_0t84q"]
+[ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="1_dmh3q"]
+[ext_resource type="Texture2D" uid="uid://sl6t556ts03d" path="res://sprites/splashes/ending_good.png" id="2_iggq8"]
+[ext_resource type="Texture2D" uid="uid://dg1aoi3pern0m" path="res://sprites/splashes/jerry photo retouch.png" id="2_k7rdy"]
+[ext_resource type="Texture2D" uid="uid://clk73wjpy1q2r" path="res://sprites/splashes/ending_bad.png" id="3_iggq8"]
+[ext_resource type="Texture2D" uid="uid://dvqk58lgl0xq5" path="res://sprites/splashes/bunsoftsplash.png" id="4_0t84q"]
+[ext_resource type="Texture2D" uid="uid://cnsp57fwuoud7" path="res://sprites/splashes/ending_secret.png" id="4_4jooh"]
+[ext_resource type="Texture2D" uid="uid://cubppusgrt1ha" path="res://sprites/splashes/bunsoft_gothic.png" id="4_uvbhr"]
+[ext_resource type="Script" uid="uid://bw7p1x5k6o2op" path="res://scripts/ending_splash.gd" id="6_e2dv3"]
+[ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="8_m7rhh"]
+[ext_resource type="Texture2D" uid="uid://nfamgiy7kknr" path="res://sprites/environment/chasm.png" id="11_a2d7o"]
+
+[sub_resource type="Animation" id="Animation_m7rhh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 672.285)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../EndingSplash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("%Credits/../../EndingSplash/SkipLabel:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(920, 629)]
+}
+
+[sub_resource type="Animation" id="Animation_e2dv3"]
+resource_name = "creditroll"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 672.285), Vector2(0, -2516.935)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../EndingSplash:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.2, 4.0666666, 6.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../EndingSplash")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(10),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"end_credits"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("%Credits/../../EndingSplash/SkipLabel:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(920, 629), Vector2(629.575, 629)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0t84q"]
+_data = {
+&"RESET": SubResource("Animation_m7rhh"),
+&"creditroll": SubResource("Animation_e2dv3")
+}
+
+[node name="Ending" type="Node2D" unique_id=671038210]
+
+[node name="CreditsContent" type="Node2D" parent="." unique_id=874512674]
+z_index = 1
+position = Vector2(0, 672.285)
+
+[node name="TitleLabel" type="Label" parent="CreditsContent" unique_id=1355716840]
+offset_left = 386.0
+offset_top = -19.284973
+offset_right = 763.0
+offset_bottom = 35.715027
+theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("1_0t84q")
+theme_override_font_sizes/font_size = 64
+text = "VESSOUL"
+
+[node name="Credits" type="Label" parent="CreditsContent" unique_id=1075065424]
+unique_name_in_owner = true
+offset_top = 103.0
+offset_right = 1153.0
+offset_bottom = 2487.0
+theme = ExtResource("1_dmh3q")
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 20
+theme_override_constants/outline_size = 12
+text = "Project Lead: Bunbijou
+Additional Sprites/Sounds: StrawberryBones
+Bunsoft Logos: Fawn Iris
+
+Music:
+Onistomp
+POCHOWEK
+Chris G.
+
+Fonts:
+Modern DOS Font by Jayvee Enaguas 
+
+Sound Effects:
+FilmCow
+DRAGON-STUDIO
+freesound_community 
+floraphonic
+u_xjrmmgxfru
+LordSonny Two
+u_i15wxund59
+Microsammy
+yodguard
+Universfield
+Jurij
+Spinopel
+tanweraman
+rishabh gupta
+ido berg
+Koi Roylers
+Samuel F. Johanns
+Pawel S.
+Universfield
+soundsforstory
+David Dumais
+
+Team BunSoft:
+Zoey
+Kara
+Aster
+Fawn
+Dyl
+Logan
+
+Playtesting:
+A.L.
+Z.S.
+T.T.
+B.K.
+E.M.
+
+Special Thanks:
+Brackeys
+Pixabay
+Ocean Networks Canada
+
+In Loving Memory of 
+Jerry
+February 20th, 2011 - December 1st, 2025"
+horizontal_alignment = 1
+
+[node name="JerryInMemoriam" type="TextureRect" parent="CreditsContent" unique_id=866612457]
+offset_left = 505.0
+offset_top = 2223.715
+offset_right = 808.0
+offset_bottom = 2771.715
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k7rdy")
+
+[node name="BunsoftLogoGood" type="TextureRect" parent="CreditsContent" unique_id=711167777]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 215.0
+offset_top = 2547.7153
+offset_right = 1015.0
+offset_bottom = 3147.7153
+scale = Vector2(0.31723404, 0.31723404)
+texture = ExtResource("4_0t84q")
+
+[node name="BunsoftLogoEvil" type="TextureRect" parent="CreditsContent" unique_id=543126320]
+unique_name_in_owner = true
+offset_left = 313.0
+offset_top = 2633.935
+offset_right = 2473.0
+offset_bottom = 4253.935
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_uvbhr")
+
+[node name="CreditsAnim" type="AnimationPlayer" parent="." unique_id=1094003833]
+unique_name_in_owner = true
+root_node = NodePath("../CreditsContent/Credits")
+libraries/ = SubResource("AnimationLibrary_0t84q")
+speed_scale = 0.1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1910097896]
+z_index = -999
+offset_right = 1164.0
+offset_bottom = 652.0
+texture = ExtResource("8_m7rhh")
+
+[node name="EndingSplash" type="Node2D" parent="." unique_id=2142153153]
+script = ExtResource("6_e2dv3")
+ending_spoof = "Good"
+
+[node name="SkipLabel" type="Label" parent="EndingSplash" unique_id=399870585]
+z_index = 1
+offset_left = 920.0
+offset_top = 629.0
+offset_right = 1410.4243
+offset_bottom = 709.0
+theme = ExtResource("1_dmh3q")
+theme_override_constants/outline_size = 9
+theme_override_font_sizes/font_size = 16
+text = "Hold F / Right Button to Skip"
+horizontal_alignment = 2
+
+[node name="EndingLabel" type="Label" parent="EndingSplash" unique_id=1082729610]
+unique_name_in_owner = true
+z_index = 1
+offset_left = 19.0
+offset_top = 13.0
+offset_right = 509.43478
+offset_bottom = 93.0
+theme = ExtResource("1_dmh3q")
+theme_override_constants/outline_size = 9
+text = "Ending # - Subtitle"
+
+[node name="EndingGood" type="TextureRect" parent="EndingSplash" unique_id=758625226]
+unique_name_in_owner = true
+visible = false
+offset_right = 2339.4229
+offset_bottom = 1315.9253
+scale = Vector2(0.49449202, 0.49449202)
+texture = ExtResource("2_iggq8")
+
+[node name="EndingBad" type="TextureRect" parent="EndingSplash" unique_id=1247301572]
+unique_name_in_owner = true
+visible = false
+offset_right = 2332.312
+offset_bottom = 1311.9255
+scale = Vector2(0.49694264, 0.49694264)
+texture = ExtResource("3_iggq8")
+
+[node name="EndingSecret" type="TextureRect" parent="EndingSplash" unique_id=1728010340]
+unique_name_in_owner = true
+visible = false
+offset_right = 2339.4229
+offset_bottom = 1315.9253
+scale = Vector2(0.49486876, 0.49486876)
+texture = ExtResource("4_4jooh")
+
+[node name="EndingSecret2" type="TextureRect" parent="EndingSplash" unique_id=772884492]
+unique_name_in_owner = true
+visible = false
+offset_right = 2339.4229
+offset_bottom = 1315.9253
+scale = Vector2(0.49486876, 0.49486876)
+texture = ExtResource("11_a2d7o")

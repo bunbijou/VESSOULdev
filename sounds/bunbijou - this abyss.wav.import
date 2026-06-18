@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://3ukl60vjj71n"
+path="res://godot/imported/bunbijou - this abyss.wav-db776586c1b0e75f50fd9f5988979c36.sample"
+
+[deps]
+
+source_file="res://sounds/bunbijou - this abyss.wav"
+dest_files=["res://godot/imported/bunbijou - this abyss.wav-db776586c1b0e75f50fd9f5988979c36.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

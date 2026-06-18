@@ -1,0 +1,47 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7p2458rof6qa"]
+
+[ext_resource type="Script" uid="uid://chs0t6j4wbh24" path="res://stop_music.gd" id="1_1eahp"]
+[ext_resource type="PackedScene" uid="uid://dqhivaxq24w4h" path="res://scenes/player.tscn" id="2_cyf6v"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="3_eu5e2"]
+[ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/enemy_blackmote.tscn" id="8_0qn86"]
+[ext_resource type="PackedScene" uid="uid://su4bm6s57ea0" path="res://scenes/enemy_chillermote.tscn" id="8_udhum"]
+[ext_resource type="PackedScene" uid="uid://cg6a4qhevagv8" path="res://scenes/enemy_shademote.tscn" id="9_1eahp"]
+[ext_resource type="PackedScene" uid="uid://dvprswdwetgib" path="res://scenes/enemy_crematormote.tscn" id="9_lom5m"]
+[ext_resource type="PackedScene" uid="uid://dm4npa58y84ks" path="res://scenes/enemy_dousermote.tscn" id="10_r66gn"]
+[ext_resource type="PackedScene" uid="uid://cddkb37kjs778" path="res://scenes/decor/TilingBGSprite.tscn" id="16_o4uuo"]
+[ext_resource type="Texture2D" uid="uid://bj1rmvturo8fh" path="res://sprites/sprBGAbyssRing.png" id="17_8gukf"]
+
+[node name="enemyzoo" type="Node2D"]
+script = ExtResource("1_1eahp")
+
+[node name="Player" parent="." groups=["Player"] instance=ExtResource("2_cyf6v")]
+unique_name_in_owner = true
+position = Vector2(-15, -3)
+
+[node name="Roaming Camera" parent="." instance=ExtResource("3_eu5e2")]
+
+[node name="BGTextureTiling" parent="." instance=ExtResource("16_o4uuo")]
+visible = false
+offset_left = -663.0
+offset_top = -417.0
+offset_right = 2935.0
+offset_bottom = 1693.0
+texture = ExtResource("17_8gukf")
+
+[node name="BlackMote" parent="." instance=ExtResource("8_0qn86")]
+position = Vector2(-33, -1)
+
+[node name="ShadeMote" parent="." instance=ExtResource("9_1eahp")]
+position = Vector2(7, -2)
+
+[node name="ChillMote" parent="." instance=ExtResource("8_udhum")]
+position = Vector2(17, -2)
+
+[node name="FireMote" parent="." instance=ExtResource("9_lom5m")]
+position = Vector2(28, -2)
+
+[node name="DouseMote" parent="." instance=ExtResource("10_r66gn")]
+position = Vector2(39, -2)
+
+[editable path="Player"]
+[editable path="Roaming Camera"]

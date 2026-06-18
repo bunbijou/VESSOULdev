@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://ee57h3s2w1ja"]
+
+[ext_resource type="Script" uid="uid://dvcbapvp11uwk" path="res://scripts/_lurkerhiding_spot.gd" id="1_8lk2c"]
+[ext_resource type="Texture2D" uid="uid://bmn70jx8bahm1" path="res://sprites/environment/sprSavePoint.png" id="1_h2suh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fad55"]
+atlas = ExtResource("1_h2suh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m237i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fad55")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yrsbj"]
+radius = 31.56
+
+[node name="HidingSpot" type="Node2D" unique_id=1019990518]
+script = ExtResource("1_8lk2c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1193189937]
+sprite_frames = SubResource("SpriteFrames_m237i")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1696070153]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1385633522]
+shape = SubResource("CircleShape2D_yrsbj")
+debug_color = Color(0, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://cuwaff5b3oesx"]
+
+[ext_resource type="Script" uid="uid://dijnu1hyy5m2y" path="res://scripts/fireball.gd" id="1_g151b"]
+[ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="2_a3el6"]
+[ext_resource type="PackedScene" uid="uid://buyitx4oxwjpe" path="res://scenes/info_component.tscn" id="3_vswk1"]
+[ext_resource type="Texture2D" uid="uid://dyv03748hk8pb" path="res://sprites/enemy_motebearer/dark_fireball.png" id="4_lq67m"]
+[ext_resource type="PackedScene" uid="uid://gijigdmvqvfg" path="res://scenes/particle_nadir_flame.tscn" id="5_d11rd"]
+[ext_resource type="Texture2D" uid="uid://chtt61w3qorsb" path="res://sprites/particles/dark_particle.png" id="6_ja7su"]
+[ext_resource type="PackedScene" uid="uid://c4nnm60ixtdiq" path="res://scenes/flash_component.tscn" id="10_fvrsp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kba2"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6pff"]
+atlas = ExtResource("4_lq67m")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g151b"]
+atlas = ExtResource("4_lq67m")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a3el6"]
+atlas = ExtResource("4_lq67m")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vswk1"]
+atlas = ExtResource("4_lq67m")
+region = Rect2(24, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tyqc2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6pff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g151b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a3el6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vswk1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dark_orb" type="Node2D" unique_id=1409250673 node_paths=PackedStringArray("flame_particle")]
+z_index = 999
+script = ExtResource("1_g151b")
+flame_particle = NodePath("SpawnFlame")
+
+[node name="HitboxComponent" parent="." unique_id=1108796297 instance=ExtResource("2_a3el6")]
+on_touch_effect = "AdvancedDarkness"
+hp = 999
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=406702907]
+shape = SubResource("CircleShape2D_7kba2")
+
+[node name="InfoComponent" parent="." unique_id=1227182012 instance=ExtResource("3_vswk1")]
+enemy = "shadow-tainted motes"
+no_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=408704857]
+position = Vector2(0, 16)
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_7kba2")
+debug_color = Color(0.85007757, 0.00089966, 0.90115523, 0.41960785)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=153245551]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_tyqc2")
+autoplay = "default"
+frame_progress = 0.19010097
+
+[node name="SpawnFlame" parent="." unique_id=1663480174 instance=ExtResource("5_d11rd")]
+amount = 5
+texture = ExtResource("6_ja7su")
+lifetime = 0.25
+explosiveness = 1.0
+emission_rect_extents = Vector2(2.5, 2.5)
+gravity = Vector2(0, -100)
+
+[node name="FlashComponent" parent="." unique_id=405903204 instance=ExtResource("10_fvrsp")]
+position = Vector2(0, -1)
+scale = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="HitboxComponent" to="." method="_on_hitbox_component_body_entered"]
+
+[editable path="InfoComponent"]
