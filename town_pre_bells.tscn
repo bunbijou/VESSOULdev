@@ -34,7 +34,7 @@
 [ext_resource type="Script" uid="uid://pnejfp5sogxw" path="res://scripts/sculptor_motion.gd" id="32_xmo8i"]
 [ext_resource type="PackedScene" uid="uid://baljuibb6pcb8" path="res://scenes/Npc_Base.tscn" id="33_3yjb8"]
 [ext_resource type="PackedScene" uid="uid://hagfimuirioj" path="res://scenes/door_town.tscn" id="34_xgtic"]
-[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="35_epmck"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/story_collectable_item.tscn" id="35_epmck"]
 [ext_resource type="PackedScene" uid="uid://b03vsnh0whgig" path="res://scenes/illusorywall.tscn" id="36_xop0v"]
 [ext_resource type="PackedScene" uid="uid://dvs6kn0r2msgf" path="res://scenes/illusory_wall_fog.tscn" id="37_ydq4g"]
 [ext_resource type="Script" uid="uid://ru1421oeocha" path="res://scripts/ng_spawn.gd" id="38_etl2i"]

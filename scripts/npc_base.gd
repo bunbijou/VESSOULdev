@@ -610,6 +610,12 @@ func disable():
 ## Gameplay Functions
 func tomeConversion():
 	if GameState.playerTomesHeld > 0: #and GameState.playerEfficiency < 3: #if player has collected tomess
+		##Achievement: first time upgrading Efficiency
+		if GameState.playerEfficiency == 0:
+			SteamHandler.achievement_get("a_efficiency_up")
+		##Achievement: increasing Efficiency to max
+		if GameState.playerEfficiency == 2:
+			SteamHandler.achievement_get("a_efficiency_max")
 		GameState.playerEfficiency += GameState.playerTomesHeld
 		GameState.playerTomesHeld = 0
 		Sound.upgrade("sculptor")
@@ -619,16 +625,30 @@ func tomeConversion():
 
 func bulbConversion():
 	if GameState.playerBulbsHeld > 0: #and GameState.playerCapacity < 5: #if player has bloombulbs
+		##Achievement: first time upgrading Capacity
+		if GameState.playerCapacity == 0:
+			SteamHandler.achievement_get("a_capacity_up")
+		##Achievement: increasing Capacity to max
+		if GameState.playerIntensity == 4:
+			SteamHandler.achievement_get("a_capacity_max")
 		GameState.playerCapacity += GameState.playerBulbsHeld
 		GameState.playerBulbsHeld = 0
 		Sound.upgrade("jari")
 		GameState.target_player.show_sidebar()
 		GameState.target_player.anim_sparkle()
-		await get_tree().create_timer(.1).timeout
-		GameState.fullHeal()
+		##Not working as of right now
+		#await get_tree().create_timer(.1).timeout
+		#GameState.fullHeal()
 
 func kindlingConversion():
 	if GameState.playerKindlingHeld > 0:
+		##Achievement: first time upgrading Intensity
+		if GameState.playerIntensity == 0:
+			SteamHandler.achievement_get("a_intensity_up")
+		##Achievement: increasing Intensity to max
+		if GameState.playerIntensity == 9:
+			SteamHandler.achievement_get("a_intensity_max")
+		
 		GameState.target_player.position = self.position+Vector2(0,30)
 		GameState.target_player.anim_unnerve()
 		if GameState.npcDict["zn"] % 2 != 0:

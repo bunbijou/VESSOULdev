@@ -241,6 +241,8 @@ func _pain():
 
 func death():
 		var fade_time : float = 5
+		##Achievement: Defeat Frenzygrowth
+		SteamHandler.achievement_get("a_frenzied_growth_defeat")
 		dead = true
 		Sound.frenzygrowth("pain")
 		Sound.frenzygrowth("pain")

@@ -13,6 +13,8 @@ func _ready() -> void:
 		"Secret": GameState.townDict["townEndingChoice"][2] = 1
 	
 	if GameState.townDict["townEndingChoice"][0] == 1:
+		##Achievement: Get the bad ending
+		SteamHandler.achievement_get("a_ending_bad")
 		GameState.endless["theme"] = 1
 		%EndingLabel.text = "Ending 1 - Antithesis (Bad Ending)"
 		%EndingGood.visible = false
@@ -24,6 +26,8 @@ func _ready() -> void:
 		BgmController.ending_bad.play()
 		
 	if GameState.townDict["townEndingChoice"][1] == 1:
+		##Achievement: Get the good ending
+		SteamHandler.achievement_get("a_ending_good")
 		GameState.endless["theme"] = 0
 		%EndingLabel.text = "Ending 2 - Thesis (Good Ending)"
 		GameState.townDict["townEndingChoice"][1] = 2 #set to completed state
@@ -35,6 +39,8 @@ func _ready() -> void:
 		BgmController.ending_good.play()
 
 	if GameState.townDict["townEndingChoice"][2] == 1:
+		##Achievement: Get the secret ending
+		SteamHandler.achievement_get("a_ending_secret")
 		GameState.endless["theme"] = 2
 		%EndingLabel.text = "Ending 3 - Synthesis (Secret Ending)"
 		GameState.townDict["townEndingChoice"][2] = 2 #set to completed state

@@ -1,3 +1,4 @@
+res://
 res://sprites/
 res://sprites/environment/
 C:/Users/Zoey/v3.2/macOS/
@@ -9,7 +10,6 @@ res://sprites/npc/
 C:/Users/Zoey/Videos/
 res://sprites/gui/
 res://sprites/demo/
-res://
 res://sprites/tilesets/
 res://fonts/
 res://scenes/
@@ -21,7 +21,6 @@ res://sprites/particles/
 res://sprites/enemy_lenore/
 res://sprites/enemy_abyssoul/
 C:/Users/Zoey/
-res://shaders/
 res://scripts/
 res://sprites/items/
 res://sprites/enemy_blackmote/

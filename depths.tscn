@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://bb3ilnmk7fe8v" path="res://scenes/miniboss_gapingjawer.tscn" id="21_pyltx"]
 [ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="23_2flap"]
 [ext_resource type="PackedScene" uid="uid://dggt33yc1kxxi" path="res://scenes/enemy_muckman.tscn" id="23_gucbv"]
-[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="24_waabk"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/story_collectable_item.tscn" id="24_waabk"]
 [ext_resource type="PackedScene" uid="uid://clyxqasn8ksjf" path="res://scenes/decor/detail_broken_jar.tscn" id="28_mero8"]
 [ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="29_tggck"]
 [ext_resource type="PackedScene" uid="uid://cxcpv33kak8ss" path="res://scenes/enemy_pothead.tscn" id="30_q8wqw"]

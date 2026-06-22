@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dvs6kn0r2msgf" path="res://scenes/illusory_wall_fog.tscn" id="5_shsn0"]
 [ext_resource type="Texture2D" uid="uid://d01ixhoboipng" path="res://sprites/enemy_censer/censer_chain.png" id="6_i4gnp"]
 [ext_resource type="PackedScene" uid="uid://n0t2n401tayi" path="res://scenes/zone_area.tscn" id="6_lpuj2"]
-[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="7_3q20x"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/story_collectable_item.tscn" id="7_3q20x"]
 [ext_resource type="Texture2D" uid="uid://cerpryv6jq3yo" path="res://sprites/gui/sprTransition.png" id="7_u3hlj"]
 [ext_resource type="PackedScene" uid="uid://qnlqdpnghvmn" path="res://scenes/miniboss_censer.tscn" id="8_won37"]
 [ext_resource type="Texture2D" uid="uid://bpsvf67ai1pg5" path="res://sprites/tilesets/spriteTilesetAbyss.png" id="9_011hj"]

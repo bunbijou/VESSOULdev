@@ -23,17 +23,17 @@ var hitstun : float = 3
 func anim_stun():
 	%ParticleAbyss.emitting = true
 	%AbyssalBody.play("stun",1,false)
-	#%AbyssTendrilLongV.play("stun")
 	await get_tree().create_timer(3).timeout
 	if !dead:
 		%AbyssalBody.play("lookDn",1,false)
-		#%AbyssTendrilLongV.play("default")
 
 func anim_attack_():
 	Sound.ThreeTendrilSwipe()
 
 func anim_death():
 	var fade_time : float = 5.0
+	##Achievement: Defeat Abyssoul
+	SteamHandler.achievement_get("a_abyssoul_defeat")
 	GameState.target_player.play_anim("lighten")
 	%AbyssAnimPlayer.play("defeat",1,0)
 	GameState.target_player.waiting = true

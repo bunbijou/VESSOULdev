@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://v5jy7sp2k86v" path="res://sprites/npc/hooded resident3.png" id="6_0rrug"]
 [ext_resource type="Texture2D" uid="uid://bm658k77serd1" path="res://sprites/environment/water4.png" id="6_tilf0"]
 [ext_resource type="Texture2D" uid="uid://yq2cm07pciak" path="res://sprites/environment/water5.png" id="7_7nu3m"]
-[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="7_525j1"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/story_collectable_item.tscn" id="7_525j1"]
 [ext_resource type="Texture2D" uid="uid://dcl5qxlrppswb" path="res://sprites/npc/hooded resident4.png" id="7_lxbdl"]
 [ext_resource type="Texture2D" uid="uid://d0hswjwypus36" path="res://sprites/environment/water6.png" id="8_rrglq"]
 [ext_resource type="Texture2D" uid="uid://bgqqqnc2ffxt4" path="res://sprites/npc/hooded resident5.png" id="8_ypel8"]

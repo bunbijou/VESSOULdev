@@ -44,6 +44,8 @@ func anim_attack():
 
 func anim_death():
 	var fade_time : float = 5
+	##Achievement: Slayed Censer
+	SteamHandler.achievement_get("a_flawed_vessel_censer")
 	GameState.target_player.waiting = true
 	GameState.target_player.current_zone = -999
 	#hardcoded location of censer death

@@ -223,6 +223,8 @@ func _pain():
 		stun = false
 
 func defeat():
+	##Achievement: Betray Lenore
+	SteamHandler.achievement_get("a_lenore_defeat")
 	GameState.target_player.waiting = true
 	BgmController.stopAll()
 	Sound.lenore("death")

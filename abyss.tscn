@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://n0t2n401tayi" path="res://scenes/zone_area.tscn" id="7_h8x71"]
 [ext_resource type="PackedScene" uid="uid://b1sy2h3btbeyu" path="res://scenes/mote.tscn" id="8_85qws"]
 [ext_resource type="PackedScene" uid="uid://bp3a3g3nh6x1t" path="res://scenes/moteBig.tscn" id="9_dwuk2"]
-[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="10_1l0p3"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/story_collectable_item.tscn" id="10_1l0p3"]
 [ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/enemy_blackmote.tscn" id="11_onept"]
 [ext_resource type="PackedScene" uid="uid://0sw0yxchbigv" path="res://scenes/enemy_mimic.tscn" id="12_r1vcb"]
 [ext_resource type="Script" uid="uid://jmuwyqjejhpr" path="res://scripts/jari_progression.gd" id="14_0lrys"]

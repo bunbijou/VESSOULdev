@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c78bv3t2d3662"]
+
+[ext_resource type="Script" uid="uid://bhwwot5p5ojkg" path="res://steam.gd" id="1_fuokq"]
+
+[node name="SteamHandler" type="Node" unique_id=207554407]
+script = ExtResource("1_fuokq")

@@ -44,10 +44,10 @@ Dialogue="*res://scenes/dialogue_box.tscn"
 DecisionSelect="*res://scenes/decision_box.tscn"
 Warp="*res://scenes/warp_position_resource.tscn"
 Localize="*res://scripts/text_reference.gd"
+SteamHandler="*uid://c78bv3t2d3662"
 
 [display]
 
-window/size/mode=3
 window/size/initial_position_type=5
 window/stretch/mode="viewport"
 
@@ -59,7 +59,7 @@ import/atlas_max_width=2700
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godotresourcecleaner/plugin.cfg")
+enabled=PackedStringArray("res://addons/godotsteam/plugin.cfg")
 
 [input]
 
@@ -186,3 +186,10 @@ textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.029506557, 0.029506557, 0.029506557, 1)
 2d/snap/snap_2d_transforms_to_pixel=true
+
+[steam]
+
+initialization/app_id=0
+initialization/initialize_on_startup=false
+initialization/embed_callbacks=false
+multiplayer_peer/max_channels=4

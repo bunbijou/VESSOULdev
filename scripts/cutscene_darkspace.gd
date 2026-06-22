@@ -66,8 +66,11 @@ func _process(_delta: float) -> void:
 				%SamaelAnimPlayer.play("glare")
 				increment_message(1)
 			13:
+				##Achievement: Released Samael
+				SteamHandler.achievement_get("a_ngplus_reset_accept")
 				end_cutscene()
-			18: #Samael not released:
+			18: #Samael not released
+				SteamHandler.achievement_get("a_ngplus_reset_deny")
 				Localize.reference_dialogue("LailunPlayerDecline")
 				increment_message(-5) #see above
 

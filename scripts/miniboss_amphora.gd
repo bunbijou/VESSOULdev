@@ -38,6 +38,8 @@ func anim_stun():
 	if !dead:
 		anim_idle()
 func anim_death():
+	##Achievement: Slayed Amphora
+	SteamHandler.achievement_get("a_flawed_vessel_amphora")
 	GameState.target_player.waiting = true
 	%OrbitParticles.emitting = false
 	GameState.target_player.current_zone = -999

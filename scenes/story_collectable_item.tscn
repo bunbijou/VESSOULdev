@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bxsgecfiie4c7"]
 
-[ext_resource type="Script" uid="uid://dp50imtedq2xi" path="res://scripts/kindling_chest.gd" id="1_bykke"]
+[ext_resource type="Script" uid="uid://dp50imtedq2xi" path="res://scripts/story_collectable_item.gd" id="1_bykke"]
 [ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="2_rs6hp"]
 [ext_resource type="Texture2D" uid="uid://nvqe25wvvlkh" path="res://sprites/items/sprTomeBlue.png" id="3_5il1t"]
 [ext_resource type="Texture2D" uid="uid://dgwa3uxa2crtu" path="res://sprites/items/sprAbyssChest.png" id="3_xohu3"]
-[ext_resource type="Texture2D" uid="uid://d4k2vabof4da2" path="res://sprites/items/sprAbyssChestOpen.png" id="4_5il1t"]
+[ext_resource type="Texture2D" uid="uid://b2mgrqlgbfylo" path="res://sprites/items/sprAbyssChestOpen.png" id="4_5il1t"]
 [ext_resource type="Texture2D" uid="uid://b72y107c4b0w" path="res://sprites/items/sprTomeOrange.png" id="4_etxlk"]
 [ext_resource type="Texture2D" uid="uid://dyengudfqxt7a" path="res://sprites/items/sprTomeBeige.png" id="5_5il1t"]
 [ext_resource type="Texture2D" uid="uid://0f8bn07uxpxn" path="res://sprites/items/vesselbloom_overlay.png" id="5_5im8i"]

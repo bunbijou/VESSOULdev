@@ -234,6 +234,8 @@ func _on_my_area_2d_body_entered(_body: Node2D) -> void:
 							await get_tree().create_timer(0.5).timeout
 							GameState.target_player.anim_mote_absorb()
 						else:
+							##Achievement: Glaze Get
+							SteamHandler.achievement_get("a_glaze_get")
 							if GameState.abyssDict["abyssGlaze"] == 0:
 								Localize.reference_dialogue("GameFlash")
 							GameState.abyssDict["abyssGlaze"] = 1
@@ -256,6 +258,8 @@ func _on_my_area_2d_body_entered(_body: Node2D) -> void:
 							GameState.playerActiveSouls += (100+(100*GameState.newgame))
 							collected = 1
 						else:
+							##Achievement: Pot Lid Get
+							SteamHandler.achievement_get("a_pot_lid_get")
 							print("Player got Pot Lid")
 							BgmController.success_jingle.play()
 							GameState.bestowItem(-2) #Pot Lid

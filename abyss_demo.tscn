@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://stae5vq2qkpy" path="res://scenes/decor/detail_dripping_water.tscn" id="3_0qx53"]
 [ext_resource type="Script" uid="uid://bxbpup72le0gq" path="res://scripts/zone_area_simple.gd" id="3_qkcyi"]
 [ext_resource type="PackedScene" uid="uid://b8vtjuqg4vjo8" path="res://scenes/mote_residue.tscn" id="4_s8t8w"]
-[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="5_wt4lx"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/story_collectable_item.tscn" id="5_wt4lx"]
 [ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="5_x0yht"]
 [ext_resource type="Texture2D" uid="uid://bpsvf67ai1pg5" path="res://sprites/tilesets/spriteTilesetAbyss.png" id="6_2x3jx"]
 [ext_resource type="Texture2D" uid="uid://bj1rmvturo8fh" path="res://sprites/environment/sprBGAbyssRing.png" id="7_mtwam"]

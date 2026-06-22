@@ -122,6 +122,8 @@ func _isDamaged():
 func _death():
 	var fade_time : float = 5
 	if !dead:
+		##Achievement: Ring Gold Bell
+		SteamHandler.achievement_get("a_gaping_jawer_defeat")
 		dead = true
 		active = false
 		%JawerAnim.play("defeat",1)

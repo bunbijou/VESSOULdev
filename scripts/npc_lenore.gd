@@ -88,6 +88,8 @@ func _process(_delta: float) -> void:
 						begin_battle()
 						increment_message(999) #doesn't have additional behaviors past this point
 					15: #player gains favor/humanity gained
+						##Achievement: Lenore's Favor
+						SteamHandler.achievement_get("a_lenore_favor")
 						BgmController.success_jingle.play()
 						BgmController.abyss_main.play()
 						Localize.reference_dialogue("LenoreFavorGained")

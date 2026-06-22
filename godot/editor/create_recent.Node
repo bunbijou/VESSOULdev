@@ -1,9 +1,9 @@
+Node
 AnimationPlayer
 Node2D
 Label
 TextureRect
 Camera2D
-Node
 Sprite2D
 CollisionShape2D
 Area2D

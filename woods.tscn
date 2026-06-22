@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c2op14ntvn4jh" path="res://scenes/woodsBreakablePumpkinBeige.tscn" id="14_pgnep"]
 [ext_resource type="PackedScene" uid="uid://dma38uah41cri" path="res://scenes/enemy_sinkhole.tscn" id="15_1b510"]
 [ext_resource type="Script" uid="uid://pnejfp5sogxw" path="res://scripts/sculptor_motion.gd" id="16_dht8r"]
-[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/item_chest.tscn" id="17_osw3r"]
+[ext_resource type="PackedScene" uid="uid://bxsgecfiie4c7" path="res://scenes/story_collectable_item.tscn" id="17_osw3r"]
 [ext_resource type="PackedScene" uid="uid://0sw0yxchbigv" path="res://scenes/enemy_mimic.tscn" id="18_l583o"]
 [ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="19_jwwof"]
 [ext_resource type="Texture2D" uid="uid://dh7xddtmrqlm5" path="res://sprites/tilesets/spriteTilesetWoods.png" id="22_7ohvd"]

@@ -98,7 +98,10 @@ func anim_stun():
 						anim_roll_up()
 func anim_death():
 	var fade_time : float = 5
-	GameState.isPaused = true
+	##Achievement: Slayed Stump
+	SteamHandler.achievement_get("a_flawed_vessel_stump")
+	GameState.target_player.waiting = true
+	#GameState.isPaused = true
 	GameState.target_player.current_zone = -999
 	GameState.target_player.temp_position = self.position
 	empowered_sprite.play("stun",1,false)
@@ -115,7 +118,8 @@ func anim_death():
 	Sound.wood_break()
 	Sound.blazing("death")
 	await get_tree().create_timer(fade_time/2).timeout
-	GameState.isPaused =false
+	GameState.target_player.waiting = false
+	#GameState.isPaused =false
 	GameState.target_player.anim_enemy_slain()
 	GameState.mote_reward(GameState.reward_stump,0,"big")
 	GameState.target_player.current_zone = 14 #Re-focus camera on player

@@ -18,6 +18,8 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
 	if unlocked:
+		##Achievement: Humanity gained
+		SteamHandler.achievement_get("a_humanity_obtained")
 		GameState.target_player.show_sidebar()
 		Sound.enemy_slain()
 		GameState.target_player.anim_humanity_gained()
