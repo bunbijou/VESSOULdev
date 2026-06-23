@@ -7,7 +7,7 @@ func _ready() -> void:
 		queue_free()
 
 func _on_area_2d_body_entered(_body: Node2D) -> void:
-	GameState.isPaused = true
+	GameState.target_player.waiting = true
 	Sound.fallOut()
 	%aBottleSprite.animation = "damage"
 	await get_tree().create_timer(.5).timeout
@@ -19,5 +19,5 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 	await get_tree().create_timer(2.5).timeout
 	LevelTransition.fadeFromBlack()
 	battleStart.emit()
-	GameState.isPaused = false
+	GameState.target_player.waiting = false
 	queue_free()

@@ -94,6 +94,9 @@ radius = 32.741306
 [sub_resource type="CircleShape2D" id="CircleShape2D_oyhk0"]
 radius = 80.09994
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6hjhy"]
+size = Vector2(304, 288)
+
 [node name="Lil Jawer" type="Node2D" unique_id=1967846737 node_paths=PackedStringArray("flash_component", "hit_area", "shield_area", "my_sprite")]
 z_index = 100
 scale = Vector2(0.5, 0.5)
@@ -163,7 +166,16 @@ unique_name_in_owner = true
 position = Vector2(0, -4.000002)
 emission_sphere_radius = 18.0
 
+[node name="LocalArea" type="Area2D" parent="." unique_id=777388191]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LocalArea" unique_id=1128391949]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_6hjhy")
+
 [connection signal="body_entered" from="HitboxComponent" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="LocalArea" to="." method="_on_local_area_body_entered"]
+[connection signal="body_exited" from="LocalArea" to="." method="_on_local_area_body_exited"]
 
 [editable path="HitboxComponent"]
 [editable path="FlashComponent"]

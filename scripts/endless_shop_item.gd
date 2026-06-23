@@ -371,6 +371,7 @@ func give():
 			GameState.target_player.anim_sparkle()
 			GameState.npcDict["zn"] = 999
 			GameState.playerIntensity += 3
+	GameState.stat_update()
 	collected = true
 	queue_free()
 

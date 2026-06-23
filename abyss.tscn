@@ -4213,31 +4213,6 @@ current_zone = -1
 [node name="NGSpawns" type="Node" parent="Static Objects" unique_id=1486264374]
 script = ExtResource("49_8rq6v")
 
-[node name="SnakeVertical-1A" parent="Static Objects/NGSpawns" unique_id=665566868 instance=ExtResource("55_m4hjk")]
-modulate = Color(1, 0, 0.49803922, 1)
-z_index = 100
-position = Vector2(-128, 108)
-scale = Vector2(-1, 1)
-current_zone = -1
-
-[node name="Sprite2D" type="Sprite2D" parent="Static Objects/NGSpawns/SnakeVertical-1A" unique_id=270017577]
-z_index = -1
-position = Vector2(-27, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("56_mykfj")
-
-[node name="SnakeVertical-1B" parent="Static Objects/NGSpawns" unique_id=2122868579 instance=ExtResource("55_m4hjk")]
-modulate = Color(1, 0, 0.49803922, 1)
-z_index = 100
-position = Vector2(-203, 214)
-current_zone = -1
-
-[node name="Sprite2D" type="Sprite2D" parent="Static Objects/NGSpawns/SnakeVertical-1B" unique_id=446309927]
-z_index = -1
-position = Vector2(-27, 0)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("56_mykfj")
-
 [node name="BlackMote0A" parent="Static Objects/NGSpawns" unique_id=826072227 instance=ExtResource("11_onept")]
 modulate = Color(1, 0, 0.49803922, 1)
 position = Vector2(72, 254)
@@ -4246,41 +4221,14 @@ position = Vector2(72, 254)
 modulate = Color(1, 0, 0.49803922, 1)
 position = Vector2(-70, 346)
 
-[node name="Snake0A" parent="Static Objects/NGSpawns" unique_id=1571673226 instance=ExtResource("58_kx4ay")]
-modulate = Color(1, 0, 0.49803922, 1)
-z_index = 50
-position = Vector2(-69, 275)
-current_zone = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="Static Objects/NGSpawns/Snake0A" unique_id=99827136]
-z_index = 49
-position = Vector2(0, -26)
-rotation = -3.1415925
-scale = Vector2(0.5, -0.5)
-texture = ExtResource("56_mykfj")
-
-[node name="Snake0B" parent="Static Objects/NGSpawns" unique_id=1962339588 instance=ExtResource("58_kx4ay")]
-modulate = Color(1, 0, 0.49803922, 1)
-z_index = 50
-position = Vector2(71, 326)
-rotation = 3.1415925
-current_zone = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="Static Objects/NGSpawns/Snake0B" unique_id=373954856]
-z_index = 49
-position = Vector2(0, -26)
-rotation = -3.1415925
-scale = Vector2(0.5, -0.5)
-texture = ExtResource("56_mykfj")
-
 [node name="CrematingBearer1A" parent="Static Objects/NGSpawns" unique_id=1719407332 instance=ExtResource("54_gryt0")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(2, 119)
+position = Vector2(-39, 120)
 current_zone = 1
 
 [node name="Burnout2A" parent="Static Objects/NGSpawns" unique_id=425616002 instance=ExtResource("57_mykfj")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(159, 211)
+position = Vector2(183, 163)
 current_zone = 2
 
 [node name="AmphoraProgression" type="Node" parent="Static Objects/NGSpawns" unique_id=1657697203]
@@ -4288,22 +4236,22 @@ script = ExtResource("58_oxarm")
 
 [node name="BlackMote3D" parent="Static Objects/NGSpawns/AmphoraProgression" unique_id=175138950 instance=ExtResource("11_onept")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(155, -23)
+position = Vector2(160, 19)
 current_zone = 3
 
 [node name="BlackMote3A" parent="Static Objects/NGSpawns/AmphoraProgression" unique_id=790024460 instance=ExtResource("11_onept")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(166, -23)
+position = Vector2(160, -30)
 current_zone = 3
 
 [node name="BlackMote3B" parent="Static Objects/NGSpawns/AmphoraProgression" unique_id=867360216 instance=ExtResource("11_onept")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(166, -13)
+position = Vector2(167, -6)
 current_zone = 3
 
 [node name="BlackMote3C" parent="Static Objects/NGSpawns/AmphoraProgression" unique_id=606717369 instance=ExtResource("11_onept")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(154, -13)
+position = Vector2(152, -6)
 current_zone = 3
 
 [node name="Snake3A" parent="Static Objects/NGSpawns/AmphoraProgression" unique_id=1962393510 instance=ExtResource("55_m4hjk")]
@@ -4363,7 +4311,7 @@ current_zone = 7
 
 [node name="Muckman7A" parent="Static Objects/NGSpawns" unique_id=731796071 instance=ExtResource("60_gdxwv")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(160, 363)
+position = Vector2(180, 250)
 current_zone = 7
 isLeader = true
 
@@ -4437,6 +4385,17 @@ texture = ExtResource("56_mykfj")
 [node name="HidingSpot" parent="Static Objects/NGSpawns" unique_id=1019990518 instance=ExtResource("62_tecfh")]
 unique_name_in_owner = true
 position = Vector2(160, -55)
+
+[node name="CrematingBearer1A2" parent="Static Objects/NGSpawns" unique_id=2064835840 instance=ExtResource("54_gryt0")]
+modulate = Color(1, 0, 0.49803922, 1)
+position = Vector2(45, 120)
+current_zone = 1
+
+[node name="Muckman7A2" parent="Static Objects/NGSpawns" unique_id=2023083290 instance=ExtResource("60_gdxwv")]
+modulate = Color(1, 0, 0.49803922, 1)
+position = Vector2(142, 250)
+current_zone = 7
+isLeader = true
 
 [node name="MiniBossAmphora" parent="Static Objects" unique_id=166464917 instance=ExtResource("22_wi4ob")]
 unique_name_in_owner = true

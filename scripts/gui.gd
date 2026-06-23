@@ -68,14 +68,24 @@ func show_humanity_message(message):
 
 
 func _process(_delta: float) -> void:
+	## In-Game Pause Menu
+	if Input.is_action_just_pressed("ui_cancel") and !get_tree().paused: #if pausing
+		pause()
+	
+	if Input.is_action_just_pressed("ui_cancel") and pause_menu:
+		_unpause()
+	
 	#Toggle GUI
 	if Input.is_action_just_pressed("ui_hide"):
 		if %GUI.visible:
 			%GUI.visible = false
 		else: %GUI.visible = true
 	
-	
-	##Damage Add Indicato
+	await get_tree().create_timer(0.25).timeout
+	gui_update()
+
+func gui_update():
+		##Damage Add Indicato
 	if GameState.playerDamageMod == 0:
 		%DamageAdd.text = ""
 	else: %DamageAdd.text = "+"+str(GameState.playerDamageAdd)
@@ -193,13 +203,6 @@ func _process(_delta: float) -> void:
 	if GameState.abyssDict["abyssLid"] > 0:
 		%ItemIconLid.visible =  true
 	else: %ItemIconLid.visible = false
-	
-	## In-Game Pause Menu
-	if Input.is_action_just_pressed("ui_cancel") and !get_tree().paused: #if pausing
-		pause()
-	
-	if Input.is_action_just_pressed("ui_cancel") and pause_menu:
-		_unpause()
 
 func pause():
 	if !GameState.target_player.dead:

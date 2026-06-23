@@ -83,7 +83,7 @@ var playerCapacityAdd : int = 0 #Endless Mode Only
 var saveslot = 0 #default
 var playerActiveScene = "res://scenes/nullscn.tscn" #this will be overrwritten with player's first save
 var playerCurrentLocation = Vector2(0,0) #this is just for storage, it shouldnt be referenced or changed except by save points!
-var playerActiveSouls : float = 0 #is referenced
+var playerActiveSouls : float = 1 #is referenced
 var playerLifetimeSouls : float = 0 #is referenced
 var playerKillCount : int = 0 #is referenced
 var playerBulbsHeld : int = 0 #can carry up to 5
@@ -331,7 +331,7 @@ func save_remote():
 	show_gui_save_menu.emit()
 
 ##Stat calculations
-func _process(_delta: float) -> void:
+func stat_update():
 	match playerCapacity: 
 		##each rank of capacity increase player baseHP by 1
 		##the latter part is for endless mode only
@@ -467,6 +467,10 @@ func _process(_delta: float) -> void:
 		playerDamageMod = int(.10*playerEfficiency)
 		if !completion:
 			cheater()
+
+##See above
+#func _process(_delta: float) -> void:
+
 
 #To be called when enemies and bosses provide a mote reward on death
 func mote_reward(moteValue:int,bonusMod:float,size:String):

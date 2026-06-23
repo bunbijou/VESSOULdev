@@ -300,6 +300,7 @@ func _ready() -> void: #only do this once
 	if demo:
 		GameState.playerCapacityAdd = 2
 		GameState.playerHP = 3
+	GameState.stat_update()
 
 func _physics_process(_delta: float) -> void:
 	## Define variable values based on system input 

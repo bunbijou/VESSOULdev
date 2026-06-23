@@ -85,3 +85,11 @@ func death():
 	await get_tree().create_timer(GameState.cleanup_time_enemy).timeout
 	queue_free()
 	
+
+func _on_local_area_body_entered(_body: PlayerVessel) -> void:
+	if GameState.target_player.current_zone == current_zone and active:
+		flash_component.is_flashable = true
+	
+
+func _on_local_area_body_exited(_body: PlayerVessel) -> void:
+	flash_component.is_flashable = false

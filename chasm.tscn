@@ -4317,11 +4317,11 @@ shape = SubResource("RectangleShape2D_k4j2o")
 
 [node name="EnemyOssuary" parent="NGSpawns Zone999" unique_id=220628567 instance=ExtResource("44_a65k2")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(-89, 197)
+position = Vector2(-64, 215)
 
 [node name="EnemyOssuary2" parent="NGSpawns Zone999" unique_id=1819144483 instance=ExtResource("44_a65k2")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(97, 200)
+position = Vector2(73, 213)
 
 [node name="Burnout" parent="NGSpawns Zone999" unique_id=425616002 instance=ExtResource("45_a65k2")]
 modulate = Color(1, 0, 0.49803922, 1)
@@ -4333,11 +4333,11 @@ position = Vector2(-40, 263)
 
 [node name="Burnout3" parent="NGSpawns Zone999" unique_id=292361004 instance=ExtResource("45_a65k2")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(-61, 202)
+position = Vector2(-92, 201)
 
 [node name="Burnout4" parent="NGSpawns Zone999" unique_id=502313944 instance=ExtResource("45_a65k2")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(71, 206)
+position = Vector2(101, 200)
 
 [node name="Burnout5" parent="NGSpawns Zone999" unique_id=2019355631 instance=ExtResource("45_a65k2")]
 modulate = Color(1, 0, 0.49803922, 1)

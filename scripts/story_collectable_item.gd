@@ -268,6 +268,7 @@ func _on_my_area_2d_body_entered(_body: Node2D) -> void:
 							"+str(Localize.item_lid_hint)
 							GameState.abyssDict["abyssLid"] = 1
 							collected = 1
+				GameState.stat_update()
 				anim_chest_empty()
 				current_zone = -999 #workaround to keep player from getting items repeatedly from the same chest
 				collected = 1
