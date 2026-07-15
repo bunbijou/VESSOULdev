@@ -83,6 +83,7 @@ func start_new_game():
 	if GameState.newgame == 0:
 		GameState.reset_game_values()
 	else: GameState.new_game_plus()
+	GameState.player_hp_previous = 1
 	get_tree().change_scene_to_file(sceneNewGame)
 
 ##NOTE: to-do switch .tres to .res for final build / steam release 

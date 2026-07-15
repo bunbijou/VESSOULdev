@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bbnaydurfqhmw"]
+
+[ext_resource type="Script" uid="uid://pk7jyy6kprqg" path="res://scripts/hide_in_game.gd" id="1_1ja4u"]
+
+[node name="WispFire" type="Node2D" unique_id=205689274]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_1ja4u")
+
+[node name="Label" type="Label" parent="." unique_id=726220864]
+offset_left = -18.666666
+offset_top = -4.6666665
+offset_right = 66.333336
+offset_bottom = 18.333334
+scale = Vector2(0.43721974, 0.43721974)
+text = "OBSOLETE!"

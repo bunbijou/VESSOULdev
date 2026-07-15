@@ -44,7 +44,7 @@
 [ext_resource type="PackedScene" uid="uid://bcs87den2w0h5" path="res://scenes/save_point.tscn" id="44_7yfm2"]
 [ext_resource type="PackedScene" uid="uid://bege4j306y7s6" path="res://scenes/npc_resident.tscn" id="44_wcm3o"]
 [ext_resource type="Texture2D" uid="uid://c6h1gsk3tpa2o" path="res://sprites/npc/snake_sleep.png" id="45_qf701"]
-[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame.tscn" id="45_rt344"]
+[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame_obsolete.tscn" id="45_rt344"]
 [ext_resource type="Script" uid="uid://cg6u6rqj1d5mu" path="res://scripts/brumating_abyss_serpent.gd" id="46_rfkgo"]
 [ext_resource type="PackedScene" uid="uid://dwx0fuuris80m" path="res://scenes/warp_lenore.tscn" id="48_rfkgo"]
 [ext_resource type="Script" uid="uid://ru1421oeocha" path="res://scripts/ng_spawn.gd" id="49_8rq6v"]
@@ -657,7 +657,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_8rq6v")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -724,7 +724,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ix7so")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -774,7 +774,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d5l6q")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]

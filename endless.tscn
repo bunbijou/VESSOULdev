@@ -47,7 +47,7 @@
 [ext_resource type="Texture2D" uid="uid://cd4mk147ucocv" path="res://sprites/gui/arrow1.png" id="21_m0g3d"]
 [ext_resource type="Script" uid="uid://dygo4w21qr1m1" path="res://scripts/endless_locked_chest.gd" id="24_m0g3d"]
 [ext_resource type="Texture2D" uid="uid://dgwa3uxa2crtu" path="res://sprites/items/sprAbyssChest.png" id="28_iovif"]
-[ext_resource type="Texture2D" uid="uid://d4k2vabof4da2" path="res://sprites/items/sprAbyssChestOpen.png" id="29_nyfqj"]
+[ext_resource type="Texture2D" uid="uid://b2mgrqlgbfylo" path="res://sprites/items/sprAbyssChestOpen.png" id="29_nyfqj"]
 [ext_resource type="Script" uid="uid://dot2665m6ynop" path="res://scripts/endless_npc_barrelby.gd" id="30_2syel"]
 [ext_resource type="Texture2D" uid="uid://bcn2ieswgn4io" path="res://sprites/npc/barrelby.png" id="30_aqrtm"]
 [ext_resource type="Texture2D" uid="uid://bpsvf67ai1pg5" path="res://sprites/tilesets/spriteTilesetAbyss.png" id="30_w3js7"]
@@ -56,7 +56,7 @@
 [ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/enemy_blackmote.tscn" id="38_smscj"]
 [ext_resource type="PackedScene" uid="uid://ca632vr6ex2em" path="res://endless_quick_flash.tscn" id="39_aqrtm"]
 [ext_resource type="Texture2D" uid="uid://csn52utcn1f1f" path="res://sprites/enemy_shadowsnake/snake_hole.png" id="41_kgtb1"]
-[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame.tscn" id="41_nfm0m"]
+[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame_obsolete.tscn" id="41_nfm0m"]
 [ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://scenes/enemy_wisp_base.tscn" id="42_242tg"]
 [ext_resource type="PackedScene" uid="uid://ci0f64lv0xhyl" path="res://scenes/enemy_lurker.tscn" id="43_242tg"]
 [ext_resource type="Texture2D" uid="uid://bn16vpjk42jot" path="res://sprites/endless/endless_gold_basin.png" id="44_omrv5"]
@@ -339,7 +339,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_34jrm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dawn_active",
 "speed": 5.0
 }, {
@@ -383,7 +383,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e0kqy")
 }],
-"loop": false,
+"loop": 0,
 "name": &"dawn_attack",
 "speed": 5.0
 }, {
@@ -394,7 +394,7 @@ animations = [{
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_trqdw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dawn_stun",
 "speed": 5.0
 }, {
@@ -411,7 +411,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_08rqs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dusk_active",
 "speed": 5.0
 }, {
@@ -458,7 +458,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6wxph")
 }],
-"loop": false,
+"loop": 0,
 "name": &"dusk_attack",
 "speed": 5.0
 }, {
@@ -469,7 +469,7 @@ animations = [{
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_fd7d2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"dusk_stun",
 "speed": 5.0
 }, {
@@ -486,7 +486,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6t1kl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"twilight_active",
 "speed": 5.0
 }, {
@@ -527,7 +527,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7mhe1")
 }],
-"loop": false,
+"loop": 0,
 "name": &"twilight_attack",
 "speed": 5.0
 }, {
@@ -538,7 +538,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bdex8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"twilight_stun",
 "speed": 5.0
 }]
@@ -1581,7 +1581,7 @@ animations = [{
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_3u1n0")
 }],
-"loop": true,
+"loop": 1,
 "name": &"emerge",
 "speed": 5.0
 }, {
@@ -1613,7 +1613,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_682ya")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -1645,7 +1645,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rvuha")
 }],
-"loop": true,
+"loop": 1,
 "name": &"talk",
 "speed": 5.0
 }]
@@ -1659,7 +1659,7 @@ animations = [{
 "duration": 2.5,
 "texture": ExtResource("21_m0g3d")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1694,7 +1694,7 @@ animations = [{
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_kk2ap")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1711,7 +1711,7 @@ animations = [{
 "duration": 2.5,
 "texture": ExtResource("21_m0g3d")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1779,7 +1779,7 @@ animations = [{
 "duration": 0.9,
 "texture": SubResource("AtlasTexture_75j1n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -1787,7 +1787,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8xkei")
 }],
-"loop": true,
+"loop": 1,
 "name": &"open",
 "speed": 5.0
 }]
@@ -1998,13 +1998,13 @@ texture = ExtResource("3_6gffw")
 
 [node name="MazeLevel" type="Label" parent="RoamingCamera/CameraMovementHandler/CanvasLayerGUI/EndlessGUI" unique_id=1581619433]
 unique_name_in_owner = true
-layout_direction = 2
 layout_mode = 0
 offset_left = -2.8115997
 offset_top = 5.4513717
 offset_right = 105.18838
 offset_bottom = 40.45137
 scale = Vector2(0.25, 0.25)
+layout_direction = 2
 theme = ExtResource("18_rk47l")
 theme_override_colors/font_color = Color(1, 0.94509804, 0.9098039, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
@@ -2017,13 +2017,13 @@ horizontal_alignment = 2
 
 [node name="DifficultyLevel" type="Label" parent="RoamingCamera/CameraMovementHandler/CanvasLayerGUI/EndlessGUI" unique_id=2144221023]
 unique_name_in_owner = true
-layout_direction = 2
 layout_mode = 0
 offset_left = -3.2727242
 offset_top = 13.949442
 offset_right = 104.727264
 offset_bottom = 48.94944
 scale = Vector2(0.25, 0.25)
+layout_direction = 2
 theme = ExtResource("18_rk47l")
 theme_override_colors/font_color = Color(1, 0, 0.3019608, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)

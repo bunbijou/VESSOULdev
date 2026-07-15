@@ -1,6 +1,5 @@
 class_name EnemyWisp extends Node2D
 
-#@onready var target_player : PlayerVessel = get_tree().get_first_node_in_group("Player")
 @export var my_sprite : AnimatedSprite2D
 @onready var wisp_parent : WispBase
 var dead : bool = false
@@ -28,13 +27,6 @@ func _physics_process(_delta: float) -> void:
 		self.rotation -= .05
 		my_sprite.rotation = -(self.rotation)
 
-func _on_rotation_child_area_2d_body_shape_entered(_body_rid: RID, _body: Node2D, _body_shape_index: int, _local_shape_index: int) -> void:
-	if !dead and enabled:
-		if GameState.npcDict["zn"] != 999: #Endless Mode Only
-			GameState.target_player.isHurt(1+GameState.newgame)
-		GameState.target_player.is_burning()
-		Sound.PlayerDamaged()
-
 func death():
 	if !dead:
 		%FireExplosion.emitting = true
@@ -44,3 +36,11 @@ func death():
 		my_sprite.play("fizzle")
 		await get_tree().create_timer(.35).timeout
 		queue_free()
+
+
+func _on_rotation_child_area_2d_body_entered(_body: PlayerVessel) -> void:
+	if !dead and enabled:
+		if GameState.npcDict["zn"] != 999: #Endless Mode Only
+			GameState.target_player.isHurt(1+GameState.newgame)
+		GameState.target_player.is_burning()
+		Sound.PlayerDamaged()

@@ -46,7 +46,7 @@
 [ext_resource type="PackedScene" uid="uid://bege4j306y7s6" path="res://scenes/npc_resident.tscn" id="43_fogdg"]
 [ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="44_uue5j"]
 [ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://scenes/enemy_wisp_base.tscn" id="45_qxypw"]
-[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame.tscn" id="46_dht8r"]
+[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame_obsolete.tscn" id="46_dht8r"]
 [ext_resource type="PackedScene" uid="uid://cv5yfyw0eoba4" path="res://npc_impostor.tscn" id="48_iaydb"]
 [ext_resource type="PackedScene" uid="uid://c4v8uhhedt7j0" path="res://ng_spawn_node2d_newgame_enemy.tscn" id="49_26quo"]
 [ext_resource type="PackedScene" uid="uid://3vmb5wy6vcqd" path="res://scenes/enemy_douser_motebearer.tscn" id="50_kbt8n"]

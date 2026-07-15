@@ -80,12 +80,29 @@ func _process(_delta: float) -> void:
 		if %GUI.visible:
 			%GUI.visible = false
 		else: %GUI.visible = true
-	
-	await get_tree().create_timer(0.25).timeout
+
 	gui_update()
 
 func gui_update():
-		##Damage Add Indicato
+	## Show Glaze Hud Elements
+	if GameState.abyssDict["abyssGlaze"] >= 1:
+		##this value should be a number between 1 and 100
+		%ItemIconGlaze.visible = true
+		%ProgressBar.visible = true
+		if (GameState.playerActiveSouls-GameState.playerFlashMin) == 0:
+			%ProgressBar.value = 0
+		else:
+			%ProgressBar.value = 2*(int(GameState.playerActiveSouls)%int(GameState.playerFlashMin))
+	else: 
+		%ItemIconGlaze.visible = false
+		%ProgressBar.visible = false
+	
+	## Show Pot Lid Hud Element
+	if GameState.abyssDict["abyssLid"] > 0:
+		%ItemIconLid.visible =  true
+	else: %ItemIconLid.visible = false
+	
+	##Damage Add Indicator
 	if GameState.playerDamageMod == 0:
 		%DamageAdd.text = ""
 	else: %DamageAdd.text = "+"+str(GameState.playerDamageAdd)
@@ -188,21 +205,6 @@ func gui_update():
 		%EfficiencyBar.visible = false
 		%EfficiencyLabel.visible = true
 		%EfficiencyLabel.text =  str(Localize.stat_efficiency)+": "+str(GameState.playerEfficiency)
-	
-	if GameState.abyssDict["abyssGlaze"] >= 1:
-		##this value should be a number between 1 and 100
-		if (GameState.playerActiveSouls-GameState.playerFlashMin) == 0:
-			%ProgressBar.value = 0
-		else:
-			%ProgressBar.value = 2*(int(GameState.playerActiveSouls)%int(GameState.playerFlashMin))
-		%ItemIconGlaze.visible = true
-		%ProgressBar.visible = true
-	else: 
-		%ItemIconGlaze.visible = false
-		%ProgressBar.visible = false
-	if GameState.abyssDict["abyssLid"] > 0:
-		%ItemIconLid.visible =  true
-	else: %ItemIconLid.visible = false
 
 func pause():
 	if !GameState.target_player.dead:

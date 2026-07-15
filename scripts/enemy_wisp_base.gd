@@ -8,10 +8,10 @@ signal enable_wisps
 @export var hit_area : HitboxComponent
 @export var current_zone : int = 999 #my home zone
 var wisp = preload("res://scenes/protective_flame.tscn")
-#var wisp_quantity : int = 1
 var dead : bool = false
 var stunned : bool = false
 var hitstun : float
+var retaliation : bool = false
 
 ##-----ANIMATIONS----##
 func anim_idle():
@@ -36,7 +36,7 @@ func anim_death():
 func _ready(): #on level start
 	flash_component.flash_detected.connect(flash)
 	hit_area.painState.connect(anim_stun)
-	#hit_area.painState.connect(wisp_enable)
+	hit_area.painState.connect(wisp_enable)
 	hit_area.death_rattle.connect(death)
 	hitstun = hit_area.hitstun
 	my_sprite.animation = "default" #set my current animation to idle anim from my statblock
@@ -48,6 +48,7 @@ func wisp_create():
 	var wisp_3 = wisp.instantiate()
 	add_child(wisp_1)
 	wisp_1.wisp_parent = self
+	wisp_1.enabled = true
 	await get_tree().create_timer(.75).timeout
 	add_child(wisp_2)
 	wisp_2.wisp_parent = self
@@ -68,8 +69,10 @@ func wisp_enable():
 
 func flash():
 	if GameState.target_player.current_zone == current_zone and !dead:
+		retaliation = true
 		anim_stun()
 		hit_area.hp -= flash_component.flash_damage
+		await get_tree().create_timer(0.25).timeout
 
 func death():
 	if !dead:

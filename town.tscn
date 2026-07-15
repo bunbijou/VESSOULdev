@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://dob8imwpcj6ct" path="res://scenes/enemy_chiller_motebearer.tscn" id="28_kl6pl"]
 [ext_resource type="Texture2D" uid="uid://c67cnxxbknohq" path="res://sprites/tilesets/TilesetAuxillaryA.png" id="28_rrglq"]
 [ext_resource type="PackedScene" uid="uid://cblhrfo1vo4hc" path="res://scenes/enemy_raven.tscn" id="29_4wb35"]
-[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame.tscn" id="31_fk3m5"]
+[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame_obsolete.tscn" id="31_fk3m5"]
 [ext_resource type="PackedScene" uid="uid://b1sy2h3btbeyu" path="res://scenes/mote.tscn" id="32_5ie80"]
 [ext_resource type="Script" uid="uid://bkbfvpha1pobe" path="res://scripts/hide_in_editor.gd" id="32_6infi"]
 [ext_resource type="Script" uid="uid://pnejfp5sogxw" path="res://scripts/sculptor_motion.gd" id="32_ujvoh"]
@@ -1808,7 +1808,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_ccuaf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"left",
 "speed": 5.0
 }, {
@@ -1822,7 +1822,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_c54sc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"right",
 "speed": 5.0
 }]
@@ -1851,7 +1851,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_c7g51")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1916,7 +1916,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_xu6hc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shield_L",
 "speed": 5.0
 }, {
@@ -1930,7 +1930,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_rs6an")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shield_R",
 "speed": 5.0
 }, {
@@ -1944,7 +1944,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_chumf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"spear_L",
 "speed": 5.0
 }, {
@@ -1958,7 +1958,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_80ejn")
 }],
-"loop": false,
+"loop": 0,
 "name": &"spear_R",
 "speed": 5.0
 }]
@@ -2020,7 +2020,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2hwoi")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]

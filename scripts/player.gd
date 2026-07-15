@@ -300,7 +300,7 @@ func _ready() -> void: #only do this once
 	if demo:
 		GameState.playerCapacityAdd = 2
 		GameState.playerHP = 3
-	GameState.stat_update()
+	
 
 func _physics_process(_delta: float) -> void:
 	## Define variable values based on system input 
@@ -333,6 +333,8 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _process(_delta: float) -> void: #every frame
+	##Animations
+	GameState.stat_update()
 	anim_key()
 	if GameState.playerEfficiency > 3:
 		anim_power_flame()

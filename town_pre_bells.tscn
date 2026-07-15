@@ -42,7 +42,7 @@
 [ext_resource type="PackedScene" uid="uid://dufonq4vijj51" path="res://scenes/enemy_shade_motebearer.tscn" id="40_p5cjo"]
 [ext_resource type="Texture2D" uid="uid://crwu4p0emmv8y" path="res://sprites/environment/sprTownDoorBoss.png" id="41_yabbx"]
 [ext_resource type="PackedScene" uid="uid://gvswyd0wgfnx" path="res://scenes/breakable_pillar.tscn" id="42_f888r"]
-[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame.tscn" id="43_wakm8"]
+[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame_obsolete.tscn" id="43_wakm8"]
 [ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://scenes/enemy_wisp_base.tscn" id="44_yxghl"]
 [ext_resource type="PackedScene" uid="uid://cblhrfo1vo4hc" path="res://scenes/enemy_raven.tscn" id="45_anaa2"]
 [ext_resource type="PackedScene" uid="uid://45qq33mwpfjc" path="res://scenes/enemy_lil_jawer.tscn" id="46_o3hyw"]

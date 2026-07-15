@@ -72,7 +72,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bm43e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -83,7 +83,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8q0sm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fall",
 "speed": 5.0
 }, {
@@ -94,7 +94,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mnb1e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fly",
 "speed": 5.0
 }, {
@@ -102,7 +102,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vaibh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"grounded",
 "speed": 5.0
 }, {
@@ -113,7 +113,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yo2hm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"groundedStun",
 "speed": 5.0
 }, {
@@ -124,7 +124,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_sv77b")
 }],
-"loop": true,
+"loop": 1,
 "name": &"preen",
 "speed": 5.0
 }, {
@@ -135,7 +135,7 @@ animations = [{
 "duration": 0.61,
 "texture": SubResource("AtlasTexture_diqpj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -230,6 +230,7 @@ debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LocalArea" unique_id=678184728]
+visible = false
 position = Vector2(0, -10)
 shape = SubResource("RectangleShape2D_t1b31")
 

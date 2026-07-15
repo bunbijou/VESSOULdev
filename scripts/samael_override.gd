@@ -10,8 +10,8 @@ func _ready() -> void:
 		GameState.townDict["townEndingChoice"][1] = 1
 		GameState.impostor = 1
 	if debug:
+		GameState.playerActiveSouls = 999
 		GameState.playerCapacity = 2
 		GameState.playerIntensity = 5
 		GameState.playerEfficiency = 1
 		GameState.abyssDict["abyssGlaze"] = 1
-		GameState.playerActiveSouls = 999
