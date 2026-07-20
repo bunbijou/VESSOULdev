@@ -785,7 +785,7 @@ condition = "Abyssoul Defeated"
 
 [node name="Player" parent="." unique_id=1138359485 instance=ExtResource("2_7yfm2")]
 z_index = 200
-position = Vector2(0, 318)
+position = Vector2(1, 320)
 current_zone = 0
 
 [node name="PotheadA-2" parent="." unique_id=1079197186 instance=ExtResource("32_dwtn8")]

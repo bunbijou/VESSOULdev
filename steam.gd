@@ -26,4 +26,5 @@ func achievement_get(achievement_name : String):
 		return
 	#else
 	Steam.setAchievement(achievement_name)
+	Steam.storeStats() ##triggers the toast
 	print("Unlocked achievement: "+achievement_name)

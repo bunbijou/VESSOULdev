@@ -1,7 +1,8 @@
+res://default_bus_layout.tres
 res://mainMenu.tscn
 res://pixeltheme_outline.tres
 res://pixeltheme.tres
 res://tileset_dawn.tres
 res://tileset_dusk.tres
 res://tileset_twilight.tres
-res://scripts/main_menu.gd
+res://a_test.gd

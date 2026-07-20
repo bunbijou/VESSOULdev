@@ -1,8 +1,8 @@
 extends Node
 
 
-func _ready() -> void:
-	SteamHandler.achievement_get("a_glaze_get")
+#func _ready() -> void:
+	#SteamHandler.achievement_get("a_glaze_get")
 	#SteamHandler.achievement_get("a_pot_lid_get")
 	#SteamHandler.achievement_get("a_forsaken_defeat")
 	#SteamHandler.achievement_get("a_lenore_favor")
