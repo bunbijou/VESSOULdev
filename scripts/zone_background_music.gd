@@ -42,6 +42,8 @@ var default : AudioStreamPlayer
 @onready var track_incantation = %DylgIncantation
 @onready var track_miracle = %DylgMiracle
 @onready var track_trial = %TrialLoop
+@onready var track_aeon = %DylGAeon
+@onready var track_ambush = %DylGAmbush
 #@onready var track_maze_ruler = %MazeRulerTheme
 
 func _ready() -> void:
@@ -95,7 +97,7 @@ func begin_playing(input: Array[AudioStreamPlayer]): #
 		#track_tomorrow.stream_paused = false
 
 func play_random():
-	begin_playing([%DylgLeviathan,%DylgBrawl,%DylgTraining,%DylGArmaments,%DylgKiller])
+	begin_playing([%DylgLeviathan,%DylgBrawl,%DylgTraining,%DylGArmaments,%DylgKiller,%DylGAeon,%DylGAmbush])
 
 func stopAll():
 	abyss_main.stop()
@@ -137,6 +139,8 @@ func stopAll():
 	track_miracle.stop()
 	track_phantoms.stop()
 	track_trial.stop()
+	track_ambush.stop()
+	track_aeon.stop()
 
 func _on_bgm_deep_abyss_finished() -> void:
 	default.play()

@@ -11,9 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://dn078qjji1e41" path="res://music/DylgKiller.mp3" id="3_gd8ew"]
 [ext_resource type="AudioStream" uid="uid://b24w1ocafj5il" path="res://music/pochowek - flute.mp3" id="3_umrpn"]
 [ext_resource type="AudioStream" uid="uid://d3a2bwwomjx6r" path="res://music/bunbijou - this abyss.ogg" id="4_6v72m"]
+[ext_resource type="AudioStream" uid="uid://e0dnb2wcaded" path="res://music/DylGAeon.mp3" id="4_hygmf"]
 [ext_resource type="AudioStream" uid="uid://l5m35f1vl7um" path="res://music/DylGSoul.mp3" id="4_jd055"]
 [ext_resource type="AudioStream" uid="uid://bcnjn4j8lu2dn" path="res://music/DylgMarket.mp3" id="4_ttw8n"]
 [ext_resource type="AudioStream" uid="uid://t4isukb5t1uh" path="res://music/DylgPalette.mp3" id="5_lgu12"]
+[ext_resource type="AudioStream" uid="uid://civo84syqr0ly" path="res://music/DylGAmbush.mp3" id="5_mjaop"]
 [ext_resource type="AudioStream" uid="uid://ew1tkjwqcjj0" path="res://music/DylgTraining.mp3" id="6_acncd"]
 [ext_resource type="AudioStream" uid="uid://b2j1wbi215nf4" path="res://sounds/jingle.wav" id="6_hfgy7"]
 [ext_resource type="AudioStream" uid="uid://ky027kii8ufw" path="res://music/bunbijou - unnerve.mp3" id="8_2tr5p"]
@@ -71,6 +73,16 @@ bus = &"MusicNoReverb"
 unique_name_in_owner = true
 stream = ExtResource("17_cqp5t")
 bus = &"Music"
+
+[node name="DylGAeon" type="AudioStreamPlayer" parent="." unique_id=501610578]
+unique_name_in_owner = true
+stream = ExtResource("4_hygmf")
+bus = &"MusicNoReverb"
+
+[node name="DylGAmbush" type="AudioStreamPlayer" parent="." unique_id=1031485212]
+unique_name_in_owner = true
+stream = ExtResource("5_mjaop")
+bus = &"MusicNoReverb"
 
 [node name="LecheSermon" type="AudioStreamPlayer" parent="." unique_id=148132288]
 stream = ExtResource("2_n1vr6")

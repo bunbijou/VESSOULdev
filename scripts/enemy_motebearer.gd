@@ -292,13 +292,14 @@ func _disarm(): #Douser
 
 #----------------------SHADE--------------------------------------#
 func _invokeDarkness():
-	GameState.shadeActive = true
-	print("GameState: Shade Enabled")
-	just_attacked = true
-	play_anim("shade_cast","")
-	GameState.target_player.anim_darken()
-	await get_tree().create_timer(1.5).timeout
-	if !dispelled: #in the case of animation interrupts
+	if !dispelled and !GameState.shadeActive:
+		GameState.shadeActive = true
+		print("GameState: Shade Enabled")
+		just_attacked = true
+		play_anim("shade_cast","")
+		GameState.target_player.anim_darken()
+		await get_tree().create_timer(1.5).timeout
+		#if !dispelled: #in the case of animation interrupts
 		my_sprite.animation = "active"
 
 func _invokeDarkOrb():
