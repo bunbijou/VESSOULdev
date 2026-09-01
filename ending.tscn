@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://bw7p1x5k6o2op" path="res://scripts/ending_splash.gd" id="6_e2dv3"]
 [ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="8_m7rhh"]
 [ext_resource type="Texture2D" uid="uid://nfamgiy7kknr" path="res://sprites/environment/chasm.png" id="11_a2d7o"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="12_ujx65"]
 
 [sub_resource type="Animation" id="Animation_m7rhh"]
 length = 0.001
@@ -112,6 +113,11 @@ _data = {
 }
 
 [node name="Ending" type="Node2D" unique_id=671038210]
+
+[node name="Player" parent="." unique_id=2070195141 instance=ExtResource("12_ujx65")]
+position = Vector2(-115, 754)
+position_override = true
+waiting = true
 
 [node name="CreditsContent" type="Node2D" parent="." unique_id=874512674]
 z_index = 1
@@ -239,7 +245,6 @@ texture = ExtResource("8_m7rhh")
 
 [node name="EndingSplash" type="Node2D" parent="." unique_id=2142153153]
 script = ExtResource("6_e2dv3")
-ending_spoof = "Good"
 
 [node name="SkipLabel" type="Label" parent="EndingSplash" unique_id=399870585]
 z_index = 1

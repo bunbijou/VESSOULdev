@@ -68,7 +68,7 @@ func anim_victory(input : String):
 
 func anim_death():
 	##Achievement: Defeat Ebon Vessel
-	SteamHandler.achievement_get("a_ebon_vessel_defeat")
+	GameState.target_player.anim_achievement("a_ebon_vessel_defeat")
 	%Music.stop()
 	%SpriteBase.flip_v = false
 	GameState.target_player.current_zone = -199

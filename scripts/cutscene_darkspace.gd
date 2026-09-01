@@ -67,10 +67,10 @@ func _process(_delta: float) -> void:
 				increment_message(1)
 			13:
 				##Achievement: Released Samael
-				SteamHandler.achievement_get("a_ngplus_reset_accept")
+				GameState.target_player.anim_achievement("a_ngplus_reset_accept")
 				end_cutscene()
 			18: #Samael not released
-				SteamHandler.achievement_get("a_ngplus_reset_deny")
+				GameState.target_player.anim_achievement("a_ngplus_reset_deny")
 				Localize.reference_dialogue("LailunPlayerDecline")
 				increment_message(-5) #see above
 

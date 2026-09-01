@@ -717,7 +717,7 @@ func reset_game_values():
 ## Called when player initiates New Game Plus
 func new_game_plus():
 		##Achievement: Start New Game Plus
-		SteamHandler.achievement_get("a_new_game")
+		GameState.target_player.anim_achievement("a_new_game")
 		playerActiveSouls = 0
 		playerLifetimeSouls = 0 
 		playerKillCount = 0 

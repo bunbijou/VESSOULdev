@@ -74,10 +74,8 @@ func anim_item_info():
 	await get_tree().create_timer(beat*3.0).timeout
 	%itemLabel.visible = false
 
-
-
 func _ready() -> void:
-	#cleaning up old/obsolete instances
+	##Cleaning up old/obsolete instances
 	match item_type:
 		0: #Kindling Chest
 			match current_zone:
@@ -96,8 +94,7 @@ func _ready() -> void:
 				22: if GameState.townDict["townKindling"][2] == 1: queue_free()
 				23: if GameState.townDict["townKindling"][3] == 1: queue_free()
 				999: if GameState.townDict["townKindling"][4] == 1: queue_free()
-
-		1: #VesselBlooms
+		1: #Vesselblooms
 			match current_zone:
 				1: #Cave of Reflection
 					if GameState.abyssDict["abyssBlooms"][0] == 1: queue_free()
@@ -117,11 +114,15 @@ func _ready() -> void:
 					if GameState.woodsDict["woodsTome"] == 1: queue_free()
 				24: #Censer
 					if GameState.townDict["townTome"] == 1: queue_free()
-	if item_type == 0 and item_subtype == 1: #if is a Glaze chest and player already has Glaze
-		if GameState.abyssDict["abyssGlaze"] == 1: 
-			GameState.abyssDict["abyssGlaze"] = 2 #turn into bonus chest
-	if item_type == 0 and item_subtype == 2: #if is a Lid chest and player already has Lid
-		if GameState.abyssDict["abyssLid"] == 1:
+	
+	#If player already has glaze
+	if GameState.abyssDict["abyssGlaze"] >= 1: 
+			if item_type == 0 and item_subtype == 1: #if is a Glaze chest
+				GameState.abyssDict["abyssGlaze"] = 2 #turn into bonus chest 
+	
+	#If player already has Lid
+	if GameState.abyssDict["abyssLid"] >= 1:
+		if item_type == 0 and item_subtype == 2: #if is a Lid chest and 
 			GameState.abyssDict["abyssLid"] = 2 #turn into bonus chest
 	
 	##This just tells the player what they got / how to use it
@@ -159,7 +160,8 @@ func _process(_delta: float) -> void:
 			#%AnimsVesselBloom.animation = "open"
 			#%myArea2D.monitoring = true
 		#else:
-			if required_kills > 0 and GameState.playerKillCount >= required_kills and locked:
+		if locked: 
+			if required_kills > 0 and GameState.playerKillCount >= required_kills:
 				locked = false #keeps this statement from repeating and overriding other anim. states
 				anim_bloom_unlock()
 
@@ -178,7 +180,9 @@ func target_defeated():
 
 ## On player touch
 func _on_my_area_2d_body_entered(_body: Node2D) -> void:
-	if GameState.target_player.current_zone == current_zone and !collected:
+	if GameState.target_player.current_zone == current_zone and collected:
+		pass
+	else:
 		match item_type:
 			0: ##Chest
 				match item_subtype:
@@ -219,10 +223,9 @@ func _on_my_area_2d_body_entered(_body: Node2D) -> void:
 						anim_item_info()
 						%itemLabel.text = str(Localize.item_kindling)+" "+str(Localize.item_get_suffix)
 						collected = 1
-						
 					1: ## Chest - Glaze
 						#If glaze already collected in a past life
-						if GameState.abyssDict["abyssGlaze"] == 2:
+						if GameState.abyssDict["abyssGlaze"] >= 1:
 							print("Player got Mote Bonus (Glaze Already Acquired)")
 							Sound.PlayerFlash() #placeholder
 							%MoteExplosion.emitting = true
@@ -235,21 +238,21 @@ func _on_my_area_2d_body_entered(_body: Node2D) -> void:
 							GameState.target_player.anim_mote_absorb()
 						else:
 							##Achievement: Glaze Get
-							SteamHandler.achievement_get("a_glaze_get")
-							if GameState.abyssDict["abyssGlaze"] == 0:
+							GameState.target_player.anim_achievement("a_glaze_get")
+							anim_item_info()
+							if GameState.abyssDict["abyssGlaze"] != 1:
 								Localize.reference_dialogue("GameFlash")
 							GameState.abyssDict["abyssGlaze"] = 1
 							BgmController.success_jingle.play()
 							print("Player acquired Glaze")
 							GameState.bestowItem(-1) #Glaze
-							anim_item_info()
 							%itemLabel.text = str(Localize.item_glaze)+" "+str(Localize.item_get_suffix)
 							#+str(Localize.item_glaze_hint)
 							collected = 1
 							if demo: GameState.playerActiveSouls += 5*GameState.playerFlashMin
 					2: ## Chest - Pot Lid
 						#If lid already collected in a past life
-						if GameState.abyssDict["abyssLid"] == 2:
+						if GameState.abyssDict["abyssLid"] >= 1:
 							print("Player got Mote Bonus (Lid Already Acquired)")
 							GameState.target_player.anim_mote_absorb()
 							anim_item_info()
@@ -259,19 +262,19 @@ func _on_my_area_2d_body_entered(_body: Node2D) -> void:
 							collected = 1
 						else:
 							##Achievement: Pot Lid Get
-							SteamHandler.achievement_get("a_pot_lid_get")
+							GameState.target_player.anim_achievement("a_pot_lid_get")
+							anim_item_info()
 							print("Player got Pot Lid")
 							BgmController.success_jingle.play()
 							GameState.bestowItem(-2) #Pot Lid
-							anim_item_info()
 							%itemLabel.text = str(Localize.item_lid)+" "+str(Localize.item_get_suffix)+"
 							"+str(Localize.item_lid_hint)
 							GameState.abyssDict["abyssLid"] = 1
 							collected = 1
-				GameState.stat_update()
 				anim_chest_empty()
 				current_zone = -999 #workaround to keep player from getting items repeatedly from the same chest
 				collected = 1
+				GameState.stat_update()
 			1: ##Vesselbloom
 				match current_zone:
 					1: #Cave of Reflection

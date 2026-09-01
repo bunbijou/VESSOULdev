@@ -56,7 +56,7 @@ var fragile : bool = false #Endless Mode Only
 ##For mashing out of frozen state
 #var mash_count : int = 0
 ##If the player is waiting for a cutscene to finish, prevent moving while in this state
-var waiting : bool = false
+@export var waiting : bool = false
 
 
 ##------------------------ANIMATIONS------------------##
@@ -211,6 +211,17 @@ func anim_darkness_advanced(toggle : bool):
 func anim_hurt_indicator(quantity : int):
 	%HurtParticle.amount = quantity
 	%HurtParticle.emitting = true
+
+func anim_achievement(achievement_name : String):
+	SteamHandler.achievement_get(achievement_name)
+	##For some reason, code past this point isn't executed
+
+func anim_achievment_success():
+	%Confetti1.emitting = true
+	%Confetti2.emitting = true
+	%Confetti3.emitting = true
+	%Confetti4.emitting = true
+
 
 ##Legacy Functions (These are referenced by other scripts, I know it's messy, maybe we cleanup the code at some point)
 func show_sidebar(): play_anim("hud_show_sidebar")

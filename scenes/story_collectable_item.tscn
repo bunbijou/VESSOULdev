@@ -78,7 +78,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2pbfq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -86,7 +86,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8t2cn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"open",
 "speed": 5.0
 }, {
@@ -94,7 +94,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fbm43")
 }],
-"loop": true,
+"loop": 1,
 "name": &"passive",
 "speed": 5.0
 }]
@@ -137,7 +137,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q4eew")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -160,7 +160,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a60uc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"open",
 "speed": 5.0
 }, {
@@ -168,7 +168,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j3ypv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"passive",
 "speed": 5.0
 }]
@@ -211,7 +211,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xohu3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -234,7 +234,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4iki6")
 }],
-"loop": false,
+"loop": 0,
 "name": &"open",
 "speed": 5.0
 }, {
@@ -242,7 +242,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g1e50")
 }],
-"loop": true,
+"loop": 1,
 "name": &"passive",
 "speed": 5.0
 }]
@@ -400,7 +400,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dv27i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -435,7 +435,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7kkvb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"variantTown",
 "speed": 5.0
 }, {
@@ -470,7 +470,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lis3o")
 }],
-"loop": true,
+"loop": 1,
 "name": &"variantWoods",
 "speed": 5.0
 }]

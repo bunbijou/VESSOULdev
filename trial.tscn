@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://b7tbhjkinfxka" path="res://sprites/environment/punishment_bg.png" id="19_enp6q"]
 [ext_resource type="Texture2D" uid="uid://1jo6qg7o4282" path="res://sprites/environment/punishment_fg_halo_2.png" id="19_gi0ds"]
 [ext_resource type="Texture2D" uid="uid://bt352vmmxwbbt" path="res://sprites/environment/punish_fg_halo_1.png" id="21_kwoea"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="23_dsfwv"]
 [ext_resource type="Script" uid="uid://5muanxy0xkft" path="res://scripts/texturerect_spin.gd" id="23_kwoea"]
 
 [sub_resource type="Animation" id="Animation_lrtj7"]
@@ -1303,7 +1304,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vos6x")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1338,7 +1339,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dmbyv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"anger",
 "speed": 5.0
 }, {
@@ -1346,7 +1347,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b06cv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fear",
 "speed": 5.0
 }, {
@@ -1363,7 +1364,7 @@ animations = [{
 "duration": 2.0,
 "texture": SubResource("AtlasTexture_lrtj7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -1386,7 +1387,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0pnlf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"base",
 "speed": 5.0
 }, {
@@ -1394,7 +1395,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_br6ix")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -1402,7 +1403,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_114xv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"fear",
 "speed": 5.0
 }]
@@ -1417,7 +1418,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y63ng")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1733,3 +1734,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("19_enp6q")
 metadata/_edit_use_anchors_ = true
+
+[node name="Player" parent="." unique_id=2070195141 instance=ExtResource("23_dsfwv")]
+position = Vector2(-172, 910)
+position_override = true
+waiting = true

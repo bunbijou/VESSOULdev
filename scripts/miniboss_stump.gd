@@ -99,7 +99,7 @@ func anim_stun():
 func anim_death():
 	var fade_time : float = 5
 	##Achievement: Slayed Stump
-	SteamHandler.achievement_get("a_flawed_vessel_stump")
+	GameState.target_player.anim_achievement("a_flawed_vessel_stump")
 	GameState.target_player.waiting = true
 	#GameState.isPaused = true
 	GameState.target_player.current_zone = -999

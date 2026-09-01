@@ -1,33 +1,53 @@
 [gd_scene format=3 uid="uid://5r8dnqu4d17x"]
 
 [ext_resource type="Script" uid="uid://vybjledy4kpx" path="res://scripts/player.gd" id="1_2fus4"]
+[ext_resource type="Texture2D" uid="uid://bphdl7ioju2hx" path="res://sprites/particles/confetti_blue1.png" id="2_apa73"]
 [ext_resource type="Texture2D" uid="uid://dekowl5fi243e" path="res://sprites/particles/pain_heart.png" id="2_g5jhy"]
 [ext_resource type="Texture2D" uid="uid://8r3luv7xx10a" path="res://sprites/particles/heal_heart.png" id="2_pf23h"]
 [ext_resource type="Texture2D" uid="uid://bfifd6tbss5q2" path="res://sprites/npc/samael_sprite_ng.png" id="2_wnwbv"]
+[ext_resource type="Texture2D" uid="uid://b7a4kdeixj57t" path="res://sprites/particles/confetti_blue2.png" id="3_74r1k"]
 [ext_resource type="Texture2D" uid="uid://ba2go20fo78h0" path="res://sprites/items/item_sparkle.png" id="3_dt7fs"]
 [ext_resource type="Script" uid="uid://d2fey7agmek8" path="res://scripts/pain_particle_dynamic.gd" id="3_holxr"]
+[ext_resource type="Texture2D" uid="uid://cc3w81j1cyfnu" path="res://sprites/particles/confetti_blue3.png" id="4_8svfe"]
+[ext_resource type="Texture2D" uid="uid://d1ngc54qp4u11" path="res://sprites/particles/confetti_blue4.png" id="5_2a3c5"]
 [ext_resource type="Texture2D" uid="uid://b4afg81tmrmbk" path="res://sprites/enemy_lurker/dark_advanced1.png" id="5_6e8lb"]
 [ext_resource type="Texture2D" uid="uid://bjoof0qetn7f1" path="res://sprites/enemy_lurker/dark_advanced2.png" id="6_2gdjj"]
+[ext_resource type="Texture2D" uid="uid://bc6upicv3oqmc" path="res://sprites/particles/confetti_blue5.png" id="6_42b1b"]
 [ext_resource type="Texture2D" uid="uid://dmq8wo77tmj0k" path="res://sprites/enemy_lurker/dark_advanced3.png" id="7_sc3ue"]
 [ext_resource type="Texture2D" uid="uid://di36yh3ahgmpb" path="res://sprites/player/spriteSoulStun.png" id="7_svm5i"]
+[ext_resource type="Texture2D" uid="uid://dc130440vsi2a" path="res://sprites/particles/confetti_green1.png" id="8_8f1cb"]
 [ext_resource type="Texture2D" uid="uid://5qjpghhqwcbg" path="res://sprites/enemy_lurker/dark_advanced4.png" id="8_lxlsd"]
 [ext_resource type="Texture2D" uid="uid://cqlbb3h4fd18b" path="res://sprites/player/spriteSoulStun2.png" id="8_x8jcl"]
 [ext_resource type="Texture2D" uid="uid://kdbpl51xxm3v" path="res://sprites/player/spriteSoulBaseStatic.png" id="9_og2dt"]
+[ext_resource type="Texture2D" uid="uid://cbu2pk308td40" path="res://sprites/particles/confetti_green2.png" id="9_vdulj"]
 [ext_resource type="Texture2D" uid="uid://ia8a6yfjlf1d" path="res://sprites/player/spriteSoulEmpoweredStatic.png" id="10_ma6nr"]
+[ext_resource type="Texture2D" uid="uid://fn8opyhgbu4n" path="res://sprites/particles/confetti_green3.png" id="10_vau08"]
 [ext_resource type="Texture2D" uid="uid://6bd7klsawi71" path="res://sprites/player/sprVesselFlashReady.png" id="11_dgwym"]
 [ext_resource type="Texture2D" uid="uid://c1ax2wc4s1xr8" path="res://sprites/player/player_respawn.png" id="11_f8n1s"]
+[ext_resource type="Texture2D" uid="uid://h3sb1grlbsx5" path="res://sprites/particles/confetti_green4.png" id="11_qsb7e"]
 [ext_resource type="Texture2D" uid="uid://bqxlgj71e760r" path="res://sprites/player/sprVesselDamage.png" id="12_5obj1"]
+[ext_resource type="Texture2D" uid="uid://toijs68o8xac" path="res://sprites/particles/confetti_green5.png" id="12_qjsmb"]
+[ext_resource type="Texture2D" uid="uid://ok1qret23sc7" path="res://sprites/particles/confetti_orange1.png" id="13_mwp2n"]
 [ext_resource type="Texture2D" uid="uid://nvmhwh8vlkic" path="res://sprites/player/sprPlayerVesselBroken.png" id="13_wrbx3"]
+[ext_resource type="Texture2D" uid="uid://duwh3st04e3io" path="res://sprites/particles/confetti_orange2.png" id="14_0yhus"]
 [ext_resource type="Texture2D" uid="uid://dkou7j4oq8l6l" path="res://sprites/player/spriteVesselAbyss.png" id="14_1lt3j"]
 [ext_resource type="Texture2D" uid="uid://d16on2ovw8rm4" path="res://sprites/player/sprVesselFallOut.png" id="15_h6pb0"]
 [ext_resource type="Texture2D" uid="uid://bqea622gqygwe" path="res://sprites/player/sprVesselFlashFail.png" id="15_holxr"]
+[ext_resource type="Texture2D" uid="uid://bxrnxm2pbr668" path="res://sprites/particles/confetti_orange3.png" id="15_jlll7"]
 [ext_resource type="Texture2D" uid="uid://v7k5shv2bnj4" path="res://sprites/player/sprPlayerVesselUnnerve.png" id="16_ee44c"]
+[ext_resource type="Texture2D" uid="uid://2b3thuyw0jtd" path="res://sprites/particles/confetti_orange4.png" id="16_qk6i7"]
+[ext_resource type="Texture2D" uid="uid://d1qyxsicu764r" path="res://sprites/particles/confetti_orange5.png" id="17_6c3st"]
 [ext_resource type="Texture2D" uid="uid://brki47i36a78x" path="res://sprites/items/sprItemPotLid.png" id="17_ovmxe"]
+[ext_resource type="Texture2D" uid="uid://1ts6w5oce4i1" path="res://sprites/particles/confetti_red1.png" id="18_1da1t"]
 [ext_resource type="Texture2D" uid="uid://p4p54yqe7v05" path="res://sprites/items/sprItemGlaze.png" id="18_x4jtt"]
 [ext_resource type="Texture2D" uid="uid://c2x6bbfrafx73" path="res://sprites/items/sprKindlingBundle.png" id="19_kpysi"]
+[ext_resource type="Texture2D" uid="uid://dmbwp52yav8br" path="res://sprites/particles/confetti_red2.png" id="19_p21yu"]
 [ext_resource type="Texture2D" uid="uid://h773s5tos818" path="res://sprites/items/sprItemBloomBulb.png" id="20_h877b"]
+[ext_resource type="Texture2D" uid="uid://bt0jt2lhdl04s" path="res://sprites/particles/confetti_red3.png" id="20_irpag"]
+[ext_resource type="Texture2D" uid="uid://sg68qimohw07" path="res://sprites/particles/confetti_red4.png" id="21_bpsgo"]
 [ext_resource type="Texture2D" uid="uid://nvqe25wvvlkh" path="res://sprites/items/sprTomeBlue.png" id="21_ks5sh"]
 [ext_resource type="Texture2D" uid="uid://b72y107c4b0w" path="res://sprites/items/sprTomeOrange.png" id="22_b0gnv"]
+[ext_resource type="Texture2D" uid="uid://ccss84yc2qjlc" path="res://sprites/particles/confetti_red5.png" id="22_jx8is"]
 [ext_resource type="Theme" uid="uid://sxrnq805k7dm" path="res://pixeltheme.tres" id="23_sm6eo"]
 [ext_resource type="Texture2D" uid="uid://dyengudfqxt7a" path="res://sprites/items/sprTomeBeige.png" id="23_ukvb2"]
 [ext_resource type="Texture2D" uid="uid://bxps78yfwivmd" path="res://sprites/player/flash_wave.png" id="24_f8n1s"]
@@ -50,6 +70,54 @@
 [ext_resource type="Texture2D" uid="uid://cl05ln4yb2n8r" path="res://sprites/particles/flame_variants_23.png" id="41_hhpqf"]
 [ext_resource type="Texture2D" uid="uid://davy8ewo76wcn" path="res://sprites/particles/flame_variants_21.png" id="42_g5jhy"]
 [ext_resource type="Theme" uid="uid://6ftgyhxeioxg" path="res://pixeltheme_outline.tres" id="47_mx1m4"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_7spbn"]
+frames = 5
+frame_0/texture = ExtResource("2_apa73")
+frame_1/texture = ExtResource("3_74r1k")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_8svfe")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("5_2a3c5")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("6_42b1b")
+frame_4/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_vx63k"]
+frames = 5
+frame_0/texture = ExtResource("8_8f1cb")
+frame_1/texture = ExtResource("9_vdulj")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("10_vau08")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("11_qsb7e")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("12_qjsmb")
+frame_4/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_lw0jh"]
+frames = 5
+frame_0/texture = ExtResource("13_mwp2n")
+frame_1/texture = ExtResource("14_0yhus")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("15_jlll7")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("16_qk6i7")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("17_6c3st")
+frame_4/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ry8ed"]
+frames = 5
+frame_0/texture = ExtResource("18_1da1t")
+frame_1/texture = ExtResource("19_p21yu")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("20_irpag")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("21_bpsgo")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("22_jx8is")
+frame_4/duration = 1.0
 
 [sub_resource type="AnimatedTexture" id="AnimatedTexture_ha2mi"]
 frames = 4
@@ -918,7 +986,7 @@ animations = [{
 "duration": 2.5,
 "texture": SubResource("AtlasTexture_2yjfb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1017,7 +1085,7 @@ animations = [{
 "duration": 0.3,
 "texture": SubResource("AtlasTexture_6e8lb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1053,7 +1121,7 @@ region = Rect2(64, 0, 16, 16)
 [sub_resource type="SpriteFrames" id="SpriteFrames_3v2ag"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"burn",
 "speed": 5.0
 }, {
@@ -1064,7 +1132,7 @@ animations = [{
 "duration": 0.61,
 "texture": SubResource("AtlasTexture_31cv2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -1072,7 +1140,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pf23h")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -1092,7 +1160,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_487ah")
 }],
-"loop": true,
+"loop": 1,
 "name": &"empowered1",
 "speed": 5.0
 }, {
@@ -1103,7 +1171,7 @@ animations = [{
 "duration": 0.51,
 "texture": ExtResource("8_x8jcl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -1153,7 +1221,7 @@ animations = [{
 "duration": 0.4,
 "texture": SubResource("AtlasTexture_jc3p3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1182,7 +1250,7 @@ animations = [{
 "duration": 0.4,
 "texture": SubResource("AtlasTexture_tlhxf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1327,7 +1395,7 @@ animations = [{
 "duration": 0.71,
 "texture": SubResource("AtlasTexture_i4ail")
 }],
-"loop": false,
+"loop": 0,
 "name": &"death",
 "speed": 5.0
 }, {
@@ -1335,7 +1403,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3v2ag")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -1361,7 +1429,7 @@ animations = [{
 "duration": 999.0,
 "texture": SubResource("AtlasTexture_51ujp")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fallout",
 "speed": 5.0
 }, {
@@ -1387,7 +1455,7 @@ animations = [{
 "duration": 0.7,
 "texture": SubResource("AtlasTexture_5obj1")
 }],
-"loop": false,
+"loop": 0,
 "name": &"spawn",
 "speed": 5.0
 }, {
@@ -1398,7 +1466,7 @@ animations = [{
 "duration": 0.71,
 "texture": SubResource("AtlasTexture_oprun")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }, {
@@ -1421,7 +1489,7 @@ animations = [{
 "duration": 0.51,
 "texture": SubResource("AtlasTexture_770dr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"unnerve",
 "speed": 5.0
 }]
@@ -1478,7 +1546,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8svfe")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1577,7 +1645,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_irpag")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1628,7 +1696,7 @@ animations = [{
 "duration": 0.51,
 "texture": SubResource("AtlasTexture_jx8is")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1682,7 +1750,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xc2qu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"break",
 "speed": 5.0
 }, {
@@ -1690,7 +1758,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_hax0n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1849,7 +1917,7 @@ animations = [{
 "duration": 0.7,
 "texture": SubResource("AtlasTexture_ljgr3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1913,7 +1981,7 @@ animations = [{
 "duration": 0.3,
 "texture": SubResource("AtlasTexture_kft7l")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1959,7 +2027,7 @@ animations = [{
 "duration": 0.6,
 "texture": ExtResource("25_sm6eo")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1983,6 +2051,98 @@ collision_layer = 2
 motion_mode = 1
 slide_on_ceiling = false
 script = ExtResource("1_2fus4")
+
+[node name="Confetti1" type="CPUParticles2D" parent="." unique_id=1984203699]
+unique_name_in_owner = true
+process_mode = 3
+z_index = 1
+emitting = false
+amount = 10
+texture = SubResource("AnimatedTexture_7spbn")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 10)
+initial_velocity_max = 10.0
+angular_velocity_min = -720.0
+angular_velocity_max = 261.82
+linear_accel_min = -8.26
+linear_accel_max = 28.1
+scale_amount_min = 0.15
+scale_amount_max = 0.5
+script = ExtResource("3_holxr")
+
+[node name="Confetti2" type="CPUParticles2D" parent="." unique_id=98210802]
+unique_name_in_owner = true
+process_mode = 3
+z_index = 1
+emitting = false
+amount = 10
+texture = SubResource("AnimatedTexture_vx63k")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 10)
+initial_velocity_max = 10.0
+angular_velocity_min = -720.0
+angular_velocity_max = 261.82
+linear_accel_min = -8.26
+linear_accel_max = 28.1
+scale_amount_min = 0.15
+scale_amount_max = 0.5
+script = ExtResource("3_holxr")
+
+[node name="Confetti3" type="CPUParticles2D" parent="." unique_id=869543404]
+unique_name_in_owner = true
+process_mode = 3
+z_index = 1
+emitting = false
+amount = 10
+texture = SubResource("AnimatedTexture_lw0jh")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 10)
+initial_velocity_max = 10.0
+angular_velocity_min = -720.0
+angular_velocity_max = 261.82
+linear_accel_min = -8.26
+linear_accel_max = 28.1
+scale_amount_min = 0.15
+scale_amount_max = 0.5
+script = ExtResource("3_holxr")
+
+[node name="Confetti4" type="CPUParticles2D" parent="." unique_id=115930955]
+unique_name_in_owner = true
+process_mode = 3
+z_index = 1
+emitting = false
+amount = 10
+texture = SubResource("AnimatedTexture_ry8ed")
+lifetime = 5.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -1)
+gravity = Vector2(0, 10)
+initial_velocity_max = 10.0
+angular_velocity_min = -720.0
+angular_velocity_max = 261.82
+linear_accel_min = -8.26
+linear_accel_max = 28.1
+scale_amount_min = 0.15
+scale_amount_max = 0.5
+script = ExtResource("3_holxr")
 
 [node name="HurtParticle" type="CPUParticles2D" parent="." unique_id=1046638450]
 unique_name_in_owner = true

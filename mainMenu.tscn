@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bpsvf67ai1pg5" path="res://sprites/tilesets/spriteTilesetAbyss.png" id="6_qyr6b"]
 [ext_resource type="Texture2D" uid="uid://w6c243bs23iu" path="res://sprites/gui/spr9CutMenu3.png" id="7_qyr6b"]
 [ext_resource type="Texture2D" uid="uid://cdben6w1p7yjh" path="res://sprites/environment/darkness4.png" id="8_0ei6b"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="12_qyr6b"]
 [ext_resource type="Texture2D" uid="uid://nfamgiy7kknr" path="res://sprites/environment/chasm.png" id="13_efmur"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y35fp"]
@@ -970,6 +971,11 @@ offset_right = 1698.0
 offset_bottom = 949.0
 scale = Vector2(0.53, 0.53)
 texture = ExtResource("13_efmur")
+
+[node name="Player" parent="." unique_id=2070195141 instance=ExtResource("12_qyr6b")]
+position = Vector2(-634, 367)
+position_override = true
+waiting = true
 
 [connection signal="pressed" from="MainMenu/TitleMenu/MenuControl/NewGame" to="MainMenu" method="_on_new_game_pressed"]
 [connection signal="pressed" from="MainMenu/TitleMenu/MenuControl/Continue" to="MainMenu" method="_on_continue_pressed"]

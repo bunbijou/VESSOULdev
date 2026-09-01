@@ -33,7 +33,7 @@ func anim_attack_():
 func anim_death():
 	var fade_time : float = 5.0
 	##Achievement: Defeat Abyssoul
-	SteamHandler.achievement_get("a_abyssoul_defeat")
+	GameState.target_player.anim_achievement("a_abyssoul_defeat")
 	GameState.target_player.play_anim("lighten")
 	%AbyssAnimPlayer.play("defeat",1,0)
 	GameState.target_player.waiting = true

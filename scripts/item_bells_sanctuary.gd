@@ -55,13 +55,13 @@ func _process(_delta: float) -> void:
 	##Update visual state when conditions have been met
 	if gold and GameState.townDict["townSanctuaryBells"][0] == 1 and !acquired:
 		##Achievement: Ring Gold Bell
-		SteamHandler.achievement_get("a_bell_gold_rung")
+		GameState.target_player.anim_achievement("a_bell_gold_rung")
 		GameState.target_player.show_sidebar()
 		anim_ring("gold", false)
 		acquired = true
 	if silver and GameState.townDict["townSanctuaryBells"][1] == 1 and !acquired:
 		##Achievement: Ring Silver Bell
-		SteamHandler.achievement_get("a_bell_silver_rung")
+		GameState.target_player.anim_achievement("a_bell_silver_rung")
 		GameState.target_player.show_sidebar()
 		anim_ring("silver", false)
 		acquired = true

@@ -176,7 +176,7 @@ func forsaken_djinn_swipe_right():
 
 func divine_intervention():
 	##Achievement: Defeat Samael
-	SteamHandler.achievement_get("a_forsaken_defeat")
+	GameState.target_player.anim_achievement("a_forsaken_defeat")
 	BgmController.stopAll()
 	battle_finish = true
 	%EnvironmentAnimationPlayer.speed_scale = 1

@@ -24,7 +24,6 @@
 [ext_resource type="PackedScene" uid="uid://bege4j306y7s6" path="res://scenes/npc_resident.tscn" id="24_73q43"]
 [ext_resource type="PackedScene" uid="uid://c4v8uhhedt7j0" path="res://ng_spawn_node2d_newgame_enemy.tscn" id="24_dlh4o"]
 [ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://scenes/enemy_wisp_base.tscn" id="25_aelpn"]
-[ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame_obsolete.tscn" id="26_aelpn"]
 [ext_resource type="PackedScene" uid="uid://0sw0yxchbigv" path="res://scenes/enemy_mimic.tscn" id="27_cn86x"]
 [ext_resource type="PackedScene" uid="uid://gesx21b6ie28" path="res://scenes/enemy_cremator_motebearer.tscn" id="28_imjri"]
 [ext_resource type="PackedScene" uid="uid://smabh5t5bodq" path="res://scenes/enemy_burnout.tscn" id="29_0sfrk"]
@@ -2314,9 +2313,6 @@ message = "FriendlyMoteCatacombs"
 
 [node name="WispBase999a" parent="NGSpawn" unique_id=1272729733 instance=ExtResource("25_aelpn")]
 modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(-257, -152)
-
-[node name="WispFire999a" parent="NGSpawn" unique_id=205689274 instance=ExtResource("26_aelpn")]
 position = Vector2(-257, -152)
 
 [node name="Mimic999A" parent="NGSpawn" unique_id=1879524217 instance=ExtResource("27_cn86x")]

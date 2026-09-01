@@ -785,7 +785,7 @@ condition = "Abyssoul Defeated"
 
 [node name="Player" parent="." unique_id=1138359485 instance=ExtResource("2_7yfm2")]
 z_index = 200
-position = Vector2(1, 320)
+position = Vector2(1, 319)
 current_zone = 0
 
 [node name="PotheadA-2" parent="." unique_id=1079197186 instance=ExtResource("32_dwtn8")]
@@ -4208,7 +4208,7 @@ script = ExtResource("51_ceyoy")
 [node name="ShadeMoteBearer-1" parent="Static Objects/GlazeRequirement" unique_id=1781194352 instance=ExtResource("50_68d6r")]
 z_index = 75
 position = Vector2(-170, 171)
-current_zone = -1
+current_zone = 42069
 
 [node name="NGSpawns" type="Node" parent="Static Objects" unique_id=1486264374]
 script = ExtResource("49_8rq6v")
