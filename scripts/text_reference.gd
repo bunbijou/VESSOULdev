@@ -520,7 +520,7 @@ New value: "+str(GameState.newgame), "none",TextSpeedVeryFast,false)
 			Dialogue.openDialogue("Small Key required.", "none", TextSpeedFast, false)
 		## Barrelby - Endless Mode
 		"BarrelbyNoMotes": 
-			Dialogue.openDialogue("* Come back when ya' get some more motes, small fry!", "barrelby_serious", TextSpeedBase, true)
+			Dialogue.openDialogue("* Come back when ya' get some more motes, small fry!", "barrelby_serious", TextSpeedBase, false)
 		"Barrelby1": 
 			Dialogue.openDialogue("* Meowdy! Say, have you ever tried ramming into small enemies while powered up? Give it a try sometime!", "barrelby", TextSpeedBase, false)
 		"Barrelby2": 
