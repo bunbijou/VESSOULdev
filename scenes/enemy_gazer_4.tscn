@@ -79,7 +79,7 @@ animations = [{
 "duration": 0.41,
 "texture": SubResource("AtlasTexture_0kgpn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -90,10 +90,13 @@ animations = [{
 "duration": 0.51,
 "texture": SubResource("AtlasTexture_3ojon")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7spbn"]
+radius = 20.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qo81k"]
 radius = 12.121211
@@ -149,7 +152,7 @@ gazer_base = NodePath("..")
 
 [node name="HitboxComponent" parent="." unique_id=966639159 instance=ExtResource("5_ch88a")]
 enemy_class = "Common"
-on_touch_effect = "None"
+on_touch_effect = "Hazard"
 hp = 4
 do_not_scale_with_ng = true
 
@@ -160,8 +163,8 @@ offset_right = 38.0
 offset_bottom = 48.0
 scale = Vector2(0.46362603, 0.46362603)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=919948540]
-shape = SubResource("CircleShape2D_p7v7l")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=287147385]
+shape = SubResource("CircleShape2D_7spbn")
 
 [node name="StaticBodyComponent" parent="." unique_id=324360700 instance=ExtResource("6_2w5cn")]
 

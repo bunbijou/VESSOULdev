@@ -216,6 +216,48 @@ func anim_achievement(achievement_name : String):
 	SteamHandler.achievement_get(achievement_name)
 	##For some reason, code past this point isn't executed
 
+##Called by npc_base.gd
+func anim_levelup(lvl_prev : int, lvl_new : int):
+	var title : String
+	#copied from main_menu.gd
+	if lvl_new >= 19:
+				title = Localize.noun_rank_20
+	else:
+		match lvl_new:
+			0: title = Localize.noun_rank
+			1: title = Localize.noun_rank_2 
+			2: title = Localize.noun_rank_3
+			3: title = Localize.noun_rank_4
+			4: title = Localize.noun_rank_5
+			5: title = Localize.noun_rank_6
+			6: title = Localize.noun_rank_7
+			7: title = Localize.noun_rank_8
+			8: title = Localize.noun_rank_9
+			9: title = Localize.noun_rank_10
+			10: title = Localize.noun_rank_11 
+			11: title = Localize.noun_rank_12
+			12: title = Localize.noun_rank_13
+			13: title = Localize.noun_rank_14
+			14: title = Localize.noun_rank_15
+			15: title = Localize.noun_rank_16
+			16: title = Localize.noun_rank_17
+			17: title = Localize.noun_rank_18
+			18: title = Localize.noun_rank_19
+	anim_achievment_success()
+	
+	##Max level / No title change
+	if lvl_new >= 19:
+		%LevelLabel.text = "LEVEL UP!
+	LV. "+str(lvl_prev)+" -> LV."+str(lvl_new)
+	else: ##Incremental level upgrade
+			%LevelLabel.text = "LEVEL UP!
+	LV. "+str(lvl_prev)+" -> LV."+str(lvl_new)+"
+	Rank: "+title
+	%LevelLabel.visible = true
+	await get_tree().create_timer(3).timeout
+	%LevelLabel.visible = false
+	%LevelLabel.text = ""
+
 func anim_achievment_success():
 	%Confetti1.emitting = true
 	%Confetti2.emitting = true

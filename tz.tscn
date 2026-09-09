@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c2saqhv4rrmlm" path="res://sprites/items/mote_big_static.png" id="5_m34gn"]
 [ext_resource type="Texture2D" uid="uid://cerpryv6jq3yo" path="res://sprites/gui/sprTransition.png" id="5_whcbc"]
 [ext_resource type="Script" uid="uid://b2gtcopa84yhr" path="res://scripts/samael_override.gd" id="7_6gl7t"]
-[ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/enemy_blackmote.tscn" id="7_o5br3"]
-[ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://scenes/enemy_wisp_base.tscn" id="8_o5br3"]
+[ext_resource type="PackedScene" uid="uid://dyhe74i7hqy2f" path="res://scenes/enemy_gazer_4.tscn" id="7_o5br3"]
+[ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/enemy_gazer_3.tscn" id="8_27s1y"]
 
 [node name="npczoo" type="Node2D" unique_id=678461844]
 
@@ -42,12 +42,10 @@ offset_bottom = 229.0
 texture = ExtResource("5_whcbc")
 metadata/_edit_lock_ = true
 
-[node name="BlackMote" parent="." unique_id=175138950 instance=ExtResource("7_o5br3")]
-position = Vector2(-63, -12)
-current_zone = 999
+[node name="Gazer" parent="." unique_id=1463209006 instance=ExtResource("7_o5br3")]
 
-[node name="WispBaseRefactor" parent="." unique_id=1272729733 instance=ExtResource("8_o5br3")]
-position = Vector2(-32, -2)
+[node name="Gazer2" parent="." unique_id=1725094445 instance=ExtResource("8_27s1y")]
+position = Vector2(-77, 0)
 
 [editable path="Player"]
 [editable path="Roaming Camera"]

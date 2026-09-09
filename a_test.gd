@@ -1,6 +1,6 @@
 extends Node
 
-
+##This won't work unless a player character node is added to the scene btw
 #func _ready() -> void:
 	#GameState.target_player.anim_achievement("a_glaze_get")
 	#GameState.target_player.anim_achievement("a_pot_lid_get")

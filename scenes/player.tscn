@@ -2591,5 +2591,17 @@ theme = ExtResource("47_mx1m4")
 theme_override_font_sizes/font_size = 16
 text = "P1"
 
+[node name="LevelLabel" type="Label" parent="." unique_id=1270538934]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+offset_left = -32.0
+offset_top = -30.0
+offset_right = 104.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("47_mx1m4")
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
 [connection signal="timeout" from="hunger_timer" to="." method="_on_hunger_timer_timeout"]
 [connection signal="timeout" from="StatusTimer" to="." method="_on_thaw_timer_timeout"]

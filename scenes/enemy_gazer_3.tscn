@@ -76,7 +76,7 @@ animations = [{
 "duration": 0.41,
 "texture": SubResource("AtlasTexture_0kgpn")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -87,7 +87,7 @@ animations = [{
 "duration": 0.51,
 "texture": SubResource("AtlasTexture_3ojon")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -130,10 +130,9 @@ gazer_base = NodePath("..")
 
 [node name="HitboxComponent" parent="." unique_id=966639159 instance=ExtResource("5_qo81k")]
 enemy_class = "Miniboss"
-on_touch_effect = "None"
+on_touch_effect = "Hazard"
 hp = 3
 do_not_scale_with_ng = true
-scale_damage_with_ng = false
 
 [node name="Label" parent="HitboxComponent" index="0" unique_id=1613579812]
 offset_left = -10.000002
@@ -155,10 +154,15 @@ shape = SubResource("CircleShape2D_qo81k")
 enemy = "Gazer"
 
 [node name="InteractSprite" parent="InfoComponent" index="0" unique_id=158143951]
+visible = true
 z_index = 1
 position = Vector2(0, -24)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" parent_id_path=PackedInt32Array(1227182012, 373575630) index="0" unique_id=1650171960]
+[node name="InteractArea2D" parent="InfoComponent" index="1" unique_id=373575630]
+visible = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InfoComponent/InteractArea2D" index="0" unique_id=1650171960]
+visible = false
 position = Vector2(0, 20)
 shape = SubResource("CircleShape2D_tvkge")
 debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)

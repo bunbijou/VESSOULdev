@@ -1,7 +1,14 @@
-res://mainMenu.tscn
+res://yz.tscn
 res://pixeltheme_outline.tres
 res://pixeltheme.tres
 res://tileset_dawn.tres
 res://tileset_dusk.tres
 res://tileset_twilight.tres
-res://scripts/text_reference.gd
+res://scenes/enemy_gazer_4.tscn
+res://scenes/enemy_gazer_tendril.tscn
+res://scripts/enemy_lurker.gd
+res://scripts/ng_spawn.gd
+res://tz.tscn
+res://scenes/enemy_lurker.tscn
+res://scenes/enemy_gazer_3.tscn
+res://ending.tscn

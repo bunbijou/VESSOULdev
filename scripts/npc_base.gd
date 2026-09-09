@@ -607,8 +607,13 @@ func disable():
 	%InteractSprite.visible = false
 	%InteractSpriteSculptor.visible = false
 
+	
+
 ## Gameplay Functions
 func tomeConversion():
+	#var lvl_prev : int = 0
+	#var glaze : int = 0
+	#var lid : int = 0
 	if GameState.playerTomesHeld > 0: #and GameState.playerEfficiency < 3: #if player has collected tomess
 		##Achievement: first time upgrading Efficiency
 		if GameState.playerEfficiency == 0:
@@ -617,11 +622,21 @@ func tomeConversion():
 		if GameState.playerEfficiency + GameState.playerTomesHeld >= 3:
 			GameState.target_player.anim_achievement("a_efficiency_max")
 		GameState.playerEfficiency += GameState.playerTomesHeld
+		###Show levelup dialogue
+		#if GameState.abyssDict["abyssGlaze"] > 0:
+			#glaze = 1
+		#if GameState.abyssDict["abyssLid"] > 1:
+			#lid = 1
+	#
+		#lvl_prev = GameState.playerIntensity+GameState.playerCapacity+GameState.playerEfficiency+glaze+lid
+		#GameState.target_player.anim_levelup(lvl_prev,lvl_prev+GameState.playerTomesHeld-1)
+		##Deduct items
 		GameState.playerTomesHeld = 0
 		Sound.upgrade("sculptor")
 		GameState.target_player.anim_sparkle()
 		GameState.target_player.anim_enchant()
 		GameState.target_player.show_sidebar()
+		
 
 func bulbConversion():
 	if GameState.playerBulbsHeld > 0: #and GameState.playerCapacity < 5: #if player has bloombulbs

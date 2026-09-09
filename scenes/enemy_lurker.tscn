@@ -52,7 +52,7 @@ animations = [{
 "duration": 2.5,
 "texture": SubResource("AtlasTexture_yrsbj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -69,7 +69,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2bil4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"erupt",
 "speed": 5.0
 }, {
@@ -80,12 +80,12 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_dbpy5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"float",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -135,7 +135,7 @@ animations = [{
 "duration": 2.5,
 "texture": SubResource("AtlasTexture_bm43e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -152,7 +152,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8q0sm")
 }],
-"loop": false,
+"loop": 0,
 "name": &"erupt",
 "speed": 5.0
 }, {
@@ -163,7 +163,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_vaibh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"float",
 "speed": 5.0
 }, {
@@ -174,7 +174,7 @@ animations = [{
 "duration": 0.61,
 "texture": SubResource("AtlasTexture_yo2hm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -210,7 +210,7 @@ autoplay = "default"
 
 [node name="HitboxComponent" parent="." unique_id=882958078 instance=ExtResource("3_4nhsu")]
 enemy_class = "Common"
-on_touch_effect = "None"
+on_touch_effect = "Alert"
 do_not_scale_with_ng = true
 scale_damage_with_ng = false
 

@@ -2,13 +2,11 @@ class_name EnemyLurker extends Node2D
 
 signal death_rattle
 
-#@onready var target_player : PlayerVessel = get_tree().get_first_node_in_group("Player")
 @export var current_zone : int = 999
 @export var my_sprite : AnimatedSprite2D
 @export var hit_area : HitboxComponent
 @export var flash_component: FlashComponent
 @export var leech_rate : float = 0.01
-#@export var stay_in_home_zone : bool = false
 var stunned : bool = false
 var fleeing : bool = false
 var speed : float = 0.1
@@ -57,7 +55,6 @@ func anim_death():
 	my_sprite.visible = false
 	GameState.mote_reward(GameState.reward_lurker+int(scale_mod),0,"small")
 
-
 ##----------FUNCTIONS----------##
 func _ready() -> void:
 	%VoidParticle.emitting = false
@@ -65,6 +62,7 @@ func _ready() -> void:
 	z_index = 0
 	flash_component.flash_detected.connect(_enemyFled)
 	hit_area.disabled = true
+	hit_area.enemy_alert.connect(flash_if_ready)
 	hit_area.death_rattle.connect(death)
 	leech_rate = leech_rate*(1+GameState.newgame) #experimental
 
@@ -106,6 +104,7 @@ func leeching(state : bool):
 ##This is called when the player flashes
 func _enemyFled():
 		if GameState.target_player.current_zone == current_zone:
+			##Hide and start doing other things
 			if !fleeing:
 				z_index = 2000
 				fleeing = true ## If we haven't already left from our hiding position, go and hide
@@ -118,21 +117,26 @@ func _enemyFled():
 				channeling = true
 				flash_component.is_flashable = false
 			else: 
-				if !stunned:
-					anim_stun()
-					hit_area.hp -= flash_component.flash_damage
-					stunned = true #give i-frames to self
-					await get_tree().create_timer(hit_area.hitstun).timeout #wait so anim and sound can play
-					stunned = false
+				##Take damage like normal
+				damage()
+
+func flash_if_ready():
+		if fleeing:
+			flash_component.is_flashable = true
+
+func damage():
+	if !stunned:
+			anim_stun()
+			hit_area.hp -= flash_component.flash_damage
+			stunned = true #give i-frames to self
+			await get_tree().create_timer(hit_area.hitstun).timeout #wait so anim and sound can play
+			stunned = false
+
 
 ##This is called when the player enters/leaves our hiding spot radius
 func _found(state : bool):
 	if fleeing:
 		flash_component.is_flashable = state
-
-#func _enemyDamaged():
-#	
-#	else: print ("Shadow Lurker resisted damage")
 
 func death():
 	if !dead:
