@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://dc4h6jqrdi865"]
 
 [ext_resource type="Script" uid="uid://dvo43ybjfplqb" path="res://scripts/darken.gd" id="1_w0x02"]
-[ext_resource type="PackedScene" uid="uid://t00c0awp5fu2" path="res://ebon_path.tscn" id="2_ogcgg"]
+[ext_resource type="PackedScene" uid="uid://t00c0awp5fu2" path="res://scenes/ebon_path.tscn" id="2_ogcgg"]
 [ext_resource type="Script" uid="uid://cdyheg47ieh28" path="res://scripts/final_battle_singleton.gd" id="2_w7v0v"]
 [ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="3_p7hcx"]
 [ext_resource type="Script" uid="uid://b2gtcopa84yhr" path="res://scripts/samael_override.gd" id="4_f4yjm"]
@@ -15,7 +15,7 @@
 [ext_resource type="Script" uid="uid://xnq7qmcrw0s5" path="res://scripts/boss_impostor.gd" id="21_0atoh"]
 [ext_resource type="PackedScene" uid="uid://bs245e1iwg3g" path="res://scenes/pew_breakable.tscn" id="22_blko6"]
 [ext_resource type="Texture2D" uid="uid://cx1kq84etpw5o" path="res://sprites/enemy_impostor/vessel_ebon_base.png" id="22_e2gsu"]
-[ext_resource type="PackedScene" uid="uid://kbrv08y1xefh" path="res://ebon_mote.tscn" id="23_e2gsu"]
+[ext_resource type="PackedScene" uid="uid://kbrv08y1xefh" path="res://scenes/ebon_mote.tscn" id="23_e2gsu"]
 [ext_resource type="Texture2D" uid="uid://bc8tiepnc5lj" path="res://sprites/enemy_impostor/vessel_ebon_channel.png" id="23_i0oa3"]
 [ext_resource type="Texture2D" uid="uid://chtt61w3qorsb" path="res://sprites/particles/dark_particle.png" id="24_i0oa3"]
 [ext_resource type="Texture2D" uid="uid://bpsvf67ai1pg5" path="res://sprites/tilesets/spriteTilesetAbyss.png" id="25_yjrv6"]

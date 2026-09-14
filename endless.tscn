@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bwrrls2w8282q"]
 
-[ext_resource type="PackedScene" uid="uid://cxue2nky35iq2" path="res://endless_door.tscn" id="1_jfxtu"]
+[ext_resource type="PackedScene" uid="uid://cxue2nky35iq2" path="res://scenes/endless_door.tscn" id="1_jfxtu"]
 [ext_resource type="Script" uid="uid://ch1pc0ejur2om" path="res://scripts/endless.gd" id="1_tqfqc"]
 [ext_resource type="Texture2D" uid="uid://gre3gchhfytu" path="res://sprites/tilesets/dawn_variant_1.png" id="2_o38tw"]
 [ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="2_qogks"]
@@ -34,10 +34,10 @@
 [ext_resource type="Texture2D" uid="uid://c1iplpd5mqn8v" path="res://sprites/endless/endless_boon_7.png" id="13_o38tw"]
 [ext_resource type="TileSet" uid="uid://c3eu1xdg0vuhq" path="res://tileset_twilight.tres" id="13_ysybj"]
 [ext_resource type="Texture2D" uid="uid://dixd7ga1vx3lf" path="res://sprites/endless/endless_boon_8.png" id="14_kx78c"]
-[ext_resource type="PackedScene" uid="uid://dqctjbuiw0ke0" path="res://endless_5_mote_jar.tscn" id="15_08us5"]
+[ext_resource type="PackedScene" uid="uid://dqctjbuiw0ke0" path="res://scenes/endless_5_mote_jar.tscn" id="15_08us5"]
 [ext_resource type="PackedScene" uid="uid://bp3a3g3nh6x1t" path="res://scenes/moteBig.tscn" id="15_ysybj"]
 [ext_resource type="Texture2D" uid="uid://dnlktt4grcn6e" path="res://sprites/tilesets/spriteTilesetTown.png" id="16_jfxtu"]
-[ext_resource type="PackedScene" uid="uid://bykdylrtyhfmj" path="res://enemy_maze_guardian.tscn" id="16_ysybj"]
+[ext_resource type="PackedScene" uid="uid://bykdylrtyhfmj" path="res://scenes/enemy_maze_guardian.tscn" id="16_ysybj"]
 [ext_resource type="PackedScene" uid="uid://cxcpv33kak8ss" path="res://scenes/enemy_pothead.tscn" id="17_8g3db"]
 [ext_resource type="Texture2D" uid="uid://dh7xddtmrqlm5" path="res://sprites/tilesets/spriteTilesetWoods.png" id="17_27hcs"]
 [ext_resource type="Script" uid="uid://2gf6aah6u27i" path="res://scripts/endless_mote_basin.gd" id="18_om0fc"]
@@ -54,7 +54,7 @@
 [ext_resource type="PackedScene" uid="uid://bvulcc8vvt13v" path="res://portal_endless.tscn" id="35_jfxtu"]
 [ext_resource type="PackedScene" uid="uid://bege4j306y7s6" path="res://scenes/npc_resident.tscn" id="38_o38tw"]
 [ext_resource type="PackedScene" uid="uid://c2vmxyble1lka" path="res://scenes/enemy_blackmote.tscn" id="38_smscj"]
-[ext_resource type="PackedScene" uid="uid://ca632vr6ex2em" path="res://endless_quick_flash.tscn" id="39_aqrtm"]
+[ext_resource type="PackedScene" uid="uid://ca632vr6ex2em" path="res://scenes/endless_quick_flash.tscn" id="39_aqrtm"]
 [ext_resource type="Texture2D" uid="uid://csn52utcn1f1f" path="res://sprites/enemy_shadowsnake/snake_hole.png" id="41_kgtb1"]
 [ext_resource type="PackedScene" uid="uid://bbnaydurfqhmw" path="res://scenes/enemy_wisp_flame_obsolete.tscn" id="41_nfm0m"]
 [ext_resource type="PackedScene" uid="uid://dpsbtlek3fm53" path="res://scenes/enemy_wisp_base.tscn" id="42_242tg"]
@@ -79,7 +79,7 @@
 [ext_resource type="PackedScene" uid="uid://4j0k3oocs83y" path="res://scenes/lil_jawer_spawn.tscn" id="61_ibpxr"]
 [ext_resource type="PackedScene" uid="uid://ee57h3s2w1ja" path="res://scenes/_lurkerhiding_spot.tscn" id="79_ro40t"]
 [ext_resource type="PackedScene" uid="uid://dvs6kn0r2msgf" path="res://scenes/illusory_wall_fog.tscn" id="80_ibpxr"]
-[ext_resource type="PackedScene" uid="uid://d3n6ldvapljkc" path="res://endless_axis.tscn" id="81_75j1n"]
+[ext_resource type="PackedScene" uid="uid://d3n6ldvapljkc" path="res://scenes/endless_axis.tscn" id="81_75j1n"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ibpxr"]
 vertices = PackedVector2Array(734, 637.1172, 602, 638.8594, 602, 506.9297, 734, 506.0625, 62.867188, 638, -70, 638, -70, 505.9297, 61.117188, 505.0625, 958.9297, 638, 826, 638, 826, 505.9297, 958.0625, 505.0625, 286.9297, 637.0625, 154, 637.9297, 154, 505.9297, 286.0625, 505.0625, 510, 637.0625, 378.0625, 637.9297, 378.9297, 505.9297, 510, 505.0625, 285.9297, 446.0625, 154.92969, 446.9297, 154.07031, 314, 285.0703, 314, 734, 446, 602.9297, 446, 602.0703, 314, 734, 314, 958.9297, 446, 826.9297, 446, 826.0703, 314, 958.0703, 314, 61.929688, 445.0625, -70.0625, 445.9297, -70.92969, 314.9297, 61.0625, 314.0625, 509.0625, 445.0625, 378, 445.9297, 378, 314.9297, 509.9297, 314.0625, 286.9297, 254, 154.92969, 254, 154.0625, 121.92969, 286.0625, 121.0625, 61.929688, 253.92969, -69.0625, 253.0625, -69.92969, 121.92969, 61.0625, 121.0625, 510, 253.92969, 378, 253.0625, 378, 122, 510, 122, 735, 253.0625, 602, 253.92969, 602, 122.92969, 735, 122.0625, 958.8594, 253.0625, 826.9297, 253.92969, 826.0703, 122, 957.1328, 122, 286, -69.0625, 286, 62, 154, 62, 154, -69.92969, 509.8672, 62, 378.9297, 62, 378.0703, -69, 508.1328, -69, 958.8672, 62, 826.0703, 62, 826.9297, -69.0625, 957.1328, -69.92969, 733.9297, 60.0625, 603, 60.929688, 603, -69, 733.0703, -69)

@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c4v8uhhedt7j0" path="res://ng_spawn_node2d_newgame_enemy.tscn" id="24_pakqw"]
 [ext_resource type="PackedScene" uid="uid://dma38uah41cri" path="res://scenes/enemy_sinkhole.tscn" id="27_ct8l6"]
 [ext_resource type="PackedScene" uid="uid://dufonq4vijj51" path="res://scenes/enemy_shade_motebearer.tscn" id="29_shsn0"]
-[ext_resource type="PackedScene" uid="uid://bgqumu14x6gii" path="res://candelabra.tscn" id="30_0122f"]
+[ext_resource type="PackedScene" uid="uid://bgqumu14x6gii" path="res://scenes/candelabra.tscn" id="30_0122f"]
 
 [sub_resource type="Animation" id="Animation_ajova"]
 resource_name = "Fog"
