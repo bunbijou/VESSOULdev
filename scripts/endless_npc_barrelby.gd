@@ -5,7 +5,7 @@ var follow_up : bool = false
 var player_touch : bool = false
 
 func _ready() -> void:
-	Dialogue.dialogue_end.connect(reset) #experimental
+	Dialogue.dialogue_end.connect(reset)
 
 ## On player touch
 func _on_interact_area_2d_body_entered(_body: Node2D) -> void:

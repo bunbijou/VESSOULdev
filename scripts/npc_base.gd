@@ -58,6 +58,12 @@ func anim_zn_switch():
 			can_interact = true
 			%InteractSprite.visible = true
 
+func anim_dragonfire():
+	if GameState.npcDict["zn"] % 2 != 0:
+		%NadirFlame.emitting = true
+	else: 
+		%ZenithFlame.emitting = true
+
 ##Functions
 #Determining initial animation state
 func _ready() -> void:
@@ -74,6 +80,7 @@ func _ready() -> void:
 				%InteractArea2D.monitoring = false
 			else: anim_jari("idle")
 		"ZenithNadir":
+			GameState.dragonflame.connect(anim_dragonfire)
 			if GameState.npcDict["zn"] % 2 == 0: #if even
 				anim_zn("zenith_emerge")
 			else: anim_zn("nadir_emerge")
@@ -181,24 +188,27 @@ func on_interact_area_exit(_body: Node2D) -> void:
 
 ##NPC dialogue, the meat of their functions are in here, should be analysed for break points
 func talk():
+	BgmController.stopAll()
 	match npcID:
 		"Sculptor":
 			if GameState.npcDict["sculptor"] <= 96: #if sculptor hasn't unmasked already
 				if !BgmController.samael_theme.playing:
-					BgmController.stopAll()
+					#BgmController.stopAll()
 					BgmController.samael_theme.play()
 		"Jari":
 			if !BgmController.jari_theme.playing:
-				BgmController.stopAll()
+				#BgmController.stopAll()
 				BgmController.jari_theme.play()
 		"ZenithNadir":
 			if !BgmController.zn_theme.playing:
+				#BgmController.stopAll()
 				if GameState.abyssDict["abyssBoss"][0] == 0: #if abyss presnce not defeated
 					BgmController.abyss_chasm_music.stop()
 				BgmController.zn_theme.play()
 	
 	#Only want to start up a dialogue if there's not already an active dialouge
 	if !Dialogue.isReading:
+		#GameState.target_player.hunger_change_state("stop")
 		match npcID: 
 			"Sculptor":
 				match GameState.npcDict["sculptor"]: #checking NPC id state
@@ -210,7 +220,7 @@ func talk():
 						else: 
 							#this is to allow people to skip people talking to samael for the first time
 							GameState.npcDict["sculptor"] += 1 #move dialogue forward
-							Localize.reference_dialogue("SculptorUpgradeGeneric")
+							#Localize.reference_dialogue("SculptorUpgradeGeneric")
 							tomeConversion()
 					1: #return
 						if GameState.abyssDict["abyssTome"] == 0: #if doesn't have tome
@@ -258,7 +268,7 @@ func talk():
 							GameState.npcDict["sculptor"] += 1 #move dialogue forward
 						else: 
 							if GameState.playerTomesHeld > 0:
-								Localize.reference_dialogue("SculptorUpgradeGeneric")
+								#Localize.reference_dialogue("SculptorUpgradeGeneric")
 								tomeConversion()
 							else: Localize.reference_dialogue("NPCWaiting")
 					7: ##Cont
@@ -280,7 +290,7 @@ func talk():
 							GameState.npcDict["sculptor"] += 1 #move dialogue forward
 						else: 
 							if GameState.playerTomesHeld > 0:
-								Localize.reference_dialogue("SculptorUpgradeGeneric")
+								#Localize.reference_dialogue("SculptorUpgradeGeneric")
 								tomeConversion()
 							else: Localize.reference_dialogue("NPCWaiting")
 					10: ##Church Town 
@@ -309,7 +319,7 @@ func talk():
 							GameState.npcDict["sculptor"] += 1 #move dialogue forward
 						else: 
 							if GameState.playerTomesHeld > 0:
-								Localize.reference_dialogue("SculptorUpgradeGeneric")
+								#Localize.reference_dialogue("SculptorUpgradeGeneric")
 								tomeConversion()
 							else: Localize.reference_dialogue("NPCWaiting")
 					14: 
@@ -386,7 +396,7 @@ func talk():
 						else: 
 							if GameState.playerBulbsHeld > 0:
 								anim_jari("talk")
-								Localize.reference_dialogue("JariUpgradeGeneric")
+								#Localize.reference_dialogue("JariUpgradeGeneric")
 								bulbConversion()
 							else: 
 								anim_jari("talk")
@@ -400,7 +410,7 @@ func talk():
 						else: 
 							if GameState.playerBulbsHeld > 0:
 								anim_jari("talk")
-								Localize.reference_dialogue("JariUpgradeGeneric")
+								#Localize.reference_dialogue("JariUpgradeGeneric")
 								bulbConversion()
 							else: 
 								anim_jari("talk")
@@ -414,7 +424,7 @@ func talk():
 						else: 
 							if GameState.playerBulbsHeld > 0:
 								anim_jari("talk")
-								Localize.reference_dialogue("JariUpgradeGeneric")
+								#Localize.reference_dialogue("JariUpgradeGeneric")
 								bulbConversion()
 							else: 
 								anim_jari("talk")
@@ -428,7 +438,7 @@ func talk():
 						else: 
 							if GameState.playerBulbsHeld > 0:
 								anim_jari("talk")
-								Localize.reference_dialogue("JariUpgradeGeneric")
+								#Localize.reference_dialogue("JariUpgradeGeneric")
 								bulbConversion()
 							else: 
 								anim_jari("talk")
@@ -442,7 +452,7 @@ func talk():
 						else: 
 							if GameState.playerBulbsHeld > 0:
 								anim_jari("talk")
-								Localize.reference_dialogue("JariUpgradeGeneric")
+								#Localize.reference_dialogue("JariUpgradeGeneric")
 								bulbConversion()
 							else: 
 								anim_jari("talk")
@@ -466,8 +476,8 @@ func talk():
 						else: GameState.npcDict["jari"] += 1 
 					10: #Jari Upgrade Generic
 						if GameState.playerBulbsHeld > 0:
-							anim_jari("talk")
-							Localize.reference_dialogue("JariUpgradeGeneric")
+							#anim_jari("talk")
+							#Localize.reference_dialogue("JariUpgradeGeneric")
 							bulbConversion()
 						else: 
 							Localize.reference_dialogue("NPCWaiting")
@@ -510,7 +520,7 @@ func talk():
 							GameState.npcDict["zn"] += 1
 						else: 
 							if GameState.playerKindlingHeld > 0:
-								Localize.reference_dialogue("ZNUpgradeGeneric")
+								#Localize.reference_dialogue("ZNUpgradeGeneric")
 								kindlingConversion()
 								GameState.npcDict["zn"] += 2 #skip
 							else: 
@@ -527,7 +537,7 @@ func talk():
 							GameState.npcDict["zn"] += 1
 						else: 
 							if GameState.playerKindlingHeld > 0:
-								Localize.reference_dialogue("ZNUpgradeGeneric")
+								#Localize.reference_dialogue("ZNUpgradeGeneric")
 								kindlingConversion()
 								GameState.npcDict["zn"] += 1 #skip
 							else: 
@@ -544,7 +554,7 @@ func talk():
 							GameState.npcDict["zn"] += 1
 						else:
 							if GameState.playerKindlingHeld > 0:
-								Localize.reference_dialogue("ZNUpgradeGeneric")
+								#Localize.reference_dialogue("ZNUpgradeGeneric")
 								kindlingConversion()
 							else: 
 								Localize.reference_dialogue("NPCWaiting")
@@ -565,7 +575,7 @@ func talk():
 							GameState.npcDict["zn"] += 1
 						else: 
 							if GameState.playerKindlingHeld > 0:
-								Localize.reference_dialogue("ZNUpgradeGeneric")
+								#Localize.reference_dialogue("ZNUpgradeGeneric")
 								kindlingConversion()
 							else: 
 								Localize.reference_dialogue("NPCWaiting")
@@ -575,7 +585,7 @@ func talk():
 									Sound.NadirSnort()
 					9:
 						if GameState.playerKindlingHeld > 0:
-							Localize.reference_dialogue("ZNUpgradeGeneric")
+							#Localize.reference_dialogue("ZNUpgradeGeneric")
 							kindlingConversion()
 						else: 
 							Localize.reference_dialogue("NPCWaiting")
@@ -585,7 +595,7 @@ func talk():
 								Sound.NadirSnort()
 					10:
 						if GameState.playerKindlingHeld > 0:
-							Localize.reference_dialogue("ZNUpgradeGeneric")
+							#Localize.reference_dialogue("ZNUpgradeGeneric")
 							kindlingConversion()
 						else: 
 							Localize.reference_dialogue("NPCWaiting")
@@ -593,6 +603,7 @@ func talk():
 								Sound.ZenithHmm()
 							if anim.animation == "nadir_talk":
 								Sound.NadirSnort()
+	#else: GameState.target_player.hunger_change_state("start")
 
 ##functions similarly to collision_reset() on the HitboxComponent object
 ##after the dialogue is done, check if the player is still there and enable collisions if so
@@ -607,76 +618,15 @@ func disable():
 	%InteractSprite.visible = false
 	%InteractSpriteSculptor.visible = false
 
-	
-
 ## Gameplay Functions
 func tomeConversion():
-	#var lvl_prev : int = 0
-	#var glaze : int = 0
-	#var lid : int = 0
-	if GameState.playerTomesHeld > 0: #and GameState.playerEfficiency < 3: #if player has collected tomess
-		##Achievement: first time upgrading Efficiency
-		if GameState.playerEfficiency == 0:
-			GameState.target_player.anim_achievement("a_efficiency_up")
-		##Achievement: increasing Efficiency to max
-		if GameState.playerEfficiency + GameState.playerTomesHeld >= 3:
-			GameState.target_player.anim_achievement("a_efficiency_max")
-		GameState.playerEfficiency += GameState.playerTomesHeld
-		###Show levelup dialogue
-		#if GameState.abyssDict["abyssGlaze"] > 0:
-			#glaze = 1
-		#if GameState.abyssDict["abyssLid"] > 1:
-			#lid = 1
-	#
-		#lvl_prev = GameState.playerIntensity+GameState.playerCapacity+GameState.playerEfficiency+glaze+lid
-		#GameState.target_player.anim_levelup(lvl_prev,lvl_prev+GameState.playerTomesHeld-1)
-		##Deduct items
-		GameState.playerTomesHeld = 0
-		Sound.upgrade("sculptor")
-		GameState.target_player.anim_sparkle()
-		GameState.target_player.anim_enchant()
-		GameState.target_player.show_sidebar()
-		
+	Localize.reference_dialogue("LevelUpTome")
 
 func bulbConversion():
-	if GameState.playerBulbsHeld > 0: #and GameState.playerCapacity < 5: #if player has bloombulbs
-		##Achievement: first time upgrading Capacity
-		if GameState.playerCapacity == 0:
-			GameState.target_player.anim_achievement("a_capacity_up")
-		##Achievement: increasing Capacity to max
-		if GameState.playerIntensity + GameState.playerBulbsHeld >= 5:
-			GameState.target_player.anim_achievement("a_capacity_max")
-		GameState.playerCapacity += GameState.playerBulbsHeld
-		GameState.playerBulbsHeld = 0
-		Sound.upgrade("jari")
-		GameState.target_player.show_sidebar()
-		GameState.target_player.anim_sparkle()
-		##Not working as of right now
-		#await get_tree().create_timer(.1).timeout
-		#GameState.fullHeal()
+	Localize.reference_dialogue("LevelUpBulb")
 
 func kindlingConversion():
-	if GameState.playerKindlingHeld > 0:
-		##Achievement: first time upgrading Intensity
-		if GameState.playerIntensity == 0:
-			GameState.target_player.anim_achievement("a_intensity_up")
-		##Achievement: increasing Intensity to max
-		if GameState.playerIntensity + GameState.playerKindlingHeld >= 10:
-			GameState.target_player.anim_achievement("a_intensity_max")
-		
-		GameState.target_player.position = self.position+Vector2(0,30)
-		GameState.target_player.anim_unnerve()
-		if GameState.npcDict["zn"] % 2 != 0:
-			%NadirFlame.emitting = true
-		else: 
-			%ZenithFlame.emitting = true
-		Sound.upgrade("zn")
-		GameState.target_player.anim_sparkle()
-		GameState.playerIntensity += GameState.playerKindlingHeld
-		GameState.playerKindlingHeld = 0
-		GameState.target_player.show_sidebar()
-		await get_tree().create_timer(beat*2).timeout
-		GameState.target_player.anim_reset()
+	Localize.reference_dialogue("LevelUpKindling")
 
 func jariFreed():
 	jariHiding = false

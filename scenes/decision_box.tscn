@@ -30,12 +30,12 @@ texture = ExtResource("5_88b80")
 
 [node name="DecisionHeader" type="Label" parent="." unique_id=1331188088]
 unique_name_in_owner = true
-layout_direction = 2
 offset_left = 12.2
 offset_top = 4.6
 offset_right = 655.75946
 offset_bottom = 141.6
 scale = Vector2(0.28419417, 0.28419417)
+layout_direction = 2
 theme = ExtResource("13_f1nrl")
 theme_override_font_sizes/font_size = 32
 text = "Select your choice:"
@@ -45,12 +45,12 @@ autowrap_mode = 2
 [node name="DecisionChoice1" type="Label" parent="." unique_id=303711347]
 unique_name_in_owner = true
 visible = false
-layout_direction = 2
 offset_left = 19.599997
 offset_top = 27.2
 offset_right = 308.13513
 offset_bottom = 164.2
 scale = Vector2(0.28419417, 0.28419417)
+layout_direction = 2
 theme = ExtResource("13_f1nrl")
 theme_override_font_sizes/font_size = 32
 text = "Lorem ipsum dolor "
@@ -68,12 +68,12 @@ texture = ExtResource("11_w7uyq")
 [node name="DecisionChoice2" type="Label" parent="." unique_id=45333535]
 unique_name_in_owner = true
 visible = false
-layout_direction = 2
 offset_left = 112.79999
 offset_top = 27.2
 offset_right = 401.33508
 offset_bottom = 164.2
 scale = Vector2(0.28419417, 0.28419417)
+layout_direction = 2
 theme = ExtResource("13_f1nrl")
 theme_override_font_sizes/font_size = 32
 text = "Lorem ipsum dolor "

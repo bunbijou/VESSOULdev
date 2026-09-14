@@ -43,4 +43,4 @@ func _on_rotation_child_area_2d_body_entered(_body: PlayerVessel) -> void:
 		if GameState.npcDict["zn"] != 999: #Endless Mode Only
 			GameState.target_player.isHurt(1+GameState.newgame)
 		GameState.target_player.is_burning()
-		Sound.PlayerDamaged()
+		#Sound.PlayerDamaged()

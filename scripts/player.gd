@@ -57,6 +57,8 @@ var fragile : bool = false #Endless Mode Only
 #var mash_count : int = 0
 ##If the player is waiting for a cutscene to finish, prevent moving while in this state
 @export var waiting : bool = false
+var rank : String = ""
+var lvl : int = 0
 
 
 ##------------------------ANIMATIONS------------------##
@@ -216,47 +218,44 @@ func anim_achievement(achievement_name : String):
 	SteamHandler.achievement_get(achievement_name)
 	##For some reason, code past this point isn't executed
 
-##Called by npc_base.gd
-func anim_levelup(lvl_prev : int, lvl_new : int):
-	var title : String
-	#copied from main_menu.gd
-	if lvl_new >= 19:
-				title = Localize.noun_rank_20
-	else:
-		match lvl_new:
-			0: title = Localize.noun_rank
-			1: title = Localize.noun_rank_2 
-			2: title = Localize.noun_rank_3
-			3: title = Localize.noun_rank_4
-			4: title = Localize.noun_rank_5
-			5: title = Localize.noun_rank_6
-			6: title = Localize.noun_rank_7
-			7: title = Localize.noun_rank_8
-			8: title = Localize.noun_rank_9
-			9: title = Localize.noun_rank_10
-			10: title = Localize.noun_rank_11 
-			11: title = Localize.noun_rank_12
-			12: title = Localize.noun_rank_13
-			13: title = Localize.noun_rank_14
-			14: title = Localize.noun_rank_15
-			15: title = Localize.noun_rank_16
-			16: title = Localize.noun_rank_17
-			17: title = Localize.noun_rank_18
-			18: title = Localize.noun_rank_19
-	anim_achievment_success()
+##Called by gui.gd
+func anim_levelupdate():
+	var glaze : int = 0
+	var lid : int = 0
 	
-	##Max level / No title change
-	if lvl_new >= 19:
-		%LevelLabel.text = "LEVEL UP!
-	LV. "+str(lvl_prev)+" -> LV."+str(lvl_new)
-	else: ##Incremental level upgrade
-			%LevelLabel.text = "LEVEL UP!
-	LV. "+str(lvl_prev)+" -> LV."+str(lvl_new)+"
-	Rank: "+title
-	%LevelLabel.visible = true
-	await get_tree().create_timer(3).timeout
-	%LevelLabel.visible = false
-	%LevelLabel.text = ""
+	if GameState.abyssDict["abyssGlaze"] >= 1:
+		glaze = 1
+	
+	if GameState.abyssDict["abyssLid"] > 0:
+		lid = 1
+	
+	lvl = GameState.playerCapacity+GameState.playerIntensity+GameState.playerEfficiency+glaze+lid+1 ##rank list starts at 1
+	
+	if lvl >= 19:
+				rank = Localize.noun_rank_20
+	else:
+		match lvl:
+			0: rank = Localize.noun_rank
+			1: rank = Localize.noun_rank_2 
+			2: rank = Localize.noun_rank_3
+			3: rank = Localize.noun_rank_4
+			4: rank = Localize.noun_rank_5
+			5: rank = Localize.noun_rank_6
+			6: rank = Localize.noun_rank_7
+			7: rank = Localize.noun_rank_8
+			8: rank = Localize.noun_rank_9
+			9: rank = Localize.noun_rank_10
+			10: rank = Localize.noun_rank_11 
+			11: rank = Localize.noun_rank_12
+			12: rank = Localize.noun_rank_13
+			13: rank = Localize.noun_rank_14
+			14: rank = Localize.noun_rank_15
+			15: rank = Localize.noun_rank_16
+			16: rank = Localize.noun_rank_17
+			17: rank = Localize.noun_rank_18
+			18: rank = Localize.noun_rank_19
+	
+
 
 func anim_achievment_success():
 	%Confetti1.emitting = true
@@ -370,10 +369,11 @@ func _physics_process(_delta: float) -> void:
 			else:
 				speed = (GameState.playerBaseSpd/(0.85*mice_count)) #was 0.75
 	else:
-		speed = 0
-		velocity.x = 0
-		velocity.y = 0
-		%hunger_timer.stop()
+		if waiting:
+			speed = 0
+			velocity.x = 0
+			velocity.y = 0
+			%hunger_timer.stop()
 
 	## Quick maths
 	if directionx:
@@ -388,6 +388,7 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta: float) -> void: #every frame
 	##Animations
 	GameState.stat_update()
+	anim_levelupdate()
 	anim_key()
 	if GameState.playerEfficiency > 3:
 		anim_power_flame()
@@ -658,5 +659,9 @@ func neutralize_status():
 		temperature = "standard"
 
 ## Called by the GUI node when unpausing
-func hunger_restart():
-	%hunger_timer.start()
+func hunger_change_state(state : String):
+	match state:
+		"start": 
+			if empowered:
+				%hunger_timer.start()
+		"stop": %hunger_timer.stop()

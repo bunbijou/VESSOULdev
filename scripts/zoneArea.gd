@@ -10,7 +10,7 @@ var follow_up : bool = false
 
 func _ready() -> void:
 	if GameState.impostor:
-		Dialogue.dialogue_end.connect(addendum) #experimental
+		Dialogue.dialogue_end.connect(addendum)
 	isActive = false #for use by objects e.g doors, illusory walls, chests
 	if !override:
 		BgmController.stopAll()
@@ -46,6 +46,10 @@ func music_swap():
 						if !BgmController.abyss_main.playing:
 							BgmController.stopAll()
 							BgmController.abyss_main.play()
+			4: ## Abyssoul arena
+				if GameState.abyssDict["abyssBoss"][0] == 1:
+					BgmController.stopAll()
+					BgmController.abyss_chasm_ambience.play()
 			6: ##Jari's Hideaway (Secret)
 				if !BgmController.abyss_main.playing:
 							BgmController.stopAll()
@@ -116,8 +120,10 @@ func music_swap():
 					BgmController.stopAll()
 					BgmController.battle_2.play()
 			-17: ## Broken Well (Catacombs entrance)
-				BgmController.abyss_main.stop()
-				Sound.ossuary("snore_stop") ##these guys are loud!!
+				if !BgmController.church_town.playing:
+					Sound.LoopingSoundCleanup()
+					BgmController.stopAll()
+					BgmController.church_town.play()
 			18: ## Town Square
 				if !BgmController.church_town.playing:
 					BgmController.stopAll()

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bege4j306y7s6"]
 
-[ext_resource type="Script" uid="uid://yp7ucd4yiibe" path="res://scripts/resident.gd" id="1_u7hjd"]
+[ext_resource type="Script" uid="uid://yp7ucd4yiibe" path="res://scripts/npc_resident.gd" id="1_u7hjd"]
 [ext_resource type="Texture2D" uid="uid://bxxfnq3222f0k" path="res://sprites/npc/sprTownResident.png" id="2_nlg8p"]
 [ext_resource type="Texture2D" uid="uid://deuxhjf1h6ium" path="res://sprites/particles/sprLightAnim.png" id="2_p51ch"]
 [ext_resource type="Texture2D" uid="uid://cd4mk147ucocv" path="res://sprites/gui/arrow1.png" id="2_s4keu"]
@@ -16,7 +16,7 @@ animations = [{
 "duration": 2.5,
 "texture": ExtResource("2_s4keu")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -52,7 +52,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nxu08")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vyw78")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -205,7 +205,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7icuy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"new_animation",
 "speed": 5.0
 }]

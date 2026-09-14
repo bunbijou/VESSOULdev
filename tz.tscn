@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c2saqhv4rrmlm" path="res://sprites/items/mote_big_static.png" id="5_m34gn"]
 [ext_resource type="Texture2D" uid="uid://cerpryv6jq3yo" path="res://sprites/gui/sprTransition.png" id="5_whcbc"]
 [ext_resource type="Script" uid="uid://b2gtcopa84yhr" path="res://scripts/samael_override.gd" id="7_6gl7t"]
-[ext_resource type="PackedScene" uid="uid://dyhe74i7hqy2f" path="res://scenes/enemy_gazer_4.tscn" id="7_o5br3"]
-[ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/enemy_gazer_3.tscn" id="8_27s1y"]
+[ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/enemy_gazer_3.tscn" id="7_o5br3"]
+[ext_resource type="PackedScene" uid="uid://dyhe74i7hqy2f" path="res://scenes/enemy_gazer_4.tscn" id="8_27s1y"]
 
 [node name="npczoo" type="Node2D" unique_id=678461844]
 
@@ -43,9 +43,10 @@ texture = ExtResource("5_whcbc")
 metadata/_edit_lock_ = true
 
 [node name="Gazer" parent="." unique_id=1463209006 instance=ExtResource("7_o5br3")]
+position = Vector2(-38, 28)
 
-[node name="Gazer2" parent="." unique_id=1725094445 instance=ExtResource("8_27s1y")]
-position = Vector2(-77, 0)
+[node name="Gazer2" parent="." unique_id=2036321616 instance=ExtResource("8_27s1y")]
+position = Vector2(26, 31)
 
 [editable path="Player"]
 [editable path="Roaming Camera"]

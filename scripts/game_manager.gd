@@ -9,6 +9,7 @@ signal show_gui_save_menu #see remote_save()
 signal game_saved #used to indicate to save points that the game can be saved again
 signal unpause
 signal rumble
+signal dragonflame #anim
 
 ##Values that will change per-game and that will reset when the Player dies
 ##Also important; these values are not modified directly by any upgrades/stat bonuses 
@@ -57,6 +58,10 @@ var reward_muckman : int = 15
 var reward_ossuary : int = 15
 var reward_gazer : int = 20
 var reward_burnout : int = 20
+const kindlingMaximumPerGame : int = 10
+const tomeMaximumPerGame : int = 3
+const bulbMaximumPerGame : int = 5
+var toll : int = 0
 
 # values that ARE directly changed as a result of item stat bonuses
 var playerBaseSpd : float #player base movement speed when not empowered
@@ -123,7 +128,7 @@ var abyssDict = {
 "abyssKindling": [0,0,0],
 "abyssLid": 0,
 "abyssGlaze": 0, ## 1 = Flash Enabled ## Greater than 1 = Extra Coat (Endless Mode only)
-"abyssBoss": [0,0] 
+"abyssBoss": [0,0] ## 0 = Abyssoul, 1 = Lenore
 }
 
 var woodsDict = {
@@ -191,6 +196,8 @@ func anim_rumble(duration : float,amplitude):
 	await get_tree().create_timer(duration).timeout
 	rumble.emit(false,amplitude)
 
+func anim_dragon_flame():
+	dragonflame.emit()
 
 func _save(lastPosition,sceneName):
 	var saveData = SceneData.new()
@@ -789,4 +796,5 @@ func coop_start():
 
 ##Seemingly only referenced by the updated Potheads
 func signal_unpause():
+	get_tree().paused = false
 	unpause.emit()

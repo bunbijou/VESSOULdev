@@ -1833,6 +1833,7 @@ maze_random_selection_hi_lo = [1, 19]
 maze_current = "RandomMaze"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=267414407]
+process_mode = 3
 root_node = NodePath("../Backgrounds/BGDuskC")
 libraries/ = SubResource("AnimationLibrary_mggwh")
 autoplay = &"loop"
@@ -2232,6 +2233,7 @@ tile_set = SubResource("TileSet_o38tw")
 [node name="Store" type="Node" parent="Top Row (0-4)" unique_id=785372725]
 
 [node name="Barrelby" type="Node2D" parent="Top Row (0-4)/Store" unique_id=468891231]
+process_mode = 3
 script = ExtResource("30_2syel")
 
 [node name="BarrelbySprite" type="AnimatedSprite2D" parent="Top Row (0-4)/Store/Barrelby" unique_id=359518402]

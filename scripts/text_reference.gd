@@ -183,7 +183,7 @@ func language_set(language : String):
 			to_abyss_chasm = "Return to Chasm"
 			to_abyss_proper = "Return to Abyss"
 			return_to_town = "Return to Church Town"
-			player_rank = "Level"
+			player_rank = "Rank"
 			noun_rank = "Clay Lump"
 			noun_rank_2 = "Flawed Vessel"
 			noun_rank_3 = "Unfinished Vessel"
@@ -489,7 +489,15 @@ New value: "+str(GameState.newgame), "none",TextSpeedVeryFast,false)
 		"NGNoOption":
 			Dialogue.openDialogue("* No effect. The sword awaits a greater challenge.
 (Disabling NG+ is not permitted)", "none",TextSpeedVeryFast,false)
-
+		"LevelUpKindling":
+			DecisionSelect.decision_prompt("Pay toll and improve attributes?
+			Required Motes:"+str(GameState.silver_toll),"Accept","Decline","LevelUpKindling", false)
+		"LevelUpTome":
+			DecisionSelect.decision_prompt("Pay toll and improve attributes?
+			Required Motes:"+str(GameState.silver_toll),"Accept","Decline","LevelUpTome", false)
+		"LevelUpBulb":
+			DecisionSelect.decision_prompt("Pay toll and improve attributes?
+			Required Motes:"+str(GameState.silver_toll),"Accept","Decline","LevelUpBulb", false)
 		
 		"SleepingSerpent": 
 			Dialogue.openDialogue("* (A brumating serpent blocks the passageway.) 
@@ -550,7 +558,7 @@ New value: "+str(GameState.newgame), "none",TextSpeedVeryFast,false)
 		"JariBloombulbReminder": 
 			Dialogue.openDialogue("* Ah, bloombulbs! Nothing in this world makes me happier than when I get my paws on one… such velvety smoothness, such warmth!","jari",TextSpeedFast, false)
 		"JariThanks": 
-			Dialogue.openDialogue("* "+"Oh, splendid, thank you kindly! In turn, I shall teach you a few tricks to increase the capacity of your vessel. (Your Capacity increased.)","jari",TextSpeedBase, false)
+			Dialogue.openDialogue("* "+"What's that…? I see something glistening within you…","jari",TextSpeedBase, false)
 		"JariAmphoraDefeated": 
 			Dialogue.openDialogue("* "+"Hmm, it seems my neighbor the Amphora has gone quiet. It never was the friendly sort…","jari_sad",TextSpeedBase, false)
 		"JariAbyssPresenceDefeated": 

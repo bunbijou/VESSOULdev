@@ -162,7 +162,7 @@ func explode():
 		charging = false
 		anim_explode()
 		if !GameState.EasyMode: GameState.target_player.isHurt(1+GameState.newgame)
-		else: GameState.target_player.isHurt(1+GameState.newgame+add_damage)
+		else: GameState.target_player.isHurt(3+GameState.newgame) ##was 1+NGvalue // #+add_damage)
 		activation_area.disabled = true
 		hit_area.disabled = true
 		death()	

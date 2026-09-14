@@ -60,42 +60,6 @@ func begin_playing(input: Array[AudioStreamPlayer]): #
 	if !music_selection.playing:
 		music_selection.play()
 
-#func _process(_delta: float) -> void:
-	#if get_tree().paused == true:
-		#abyss_main.stream_paused = false
-		#church_town.stop()
-		#gods_wood.stream_paused = false
-		#abyss_chasm_ambience.stream_paused = false
-		#abyss_chasm_music.stream_paused = false
-		#catacombs.stream_paused = false
-		#battle_1.stream_paused = false
-		#battle_2.stream_paused = false
-		#battle_3.stream_paused = false
-		#battle_frenzygrowth.stream_paused = false
-		#jari_theme.stream_paused = false
-		#samael_battle.stream_paused = false
-		#descent_battle.stream_paused = false
-		#djinn_battle.stream_paused = false
-		#menu_theme.stream_paused = false
-		#ending_bad.stream_paused = false
-		#ending_good.stream_paused = false
-		#samael_theme.stream_paused = false
-		#zn_theme.stream_paused = false
-		#impostor_theme.stream_paused = false
-		#track_leviathan.stream_paused = false
-		#track_brawl.stream_paused = false
-		#track_options.stream_paused = false
-		#track_armaments.stream_paused = false
-		#track_forge.stream_paused = false
-		#track_killer.stream_paused = false
-		#track_market.stream_paused = false
-		#track_palette.stream_paused = false
-		#track_training.stream_paused = false
-		#track_moon.stream_paused = false
-		#track_drive.stream_paused = false
-		#track_soul.stream_paused = false
-		#track_tomorrow.stream_paused = false
-
 func play_random():
 	begin_playing([%DylgLeviathan,%DylgBrawl,%DylgTraining,%DylGArmaments,%DylgKiller,%DylGAeon,%DylGAmbush])
 

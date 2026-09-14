@@ -1,6 +1,6 @@
+Node
 CollisionShape2D
 Label
-Node
 AnimationPlayer
 Node2D
 TextureRect

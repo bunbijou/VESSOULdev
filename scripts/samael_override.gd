@@ -10,6 +10,7 @@ func _ready() -> void:
 		GameState.townDict["townEndingChoice"][1] = 1
 		GameState.impostor = 1
 	if debug:
+		GameState.playerLifetimeSouls = 999
 		GameState.playerActiveSouls = 999
 		GameState.playerCapacity = 2
 		GameState.playerIntensity = 5

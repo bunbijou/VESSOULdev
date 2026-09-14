@@ -38,7 +38,7 @@ func _ready() -> void:
 			if !BgmController.impostor_theme.playing:
 				BgmController.impostor_theme.play()
 			talk()
-		Dialogue.dialogue_end.connect(addendum) #experimental
+		Dialogue.dialogue_end.connect(addendum)
 		match location: #function as normal
 			"Abyss":
 				if GameState.player_gods_wood_entered:

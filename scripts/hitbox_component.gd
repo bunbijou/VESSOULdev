@@ -89,7 +89,7 @@ func _process(_delta: float) -> void:
 
 ##Formerly, this had entities pass in the hitstun value
 # That fact may be causing issues
-func _on_player_touch(_body : CharacterBody2D) -> void:
+func _on_player_touch(_body : PlayerVessel) -> void:
 	match on_touch_effect:
 		"None": 
 			pass

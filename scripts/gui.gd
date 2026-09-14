@@ -84,6 +84,12 @@ func _process(_delta: float) -> void:
 	gui_update()
 
 func gui_update():
+	##Show level + rank
+	GameState.target_player.anim_levelupdate()
+	%LevelInfo.text = "Lvl. "+str(GameState.target_player.lvl)+"
+	"+Localize.player_rank+":
+	"+GameState.target_player.rank
+	
 	## Show Glaze Hud Elements
 	if GameState.abyssDict["abyssGlaze"] >= 1:
 		##this value should be a number between 1 and 100
@@ -207,7 +213,7 @@ func gui_update():
 		%EfficiencyLabel.text =  str(Localize.stat_efficiency)+": "+str(GameState.playerEfficiency)
 
 func pause():
-	if !GameState.target_player.dead:
+	if !GameState.target_player.dead and !GameState.target_player.demo:
 		Sound.menu("accept")
 		get_tree().paused = true
 		%PauseMenu.visible = true
@@ -215,6 +221,7 @@ func pause():
 		await get_tree().create_timer(.25).timeout
 		pause_menu = true
 		%BackToGame.grab_focus()
+		GameState.target_player.hunger_change_state("stop")
 
 func _unpause():
 		Sound.menu("cancel")
@@ -222,9 +229,9 @@ func _unpause():
 		%SidebarAnim.current_animation = "RESET"
 		%PauseMenu.visible = false 
 		%HPDisplay.visible = true
-		get_tree().paused = false
-		if GameState.target_player.empowered:
-			GameState.target_player.hunger_restart()
+		##Experimental
+		#get_tree().paused = false
+		GameState.target_player.hunger_change_state("start")
 		GameState.signal_unpause()
 
 
