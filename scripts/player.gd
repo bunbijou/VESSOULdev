@@ -360,16 +360,21 @@ func _physics_process(_delta: float) -> void:
 	var directiony := (Input.get_axis("ui_up", "ui_down"))
 	
 	## Modifying speed value based on state e.g mice, freezing, death, waiting
-	if !dead and temperature != "cold" and !waiting: 
-		if temperature == "hot":
-			speed = GameState.playerBaseSpd * burning_speed_modifier
-		else: ## being hot will remove the mouse debuff, so they're mutually exclusive
-			if mice_count < 1:
-				speed = GameState.playerBaseSpd
-			else:
-				speed = (GameState.playerBaseSpd/(0.85*mice_count)) #was 0.75
-	else:
-		if waiting:
+	if !dead and temperature != "cold": 
+		if !waiting: ##If not dead, not frozen and not waiting e.g. active
+			if temperature == "hot":
+				speed = GameState.playerBaseSpd * burning_speed_modifier
+			else: ## being hot will remove the mouse debuff, so they're mutually exclusive
+				if mice_count < 1:
+					speed = GameState.playerBaseSpd
+				else:
+					speed = (GameState.playerBaseSpd/(0.85*mice_count)) #was 0.75
+		else:  ## If waiting
+			speed = 0
+			velocity.x = 0
+			velocity.y = 0
+			%hunger_timer.stop()
+	else: ## if dead or if cold
 			speed = 0
 			velocity.x = 0
 			velocity.y = 0

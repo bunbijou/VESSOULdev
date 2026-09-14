@@ -1,1 +1,1 @@
-extends "res://darken.gd"
+#extends "res://darken.gd"

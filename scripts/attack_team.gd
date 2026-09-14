@@ -5,7 +5,7 @@ func _ready() -> void:
 
 func activate():
 	BgmController.abyss_main.stop()
-	BgmController.track_echoes.play()
+	BgmController.track_ambush.play()
 	self.visible = true
 	%PotheadA.current_zone = 1111
 	%PotheadA.retarget()

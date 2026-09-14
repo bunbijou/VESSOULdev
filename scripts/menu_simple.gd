@@ -1,3 +1,4 @@
+##All this stuff is copied from mainmenu.gd
 extends Node2D
 @export_enum("res://abyss.tscn","res://chasm.tscn","res://woods.tscn","res://depths.tscn","res://town.tscn","res://catacombs.tscn","res://clerestory.tscn","res://sanctuary.tscn","res://yz.tscn") var sceneNewGame: String
 @export var language : String = "English" ##Default

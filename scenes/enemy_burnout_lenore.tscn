@@ -107,7 +107,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sipxa")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -121,7 +121,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ohwcf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"erupt",
 "speed": 5.0
 }, {
@@ -138,7 +138,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pi4m3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatDown",
 "speed": 5.0
 }, {
@@ -155,7 +155,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7rgka")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatSide",
 "speed": 5.0
 }, {
@@ -172,7 +172,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_km0vy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatUp",
 "speed": 5.0
 }, {
@@ -183,7 +183,7 @@ animations = [{
 "duration": 0.8,
 "texture": SubResource("AtlasTexture_spsjr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -279,7 +279,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mo1jp")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -293,7 +293,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8y2pk")
 }],
-"loop": false,
+"loop": 0,
 "name": &"erupt",
 "speed": 5.0
 }, {
@@ -310,7 +310,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_12lqw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatDown",
 "speed": 5.0
 }, {
@@ -327,7 +327,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nmf8q")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatSide",
 "speed": 5.0
 }, {
@@ -344,7 +344,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_64mfj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatUp",
 "speed": 5.0
 }]
@@ -419,7 +419,6 @@ scale = Vector2(0.122860774, 0.122860774)
 shape = SubResource("CircleShape2D_fw53f")
 
 [node name="HitboxActivation" parent="." unique_id=1696555858 instance=ExtResource("5_j3i46")]
-visible = true
 scale = Vector2(1.1567093, 1.1567093)
 on_touch_effect = "Alert"
 hp = 999

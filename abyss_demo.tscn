@@ -3892,7 +3892,6 @@ position = Vector2(-66, 10)
 current_zone = 1111
 
 [node name="TextureRect" type="TextureRect" parent="IllusoryWall" unique_id=1199193401]
-visible = false
 z_index = 99
 offset_left = -377.46478
 offset_top = -247.88733

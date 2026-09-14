@@ -113,7 +113,7 @@ animations = [{
 "duration": 1.01,
 "texture": SubResource("AtlasTexture_bm43e")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -127,7 +127,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mnb1e")
 }],
-"loop": false,
+"loop": 0,
 "name": &"erupt",
 "speed": 5.0
 }, {
@@ -144,7 +144,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rhcda")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatDown",
 "speed": 5.0
 }, {
@@ -161,7 +161,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5s7wl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatSide",
 "speed": 5.0
 }, {
@@ -178,7 +178,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8q0sm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatUp",
 "speed": 5.0
 }, {
@@ -189,7 +189,7 @@ animations = [{
 "duration": 0.61,
 "texture": SubResource("AtlasTexture_7oj0p")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -285,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3x6gs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -299,7 +299,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_53to0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"erupt",
 "speed": 5.0
 }, {
@@ -316,7 +316,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l54ju")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatDown",
 "speed": 5.0
 }, {
@@ -333,7 +333,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u6rmx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatSide",
 "speed": 5.0
 }, {
@@ -350,12 +350,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_muu46")
 }],
-"loop": true,
+"loop": 1,
 "name": &"floatUp",
 "speed": 5.0
 }, {
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -390,7 +390,7 @@ flash_component = NodePath("FlashComponent")
 my_sprite = NodePath("animSprite")
 my_sprite_overlay = NodePath("animSpriteOverlay")
 behavior = "Offensive"
-resentment = true
+lenore_variant = true
 
 [node name="ShadeShield" parent="." unique_id=1561931441 instance=ExtResource("2_dt8t3")]
 unique_name_in_owner = true
@@ -456,7 +456,6 @@ scale = Vector2(0.122860774, 0.122860774)
 shape = SubResource("CircleShape2D_fw53f")
 
 [node name="HitboxActivation" parent="." unique_id=1696555858 instance=ExtResource("7_72uco")]
-visible = true
 on_touch_effect = "Alert"
 hp = 999
 

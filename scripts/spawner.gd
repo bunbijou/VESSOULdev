@@ -1,9 +1,9 @@
 extends Node2D
 @export_enum("Quick Flash","Mote","Big Mote","Kindling Chest","Vesselbloom","Tome","Breakable Pot","Heavy Breakable Pot") var selection : String = "Quick Flash"
-var quickflash = preload("res://endless_quick_flash.tscn")
+var quickflash = preload("res://scenes/endless_quick_flash.tscn")
 var mote = preload("res://scenes/mote.tscn")
 var bigmote = preload("res://scenes/moteBig.tscn")
-var item = preload("res://scenes/item_chest.tscn")
+var item = preload("res://scenes/story_collectable_item.tscn")
 var potbreakable = preload("res://scenes/decor/jar_breakable.tscn")
 var potbreakableheavy = preload("res://scenes/decor/vessel_breakable_large.tscn")
 var player_contact : bool = false

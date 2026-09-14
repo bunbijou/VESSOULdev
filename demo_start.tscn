@@ -251,6 +251,8 @@ offset_bottom = 949.0
 scale = Vector2(0.53, 0.53)
 texture = ExtResource("11_cf8ob")
 
+[connection signal="item_selected" from="SimpleMenu/LabelLanguage/LanguageOptionButton" to="." method="_on_option_language_selected"]
+[connection signal="item_selected" from="SimpleMenu/LabelDisplay/OptionButton" to="." method="_on_option_button_item_selected"]
 [connection signal="value_changed" from="SimpleMenu/LabelMusic/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="SimpleMenu/LabelSFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="SimpleMenu/DemoStart" to="." method="_on_demo_start_pressed"]

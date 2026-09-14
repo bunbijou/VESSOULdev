@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dvo43ybjfplqb" path="res://scripts/darken.gd" id="1_68omp"]
 [ext_resource type="Texture2D" uid="uid://bdn1jy61f0rsg" path="res://sprites/enemy_ossuary/spr_enemy_ossuary.png" id="1_n617f"]
 [ext_resource type="Texture2D" uid="uid://dhq4b8f6j3uxn" path="res://sprites/enemy_lenore/ossuary_bone-sheet.png" id="1_ping5"]
+[ext_resource type="Script" uid="uid://c5yqp81768g1e" path="res://lenore_demo_override.gd" id="2_73l0a"]
 [ext_resource type="Script" uid="uid://ced537jqpag4j" path="res://scripts/lenore_softlock_prevention.gd" id="2_chyg3"]
 [ext_resource type="Texture2D" uid="uid://dilc8llsyokfb" path="res://sprites/enemy_pothead/sprEnemyPotHead.png" id="2_vnhox"]
 [ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="3_oh4eh"]
@@ -1145,7 +1146,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gp2dk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1179,7 +1180,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2yu75")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -1196,7 +1197,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_3kgjl")
 }],
-"loop": true,
+"loop": 1,
 "name": &"explode",
 "speed": 5.0
 }]
@@ -1211,7 +1212,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eevgw")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1305,7 +1306,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tpq4w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"cry",
 "speed": 5.0
 }, {
@@ -1325,7 +1326,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tftee")
 }],
-"loop": false,
+"loop": 0,
 "name": &"fade",
 "speed": 5.0
 }, {
@@ -1348,7 +1349,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fkrfb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }]
@@ -1377,7 +1378,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ir1sc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -1388,7 +1389,7 @@ animations = [{
 "duration": 0.71,
 "texture": SubResource("AtlasTexture_n617f")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -1424,7 +1425,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_12tud")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1459,7 +1460,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4cql")
 }],
-"loop": true,
+"loop": 1,
 "name": &"claw",
 "speed": 5.0
 }, {
@@ -1467,7 +1468,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vnhox")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -1475,7 +1476,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ghkv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"ossuary_hold",
 "speed": 5.0
 }, {
@@ -1483,7 +1484,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ms378")
 }],
-"loop": true,
+"loop": 1,
 "name": &"slap",
 "speed": 5.0
 }, {
@@ -1494,7 +1495,7 @@ animations = [{
 "duration": 0.6,
 "texture": SubResource("AtlasTexture_7mbyr")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -1568,7 +1569,7 @@ animations = [{
 "duration": 3.0,
 "texture": SubResource("AtlasTexture_w6xdo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -2355,6 +2356,9 @@ script = ExtResource("2_chyg3")
 position = Vector2(0, 16)
 position_override = true
 
+[node name="DemoOverride" type="Node" parent="." unique_id=1038355677]
+script = ExtResource("2_73l0a")
+
 [node name="MoteResidue" parent="." unique_id=838510361 instance=ExtResource("25_gp2dk")]
 position = Vector2(-476.99997, 384.0001)
 
@@ -2615,6 +2619,7 @@ color = Color(0, 0, 0, 0.8627451)
 script = ExtResource("7_gp2dk")
 
 [node name="NPCLenore" type="Node2D" parent="LenoreProgression" unique_id=1963793472 node_paths=PackedStringArray("anim")]
+unique_name_in_owner = true
 process_mode = 3
 z_index = 50
 position = Vector2(0, -70)
@@ -2661,6 +2666,7 @@ shape = SubResource("CircleShape2D_u4v1x")
 debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
 
 [node name="BossLenore" type="Node2D" parent="LenoreProgression" unique_id=770593343 node_paths=PackedStringArray("target_npc", "anim")]
+unique_name_in_owner = true
 z_index = 99
 position = Vector2(0, -69)
 scale = Vector2(0.5, 0.5)

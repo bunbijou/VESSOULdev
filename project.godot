@@ -48,6 +48,7 @@ SteamHandler="*uid://c78bv3t2d3662"
 
 [display]
 
+window/size/mode=2
 window/size/initial_position_type=5
 window/stretch/mode="viewport"
 

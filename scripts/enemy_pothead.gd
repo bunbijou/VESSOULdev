@@ -11,7 +11,7 @@ signal death_rattle
 @export var silence : bool = false
 @export_enum("Offensive","Defensive") var behavior : String = "Defensive"
 @export var mote_bonus_mult : float = 0.0
-@export var resentment : bool = false
+@export var lenore_variant : bool = false
 var anim_wait : float = 1
 var stun : bool = false
 var erupted : bool = false
@@ -81,7 +81,7 @@ func play_anim(type : String, dir : String):
 			my_sprite.visible = false
 			%DeathParticle.emitting = true
 			##Ported from Ossuary, only used by the Lenore potheads at this point
-			if !resentment:
+			if !lenore_variant:
 				GameState.mote_reward(GameState.reward_pothead,mote_bonus_mult,"small")
 
 ## Legacy functions
@@ -240,6 +240,12 @@ func cast_fire():
 	var flame_spit_instance_e = projectile.instantiate()
 	var flame_spit_interval : float = 0.05
 	var beat : float = 1.5
+	var flame_spit_scale_mod : Vector2 = Vector2(1,1)
+	if lenore_variant:
+		flame_spit_interval = 0.03
+		beat = 0.5
+		##Doesnt rlly do anything ATP
+		flame_spit_scale_mod = Vector2(2,2)
 	if !casting and erupted and !GameState.target_player.dead and !get_tree().paused:
 		casting = true
 		await get_tree().create_timer(randi_range(2,5)).timeout
@@ -248,22 +254,27 @@ func cast_fire():
 		%FireExplosion.emitting = true
 		add_child(flame_spit_instance_a)
 		flame_spit_instance_a.current_zone = current_zone
+		flame_spit_instance_a.scale = flame_spit_scale_mod
 		await get_tree().create_timer(flame_spit_interval).timeout
 		%FireExplosion.emitting = true
 		add_child(flame_spit_instance_b)
 		flame_spit_instance_b.current_zone = current_zone
+		flame_spit_instance_b.scale = flame_spit_scale_mod
 		await get_tree().create_timer(flame_spit_interval).timeout
 		%FireExplosion.emitting = true
 		add_child(flame_spit_instance_c)
 		flame_spit_instance_c.current_zone = current_zone
+		flame_spit_instance_c.scale = flame_spit_scale_mod
 		await get_tree().create_timer(flame_spit_interval).timeout
 		%FireExplosion.emitting = true
 		add_child(flame_spit_instance_d)
 		flame_spit_instance_d.current_zone = current_zone
+		flame_spit_instance_d.scale = flame_spit_scale_mod
 		await get_tree().create_timer(flame_spit_interval).timeout
 		%FireExplosion.emitting = true
 		add_child(flame_spit_instance_e)
 		flame_spit_instance_e.current_zone = current_zone
+		flame_spit_instance_e.scale = flame_spit_scale_mod
 		await get_tree().create_timer(beat).timeout
 		if behavior == "Defensive": #Bury then emerge
 			play_anim("bury","")

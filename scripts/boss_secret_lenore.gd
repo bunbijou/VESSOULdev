@@ -85,6 +85,7 @@ func anim_overhead_strike_lr():
 	anim.current_animation = "overhead_strike"
 	await get_tree().create_timer(beat*2).timeout
 	Sound.impact_big()
+	GameState.anim_rumble(.5,10)
 	await get_tree().create_timer(beat).timeout
 	%Telegraph.visible = false
 
@@ -163,7 +164,10 @@ func place_enemy():
 	if enemy_type == "Pothead":
 		enemy_summon_pothead.emit()
 		enemy_type = "Burnout"
-	else: enemy_summon_burnout.emit()
+	else: 
+		if !demo:
+			enemy_summon_burnout.emit()
+		else: enemy_summon_pothead.emit()
 	attacking = false
 	## Every time we do this attack, we want to do it an additional time next loop
 	## This value indicates how many times to cycle the attack

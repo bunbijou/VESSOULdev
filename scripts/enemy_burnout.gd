@@ -9,6 +9,7 @@ signal death_rattle
 @export var my_sprite : AnimatedSprite2D
 @export var my_sprite_overlay : AnimatedSprite2D
 @export var speed : float = .5
+#@export var lenore_variant : bool = false
 var anim_wait : float = 1
 var stun : bool = false
 var charging : bool = false

@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c4nnm60ixtdiq" path="res://scenes/flash_component.tscn" id="7_ygd54"]
 [ext_resource type="Texture2D" uid="uid://b3pkrcss0jjt8" path="res://sprites/particles/fragment_abyss_3.png" id="8_02hlv"]
 [ext_resource type="Texture2D" uid="uid://dl3v50bd5tsa7" path="res://sprites/particles/fragment_abyss_4.png" id="9_ygd54"]
+[ext_resource type="Texture2D" uid="uid://deuxhjf1h6ium" path="res://sprites/particles/sprLightAnim.png" id="11_0sa3w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7kba2"]
 radius = 9.0
@@ -45,7 +46,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kev3c")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -60,6 +61,42 @@ frame_2/texture = ExtResource("8_02hlv")
 frame_2/duration = 1.0
 frame_3/texture = ExtResource("9_ygd54")
 frame_3/duration = 1.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1givo"]
+atlas = ExtResource("11_0sa3w")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e1k4j"]
+atlas = ExtResource("11_0sa3w")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gwg0"]
+atlas = ExtResource("11_0sa3w")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxu08"]
+atlas = ExtResource("11_0sa3w")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_02hlv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1givo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e1k4j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gwg0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxu08")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="abyss_orb" type="Node2D" unique_id=1409250673 node_paths=PackedStringArray("flame_particle")]
 z_index = 999
@@ -110,7 +147,13 @@ amount = 3
 emission_shape = 1
 emission_sphere_radius = 3.0
 gravity = Vector2(0, 10)
-color = Color(0.11372549, 0.16862746, 0.3254902, 1)
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=119997371]
+modulate = Color(1, 1, 1, 0.49411765)
+z_index = -1
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_02hlv")
+autoplay = "default"
 
 [connection signal="body_entered" from="HitboxComponent" to="." method="_on_hitbox_component_body_entered"]
 

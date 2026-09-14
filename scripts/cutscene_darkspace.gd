@@ -20,7 +20,7 @@ func _ready() -> void:
 		increment_message(1)
 
 func _process(_delta: float) -> void:
-	if !get_tree().paused
+	if !get_tree().paused:
 		match message:
 			0: pass
 			1: #Lailun
