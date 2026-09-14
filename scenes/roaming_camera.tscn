@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmkocny6u2m8j"]
 
-[ext_resource type="Script" uid="uid://xd5qya2abhwg" path="res://scripts/zone_camera.gd" id="1_ubhwh"]
+[ext_resource type="Script" uid="uid://xd5qya2abhwg" path="res://scripts/roaming_camera.gd" id="1_ubhwh"]
 [ext_resource type="PackedScene" uid="uid://dmg0s5sgqdhau" path="res://scenes/gui.tscn" id="2_jt70h"]
 
 [node name="Roaming Camera" type="Node2D" unique_id=39511994]
