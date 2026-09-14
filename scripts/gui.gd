@@ -86,9 +86,9 @@ func _process(_delta: float) -> void:
 func gui_update():
 	##Show level + rank
 	GameState.target_player.anim_levelupdate()
-	%LevelInfo.text = "Lvl. "+str(GameState.target_player.lvl)+"
-	"+Localize.player_rank+":
-	"+GameState.target_player.rank
+	#%LevelInfo.text = "Lvl. "+str(GameState.target_player.lvl)+"
+	#"+Localize.player_rank+":
+	#"+GameState.target_player.rank
 	
 	## Show Glaze Hud Elements
 	if GameState.abyssDict["abyssGlaze"] >= 1:
