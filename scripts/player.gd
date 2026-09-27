@@ -215,8 +215,8 @@ func anim_hurt_indicator(quantity : int):
 	%HurtParticle.emitting = true
 
 func anim_achievement(achievement_name : String):
+	##Not working in the steam build of the game as of 9/26/26
 	SteamHandler.achievement_get(achievement_name)
-	##For some reason, code past this point isn't executed
 
 ##Called by gui.gd
 func anim_levelupdate():

@@ -1,6 +1,12 @@
 [gd_scene format=3 uid="uid://jinu8p8obopl"]
 
 [ext_resource type="Script" uid="uid://cxg0sg1we20ob" path="res://scripts/a_test.gd" id="1_hw5gt"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="1_yhy8t"]
 
-[node name="Node" type="Node" unique_id=436547006]
+[node name="a_test" type="Node" unique_id=436547006]
+
+[node name="Player" parent="." unique_id=2070195141 instance=ExtResource("1_yhy8t")]
+
+[node name="Singleton" type="Node" parent="." unique_id=716084868]
 script = ExtResource("1_hw5gt")
+achievement_test_setting = "lock_all"
