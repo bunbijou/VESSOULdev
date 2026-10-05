@@ -89,7 +89,7 @@ func disable():
 		%InteractSprite.visible = false
 
 func _process(_delta: float) -> void:
-	if can_interact and !GameState.target_player.dead and Input.is_action_just_pressed("ui_accept") and inspect:
+	if can_interact and !GameState.target_player.dead and Input.is_action_just_pressed("ui_accept") and inspect and !Dialogue.isReading:
 			match enemy:
 				"Pothead":
 					Sound.itemGet("tome")

@@ -2074,6 +2074,7 @@ current_zone = 0
 [node name="Mimic" parent="." unique_id=1879524217 instance=ExtResource("17_tb0n2")]
 position = Vector2(-806, -65)
 current_zone = 0
+speed = 0.4
 
 [node name="SnakeHorizontal" parent="." unique_id=665566868 instance=ExtResource("18_tgydh")]
 position = Vector2(-749, -64)

@@ -117,6 +117,7 @@ func _ready() -> void:
 	activation_area.enemy_alert.connect(emerge) #when player in radius, emerge
 	activation_area.collision_reset()
 	GameState.unpause.connect(retarget)
+	Dialogue.dialogue_end.connect(retarget)
 
 func emerge():
 	if !dead and GameState.target_player.current_zone == current_zone:

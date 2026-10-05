@@ -45,8 +45,6 @@ func anim_chest_lock():
 	%AnimsChest.animation = "default"
 
 func anim_chest_unlock():
-	if %AnimsChest.animation == "default" and locked:
-		Sound.ChestOpen()
 	%myArea2D.set_deferred("monitoring", true)
 	%AnimsChest.visible = true
 	%AnimsChest.animation = "open" 
@@ -171,6 +169,8 @@ func target_defeated():
 		match item_type:
 			0: #Chest
 				anim_chest_unlock()
+				if %AnimsChest.animation == "default" and locked:
+					Sound.ChestOpen()
 			1: #Vesselbloom
 				anim_bloom_unlock()
 			2:  #Tome
@@ -322,5 +322,6 @@ func _on_my_area_2d_body_entered(_body: Node2D) -> void:
 				current_zone = -999
 				collected = 1
 		item_get.emit()
-		GameState._save(GameState.playerCurrentLocation,str(get_tree().current_scene.name))
+		#Defer to stored player location and scene
+		GameState._save(GameState.playerCurrentLocation,GameState.playerActiveScene)
 		print("Game was saved following item collection")

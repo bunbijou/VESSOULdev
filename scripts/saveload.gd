@@ -1,6 +1,6 @@
 class_name SceneData extends Resource
 
-@export var activescn = "res://scenes/nullscn.tscn"
+@export var activescn = "abyss"
 @export var playerxy = Vector2(0,0)
 @export var playersouls : float = 0
 @export var playersoulsl : float = 0
@@ -14,7 +14,7 @@ class_name SceneData extends Resource
 @export var mote_residue : bool = false
 @export var mote_residue_value : int = 0
 @export var mote_residue_position : Vector2 = Vector2(9999,9999)
-@export var mote_residue_scene : String = "res://scenes/nullscn.tscn"
+@export var mote_residue_scene : String = "abyss"
 @export var EasyMode : bool = false
 @export var favor : int = -1
 @export var completion : bool = false

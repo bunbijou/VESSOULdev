@@ -9,4 +9,3 @@
 
 [node name="Singleton" type="Node" parent="." unique_id=716084868]
 script = ExtResource("1_hw5gt")
-achievement_test_setting = "lock_all"

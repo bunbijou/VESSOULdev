@@ -101,10 +101,11 @@ radius = 12.121211
 [sub_resource type="CircleShape2D" id="CircleShape2D_tvkge"]
 radius = 120.0
 
-[node name="Gazer" type="Node2D" unique_id=1463209006 node_paths=PackedStringArray("hit_area")]
+[node name="Gazer" type="Node2D" unique_id=1463209006 node_paths=PackedStringArray("hit_area", "debug_hitbox")]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_k0vod")
 hit_area = NodePath("HitboxComponent")
+debug_hitbox = NodePath("DebugHitbox")
 
 [node name="sprBase" type="AnimatedSprite2D" parent="." unique_id=1399166935]
 unique_name_in_owner = true
@@ -171,6 +172,14 @@ debug_color = Color(0.98541826, 0, 0.3385864, 0.41960785)
 unique_name_in_owner = true
 amount = 10
 emission_sphere_radius = 50.0
+
+[node name="DebugHitbox" parent="." unique_id=1108796297 instance=ExtResource("5_qo81k")]
+on_touch_effect = "Alert"
+hp = 999
+do_not_scale_with_ng = true
+scale_damage_with_ng = false
+
+[connection signal="body_entered" from="DebugHitbox" to="." method="_on_debug_hitbox_body_entered"]
 
 [editable path="HitboxComponent"]
 [editable path="InfoComponent"]

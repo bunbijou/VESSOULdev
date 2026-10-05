@@ -54,8 +54,9 @@ func show_death_message(output : String):
 		%DeathBannerText.text = output
 		%DeathAnimPlayer.play("death",-1,1,false)
 		await get_tree().create_timer(.1).timeout
-		%DeathMessage.visible = true
-		%DeathMessage.text = str(Localize.death_description)+str(GameState.last_enemy)
+		##Disabled debug functionality
+		#%DeathMessage.visible = true
+		#%DeathMessage.text = str(Localize.death_description)+str(GameState.last_enemy)
 
 func show_humanity_message(message):
 	Sound.enemy_slain()
@@ -520,6 +521,7 @@ func save_game(saveslot):
 	GameState.fullHeal() #experimental
 	await get_tree().create_timer(.01).timeout
 	GameState.saveslot = saveslot
+	##This is the only time the player's saved position and scene should be modified
 	GameState._save(GameState.target_player.position, get_tree().get_current_scene().get_name())
 	await get_tree().create_timer(.33).timeout
 	get_tree().reload_current_scene() #experimental

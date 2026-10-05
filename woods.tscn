@@ -3063,7 +3063,7 @@ position = Vector2(-65.30275, -65.743256)
 scale = Vector2(0.52663505, 0.5136191)
 
 [node name="9 Bloom" parent="ZoneObjects/Zone9 - Town Gate" unique_id=1176753524 node_paths=PackedStringArray("target_enemy") instance=ExtResource("17_osw3r")]
-position = Vector2(2.1065388, 12.326828)
+position = Vector2(2.1065388, 24.653702)
 scale = Vector2(1.0532701, 1.0272382)
 current_zone = 9
 item_type = 1
@@ -3510,7 +3510,7 @@ position = Vector2(-184, -43)
 position = Vector2(-168, 15)
 
 [node name="WispBaseRefactor" parent="." unique_id=1272729733 instance=ExtResource("45_qxypw")]
-position = Vector2(0, -133.99998)
+position = Vector2(0, -127.999985)
 current_zone = 9
 
 [node name="Muncher" parent="." unique_id=507696334 instance=ExtResource("42_65dc5")]
@@ -3742,20 +3742,6 @@ position = Vector2(99, 82)
 scale = Vector2(-1, 1)
 current_zone = 13
 
-[node name="Raven13A7" parent="NGSpawns" unique_id=1123837921 instance=ExtResource("37_c5hi5")]
-modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(280, 153)
-scale = Vector2(1.5, 1.5)
-current_zone = 13
-mote_bonus_mod = 0.25
-
-[node name="Raven13A8" parent="NGSpawns" unique_id=993783647 instance=ExtResource("37_c5hi5")]
-modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(221, 365)
-scale = Vector2(2, 2)
-current_zone = 13
-mote_bonus_mod = 0.25
-
 [node name="BlazingStumpProgression" type="Node" parent="NGSpawns" unique_id=622060220]
 script = ExtResource("58_5emk8")
 
@@ -3764,6 +3750,7 @@ modulate = Color(1, 0.8666667, 0.8745098, 1)
 z_index = 50
 position = Vector2(-148, 360)
 current_zone = 14
+speed = 0.4
 
 [node name="Mousehole" parent="NGSpawns/BlazingStumpProgression" unique_id=67329612 instance=ExtResource("59_emt6k")]
 current_zone = 14
@@ -3810,9 +3797,6 @@ modulate = Color(1, 0, 0.49803922, 1)
 position = Vector2(-111, 207)
 current_zone = 11
 
-[node name="WispFire" parent="." unique_id=205689274 instance=ExtResource("46_dht8r")]
-position = Vector2(-1, -135)
-
 [node name="Lurker" parent="." unique_id=932862485 instance=ExtResource("11_3vo27")]
 position = Vector2(0, 32)
 current_zone = 8
@@ -3820,6 +3804,7 @@ current_zone = 8
 [node name="Mimic" parent="." unique_id=1782854424 instance=ExtResource("18_l583o")]
 position = Vector2(205, -151)
 current_zone = 15
+speed = 0.4
 
 [node name="BreakableObj" parent="." unique_id=1298812102 instance=ExtResource("2_uue5j")]
 position = Vector2(-32, -42)

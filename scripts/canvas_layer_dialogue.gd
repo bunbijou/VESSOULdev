@@ -27,6 +27,7 @@ func openDialogue(speech:String,portrait:String,speed:float,fast:bool):
 	var quick_speed : float = 6
 	if GameState.decisionActive == false:
 		dialogue_start.emit()
+		GameState.target_player.hunger_change_state("stop")
 		if !fast:
 			quick = false
 			get_tree().paused = true
@@ -165,6 +166,7 @@ func closeDialogue(): #keeps portraits from stacking on eachother between dialog
 	%DialogueBoxText.visible = false
 	%Portrait.visible = false
 	%PortraitFrame.visible = false
+	GameState.target_player.hunger_change_state("start")
 
 func readOut():
 	isReading = true

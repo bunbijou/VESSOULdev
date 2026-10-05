@@ -26,7 +26,8 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 		GameState.abyssDict["abyssBoss"][1] = 1 #register boss completion
 		GameState.favor = 1
 		GameState.mote_reward(GameState.reward_lenore,0,"big")
-		GameState._save(GameState.playerCurrentLocation,str(get_tree().current_scene.name))
+		#Defer to stored player location and scene
+		GameState._save(GameState.playerCurrentLocation,GameState.playerActiveScene)
 		print("Game was saved following favor gain")
 		cleanup()
 	else: print ("Humanity condition not met")

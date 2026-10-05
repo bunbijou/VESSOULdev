@@ -170,6 +170,7 @@ func decision_action(key : String,choice : int):
 							Dialogue.remote_end_dialogue()
 func decision_prompt(question,option1,option2,key,consent_required):
 	if GameState.decisionActive == false:
+		GameState.target_player.hunger_change_state("stop")
 		active_key = key
 		get_tree().paused = true
 		GameState.decisionActive = true
@@ -203,6 +204,7 @@ func close_decision_prompt():
 	%DecisionArrowRight.visible = false
 	%DecisionConsent.visible = false
 	%ConsentBox.visible = false
+	GameState.target_player.hunger_change_state("start")
 
 func decision_consent_show():
 	%DecisionConsent.text = Localize.menu_decision_consent

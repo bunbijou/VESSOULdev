@@ -356,8 +356,8 @@ func _ready() -> void: #only do this once
 
 func _physics_process(_delta: float) -> void:
 	## Define variable values based on system input 
-	var directionx := (Input.get_axis("ui_left", "ui_right"))
-	var directiony := (Input.get_axis("ui_up", "ui_down"))
+	var directionx = int(Input.get_axis("ui_left", "ui_right"))
+	var directiony = int(Input.get_axis("ui_up", "ui_down"))
 	
 	## Modifying speed value based on state e.g mice, freezing, death, waiting
 	if !dead and temperature != "cold": 

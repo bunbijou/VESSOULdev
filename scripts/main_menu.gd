@@ -1,6 +1,11 @@
 extends Node2D
 @export_enum("res://abyss.tscn","res://chasm.tscn","res://woods.tscn","res://depths.tscn","res://town.tscn","res://catacombs.tscn","res://clerestory.tscn","res://sanctuary.tscn","res://yz.tscn") var sceneNewGame: String
-@export var language : String = "English" ##Default
+
+@onready var display_setting : String = "Windowed"
+@onready var music_setting : float = 1
+@onready var sound_setting : float = 1
+@onready var language_setting : String = "English"
+@onready var has_played_endless : bool = false
 
 func anim_menu_light(setting : String):
 	match setting:
@@ -17,7 +22,8 @@ func _ready() -> void:
 		DecisionSelect.endless_start.connect(endless_mode)
 		%NewGame.grab_focus()
 		Sound.LoopingSoundCleanup()
-		Localize.language_set(language)
+		print("Loading engine data...")
+		engine_load()
 		GameState.new_game.connect(start_new_game)
 		LevelTransition.fadeFromBlack()
 		anim_menu_light("on")
@@ -52,11 +58,6 @@ func _ready() -> void:
 		%SimpleModeDescLabel.text = str(Localize.menu_simple_mode_desc)
 		%Quit.text = str(Localize.menu_quit_to_desktop)
 		%Endless.text = str(Localize.menu_endless_mode)
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(%MusicSlider.value))
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MusicNoReverb"), linear_to_db(%MusicSlider.value))
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MusicDistort"), linear_to_db(%MusicSlider.value))
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(%SFXSlider.value))
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX Reverb"), linear_to_db(%SFXSlider.value))
 		BgmController.abyss_chasm_ambience.play()
 		BgmController.menu_theme.play()
 
@@ -327,11 +328,11 @@ func _on_option_language_selected(index: int) -> void:
 		0: #English
 			Sound.menu("move")
 			Localize.language_set("English")
-			language = "English"
+			language_setting = "English"
 		1: #Pirate
 			Sound.menu("move")
 			Localize.language_set("Pirate")
-			language = "Pirate"
+			language_setting = "Pirate"
 
 func _on_options_close_pressed() -> void:
 	Sound.menu("cancel")
@@ -353,57 +354,32 @@ func _on_simple_mode_toggled(toggled_on: bool) -> void:
 func _on_option_button_item_selected(index: int) -> void:
 	match index:
 		0: #Fullscreen
+			display_setting = "Fullscreen"
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, false)
-			Sound.MoteCollect() #to-do affect screen size
 		1: #Windowed
+			display_setting = "Windowed"
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
-
-			Sound.MoteCollect() #to-do ditto
 		2: #Borderless Windowed
+			display_setting = "Borderless Windowed"
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, false)
-			Sound.MoteCollect() #to-do ditto
-
-func _on_music_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		pass
-		#Sound.MoteCollect()
-		#GameState.music_volume = 0
-		#%MusicSlider.value = 0
-		#BgmController.stopAll()
-	else: 
-		pass
-		#Sound.MoteCollect()
-		#%MusicSlider.value = 1
-		#GameState.music_volume = 1
-
-func _on_sfx_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		pass
-		#GameState.sound_volume = 0
-		#%SFXSlider.value = 0
-	else: 
-		pass
-		#Sound.MoteCollect()
-		#%SFXSlider.value = 1
-		#GameState.sound_volume = 1
+	Sound.MoteCollect() #to-do affect screen size
+	engine_save()
 
 func _on_music_slider_value_changed(_value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(_value))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MusicNoReverb"), linear_to_db(_value))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MusicDistort"), linear_to_db(_value))
-
-func _on_music_slider_changed() -> void:
-	pass
+	engine_save()
 
 func _on_sfx_slider_value_changed(_value: float) -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(_value))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX Reverb"), linear_to_db(_value))
-	Sound.MoteCollect()
+	engine_save()
 
 func _on_quit_pressed() -> void:
 	%MenuControl.grab_focus() #prevent additional inputs by player
@@ -412,19 +388,68 @@ func _on_quit_pressed() -> void:
 	await get_tree().create_timer(1).timeout
 	get_tree().quit()
 
-
 func _on_endless_pressed() -> void:
 	if GameState.completion == false:
-		%MenuControl.grab_focus() #prevent additional inputs by player
-		Localize.reference_dialogue("EndlessWarning")
+		if !has_played_endless:
+			%MenuControl.grab_focus() #prevent additional inputs by player
+			Localize.reference_dialogue("EndlessWarning")
+		else: endless_mode()
 	else: endless_mode()
 
 func endless_mode():
+	has_played_endless = true
 	Sound.menu("select")
 	LevelTransition.fadeToBlack()
 	GameState.player_hp_previous = 3
+	engine_save()
 	await get_tree().create_timer(1).timeout
 	get_tree().call_deferred("change_scene_to_file","res://endless.tscn")
+
+##New functions for saving and loading engine-related data
+func engine_save():
+	var saveData = EngineData.new()
+	saveData.language = language_setting
+	saveData.display_mode = display_setting
+	saveData.music_volume = music_setting
+	saveData.sound_volume = sound_setting
+	saveData.easy_mode = GameState.EasyMode
+	saveData.endless_enabled = has_played_endless
+	Dialogue.save_indicate()
+	ResourceSaver.save(saveData, "res://scripts/engine.res")
+	print("Saved new engine configuration")
+
+func engine_load():
+	var data = ResourceLoader.load("res://scripts/engine.res") as EngineData #load saved data	
+	##Apply saved language setting
+	language_setting = data.language
+	Localize.language_set(data.language)
+	###Apply saved audio settings
+	music_setting = data.music_volume
+	sound_setting = data.sound_volume
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_setting))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MusicNoReverb"), linear_to_db(music_setting))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("MusicDistort"), linear_to_db(music_setting))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sound_setting))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX Reverb"), linear_to_db(sound_setting))
+	
+	##Apply saved display settings
+	display_setting = data.display_mode
+	match display_setting:
+		"Fullscreen":
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, false)
+		"Windowed":
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
+		"Borderless Windowed":
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, false)
+	GameState.EasyMode = data.easy_mode
+	has_played_endless = data.endless_enabled
+	print("Engine data loaded successfully")
+
 
 #func _on_save_1_delete_pressed() -> void:
 	#Sound.MoteCollect()

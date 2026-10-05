@@ -34,10 +34,13 @@ func achievement_get(achievement_name : String):
 		#return
 	else:
 		Steam.setAchievement(achievement_name)
-		Steam.storeStats() ##triggers the toast
+		achievement_show_toast()
 		print("Unlocked achievement: "+achievement_name)
 		GameState.target_player.anim_achievment_success()
 
 func achievement_reset(achievement_name : String):
 	Steam.clearAchievement(achievement_name)
 	#Sound.respawn() ##placeholder
+
+func achievement_show_toast():
+	Steam.storeStats() ##triggers the toast

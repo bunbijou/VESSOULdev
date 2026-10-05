@@ -54,7 +54,8 @@ func deactivate():
 		GameState.mote_residue = false
 		GameState.mote_residue_position = Vector2(99999,99999)
 		GameState.mote_residue_scene = "res://scenes/nullscn.tscn"
-		GameState._save(GameState.playerCurrentLocation,str(get_tree().current_scene.name))
+		#Defer to stored player location and scene
+		GameState._save(GameState.playerCurrentLocation,GameState.playerActiveScene)
 		detection_area.set_deferred("disabled", true)
 		await get_tree().create_timer(fade_time).timeout
 		#value_label.visible = false

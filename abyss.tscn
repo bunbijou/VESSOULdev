@@ -59,10 +59,8 @@
 [ext_resource type="PackedScene" uid="uid://smabh5t5bodq" path="res://scenes/enemy_burnout.tscn" id="57_mykfj"]
 [ext_resource type="PackedScene" uid="uid://bwo41youuh3dj" path="res://scenes/enemy_snake_vertical.tscn" id="58_kx4ay"]
 [ext_resource type="Script" uid="uid://b73he4mqqbmsg" path="res://scripts/amphora_progression.gd" id="58_oxarm"]
-[ext_resource type="PackedScene" uid="uid://ci0f64lv0xhyl" path="res://scenes/enemy_lurker.tscn" id="59_d0srn"]
 [ext_resource type="PackedScene" uid="uid://dggt33yc1kxxi" path="res://scenes/enemy_muckman.tscn" id="60_gdxwv"]
 [ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/enemy_gazer_3.tscn" id="62_oxarm"]
-[ext_resource type="PackedScene" uid="uid://ee57h3s2w1ja" path="res://scenes/_lurkerhiding_spot.tscn" id="62_tecfh"]
 [ext_resource type="PackedScene" uid="uid://kjuad5j7v7fd" path="res://scenes/gazer_claw.tscn" id="63_tecfh"]
 [ext_resource type="PackedScene" uid="uid://bo3amhkgkayx4" path="res://scenes/particle_soulflame.tscn" id="65_3cei0"]
 [ext_resource type="PackedScene" uid="uid://20k233gcot1d" path="res://scenes/HitboxComponent.tscn" id="65_7oico"]
@@ -693,6 +691,9 @@ frame_10/texture = ExtResource("34_7yfm2")
 frame_10/duration = 1.0
 frame_11/texture = ExtResource("35_wcm3o")
 frame_11/duration = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7spbn"]
+size = Vector2(308, 284)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ix7so"]
 size = Vector2(20, 36)
@@ -4153,6 +4154,10 @@ z_index = 50
 position = Vector2(-57, 161)
 rotation = 3.1415925
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Static Objects/Gazer/DebugHitbox" parent_id_path=PackedInt32Array(1463209006, 1108796297) index="1" unique_id=2015058496]
+position = Vector2(222.00002, -1.9999695)
+shape = SubResource("RectangleShape2D_7spbn")
+
 [node name="NGSpawn" parent="Static Objects/Gazer" unique_id=1261217720 instance=ExtResource("53_47yxs")]
 
 [node name="GazerClaw" parent="Static Objects/Gazer/NGSpawn" unique_id=584976567 node_paths=PackedStringArray("gazer_base") instance=ExtResource("63_tecfh")]
@@ -4208,7 +4213,7 @@ script = ExtResource("51_ceyoy")
 [node name="ShadeMoteBearer-1" parent="Static Objects/GlazeRequirement" unique_id=1781194352 instance=ExtResource("50_68d6r")]
 z_index = 75
 position = Vector2(-170, 171)
-current_zone = 42069
+current_zone = -1
 
 [node name="NGSpawns" type="Node" parent="Static Objects" unique_id=1486264374]
 script = ExtResource("49_8rq6v")
@@ -4304,11 +4309,6 @@ position = Vector2(-27, 0)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("56_mykfj")
 
-[node name="Lurker7A" parent="Static Objects/NGSpawns" unique_id=932862485 instance=ExtResource("59_d0srn")]
-modulate = Color(1, 0, 0.49803922, 1)
-position = Vector2(235, -68)
-current_zone = 7
-
 [node name="Muckman7A" parent="Static Objects/NGSpawns" unique_id=731796071 instance=ExtResource("60_gdxwv")]
 modulate = Color(1, 0, 0.49803922, 1)
 position = Vector2(180, 250)
@@ -4382,10 +4382,6 @@ rotation = -3.1415925
 scale = Vector2(0.5, -0.5)
 texture = ExtResource("56_mykfj")
 
-[node name="HidingSpot" parent="Static Objects/NGSpawns" unique_id=1019990518 instance=ExtResource("62_tecfh")]
-unique_name_in_owner = true
-position = Vector2(160, -55)
-
 [node name="CrematingBearer1A2" parent="Static Objects/NGSpawns" unique_id=2064835840 instance=ExtResource("54_gryt0")]
 modulate = Color(1, 0, 0.49803922, 1)
 position = Vector2(45, 120)
@@ -4449,6 +4445,7 @@ position = Vector2(97, 29)
 [node name="Mimic" parent="." unique_id=1879524217 instance=ExtResource("12_r1vcb")]
 position = Vector2(160, 309)
 current_zone = 7
+speed = 0.4
 
 [node name="Glowsword" type="Node2D" parent="." unique_id=701689810]
 position = Vector2(0, 273)
@@ -4499,3 +4496,6 @@ frame_progress = 0.8123684
 [editable path="Static Objects/All Maps/Zone 0 - Forsaken Grave/Objects - Forsaken Grave/AnimatedSprite2D2"]
 [editable path="Static Objects/All Maps/Zone 0 - Forsaken Grave/Objects - Forsaken Grave/AnimatedSprite2D"]
 [editable path="Static Objects/IllusoryWallA-2"]
+[editable path="Static Objects/Gazer"]
+[editable path="Static Objects/Gazer/HitboxComponent"]
+[editable path="Static Objects/Gazer/InfoComponent"]

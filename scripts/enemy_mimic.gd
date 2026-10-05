@@ -5,7 +5,7 @@ signal death_rattle
 @export var current_zone : int = 999
 @export var hit_area : HitboxComponent
 @export var flash_component : FlashComponent
-@export var speed : float = 0.1
+@export var speed : float = 0.4
 var dead : bool = false
 var aggression : bool = false
 var vulnerable : bool = false

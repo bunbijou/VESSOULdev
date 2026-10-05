@@ -414,7 +414,7 @@ func stat_update():
 			playerMoteDecay = 0
 		else: playerMoteDecay = 0.50 #= 1 - .15*playerEfficiency
 		if !target_player.endless:
-			playerSatietyMod = 1 + .10*playerEfficiency# + (playerSatietyAdd)
+			playerSatietyMod = 1 + .05*playerEfficiency# + (playerSatietyAdd)
 		else: playerSatietyMod = 0
 		playerFlashMin = 30
 		playerBoostMin = 1

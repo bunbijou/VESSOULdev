@@ -67,6 +67,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		changeScene()
 
 func changeScene():
+		BgmController.stopAll()
 		Sound.warp()
 		#Maintain the player HP state between scenes
 		GameState.player_hp_previous = GameState.playerHP

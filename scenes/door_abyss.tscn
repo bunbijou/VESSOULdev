@@ -5,6 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://cgvm7sp4hk3d5" path="res://sprites/particles/cloud1.png" id="2_0j6jt"]
 [ext_resource type="Texture2D" uid="uid://bubp1wf2fm8yd" path="res://sprites/environment/spriteAbyssDoor.png" id="3_32403"]
 [ext_resource type="FontFile" uid="uid://bdv6780donwln" path="res://fonts/PressStart2P.ttf" id="3_ylujf"]
+[ext_resource type="Texture2D" uid="uid://kgv7gly5372k" path="res://sprites/particles/faint_wisp_0.png" id="6_0uv5l"]
+[ext_resource type="Texture2D" uid="uid://hgm08usg7wgt" path="res://sprites/particles/faint_wisp_1.png" id="7_3etc1"]
+[ext_resource type="Texture2D" uid="uid://6qb3d2qb2m5v" path="res://sprites/particles/faint_wisp_2.png" id="8_wvgm6"]
+[ext_resource type="Texture2D" uid="uid://d2k21r2nccq8y" path="res://sprites/particles/faint_wisp_3.png" id="9_45hag"]
+[ext_resource type="Texture2D" uid="uid://dkqnxox5uubrt" path="res://sprites/particles/faint_wisp_red_0.png" id="10_qfa7h"]
+[ext_resource type="Texture2D" uid="uid://dychpe6p152c4" path="res://sprites/particles/faint_wisp_red_1.png" id="11_q4jxr"]
+[ext_resource type="Texture2D" uid="uid://bd70j3tyu3go" path="res://sprites/particles/faint_wisp_red_2.png" id="12_f2dki"]
+[ext_resource type="Texture2D" uid="uid://ch3xjpywasold" path="res://sprites/particles/faint_wisp_red_3.png" id="13_wqw4j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyftw"]
 size = Vector2(12, 12)
@@ -34,7 +42,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bhus6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"boss",
 "speed": 5.0
 }, {
@@ -45,7 +53,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bv8gn")
 }],
-"loop": false,
+"loop": 0,
 "name": &"default",
 "speed": 5.0
 }]
@@ -86,6 +94,28 @@ _data = {
 &"open": SubResource("Animation_ylujf")
 }
 
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ix7so"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("6_0uv5l")
+frame_1/texture = ExtResource("7_3etc1")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("8_wvgm6")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("9_45hag")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_drol2"]
+frames = 4
+speed_scale = 5.0
+frame_0/texture = ExtResource("10_qfa7h")
+frame_1/texture = ExtResource("11_q4jxr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("12_f2dki")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("13_wqw4j")
+frame_3/duration = 1.0
+
 [node name="DoorAbyss" type="Node2D" unique_id=643791647 node_paths=PackedStringArray("abyss_door_particle", "myAnimPlayer", "mySprite")]
 script = ExtResource("1_7malb")
 abyss_door_particle = NodePath("MotionParticle")
@@ -116,6 +146,7 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1863191926]
 unique_name_in_owner = true
+visible = false
 shape = SubResource("RectangleShape2D_qyftw")
 
 [node name="aSpriteDoor" type="AnimatedSprite2D" parent="." unique_id=81059575]
@@ -145,3 +176,40 @@ vertical_alignment = 1
 [node name="animPlayer" type="AnimationPlayer" parent="." unique_id=1300554442]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_gobxe")
+
+[node name="MoteReqParticle" type="CPUParticles2D" parent="." unique_id=2094216296]
+unique_name_in_owner = true
+visible = false
+z_index = 100
+texture = SubResource("AnimatedTexture_ix7so")
+speed_scale = 0.1
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector2(0, 0)
+gravity = Vector2(0, -1)
+initial_velocity_max = 50.0
+orbit_velocity_min = 1.0
+orbit_velocity_max = 1.0
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+
+[node name="KillReqParticle" type="CPUParticles2D" parent="." unique_id=1583654070]
+unique_name_in_owner = true
+visible = false
+z_index = 100
+position = Vector2(0, 3)
+texture = SubResource("AnimatedTexture_drol2")
+speed_scale = 0.1
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector2(0, 0)
+gravity = Vector2(0, -1)
+initial_velocity_max = 50.0
+orbit_velocity_min = 1.0
+orbit_velocity_max = 1.0
+radial_accel_min = 1.0
+radial_accel_max = 1.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05

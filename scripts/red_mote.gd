@@ -17,6 +17,7 @@ var isReady = false
 
 func _ready():
 	if GameState.abyssDict["abyssMiniBoss"] == 1: #if Amphora already defeated
+		print("Cleaned up amphora motes")
 		queue_free()
 	target_enemy.cleanup.connect(queue_free) #experimental
 	target_enemy.counterattack.connect(counter)

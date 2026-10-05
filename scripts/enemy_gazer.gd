@@ -5,6 +5,7 @@ signal stunned
 
 @export_category("Gazer HP should be tied to amount of tendrils they have, modifiable")
 @export var hit_area : HitboxComponent
+@export var debug_hitbox : HitboxComponent
 var spin_speed : float = 0.005
 var dead : bool = false
 
@@ -43,3 +44,10 @@ func death():
 		death_rattle.emit()
 		await get_tree().create_timer(GameState.cleanup_time_enemy).timeout
 		queue_free()
+
+
+func _on_debug_hitbox_body_entered(_body: PlayerVessel) -> void:
+	if debug_hitbox:
+		queue_free()
+		death_rattle.emit()
+		print("Removed Gazer to prevent softlock")
