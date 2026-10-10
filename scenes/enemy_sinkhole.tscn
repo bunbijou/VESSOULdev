@@ -41,7 +41,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kvhwk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -106,7 +106,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p13oj")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -117,7 +117,7 @@ animations = [{
 "duration": 0.61,
 "texture": SubResource("AtlasTexture_l24qf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"stun",
 "speed": 5.0
 }]
@@ -170,16 +170,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a01k3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fbt3h"]
 radius = 60.299255
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p13oj"]
-size = Vector2(86, 80)
 
 [node name="Sinkhole" type="Node2D" unique_id=696465493 node_paths=PackedStringArray("hit_area", "flash_component", "my_sprite", "overlay_sprite", "overlay_sprite_aux")]
 z_index = 99
@@ -209,7 +206,6 @@ autoplay = "default"
 frame_progress = 0.18503867
 
 [node name="HitboxComponent" parent="." unique_id=709333003 instance=ExtResource("3_yyf1x")]
-visible = true
 enemy_class = "Common"
 on_touch_effect = "FallOut"
 hp = 3
@@ -257,17 +253,6 @@ amount = 8
 emission_sphere_radius = 15.0
 scale_amount_min = 0.33
 scale_amount_max = 0.66
-
-[node name="Area2D" type="Area2D" parent="." unique_id=387720613]
-visible = false
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1348828338]
-shape = SubResource("RectangleShape2D_p13oj")
-debug_color = Color(0, 0, 0, 0.41960785)
-
-[connection signal="body_entered" from="Area2D" to="." method="push_area_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="push_area_exited"]
 
 [editable path="HitboxComponent"]
 [editable path="InfoComponent"]

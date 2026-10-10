@@ -193,7 +193,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cqqpy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"barrelby",
 "speed": 5.0
 }, {
@@ -201,7 +201,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gar6j")
 }],
-"loop": true,
+"loop": 1,
 "name": &"barrelby_laugh",
 "speed": 5.0
 }, {
@@ -209,7 +209,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xfuh3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"barrelby_serious",
 "speed": 5.0
 }, {
@@ -217,7 +217,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7jlb8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"friendly_mote",
 "speed": 5.0
 }, {
@@ -252,7 +252,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n0lt8")
 }],
-"loop": true,
+"loop": 1,
 "name": &"impostor",
 "speed": 5.0
 }, {
@@ -260,7 +260,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_r3krt")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jari",
 "speed": 5.0
 }, {
@@ -268,7 +268,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8ilgs")
 }],
-"loop": true,
+"loop": 1,
 "name": &"jari_sad",
 "speed": 5.0
 }, {
@@ -276,7 +276,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vih8f")
 }],
-"loop": true,
+"loop": 1,
 "name": &"journal",
 "speed": 5.0
 }, {
@@ -284,7 +284,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_whd2w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"joviel",
 "speed": 5.0
 }, {
@@ -292,7 +292,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_7m1w1")
 }],
-"loop": true,
+"loop": 1,
 "name": &"joviel_surprise",
 "speed": 5.0
 }, {
@@ -300,7 +300,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a4w5w")
 }],
-"loop": true,
+"loop": 1,
 "name": &"lailun",
 "speed": 5.0
 }, {
@@ -308,7 +308,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tnsmk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"lenore",
 "speed": 5.0
 }, {
@@ -316,7 +316,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qnwmy")
 }],
-"loop": true,
+"loop": 1,
 "name": &"lenore_happy",
 "speed": 5.0
 }, {
@@ -324,7 +324,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6ajw5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"lenore_sad",
 "speed": 5.0
 }, {
@@ -332,7 +332,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tpcxq")
 }],
-"loop": true,
+"loop": 1,
 "name": &"nadir",
 "speed": 5.0
 }, {
@@ -340,7 +340,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wubxo")
 }],
-"loop": true,
+"loop": 1,
 "name": &"nadir_contemplative",
 "speed": 5.0
 }, {
@@ -348,7 +348,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_axir3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"player",
 "speed": 5.0
 }, {
@@ -356,7 +356,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j52wi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"portia",
 "speed": 5.0
 }, {
@@ -364,7 +364,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x3uif")
 }],
-"loop": true,
+"loop": 1,
 "name": &"portia_happy",
 "speed": 5.0
 }, {
@@ -372,7 +372,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_077s2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"portia_sad",
 "speed": 5.0
 }, {
@@ -380,7 +380,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6srs7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"portia_wink",
 "speed": 5.0
 }, {
@@ -388,7 +388,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_eo1t4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"samael",
 "speed": 5.0
 }, {
@@ -396,7 +396,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_13ed3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"samael_anger",
 "speed": 5.0
 }, {
@@ -404,7 +404,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xnctf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"samael_djinn",
 "speed": 5.0
 }, {
@@ -412,7 +412,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_arab7")
 }],
-"loop": true,
+"loop": 1,
 "name": &"samael_fear",
 "speed": 5.0
 }, {
@@ -420,7 +420,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tpuk5")
 }],
-"loop": true,
+"loop": 1,
 "name": &"samael_sprite",
 "speed": 5.0
 }, {
@@ -428,7 +428,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5at5i")
 }],
-"loop": true,
+"loop": 1,
 "name": &"samael_triumph",
 "speed": 5.0
 }, {
@@ -436,7 +436,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pqunf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sculptor",
 "speed": 5.0
 }, {
@@ -444,7 +444,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lsmr3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sculptor_unmask",
 "speed": 5.0
 }, {
@@ -452,7 +452,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wbcef")
 }],
-"loop": true,
+"loop": 1,
 "name": &"sculptor_unmask_reject",
 "speed": 5.0
 }, {
@@ -460,7 +460,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_72mw4")
 }],
-"loop": true,
+"loop": 1,
 "name": &"tip",
 "speed": 5.0
 }, {
@@ -468,7 +468,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_84aw6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"zenith",
 "speed": 5.0
 }, {
@@ -476,7 +476,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_npfpx")
 }],
-"loop": true,
+"loop": 1,
 "name": &"zenith_contemplative",
 "speed": 5.0
 }]
@@ -660,7 +660,7 @@ z_index = 1
 position = Vector2(0, -1.4694672)
 scale = Vector2(0.9551795, 0.9551795)
 sprite_frames = SubResource("SpriteFrames_a8135")
-animation = &"portia_wink"
+animation = &"nadir"
 
 [node name="PortraitFrame" type="Sprite2D" parent="Node2D" unique_id=1788891753]
 unique_name_in_owner = true
@@ -715,12 +715,12 @@ texture = SubResource("AnimatedTexture_k63bq")
 
 [node name="DialogueBoxText" type="Label" parent="." unique_id=1272931747]
 unique_name_in_owner = true
-layout_direction = 2
 offset_left = 33.799988
 offset_top = 72.03285
 offset_right = 642.2064
 offset_bottom = 310.03284
 scale = Vector2(0.27415884, 0.250153)
+layout_direction = 2
 theme = ExtResource("17_wbcef")
 theme_override_constants/line_spacing = 14
 theme_override_constants/outline_size = 8

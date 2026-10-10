@@ -121,6 +121,7 @@ func _process(_delta: float) -> void:
 				#Player declines
 				if GameState.npcDict["sculptor"] == 99:
 					BgmController.stopAll()
+					GameState.target_player.anim_flash_fill()
 					anim_sculptor("unmask_reject")
 					Localize.reference_dialogue("SculptorPlayerDecline")
 					GameState.npcDict["sculptor"] = 100 ##begin final battle (see below)
@@ -575,7 +576,7 @@ func talk():
 									Sound.NadirSnort()
 					9:
 						if GameState.playerKindlingHeld > 0:
-							Localize.reference_dialogue("ZNUpgradeGeneric")
+							Localize.reference_dialogue("ZenithAdditional1")
 							kindlingConversion()
 						else: 
 							Localize.reference_dialogue("NPCWaiting")
@@ -585,7 +586,7 @@ func talk():
 								Sound.NadirSnort()
 					10:
 						if GameState.playerKindlingHeld > 0:
-							Localize.reference_dialogue("ZNUpgradeGeneric")
+							Localize.reference_dialogue("NadirAdditional1")
 							kindlingConversion()
 						else: 
 							Localize.reference_dialogue("NPCWaiting")

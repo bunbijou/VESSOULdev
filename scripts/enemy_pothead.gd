@@ -11,7 +11,7 @@ signal death_rattle
 @export var silence : bool = false
 @export_enum("Offensive","Defensive") var behavior : String = "Defensive"
 @export var mote_bonus_mult : float = 0.0
-@export var lenore_variant : bool = false
+var target_boss : Node2D
 var anim_wait : float = 1
 var stun : bool = false
 var erupted : bool = false
@@ -81,7 +81,7 @@ func play_anim(type : String, dir : String):
 			my_sprite.visible = false
 			%DeathParticle.emitting = true
 			##Ported from Ossuary, only used by the Lenore potheads at this point
-			if !lenore_variant:
+			if !target_boss:
 				GameState.mote_reward(GameState.reward_pothead,mote_bonus_mult,"small")
 
 ## Legacy functions
@@ -118,6 +118,8 @@ func _ready() -> void:
 	activation_area.collision_reset()
 	GameState.unpause.connect(retarget)
 	Dialogue.dialogue_end.connect(retarget)
+	if target_boss:
+		target_boss.dispel_summoned_enemies.connect(death)
 
 func emerge():
 	if !dead and GameState.target_player.current_zone == current_zone:
@@ -169,6 +171,7 @@ func _process(_delta: float) -> void:
 				else:
 					if self.position.x > GameState.target_player.position.x: #if destination is to the left
 						anim_move_horizontal("left")
+
 
 
 #func _physics_process(_delta: float) -> void:
@@ -242,7 +245,7 @@ func cast_fire():
 	var flame_spit_interval : float = 0.05
 	var beat : float = 1.5
 	var flame_spit_scale_mod : Vector2 = Vector2(1,1)
-	if lenore_variant:
+	if target_boss:
 		flame_spit_interval = 0.03
 		beat = 0.5
 		##Doesnt rlly do anything ATP
@@ -308,13 +311,7 @@ func death():
 		await get_tree().create_timer(GameState.cleanup_time_enemy).timeout 
 		queue_free() #banish self to shadow realm
 
-##Experimental
+## Sound Cleanup
 func _exit_tree() -> void:
 	Sound.pothead("snore_stop")
 	Sound.fire_crackle_loop("stop")
-
-### Experimental
-#func _on_hitbox_activation_body_exited(_body: Node2D) -> void:
-	#pass
-	##if !casting:
-	##	bury()

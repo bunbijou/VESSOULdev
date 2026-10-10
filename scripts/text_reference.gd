@@ -448,9 +448,9 @@ Escape (Keyboard) / Left Button (Gamepad): Go Back"
 func new_game_plus_consent():
 	match GameState.language:
 		"English":
-			DecisionSelect.decision_prompt("Start New Game+? Enemies are stronger and more plentiful, driven to rage by Samael's flame. Items will be kept.","Yes (NG+)","No (Restart Game)","ContinueGame", true)
+			DecisionSelect.decision_prompt("Start New Game+? Enemies are stronger and more plentiful, driven to rage by Samael's flame. Items will be kept.","Yes","No","ContinueGame", true)
 		"Pirate": ##Test implementation
-			DecisionSelect.decision_prompt("Begin quest anew? Demonic fire spurs monsters to march on the land, but yer loot will be kept.","Aye (NG+)","Naw (Restart Game)","ContinueGame", true)
+			DecisionSelect.decision_prompt("Begin perilous quest? Demonic fire spurs monsters to march on the land, but yer loot will be kept.","Aye","Naw","ContinueGame", true)
 
 #Endless Mode Mote Basin
 func mote_basin_interface(line, balance):
@@ -489,6 +489,7 @@ New value: "+str(GameState.newgame), "none",TextSpeedVeryFast,false)
 		"NGNoOption":
 			Dialogue.openDialogue("* No effect. The sword awaits a greater challenge.
 (Disabling NG+ is not permitted)", "none",TextSpeedVeryFast,false)
+		##These levelup dialogues are unused as of this point
 		"LevelUpKindling":
 			DecisionSelect.decision_prompt("Pay toll and improve attributes?
 			Required Motes:"+str(GameState.silver_toll),"Accept","Decline","LevelUpKindling", false)
@@ -610,6 +611,11 @@ New value: "+str(GameState.newgame), "none",TextSpeedVeryFast,false)
 			Dialogue.openDialogue("* "+"We meet again. How your flame surges now… you have grown much. However, you are but a lamb… ignorant to the reality of your state. Find yourself, and be true.","zenith",TextSpeedFast, false)
 		"NadirChurchTown":
 			Dialogue.openDialogue("* "+"Earthen vessel; I would impart upon thee a lesson. You must abandon your sense of self. A higher calling awaits. Be willing to serve your creator, regardless of the outcome. For that is your purpose.","nadir_contemplative",TextSpeedSlow, false)
+		"ZenithAdditional1": 
+			Dialogue.openDialogue("* "+"Greetings, dear vessel. Ah, the flame that roars within you… I must admit, I feel pride in seeing how it has grown. As I gaze upon it, a certain essence swirls within, shining brighter than the dim flecks that abound in this pit. Do not waste it.","zenith",TextSpeedFast, false)
+		"NadirAdditional1":
+			Dialogue.openDialogue("* "+"What, still here…? I have nothing more to say to you. The specifications of your design were part of an elaborate undertaking by your creator. To defy him now… would certainly spell your demise.","nadir",TextSpeedSlow, false)
+		
 		
 			##Samael/Sculptor
 		"SculptorUpgradeGeneric":
@@ -658,13 +664,9 @@ New value: "+str(GameState.newgame), "none",TextSpeedVeryFast,false)
 			Dialogue.openDialogue("* "+"Dear vessel, true greatness awaits you! You shall be perfection personified! All I ask is you allow me to strip you of your cerulean cask… but for a moment. I will use the utmost care.","sculptor_unmask",TextSpeedBase,false)
 		"SculptorPrompt": 
 			if GameState.favor != 1: #If Lenore's favor not gained
-				DecisionSelect.decision_prompt("Give up your vessel?","Yes
-				(End Game)","No
-				(Continue)","GiveUpSoul",false) #ignore the last part, it's for behind-the-scenes purposes
+				DecisionSelect.decision_prompt("Give up your vessel?","Give Up","Refuse","GiveUpSoul",false)
 			else:
-				DecisionSelect.decision_prompt("Give up your vessel?","Yes
-				(End Game)","No
-				(Recommended)", "GiveUpSoul", false)
+				DecisionSelect.decision_prompt("Give up your vessel?","Give Up","Attack", "GiveUpSoul", false)
 		"SculptorPlayerAccept": 
 			Dialogue.openDialogue("* "+"Good. Now, come closer. Trust in me. This will only hurt for a moment.","sculptor_unmask",TextSpeedBase,false)
 		"SculptorPlayerDecline": 
@@ -817,9 +819,9 @@ New value: "+str(GameState.newgame), "none",TextSpeedVeryFast,false)
 		"Lenore12":
 			Dialogue.openDialogue("* I want to ask you. Is it foolish to think someone as bad as him can change…? A part of me wishes he was still locked up, but… I don't think that would make me happy.", "lenore", TextSpeedSlow, false)
 		"LenoreQuestion1":
-			DecisionSelect.decision_prompt("","You are foolish
-			(Battle)","You are kind
-			(Do Not Battle)","LenoreQuestion1", false)
+			DecisionSelect.decision_prompt("","You are
+			foolish","You are
+			kind","LenoreQuestion1", false)
 		"LenoreFavorLost":
 			Dialogue.openDialogue(" * You're right… He took everything from me… my home… my body… my family… Why would I ever trust him…? I… I want to be alone now. Please, go away. JUST GO AWAY!!", "lenore_sad", TextSpeedSlow-1, false)
 		"LenoreFavorGained":

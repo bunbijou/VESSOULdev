@@ -2,6 +2,9 @@ extends Node
 ##Used in EnemyZoo (yz.tscn) and SanctuaryAlt (sanctuaryalt.tscn)
 ## DEBUG ONLY
 @export var debug : bool = false
+@export var intensity_override : int = 5
+@export var efficiency_override : int = 1
+@export var capacity_override : int = 2
 @export var impostor_route : bool = true
 
 func _ready() -> void:
@@ -12,7 +15,7 @@ func _ready() -> void:
 	if debug:
 		GameState.playerLifetimeSouls = 999
 		GameState.playerActiveSouls = 999
-		GameState.playerCapacity = 2
-		GameState.playerIntensity = 5
-		GameState.playerEfficiency = 1
+		GameState.playerCapacity = capacity_override
+		GameState.playerIntensity = intensity_override
+		GameState.playerEfficiency = efficiency_override
 		GameState.abyssDict["abyssGlaze"] = 1

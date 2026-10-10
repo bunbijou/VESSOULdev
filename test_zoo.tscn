@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bv1njmb31xd0d"]
+
+[ext_resource type="Script" uid="uid://b2gtcopa84yhr" path="res://scripts/samael_override.gd" id="1_yaprb"]
+[ext_resource type="PackedScene" uid="uid://5r8dnqu4d17x" path="res://scenes/player.tscn" id="2_jf5ji"]
+[ext_resource type="PackedScene" uid="uid://cmkocny6u2m8j" path="res://scenes/roaming_camera.tscn" id="3_ya1rn"]
+[ext_resource type="Script" uid="uid://n4p1sbrbo8o2" path="res://scripts/falling_rock_test.gd" id="4_hufrm"]
+[ext_resource type="Texture2D" uid="uid://c2saqhv4rrmlm" path="res://sprites/items/mote_big_static.png" id="5_qvjln"]
+[ext_resource type="Texture2D" uid="uid://cerpryv6jq3yo" path="res://sprites/gui/sprTransition.png" id="6_ruoeu"]
+[ext_resource type="PackedScene" uid="uid://d2dyo7iiys5aw" path="res://scenes/enemy_gazer_3.tscn" id="7_mkyst"]
+[ext_resource type="PackedScene" uid="uid://dyhe74i7hqy2f" path="res://scenes/enemy_gazer_4.tscn" id="8_5oy5j"]
+[ext_resource type="PackedScene" uid="uid://dma38uah41cri" path="res://scenes/enemy_sinkhole.tscn" id="9_ya1rn"]
+[ext_resource type="PackedScene" uid="uid://cmunxjljrrjlb" path="res://scenes/sinkhole_gravity.tscn" id="10_ya1rn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7spbn"]
+radius = 44.011364
+
+[node name="npczoo" type="Node2D" unique_id=678461844]
+
+[node name="SamaelOverride" type="Node" parent="." unique_id=1293145425]
+script = ExtResource("1_yaprb")
+debug = true
+
+[node name="Player" parent="." unique_id=810502560 instance=ExtResource("2_jf5ji")]
+position = Vector2(-49, -2)
+position_override = true
+
+[node name="Roaming Camera" parent="." unique_id=39511994 instance=ExtResource("3_ya1rn")]
+position = Vector2(0, 17)
+
+[node name="GlobalCamera" parent="Roaming Camera/CameraMovementHandler" parent_id_path=PackedInt32Array(39511994, 1192835132) index="0" unique_id=1095630346]
+zoom = Vector2(6, 6)
+
+[node name="Falling Rock Test Node" type="Node2D" parent="." unique_id=941241209]
+visible = false
+position = Vector2(-60, -1)
+script = ExtResource("4_hufrm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Falling Rock Test Node" unique_id=1257558594]
+texture = ExtResource("5_qvjln")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1369890046]
+z_index = -999
+offset_left = -314.0
+offset_top = -187.0
+offset_right = 346.0
+offset_bottom = 229.0
+texture = ExtResource("6_ruoeu")
+metadata/_edit_lock_ = true
+
+[node name="Gazer" parent="." unique_id=1463209006 instance=ExtResource("7_mkyst")]
+position = Vector2(-32, 108)
+
+[node name="Gazer2" parent="." unique_id=2036321616 instance=ExtResource("8_5oy5j")]
+position = Vector2(32, 111)
+
+[node name="Sinkhole" parent="." unique_id=696465493 instance=ExtResource("9_ya1rn")]
+
+[node name="SinkholeGravity" parent="." unique_id=1156258789 node_paths=PackedStringArray("parent_enemy") instance=ExtResource("10_ya1rn")]
+parent_enemy = NodePath("../Sinkhole")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkholeGravity" unique_id=1045980926]
+shape = SubResource("CircleShape2D_7spbn")
+
+[editable path="Player"]
+[editable path="Roaming Camera"]

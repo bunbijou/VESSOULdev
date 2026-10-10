@@ -4,6 +4,7 @@ signal death_rattle
 signal cast_spikes
 signal enemy_summon_pothead
 signal enemy_summon_burnout
+signal dispel_summoned_enemies
 
 @export var current_zone : int = 999
 @export var target_npc : Node2D
@@ -23,6 +24,7 @@ var active_phase = 0 #for registering state changes
 var cycle : int = 0
 var repeat : int = 0
 var enemy_type : String = "Pothead"
+var dead : bool = false
 
 ##----ANIMATIONS------##
 func anim_idle():
@@ -85,7 +87,7 @@ func anim_overhead_strike_lr():
 	anim.current_animation = "overhead_strike"
 	await get_tree().create_timer(beat*2).timeout
 	Sound.impact_big()
-	GameState.anim_rumble(.5,10)
+	GameState.anim_rumble(.5,20)
 	await get_tree().create_timer(beat).timeout
 	%Telegraph.visible = false
 
@@ -185,8 +187,8 @@ func toss_enemy():
 	current += 1
 
 func bone_bomb():
-	%BoneColl2.set_deferred("disabled", false)
 	%BoneColl1.set_deferred("disabled", false)
+	%BoneColl2.set_deferred("disabled", false)
 	%BoneColl3.set_deferred("disabled", false)
 	%BoneColl4.set_deferred("disabled", false)
 	%BoneColl5.set_deferred("disabled", false)
@@ -219,6 +221,7 @@ func block_flash():
 
 func _pain():
 	if vulnerable and !stun:
+		dispel_summoned_enemies.emit()
 		anim_stun()
 		health -= 1
 		vulnerable = false #prevent further attacks for this cycle
@@ -227,22 +230,25 @@ func _pain():
 		stun = false
 
 func defeat():
-	##Achievement: Betray Lenore
-	GameState.target_player.anim_achievement("a_lenore_defeat")
-	GameState.target_player.waiting = true
-	BgmController.stopAll()
-	Sound.lenore("death")
-	LevelTransition.fadeToWhite()
-	await get_tree().create_timer(beat*3).timeout
-	if !demo:
-		GameState.target_player.waiting = false
-		GameState.target_player.anim_lighten()
-		LevelTransition.fadeFromBlack()
-		death_rattle.emit()
-		BgmController.abyss_main.play()
-		queue_free()
-	else: 
-		get_tree().call_deferred("change_scene_to_file","res://demo_end.tscn")
+	if !dead:
+		dead = true
+		##Achievement: Betray Lenore
+		dispel_summoned_enemies.emit()
+		GameState.target_player.anim_achievement("a_lenore_defeat")
+		GameState.target_player.waiting = true
+		BgmController.stopAll()
+		Sound.lenore("death")
+		LevelTransition.fadeToWhite()
+		await get_tree().create_timer(beat*3).timeout
+		if !demo:
+			GameState.target_player.waiting = false
+			GameState.target_player.anim_lighten()
+			LevelTransition.fadeFromBlack()
+			death_rattle.emit()
+			BgmController.abyss_main.play()
+			queue_free()
+		else: 
+			get_tree().call_deferred("change_scene_to_file","res://demo_end.tscn")
 
 func cleanup():
 	death_rattle.emit()

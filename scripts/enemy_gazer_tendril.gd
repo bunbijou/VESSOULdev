@@ -11,6 +11,7 @@ func anim_stun():
 
 func _on_soul_mote_body_entered(_body: PlayerVessel) -> void:
 	if !GameState.shadeActive:
+		Sound.itemGet("bulb")
 		anim_stun()
 		stunned = true
 		gazer_base.stun()

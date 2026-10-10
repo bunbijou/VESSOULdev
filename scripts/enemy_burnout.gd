@@ -9,7 +9,7 @@ signal death_rattle
 @export var my_sprite : AnimatedSprite2D
 @export var my_sprite_overlay : AnimatedSprite2D
 @export var speed : float = .5
-#@export var lenore_variant : bool = false
+var target_boss : Node2D
 var anim_wait : float = 1
 var stun : bool = false
 var charging : bool = false
@@ -83,6 +83,8 @@ func _ready() -> void:
 	activation_area.enemy_alert.connect(emerge)
 	hit_area.disabled = true
 	activation_area.collision_reset()
+	if target_boss:
+		target_boss.dispel_summoned_enemies.connect(death)
 
 func emerge():
 	flash_component.is_flashable = true
@@ -210,7 +212,7 @@ func death():
 		hit_area.on_touch_effect = "None"
 		GameState.addKillCount()
 		death_rattle.emit()
-		await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(GameState.cleanup_time_enemy).timeout
 		queue_free()
 
 ##Experimental

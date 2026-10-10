@@ -151,34 +151,42 @@ func _enemyDamaged():
 func ThreeTendrilSwipeUD(): #called by the divider animation event
 	if !dead:
 		if !tendrilUDDead and !stunState and !desperation: #if top/bottom tendrils not destroyed and not in hitstun
-			%TendrilAnimationPlayer.current_animation = "attackUD" #attack #attack
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackUD" #attack #attack
 			tendrilUDVulnerable = true #indicate damage-able state
 			await get_tree().create_timer(3.5).timeout
-			%TendrilAnimationPlayer.current_animation = "RESET"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "RESET"
 			tendrilUDVulnerable = false
 		else: Sound.AbyssalCry()
 		
 		#desperation attacks
 		if !tendrilUDDead and !tendrilLRDead and !stunState and desperation:
-			%TendrilAnimationPlayer.current_animation = "attackUD" #attack
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackUD" #attack
 			tendrilUDVulnerable = true
 			await get_tree().create_timer(3.5).timeout
 			tendrilUDVulnerable = false
-			%TendrilAnimationPlayer.current_animation = "attackLR" #attack
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackLR" #attack
 			tendrilLRVulnerable = true
 			await get_tree().create_timer(3.5).timeout
 			tendrilLRVulnerable = false
 		else: Sound.AbyssalCry()
 		
 		if tendrilUDDead and !tendrilLRDead and !stunState and desperation:
-			%TendrilAnimationPlayer.current_animation = "attackLR"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackLR"
 			tendrilLRVulnerable = true
 			await get_tree().create_timer(1.5).timeout
-			%TendrilAnimationPlayer.current_animation = "attackLR"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackLR"
 			await get_tree().create_timer(1.5).timeout
-			%TendrilAnimationPlayer.current_animation = "attackLR"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackLR"
 			await get_tree().create_timer(1.5).timeout
-			%TendrilAnimationPlayer.current_animation = "attackLR"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackLR"
 			tendrilLRVulnerable = false
 		else: Sound.AbyssalCry()
 
@@ -187,7 +195,8 @@ func ThreeTendrilSwipeUD(): #called by the divider animation event
 func ThreeTendrilSwipeLR(): #called by the divider animation event
 	if !dead:
 		if !tendrilLRDead and !stunState and !desperation: #if tendrils not destroyed and not in hitstun
-			%TendrilAnimationPlayer.current_animation = "attackLR" #attack
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackLR" #attack
 			tendrilLRVulnerable = true
 			await get_tree().create_timer(3.5).timeout
 			%TendrilAnimationPlayer.current_animation = "RESET"
@@ -196,23 +205,28 @@ func ThreeTendrilSwipeLR(): #called by the divider animation event
 		
 			#desperation attacks
 		if !tendrilLRDead and !tendrilUDDead and !stunState and desperation:
-			%TendrilAnimationPlayer.current_animation = "attackLR" #attack
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackLR" #attack
 			tendrilLRVulnerable = true
 			await get_tree().create_timer(3.5).timeout
 			tendrilLRVulnerable = false
-			%TendrilAnimationPlayer.current_animation = "attackUD" #attack
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackUD" #attack
 			tendrilUDVulnerable = true
 			await get_tree().create_timer(3.5).timeout
 			tendrilUDVulnerable = false
 		else: Sound.AbyssalCry()
 		
 		if tendrilLRDead and !tendrilUDDead and !stunState and desperation:
-			%TendrilAnimationPlayer.current_animation = "attackUD"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackUD"
 			tendrilUDVulnerable = true
 			await get_tree().create_timer(1.5).timeout
-			%TendrilAnimationPlayer.current_animation = "attackUD"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackUD"
 			await get_tree().create_timer(1.5).timeout
-			%TendrilAnimationPlayer.current_animation = "attackUD"
+			if !dead:
+				%TendrilAnimationPlayer.current_animation = "attackUD"
 			await get_tree().create_timer(1.5).timeout
 			tendrilUDVulnerable = false
 		else: Sound.AbyssalCry()
@@ -232,5 +246,5 @@ func bossDeath():
 		%WoodsWarp.call_deferred("false")
 		await get_tree().create_timer(5).timeout
 		GameState.abyssDict["abyssBoss"][0] = 1 
-		await get_tree().create_timer(30).timeout
+		await get_tree().create_timer(GameState.cleanup_time_boss).timeout
 		queue_free() #banish self to shadow realm

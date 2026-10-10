@@ -90,7 +90,7 @@ func _process(_delta: float) -> void:
 					15: #player gains favor/humanity gained
 						##Achievement: Lenore's Favor
 						GameState.target_player.anim_achievement("a_lenore_favor")
-						BgmController.success_jingle.play()
+						#BgmController.success_jingle.play()
 						BgmController.abyss_main.play()
 						Localize.reference_dialogue("LenoreFavorGained")
 						increment_message(100)

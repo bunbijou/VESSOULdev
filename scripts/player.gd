@@ -404,23 +404,6 @@ func _process(_delta: float) -> void: #every frame
 		print("Co-op enabled")
 		player_2_start()
 	
-	##Debug
-	#%DebugPositionLabel.text = str(self.position)
-	##Mashing out of frozen state (Not working)
-	#if temperature == "cold":
-		#var requirement : String
-		#if Input.is_action_just_pressed("ui_left") and requirement != "ui_right":
-			#mash_count += 1
-			#self.position = self.position+(Vector2(-1,0))
-			#requirement = "ui_right"
-		#if Input.is_action_just_pressed("ui_right") and requirement == "ui_right":
-			#mash_count += 1
-			#self.position = self.position+(Vector2(1,0))
-			#requirement = "ui_left"
-		#if mash_count == 10:
-			#neutralize_status()
-			#mash_count = 0
-	
 	##Unnerve State
 	if mice_count >= 1 and !dead and !fallen: #can be overwritten by other states
 		anim_unnerve()
@@ -462,6 +445,7 @@ func _process(_delta: float) -> void: #every frame
 			speed = GameState.playerBuffedSpd 
 			%hunger_timer.start()
 
+## Coop Start
 func player_2_start():
 	if !GameState.coop:
 		GameState.coop_start()
@@ -469,7 +453,7 @@ func player_2_start():
 		await get_tree().create_timer(3).timeout
 		%SlotLabel.visible = false
 
-##When empowered, tick down soul meter (see above)
+## Mote Decay
 func _on_hunger_timer_timeout() -> void: 
 	GameState.playerActiveSouls -= GameState.playerMoteDecay
 
@@ -484,7 +468,7 @@ func is_doused():
 			Sound.PlayerExtinguished()
 			anim_reset()
 
-## Falling (Only used by Sinkhole at this point)
+## Sinkhole Fall
 func is_fallen(): #pretty much copies below
 		self.z_index = 999
 		anim_falling()
@@ -513,7 +497,7 @@ func is_fallen(): #pretty much copies below
 		else: 
 			play_anim("reset")
 
-## Death (also referred to as Shattering)
+## Death
 func is_dead():
 	player_resurrect.emit()
 	await get_tree().create_timer(.1).timeout #wait for resurrect (Endless mode only)
@@ -649,7 +633,7 @@ func is_burning():
 func _on_thaw_timer_timeout() -> void:
 	neutralize_status()
 
-## Ditto
+## ditto (Assuming this is seperated out so that other nodes can call it at will)
 func neutralize_status():
 	if !dead and temperature != "standard":
 		state_revert.emit()

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cmunxjljrrjlb"]
+
+[ext_resource type="Script" uid="uid://deyoces0ahvyc" path="res://sinkhole_gravity.gd" id="1_rff0n"]
+
+[node name="SinkholeGravity" type="Area2D" unique_id=1156258789]
+collision_mask = 2
+script = ExtResource("1_rff0n")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

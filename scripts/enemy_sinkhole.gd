@@ -10,7 +10,6 @@ signal death_rattle
 @export var overlay_sprite : AnimatedSprite2D
 @export var overlay_sprite_aux : AnimatedSprite2D
 @export var mote_bonus_mult : float = 0
-var push : bool = false
 var dead : bool = false
 
 ##---------ANIMATIONS-----------##
@@ -48,11 +47,6 @@ func _ready() -> void:
 	hit_area.player_reposition.connect(displace_player)
 	hit_area.death_rattle.connect(death)
 
-#func _physics_process(_delta: float) -> void:
-	#if push:
-		#Sound.sinkhole("pain")
-		#GameState.target_player.position += (GameState.target_player.position/self.position)
-
 func displace_player():
 	if !dead:
 		GameState.target_player.position = self.position
@@ -78,12 +72,3 @@ func death():
 		GameState.addKillCount()
 		await get_tree().create_timer(GameState.cleanup_time_enemy).timeout
 		queue_free()
-
-
-func push_area_entered(_body : PlayerVessel):
-	pass
-	#push = true
-
-func push_area_exited(_body: PlayerVessel) -> void:
-	pass
-	#push = false

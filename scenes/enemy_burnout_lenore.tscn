@@ -367,6 +367,7 @@ hit_area = NodePath("HitboxMelee")
 flash_component = NodePath("FlashComponent")
 my_sprite = NodePath("animSprite")
 my_sprite_overlay = NodePath("animSpriteOverlay")
+lenore_variant = true
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1648749087]
 unique_name_in_owner = true

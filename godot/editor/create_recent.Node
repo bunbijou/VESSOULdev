@@ -1,12 +1,12 @@
 Node
 CollisionShape2D
+Area2D
 Label
 AnimationPlayer
 Node2D
 TextureRect
 Camera2D
 Sprite2D
-Area2D
 AnimatedSprite2D
 CPUParticles2D
 Control

@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://stae5vq2qkpy" path="res://scenes/decor/detail_dripping_water.tscn" id="27_uw7u3"]
 [ext_resource type="PackedScene" uid="uid://b03vsnh0whgig" path="res://scenes/illusorywall.tscn" id="28_nwwvd"]
 [ext_resource type="Texture2D" uid="uid://b4pmu2xolkmfb" path="res://sprites/environment/spriteAbyssBGExterior.png" id="29_u7bf2"]
+[ext_resource type="PackedScene" uid="uid://cmunxjljrrjlb" path="res://scenes/sinkhole_gravity.tscn" id="32_7oico"]
 [ext_resource type="PackedScene" uid="uid://cxcpv33kak8ss" path="res://scenes/enemy_pothead.tscn" id="32_dwtn8"]
 [ext_resource type="Texture2D" uid="uid://cr3ashffmbwld" path="res://sprites/environment/water2.png" id="33_rybl5"]
 [ext_resource type="Texture2D" uid="uid://bbdk75glsjoyi" path="res://sprites/environment/water11.png" id="34_7yfm2"]
@@ -67,6 +68,9 @@
 [ext_resource type="Script" uid="uid://c6odck08nskvr" path="res://scripts/adjust_ng_level.gd" id="65_ix7so"]
 [ext_resource type="Texture2D" uid="uid://dghjrrln1s3jt" path="res://sprites/environment/glowsword.png" id="66_ehlwh"]
 [ext_resource type="Texture2D" uid="uid://osk015rv5cuo" path="res://sprites/environment/sprSaveMist.png" id="67_ehlwh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ix7so"]
+radius = 44.011364
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1swam"]
 resource_name = "sprAbyssTile"
@@ -788,6 +792,17 @@ condition = "Abyssoul Defeated"
 z_index = 200
 position = Vector2(1, 319)
 current_zone = 0
+
+[node name="Sinkhole" parent="." unique_id=1466196805 instance=ExtResource("18_2gprf")]
+position = Vector2(-166, 304)
+current_zone = 5
+
+[node name="SinkholeGravity" parent="." unique_id=1156258789 node_paths=PackedStringArray("parent_enemy") instance=ExtResource("32_7oico")]
+parent_enemy = NodePath("../Sinkhole")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkholeGravity" unique_id=974670733]
+position = Vector2(-166, 305)
+shape = SubResource("CircleShape2D_ix7so")
 
 [node name="PotheadA-2" parent="." unique_id=1079197186 instance=ExtResource("32_dwtn8")]
 position = Vector2(106, 124)
@@ -1550,7 +1565,7 @@ z_index = -10
 position = Vector2(-7.0717163, -1.7426834)
 scale = Vector2(1.1786188, 0.87133604)
 current_zone = 5
-target_enemy = NodePath("../../../Sinkhole")
+target_enemy = NodePath("../../../../Sinkhole")
 
 [node name="Objects - Recluse\'s Cave" type="Node2D" parent="Static Objects/All Maps/Zone 5 - Recluse\'s Cave (Kindling Bundle)" unique_id=1551944603]
 position = Vector2(-315.73077, -131.90958)
@@ -4105,10 +4120,6 @@ shape = SubResource("CircleShape2D_rt344")
 [node name="WispFireA-2" parent="Static Objects" unique_id=1488906370 instance=ExtResource("45_rt344")]
 position = Vector2(159, 181)
 metadata/_edit_lock_ = true
-
-[node name="Sinkhole" parent="Static Objects" unique_id=1466196805 instance=ExtResource("18_2gprf")]
-position = Vector2(-166, 304)
-current_zone = 5
 
 [node name="WispBaseRefactor" parent="Static Objects" unique_id=1215332758 instance=ExtResource("42_bumgp")]
 position = Vector2(160, 183)

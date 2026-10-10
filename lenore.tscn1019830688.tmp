@@ -2352,11 +2352,9 @@ script = ExtResource("2_chyg3")
 position = Vector2(0, 16)
 position_override = true
 
-[node name="Debug" type="Node" parent="." unique_id=2072803948]
+[node name="Node" type="Node" parent="." unique_id=2072803948]
 script = ExtResource("5_wk63p")
 debug = true
-intensity_override = 99
-capacity_override = 99
 
 [node name="DemoOverride" type="Node" parent="." unique_id=1038355677]
 script = ExtResource("2_73l0a")
